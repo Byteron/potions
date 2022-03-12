@@ -19,6 +19,16 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://src/game/game.gd"
 }, {
+"base": "Area3D",
+"class": &"Interactable",
+"language": &"GDScript",
+"path": "res://src/tools/interactable.gd"
+}, {
+"base": "Area3D",
+"class": &"Interacter",
+"language": &"GDScript",
+"path": "res://src/character/interacter.gd"
+}, {
 "base": "Panel",
 "class": &"TitleScreen",
 "language": &"GDScript",
@@ -27,6 +37,8 @@ _global_script_classes=[{
 _global_script_class_icons={
 "Controller": "",
 "Game": "",
+"Interactable": "",
+"Interacter": "",
 "TitleScreen": ""
 }
 
@@ -57,5 +69,10 @@ move_up={
 move_down={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"store_command":true,"alt_pressed":false,"shift_pressed":false,"meta_pressed":false,"command_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"unicode":0,"echo":false,"script":null)
+]
+}
+interact={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"store_command":true,"alt_pressed":false,"shift_pressed":false,"meta_pressed":false,"command_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"unicode":0,"echo":false,"script":null)
 ]
 }

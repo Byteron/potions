@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckdjoj3odyhhe"]
+
+[ext_resource type="PackedScene" uid="uid://cr5n7b61ucrh3" path="res://src/tools/pot.tscn" id="1_rkcwk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vm0f3"]
+size = Vector3(1, 0.5, 1)
+
+[node name="Table" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268619, 0)
+mesh = SubResource( "BoxMesh_vm0f3" )
+
+[node name="Pot" parent="." instance=ExtResource( "1_rkcwk" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.253144, 0)

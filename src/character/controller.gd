@@ -2,11 +2,15 @@ extends Node
 class_name Controller
 
 @onready var parent := get_parent()
-@export var speed := 2
+@export var speed := 8
 
 
 func _process(delta: float) -> void:
 	var next_position: Vector3 = parent.position + get_direction() * speed * delta
+	
+	if next_position == parent.position:
+		return
+
 	parent.look_at(next_position, Vector3.UP)
 	parent.position = next_position
 
