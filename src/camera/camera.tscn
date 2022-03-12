@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://f1n8k126mnsd"]
+
+[ext_resource type="Script" path="res://src/game/camera.gd" id="1_2lp2b"]
+
+[node name="Camera" type="Node3D"]
+script = ExtResource( "1_2lp2b" )
+target_node = NodePath("../Character")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 8.53761, 2.75384)
+fov = 50.0
