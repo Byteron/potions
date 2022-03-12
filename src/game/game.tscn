@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhnt7piyj3t7t"]
+[gd_scene load_steps=8 format=3 uid="uid://dhnt7piyj3t7t"]
 
 [ext_resource type="PackedScene" uid="uid://b1qbpsush37j0" path="res://src/character/character.tscn" id="2_gea1m"]
+[ext_resource type="Texture2D" uid="uid://b8y3lp0q2ngay" path="res://icon.png" id="3_82bnb"]
 [ext_resource type="PackedScene" uid="uid://fivoip5lpp1f" path="res://src/tools/seed_station.tscn" id="3_flidp"]
 [ext_resource type="Script" path="res://src/game/camera.gd" id="3_tavmp"]
 
@@ -32,12 +33,16 @@ directional_shadow_max_distance = 250.0
 [node name="SeedStation" parent="." instance=ExtResource( "3_flidp" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36639, 0.268619, -3.8345)
 
+[node name="Sprite3D" type="Sprite3D" parent="SeedStation"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.762456, 0)
+texture = ExtResource( "3_82bnb" )
+
 [node name="Camera" type="Node3D" parent="."]
 script = ExtResource( "3_tavmp" )
 target_node = NodePath("../Character")
 
 [node name="Camera3D" type="Camera3D" parent="Camera"]
-transform = Transform3D(1, 0, 0, 0, 0.565212, 0.824946, 0, -0.824946, 0.565212, 0, 9.68572, 4.86449)
-fov = 60.0
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 8.53761, 2.75384)
+fov = 50.0
 
 [editable path="Character"]
