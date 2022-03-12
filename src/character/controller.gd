@@ -6,11 +6,13 @@ class_name Controller
 
 
 func _process(delta: float) -> void:
-	parent.position += get_direction() * speed * delta
+	var next_position: Vector3 = parent.position + get_direction() * speed * delta
+	parent.look_at(next_position, Vector3.UP)
+	parent.position = next_position
 
 
 func get_direction() -> Vector3:
 	var direction := Vector3()
-	direction.x = Input.get_axis("ui_left", "ui_right")
-	direction.z = Input.get_axis("ui_up", "ui_down")
+	direction.x = Input.get_axis("move_left", "move_right")
+	direction.z = Input.get_axis("move_up", "move_down")
 	return direction.normalized()

@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1qbpsush37j0"]
+[gd_scene load_steps=4 format=3 uid="uid://b1qbpsush37j0"]
 
-[ext_resource type="Script" path="res://src/character/character.gd" id="1_4so4r"]
 [ext_resource type="Script" path="res://src/character/controller.gd" id="2_fkose"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_8xtrk"]
@@ -11,29 +10,28 @@ height = 1.0
 size = Vector3(1, 1, 1)
 
 [node name="Character" type="Node3D"]
-script = ExtResource( "1_4so4r" )
 
 [node name="Body" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource( "SphereMesh_8xtrk" )
 
 [node name="Head" type="MeshInstance3D" parent="Body"]
-transform = Transform3D(0.57674, 0, 0, 0, 0.57674, 0, 0, 0, 0.57674, 0, 0.8, 0)
+transform = Transform3D(0.57674, 0, 0, 0, 0.57674, 0, 0, 0, 0.57674, 0, 0.692058, 0)
 mesh = SubResource( "SphereMesh_8xtrk" )
 skeleton = NodePath("../..")
 
 [node name="Hat" type="MeshInstance3D" parent="Body/Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04033, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.705982, 0)
 mesh = SubResource( "PrismMesh_tg8a2" )
 skeleton = NodePath("../../..")
 
 [node name="LeftHand" type="MeshInstance3D" parent="Body"]
-transform = Transform3D(0.387728, 0, 0, 0, 0.387728, 0, 0, 0, 0.387728, -0.472248, 0.388764, -0.410392)
+transform = Transform3D(0.387728, 0, 0, 0, 0.387728, 0, 0, 0, 0.387728, -0.472248, 0.203867, -0.410392)
 mesh = SubResource( "SphereMesh_8xtrk" )
 skeleton = NodePath("../..")
 
 [node name="RightHand" type="MeshInstance3D" parent="Body"]
-transform = Transform3D(0.387728, 0, 0, 0, 0.387728, 0, 0, 0, 0.387728, 0.511461, 0.351109, -0.300571)
+transform = Transform3D(0.387728, 0, 0, 0, 0.387728, 0, 0, 0, 0.387728, 0.511461, 0.166212, -0.300571)
 mesh = SubResource( "SphereMesh_8xtrk" )
 skeleton = NodePath("../..")
 
