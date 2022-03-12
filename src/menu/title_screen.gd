@@ -3,7 +3,7 @@ class_name TitleScreen
 
 
 func _on_play_button_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene("res://src/game/game.tscn")
 
 
 func _on_quit_button_pressed() -> void:
