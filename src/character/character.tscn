@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1qbpsush37j0"]
+[gd_scene load_steps=7 format=3 uid="uid://b1qbpsush37j0"]
 
 [ext_resource type="Script" path="res://src/character/controller.gd" id="2_fkose"]
 [ext_resource type="Script" path="res://src/character/interacter.gd" id="2_omt1l"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h4cxt"]
+height = 1.86137
 
 [sub_resource type="SphereMesh" id="SphereMesh_8xtrk"]
 radius = 0.5
@@ -11,8 +14,13 @@ height = 1.0
 size = Vector3(1, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xggk"]
+size = Vector3(0.709334, 1, 0.795445)
 
-[node name="Character" type="Node3D"]
+[node name="Character" type="CharacterBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925832, 0)
+shape = SubResource( "CapsuleShape3D_h4cxt" )
 
 [node name="Body" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -45,5 +53,5 @@ script = ExtResource( "2_fkose" )
 script = ExtResource( "2_omt1l" )
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interacter"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.18524)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.02269)
 shape = SubResource( "BoxShape3D_0xggk" )

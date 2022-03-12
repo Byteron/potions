@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhnt7piyj3t7t"]
+[gd_scene load_steps=7 format=3 uid="uid://dhnt7piyj3t7t"]
 
-[ext_resource type="Script" path="res://src/game/game.gd" id="1_r2tft"]
 [ext_resource type="PackedScene" uid="uid://b1qbpsush37j0" path="res://src/character/character.tscn" id="2_gea1m"]
 [ext_resource type="PackedScene" uid="uid://ckdjoj3odyhhe" path="res://src/tools/table.tscn" id="3_5nvkf"]
 
@@ -21,7 +20,6 @@ glow_enabled = true
 size = Vector2(10, 10)
 
 [node name="Game" type="Node3D"]
-script = ExtResource( "1_r2tft" )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( "Environment_n77bu" )
@@ -34,7 +32,8 @@ directional_shadow_max_distance = 250.0
 [node name="Character" parent="." instance=ExtResource( "2_gea1m" )]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.978807, 0.204786, 0, -0.204786, 0.978807, 0, 3.15511, 4.86449)
+transform = Transform3D(1, 0, 0, 0, 0.63299, 0.77416, 0, -0.77416, 0.63299, 0, 5.1687, 4.86449)
+fov = 60.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)
@@ -42,5 +41,11 @@ mesh = SubResource( "QuadMesh_sx677" )
 
 [node name="Table" parent="." instance=ExtResource( "3_5nvkf" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.259137, -3.85258)
+
+[node name="Table2" parent="." instance=ExtResource( "3_5nvkf" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31749, 0.259137, -3.85258)
+
+[node name="Table3" parent="." instance=ExtResource( "3_5nvkf" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31595, 0.259137, -3.85258)
 
 [editable path="Character"]

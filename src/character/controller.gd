@@ -1,18 +1,17 @@
 extends Node
 class_name Controller
 
-@onready var parent := get_parent()
+@onready var parent: CharacterBody3D = get_parent()
 @export var speed := 8
 
 
 func _process(delta: float) -> void:
-	var next_position: Vector3 = parent.position + get_direction() * speed * delta
-	
-	if next_position == parent.position:
-		return
+	parent.velocity = get_direction() * speed
 
-	parent.look_at(next_position, Vector3.UP)
-	parent.position = next_position
+	if parent.velocity != Vector3.ZERO:
+		parent.look_at(parent.position + parent.velocity, Vector3.UP)
+
+	parent.move_and_slide()
 
 
 func get_direction() -> Vector3:
