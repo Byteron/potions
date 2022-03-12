@@ -1,15 +1,13 @@
 extends Area3D
-class_name Interacter
-
-@onready var parent := get_parent()
+class_name Picker
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
-		interact()
+		pick()
 
 
-func interact() -> void:
+func pick() -> void:
 	for area in get_overlapping_areas():
-		if area is Interactable:
-			area.interact()
+		if area is Pickable:
+			area.pick()
 			return

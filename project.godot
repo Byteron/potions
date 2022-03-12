@@ -24,6 +24,16 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://src/character/interacter.gd"
 }, {
+"base": "Area3D",
+"class": &"Pickable",
+"language": &"GDScript",
+"path": "res://src/tools/pickable.gd"
+}, {
+"base": "Area3D",
+"class": &"Picker",
+"language": &"GDScript",
+"path": "res://src/character/picker.gd"
+}, {
 "base": "Panel",
 "class": &"TitleScreen",
 "language": &"GDScript",
@@ -33,6 +43,8 @@ _global_script_class_icons={
 "Controller": "",
 "Interactable": "",
 "Interacter": "",
+"Pickable": "",
+"Picker": "",
 "TitleScreen": ""
 }
 
@@ -42,6 +54,11 @@ config/name="Potions"
 run/main_scene="res://src/game/game.tscn"
 config/icon="res://icon.png"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [input]
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1qbpsush37j0"]
+[gd_scene load_steps=8 format=3 uid="uid://b1qbpsush37j0"]
 
 [ext_resource type="Script" path="res://src/character/controller.gd" id="2_fkose"]
 [ext_resource type="Script" path="res://src/character/interacter.gd" id="2_omt1l"]
+[ext_resource type="Script" path="res://src/character/picker.gd" id="3_ofeoo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h4cxt"]
 height = 1.86137
@@ -53,5 +54,12 @@ script = ExtResource( "2_fkose" )
 script = ExtResource( "2_omt1l" )
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interacter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.02269)
+shape = SubResource( "BoxShape3D_0xggk" )
+
+[node name="Picker" type="Area3D" parent="."]
+script = ExtResource( "3_ofeoo" )
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Picker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1.02269)
 shape = SubResource( "BoxShape3D_0xggk" )

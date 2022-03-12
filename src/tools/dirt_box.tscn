@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckdjoj3odyhhe"]
+[gd_scene load_steps=4 format=3 uid="uid://crcj6q03xogoe"]
 
-[ext_resource type="PackedScene" uid="uid://cr5n7b61ucrh3" path="res://src/tools/pot.tscn" id="1_rkcwk"]
+[ext_resource type="PackedScene" uid="uid://cr5n7b61ucrh3" path="res://src/tools/pot.tscn" id="1_3rihx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ah76e"]
 size = Vector3(1, 0.5, 1)
@@ -8,10 +8,10 @@ size = Vector3(1, 0.5, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_no23q"]
 size = Vector3(1, 0.5, 1)
 
-[node name="Table" type="StaticBody3D"]
+[node name="DirtBox" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268619, 0)
 
-[node name="Pot" parent="." instance=ExtResource( "1_rkcwk" )]
+[node name="Pot" parent="." instance=ExtResource( "1_3rihx" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.253144, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
