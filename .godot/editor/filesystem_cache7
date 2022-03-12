@@ -1,0 +1,12 @@
+102b54792f6b2ef812636a2bdaeb9d34
+::res://::1647080679
+icon.png::CompressedTexture2D::4753918136609947528::1647080274::1647080278::1::::<><>::
+::res://assets/::1647080299
+::res://src/::1647080538
+::res://src/game/::1647080626
+game.gd::GDScript::-1::1647080563::0::1::::Game<>Node3D<>::
+game.tscn::PackedScene::7678632436928114703::1647080626::0::1::::<><>::res://src/game/game.gd
+::res://src/global/::1647080310
+::res://src/menu/::1647080532
+title_screen.gd::GDScript::-1::1647080466::0::1::::TitleScreen<>Panel<>::
+title_screen.tscn::PackedScene::422505681748468497::1647080532::0::1::::<><>::res://src/menu/title_screen.gd

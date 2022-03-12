@@ -1,0 +1,32 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "Node3D",
+"class": &"Game",
+"language": &"GDScript",
+"path": "res://src/game/game.gd"
+}, {
+"base": "Panel",
+"class": &"TitleScreen",
+"language": &"GDScript",
+"path": "res://src/menu/title_screen.gd"
+}]
+_global_script_class_icons={
+"Game": "",
+"TitleScreen": ""
+}
+
+[application]
+
+config/name="Potions"
+run/main_scene="res://src/menu/title_screen.tscn"
+config/icon="res://icon.png"
+config/features=PackedStringArray("4.0", "Vulkan Clustered")
