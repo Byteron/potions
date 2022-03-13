@@ -11,11 +11,13 @@ var _growable: Growable = null
 
 func _on_interactable_interacted(character: Character) -> void:
 	if character.has_item() and character.item is Seed and not has_growable():
-		character.drop_item()
+		var seed: Seed = character.item
 		_growable = Growable.instantiate()
+		_growable.data = seed.data as GrowableData
 		_container.add_child(_growable)
+		character.drop_item()
 
-	elif not character.has_item() and has_growable() and _growable.is_grown():
+	elif not character.has_item() and has_growable() and _growable.is_grown:
 		var ingredient = Ingredient.instantiate()
 		character.take_item(ingredient)
 		_growable.queue_free()

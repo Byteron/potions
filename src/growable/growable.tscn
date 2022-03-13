@@ -1,13 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://jjc0gcemiqe8"]
 
 [ext_resource type="Script" path="res://src/growable/growable.gd" id="1_nr1wk"]
-[ext_resource type="Texture2D" uid="uid://xht6dqxno8bx" path="res://assets/graphics/images/herb plant.png" id="2_34ud7"]
+[ext_resource type="Texture2D" uid="uid://cs52kfp5nivmi" path="res://assets/graphics/images/herb_sapling.png" id="2_on2bp"]
 
 [node name="Growable" type="Node3D"]
 script = ExtResource( "1_nr1wk" )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 offset = Vector2(0, 148)
 billboard = 1
 shaded = true
-texture = ExtResource( "2_34ud7" )
+texture = ExtResource( "2_on2bp" )
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -29,6 +29,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://src/growable/growable.gd"
 }, {
+"base": "Resource",
+"class": &"GrowableData",
+"language": &"GDScript",
+"path": "res://src/data/growable_data.gd"
+}, {
 "base": "Item",
 "class": &"Ingredient",
 "language": &"GDScript",
@@ -69,6 +74,7 @@ _global_script_class_icons={
 "Character": "",
 "Dirt": "",
 "Growable": "",
+"GrowableData": "",
 "Ingredient": "",
 "Interactable": "",
 "Interacter": "",
