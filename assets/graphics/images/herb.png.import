@@ -1,10 +1,10 @@
 [remap]
 
 importer="texture"
-type="StreamTexture2D"
+type="CompressedTexture2D"
 uid="uid://cx1k8jjs82hif"
-path.s3tc="res://.godot/imported/herb.png-8f28f45c234fdcaf4b4dcf9d76f62efb.s3tc.stex"
-path.etc2="res://.godot/imported/herb.png-8f28f45c234fdcaf4b4dcf9d76f62efb.etc2.stex"
+path.s3tc="res://.godot/imported/herb.png-8f28f45c234fdcaf4b4dcf9d76f62efb.s3tc.ctex"
+path.etc2="res://.godot/imported/herb.png-8f28f45c234fdcaf4b4dcf9d76f62efb.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
@@ -13,7 +13,7 @@ metadata={
 [deps]
 
 source_file="res://assets/graphics/images/herb.png"
-dest_files=["res://.godot/imported/herb.png-8f28f45c234fdcaf4b4dcf9d76f62efb.s3tc.stex", "res://.godot/imported/herb.png-8f28f45c234fdcaf4b4dcf9d76f62efb.etc2.stex"]
+dest_files=["res://.godot/imported/herb.png-8f28f45c234fdcaf4b4dcf9d76f62efb.s3tc.ctex", "res://.godot/imported/herb.png-8f28f45c234fdcaf4b4dcf9d76f62efb.etc2.ctex"]
 
 [params]
 
