@@ -27,5 +27,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.262748, 0)
 shape = SubResource( "BoxShape3D_j3mo4" )
 
 [node name="Container" type="Position3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.312434)
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

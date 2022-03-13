@@ -1,14 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://cuu0efh3sgwys"]
 
 [ext_resource type="Script" path="res://src/item/item.gd" id="1_r4dtl"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_xp5bv"]
-radius = 0.4
-height = 0.5
+[ext_resource type="Texture2D" uid="uid://cx1k8jjs82hif" path="res://assets/graphics/images/herb.png" id="2_lqddx"]
 
 [node name="Item" type="Node3D"]
 script = ExtResource( "1_r4dtl" )
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.255275, 0)
-mesh = SubResource( "SphereMesh_xp5bv" )
+[node name="Sprite3D" type="Sprite3D" parent="."]
+offset = Vector2(0, 64)
+billboard = 1
+shaded = true
+texture = ExtResource( "2_lqddx" )
