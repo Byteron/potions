@@ -23,7 +23,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xi1mh"]
-size = Vector3(10.6473, 2.08825, 2.03783)
+size = Vector3(5.35439, 1, 1)
 
 [node name="Game" type="Node3D"]
 
@@ -82,9 +82,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3022, 0.268619, -2.31408)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17475, 0.268619, -5.96899)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.82145, 0, -0.307427)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.82145, 0, -0.307427)
 
 [node name="counter" parent="StaticBody3D" instance=ExtResource( "9_0h4tp" )]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0602899)
