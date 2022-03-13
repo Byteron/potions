@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/tools/dirt.gd" id="1_vfh7c"]
 [ext_resource type="PackedScene" uid="uid://jjc0gcemiqe8" path="res://src/growable/growable.tscn" id="2_favi3"]
 [ext_resource type="Script" path="res://src/character/interactable.gd" id="2_ri6w4"]
-[ext_resource type="PackedScene" uid="uid://cuu0efh3sgwys" path="res://src/item/item.tscn" id="3_6btxm"]
+[ext_resource type="PackedScene" uid="uid://dnbdkc0ar7p0q" path="res://src/item/ingredient.tscn" id="3_pygpx"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_o0vnp"]
 
@@ -13,7 +13,7 @@ size = Vector3(0.59664, 0.548702, 0.57093)
 [node name="Dirt" type="Node3D"]
 script = ExtResource( "1_vfh7c" )
 Growable = ExtResource( "2_favi3" )
-Item = ExtResource( "3_6btxm" )
+Ingredient = ExtResource( "3_pygpx" )
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)

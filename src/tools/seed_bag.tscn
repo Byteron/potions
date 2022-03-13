@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bm8w8jr4hcqn8"]
+[gd_scene load_steps=6 format=3 uid="uid://d1lyxdgdrti2h"]
 
-[ext_resource type="Script" path="res://src/tools/seed.gd" id="1_c52bq"]
-[ext_resource type="PackedScene" uid="uid://cuu0efh3sgwys" path="res://src/item/item.tscn" id="2_klu8k"]
+[ext_resource type="Script" path="res://src/tools/seed_bag.gd" id="1_7oesv"]
 [ext_resource type="Script" path="res://src/character/interactable.gd" id="2_llbv3"]
+[ext_resource type="PackedScene" uid="uid://bmf4xt0orw8ke" path="res://src/item/seed.tscn" id="2_ypd7r"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_1eb1j"]
 radius = 0.4
@@ -11,9 +11,9 @@ height = 0.5
 [sub_resource type="BoxShape3D" id="BoxShape3D_vbl5y"]
 size = Vector3(0.757387, 0.457332, 0.757096)
 
-[node name="Seed" type="Node3D"]
-script = ExtResource( "1_c52bq" )
-Item = ExtResource( "2_klu8k" )
+[node name="Seedbag" type="Node3D"]
+script = ExtResource( "1_7oesv" )
+Seed = ExtResource( "2_ypd7r" )
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.255275, 0)

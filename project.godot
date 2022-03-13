@@ -29,6 +29,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://src/growable/growable.gd"
 }, {
+"base": "Item",
+"class": &"Ingredient",
+"language": &"GDScript",
+"path": "res://src/item/ingredient.gd"
+}, {
 "base": "Area3D",
 "class": &"Interactable",
 "language": &"GDScript",
@@ -44,10 +49,15 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://src/item/item.gd"
 }, {
-"base": "Node3D",
+"base": "Ingredient",
 "class": &"Seed",
 "language": &"GDScript",
-"path": "res://src/tools/seed.gd"
+"path": "res://src/item/seed.gd"
+}, {
+"base": "Node3D",
+"class": &"SeedBag",
+"language": &"GDScript",
+"path": "res://src/tools/seed_bag.gd"
 }, {
 "base": "Panel",
 "class": &"TitleScreen",
@@ -59,10 +69,12 @@ _global_script_class_icons={
 "Character": "",
 "Dirt": "",
 "Growable": "",
+"Ingredient": "",
 "Interactable": "",
 "Interacter": "",
 "Item": "",
 "Seed": "",
+"SeedBag": "",
 "TitleScreen": ""
 }
 
