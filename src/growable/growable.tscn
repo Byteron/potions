@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://jjc0gcemiqe8"]
+
+[ext_resource type="Script" path="res://src/growable/growable.gd" id="1_nr1wk"]
+[ext_resource type="Texture2D" uid="uid://b8y3lp0q2ngay" path="res://icon.png" id="2_xg0f4"]
+
+[node name="Growable" type="Node3D"]
+script = ExtResource( "1_nr1wk" )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+offset = Vector2(0, 32)
+texture = ExtResource( "2_xg0f4" )

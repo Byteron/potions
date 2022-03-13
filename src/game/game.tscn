@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhnt7piyj3t7t"]
+[gd_scene load_steps=8 format=3 uid="uid://dhnt7piyj3t7t"]
 
-[ext_resource type="PackedScene" path="res://src/character/character.tscn" id="2_gea1m"]
-[ext_resource type="Texture2D" uid="uid://b8y3lp0q2ngay" path="res://icon.png" id="3_82bnb"]
+[ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="2_gea1m"]
 [ext_resource type="PackedScene" uid="uid://ccyxho52ikox5" path="res://src/tools/seed_station.tscn" id="3_flidp"]
 [ext_resource type="PackedScene" uid="uid://f1n8k126mnsd" path="res://src/camera/camera.tscn" id="4_5itd5"]
-[ext_resource type="PackedScene" path="res://src/tools/dirt_box.tscn" id="5_1kpv3"]
+[ext_resource type="PackedScene" uid="uid://bcc3w2be250tf" path="res://src/tools/dirt_box.tscn" id="5_1kpv3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m0y12"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -34,13 +33,31 @@ directional_shadow_max_distance = 250.0
 [node name="SeedStation" parent="." instance=ExtResource( "3_flidp" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36639, 0.268619, -3.8345)
 
-[node name="Sprite3D" type="Sprite3D" parent="SeedStation"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.762456, 0)
-texture = ExtResource( "3_82bnb" )
-
 [node name="Camera" parent="." instance=ExtResource( "4_5itd5" )]
+_target_node = NodePath("../Character")
 
 [node name="DirtBox" parent="." instance=ExtResource( "5_1kpv3" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41879, 0.268619, -3.66285)
+
+[node name="DirtBox2" parent="." instance=ExtResource( "5_1kpv3" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94555, 0.268619, -3.66285)
+
+[node name="DirtBox3" parent="." instance=ExtResource( "5_1kpv3" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49453, 0.268619, -3.66285)
+
+[node name="DirtBox4" parent="." instance=ExtResource( "5_1kpv3" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.97505, 0.268619, -3.66285)
+
+[node name="DirtBox5" parent="." instance=ExtResource( "5_1kpv3" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41879, 0.268619, -7.3125)
+
+[node name="DirtBox6" parent="." instance=ExtResource( "5_1kpv3" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94555, 0.268619, -7.3125)
+
+[node name="DirtBox7" parent="." instance=ExtResource( "5_1kpv3" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49453, 0.268619, -7.3125)
+
+[node name="DirtBox8" parent="." instance=ExtResource( "5_1kpv3" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.97505, 0.268619, -7.3125)
 
 [editable path="Character"]

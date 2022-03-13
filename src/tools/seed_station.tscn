@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccyxho52ikox5"]
 
-[ext_resource type="PackedScene" path="res://src/tools/seed.tscn" id="1_442md"]
+[ext_resource type="PackedScene" uid="uid://bm8w8jr4hcqn8" path="res://src/tools/seed.tscn" id="1_442md"]
 [ext_resource type="PackedScene" uid="uid://31skn8qsjy5s" path="res://src/deco/box.tscn" id="2_iul63"]
 
 [node name="SeedStation" type="Node3D"]

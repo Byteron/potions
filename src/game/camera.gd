@@ -1,15 +1,11 @@
 extends Node3D
 
-@export var target_node: NodePath
-@onready var target: Node3D = get_node(target_node)
+@export var _target_node: NodePath
+@onready var _target: Node3D = get_node(_target_node)
 
 
-func _ready() -> void:
-	pass
-
-
-func _process(delta: float) -> void:
-	if not target:
+func _process(_delta: float) -> void:
+	if not _target:
 		return
 	
-	position = target.position
+	position = _target.position

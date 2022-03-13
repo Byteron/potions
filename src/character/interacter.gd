@@ -1,7 +1,7 @@
 extends Area3D
 class_name Interacter
 
-@onready var character: Character = get_parent()
+@onready var _character: Character = get_parent()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -12,5 +12,5 @@ func _unhandled_input(event: InputEvent) -> void:
 func interact() -> void:
 	for area in get_overlapping_areas():
 		if area is Interactable:
-			area.interact(character)
+			area.interact(_character)
 			return

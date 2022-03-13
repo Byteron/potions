@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://bcc3w2be250tf"]
 
-[ext_resource type="PackedScene" uid="uid://cr5n7b61ucrh3" path="res://src/tools/dirt.tscn" id="1_3rihx"]
-[ext_resource type="PackedScene" path="res://src/deco/box.tscn" id="2_06sb6"]
+[ext_resource type="PackedScene" uid="uid://y30udydf5kh" path="res://src/tools/dirt.tscn" id="1_3rihx"]
+[ext_resource type="PackedScene" uid="uid://31skn8qsjy5s" path="res://src/deco/box.tscn" id="2_06sb6"]
 
 [node name="DirtBox" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268619, 0)
