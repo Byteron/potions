@@ -1,12 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcc3w2be250tf"]
+[gd_scene load_steps=4 format=3 uid="uid://bcc3w2be250tf"]
 
 [ext_resource type="PackedScene" uid="uid://y30udydf5kh" path="res://src/tools/dirt.tscn" id="1_3rihx"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4lw7"]
-albedo_color = Color(0.270588, 0.180392, 0.0627451, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_a1wgn"]
-size = Vector3(4, 0.5, 1)
+[ext_resource type="PackedScene" uid="uid://ctradih82bklf" path="res://assets/graphics/gltf/planter.gltf" id="2_4nu2f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6uuv8"]
 size = Vector3(4.01759, 0.5, 1)
@@ -28,9 +23,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46735, 0.253144, 0)
 
 [node name="Box" type="StaticBody3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Box"]
-material_override = SubResource( "StandardMaterial3D_g4lw7" )
-mesh = SubResource( "BoxMesh_a1wgn" )
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box"]
 shape = SubResource( "BoxShape3D_6uuv8" )
+
+[node name="planter" parent="Box" instance=ExtResource( "2_4nu2f" )]
+transform = Transform3D(0.5, 0, 0, 0, 0.3, 0, 0, 0, 0.5, 0, 0.00356179, 0)

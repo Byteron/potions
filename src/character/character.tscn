@@ -1,101 +1,24 @@
-[gd_scene load_steps=11 format=3 uid="uid://csb4thvmptxi0"]
+[gd_scene load_steps=10 format=3 uid="uid://csb4thvmptxi0"]
 
 [ext_resource type="Script" path="res://src/character/character.gd" id="1_mwdtg"]
+[ext_resource type="PackedScene" uid="uid://cqqduptqpmf6a" path="res://assets/graphics/gltf/character.gltf" id="2_8wlrt"]
 [ext_resource type="Script" path="res://src/character/controller.gd" id="2_76uc0"]
 [ext_resource type="Script" path="res://src/character/interacter.gd" id="2_if37b"]
 
 [sub_resource type="Animation" id="Animation_pfuni"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/LeftHand:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.472248, 0.0468751, -0.267699)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/RightHand:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.511461, 0.00922012, -0.157878)]
-}
 
 [sub_resource type="Animation" id="Animation_x3naf"]
 resource_name = "carry"
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/LeftHand:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.398317, 0.20593, -0.541975)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/RightHand:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.429197, 0.168275, -0.553505)]
-}
 
 [sub_resource type="Animation" id="Animation_himi2"]
 resource_name = "normal"
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body/LeftHand:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-0.472248, 0.0468751, -0.267699)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Body/RightHand:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.511461, 0.00922012, -0.157878)]
-}
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h4cxt"]
+radius = 0.447411
 height = 1.86137
-
-[sub_resource type="SphereMesh" id="SphereMesh_8xtrk"]
-radius = 0.5
-height = 1.0
-
-[sub_resource type="PrismMesh" id="PrismMesh_tg8a2"]
-size = Vector3(1, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xggk"]
 size = Vector3(0.709334, 1, 0.795445)
@@ -112,29 +35,8 @@ anims/normal = SubResource( "Animation_himi2" )
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925832, 0)
 shape = SubResource( "CapsuleShape3D_h4cxt" )
 
-[node name="Body" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource( "SphereMesh_8xtrk" )
-
-[node name="Head" type="MeshInstance3D" parent="Body"]
-transform = Transform3D(0.57674, 0, 0, 0, 0.57674, 0, 0, 0, 0.57674, 0, 0.692058, 0)
-mesh = SubResource( "SphereMesh_8xtrk" )
-skeleton = NodePath("../..")
-
-[node name="Hat" type="MeshInstance3D" parent="Body/Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.705982, 0)
-mesh = SubResource( "PrismMesh_tg8a2" )
-skeleton = NodePath("../../..")
-
-[node name="LeftHand" type="MeshInstance3D" parent="Body"]
-transform = Transform3D(0.387728, 0, 0, 0, 0.387728, 0, 0, 0, 0.387728, -0.472248, 0.0468751, -0.267699)
-mesh = SubResource( "SphereMesh_8xtrk" )
-skeleton = NodePath("../..")
-
-[node name="RightHand" type="MeshInstance3D" parent="Body"]
-transform = Transform3D(0.387728, 0, 0, 0, 0.387728, 0, 0, 0, 0.387728, 0.511461, 0.00922012, -0.157878)
-mesh = SubResource( "SphereMesh_8xtrk" )
-skeleton = NodePath("../..")
+[node name="character" parent="." instance=ExtResource( "2_8wlrt" )]
+transform = Transform3D(-0.430165, 0, -3.76062e-08, 0, 0.430165, 0, 3.76062e-08, 0, -0.430165, 0, 1.03926, 0)
 
 [node name="Controller" type="Node" parent="."]
 script = ExtResource( "2_76uc0" )
@@ -148,3 +50,5 @@ shape = SubResource( "BoxShape3D_0xggk" )
 
 [node name="ItemContainer" type="Position3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.564917, -0.877625)
+
+[editable path="character"]

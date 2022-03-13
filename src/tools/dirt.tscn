@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dnbdkc0ar7p0q" path="res://src/item/ingredient.tscn" id="3_pygpx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yuti4"]
-albedo_color = Color(0.164706, 0.0745098, 0.0313726, 1)
+albedo_color = Color(0.454902, 0.305882, 0.219608, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_r653o"]
 radius = 0.4
