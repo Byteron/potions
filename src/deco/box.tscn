@@ -4,7 +4,7 @@
 size = Vector3(1, 0.5, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e46mi"]
-size = Vector3(1, 0.5, 1)
+size = Vector3(0.993039, 0.5, 1)
 
 [node name="Box" type="StaticBody3D"]
 

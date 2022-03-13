@@ -1,10 +1,10 @@
 extends Node3D
 class_name Growable
 
-enum TYPE { HERB, ROOT, FLOWER, MUSHROOM }
+enum Type { HERB, ROOT, FLOWER, MUSHROOM }
 
 var data: GrowableData = null
-var _type: TYPE = TYPE.HERB
+var _type: Type = Type.HERB
 var _stage := -1
 
 var is_grown := false

@@ -3,10 +3,7 @@
 [ext_resource type="Script" path="res://src/tools/seed_bag.gd" id="1_7oesv"]
 [ext_resource type="Script" path="res://src/character/interactable.gd" id="2_llbv3"]
 [ext_resource type="PackedScene" uid="uid://bmf4xt0orw8ke" path="res://src/item/seed.tscn" id="2_ypd7r"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_1eb1j"]
-radius = 0.4
-height = 0.5
+[ext_resource type="Texture2D" uid="uid://bwpm8dyr2ay75" path="res://assets/graphics/images/seed.png" id="4_lannv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vbl5y"]
 size = Vector3(0.757387, 0.457332, 0.757096)
@@ -15,15 +12,17 @@ size = Vector3(0.757387, 0.457332, 0.757096)
 script = ExtResource( "1_7oesv" )
 Seed = ExtResource( "2_ypd7r" )
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.255275, 0)
-mesh = SubResource( "SphereMesh_1eb1j" )
-
 [node name="Interactable" type="Area3D" parent="."]
 script = ExtResource( "2_llbv3" )
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.251184, 0)
 shape = SubResource( "BoxShape3D_vbl5y" )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+offset = Vector2(0, 64)
+billboard = 1
+shaded = true
+texture = ExtResource( "4_lannv" )
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

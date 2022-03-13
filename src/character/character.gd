@@ -13,10 +13,12 @@ func take_item(item: Item) -> void:
 	_anim.play("carry")
 
 
-func drop_item() -> void:
-	item.queue_free()
-	item = null
+func drop_item() -> Item:
+	_item_container.remove_child(self.item)
+	var item = self.item
+	self.item = null
 	_anim.play("normal")
+	return item
 
 
 func has_item() -> bool:

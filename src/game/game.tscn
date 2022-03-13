@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhnt7piyj3t7t"]
+[gd_scene load_steps=10 format=3 uid="uid://dhnt7piyj3t7t"]
 
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="2_gea1m"]
 [ext_resource type="PackedScene" uid="uid://cg4ijloqgw17j" path="res://src/tools/seed_station.tscn" id="3_flidp"]
 [ext_resource type="PackedScene" uid="uid://f1n8k126mnsd" path="res://src/camera/camera.tscn" id="4_5itd5"]
 [ext_resource type="PackedScene" uid="uid://bcc3w2be250tf" path="res://src/tools/dirt_box.tscn" id="5_1kpv3"]
 [ext_resource type="PackedScene" uid="uid://caikcb1de6gpx" path="res://src/tools/bin.tscn" id="5_ejq71"]
+[ext_resource type="PackedScene" uid="uid://dedtyiyh76401" path="res://src/tools/cutting_board.tscn" id="6_4hknu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m0y12"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -32,24 +33,27 @@ directional_shadow_max_distance = 250.0
 [node name="Character" parent="." instance=ExtResource( "2_gea1m" )]
 
 [node name="SeedStation" parent="." instance=ExtResource( "3_flidp" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.905008, 0.268619, -3.8345)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.905008, 0.268619, -3.64465)
 
 [node name="Camera" parent="." instance=ExtResource( "4_5itd5" )]
 _target_node = NodePath("../Character")
 
 [node name="DirtBox" parent="." instance=ExtResource( "5_1kpv3" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41879, 0.268619, -3.66285)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.97847, 0.268619, -3.51711)
 
 [node name="DirtBox2" parent="." instance=ExtResource( "5_1kpv3" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94555, 0.268619, -3.66285)
-
-[node name="DirtBox3" parent="." instance=ExtResource( "5_1kpv3" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49453, 0.268619, -3.66285)
-
-[node name="DirtBox4" parent="." instance=ExtResource( "5_1kpv3" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.97505, 0.268619, -3.66285)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94555, 0.268619, -6.51184)
 
 [node name="Bin" parent="." instance=ExtResource( "5_ejq71" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.04014, 0.268619, -3.77743)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.04014, 0.268619, -3.58902)
+
+[node name="CuttingBoard" parent="." instance=ExtResource( "6_4hknu" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.10565, 0.268619, -3.62403)
+
+[node name="CuttingBoard2" parent="." instance=ExtResource( "6_4hknu" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.69437, 0.268619, -3.62403)
+
+[node name="CuttingBoard3" parent="." instance=ExtResource( "6_4hknu" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.2467, 0.268619, -3.62403)
 
 [editable path="Character"]

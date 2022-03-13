@@ -7,5 +7,6 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268619, 0)
 
 [node name="SeedBag" parent="." instance=ExtResource( "1_442md" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24358, 0.484765)
 
 [node name="Box" parent="." instance=ExtResource( "2_iul63" )]

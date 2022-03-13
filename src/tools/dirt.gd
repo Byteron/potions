@@ -15,7 +15,8 @@ func _on_interactable_interacted(character: Character) -> void:
 		_growable = Growable.instantiate()
 		_growable.data = seed.data as GrowableData
 		_container.add_child(_growable)
-		character.drop_item()
+		var item = character.drop_item()
+		item.queue_free()
 
 	elif not character.has_item() and has_growable() and _growable.is_grown:
 		var ingredient = Ingredient.instantiate()
