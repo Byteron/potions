@@ -32,7 +32,7 @@ directional_shadow_max_distance = 250.0
 [node name="Character" parent="." instance=ExtResource( "2_gea1m" )]
 
 [node name="SeedStation" parent="." instance=ExtResource( "3_flidp" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36639, 0.268619, -3.8345)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.905008, 0.268619, -3.8345)
 
 [node name="Camera" parent="." instance=ExtResource( "4_5itd5" )]
 _target_node = NodePath("../Character")
@@ -49,19 +49,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49453, 0.268619, -3.66285)
 [node name="DirtBox4" parent="." instance=ExtResource( "5_1kpv3" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.97505, 0.268619, -3.66285)
 
-[node name="DirtBox5" parent="." instance=ExtResource( "5_1kpv3" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41879, 0.268619, -7.3125)
-
-[node name="DirtBox6" parent="." instance=ExtResource( "5_1kpv3" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94555, 0.268619, -7.3125)
-
-[node name="DirtBox7" parent="." instance=ExtResource( "5_1kpv3" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49453, 0.268619, -7.3125)
-
-[node name="DirtBox8" parent="." instance=ExtResource( "5_1kpv3" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.97505, 0.268619, -7.3125)
-
 [node name="Bin" parent="." instance=ExtResource( "5_ejq71" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.55831, 0.268619, -7.53209)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.04014, 0.268619, -3.77743)
 
 [editable path="Character"]
