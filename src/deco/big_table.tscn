@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn2wq7dt428xv"]
+
+[ext_resource type="PackedScene" uid="uid://djgqvndknyjwh" path="res://src/tools/space.tscn" id="1_o3abt"]
+[ext_resource type="PackedScene" uid="uid://dedtyiyh76401" path="res://src/tools/cutting_board.tscn" id="2_hotyo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_e67vn"]
+size = Vector3(2, 0.5, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6f18l"]
+size = Vector3(2, 0.5, 3)
+
+[node name="Table" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = SubResource( "BoxMesh_e67vn" )
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource( "BoxShape3D_6f18l" )
+
+[node name="Space" parent="." instance=ExtResource( "1_o3abt" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.501876, 1)
+
+[node name="Space2" parent="." instance=ExtResource( "1_o3abt" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.501876, 1)
+
+[node name="Space3" parent="." instance=ExtResource( "1_o3abt" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.501876, 0)
+
+[node name="Space5" parent="." instance=ExtResource( "1_o3abt" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.501876, -0.9)
+
+[node name="CuttingBoard" parent="." instance=ExtResource( "2_hotyo" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.25, -1)
+
+[node name="CuttingBoard2" parent="." instance=ExtResource( "2_hotyo" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.25, 0)

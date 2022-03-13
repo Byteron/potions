@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dedtyiyh76401"]
+[gd_scene load_steps=6 format=3 uid="uid://dedtyiyh76401"]
 
 [ext_resource type="Script" path="res://src/tools/cutting_board.gd" id="1_k0a6o"]
-[ext_resource type="PackedScene" uid="uid://31skn8qsjy5s" path="res://src/deco/box.tscn" id="2_kqika"]
 [ext_resource type="Script" path="res://src/character/interactable.gd" id="3_ci12t"]
 [ext_resource type="Texture2D" uid="uid://bcx0n6ho8dykr" path="res://assets/graphics/images/cutting_board.png" id="4_msosi"]
 [ext_resource type="Script" path="res://src/tools/refiner.gd" id="4_nlhxw"]
@@ -12,8 +11,6 @@ size = Vector3(0.59664, 0.548702, 0.57093)
 [node name="CuttingBoard" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268619, 0)
 script = ExtResource( "1_k0a6o" )
-
-[node name="Box" parent="." instance=ExtResource( "2_kqika" )]
 
 [node name="Container" type="Position3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.338421, 0.486571)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhnt7piyj3t7t"]
+[gd_scene load_steps=11 format=3 uid="uid://dhnt7piyj3t7t"]
 
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="2_gea1m"]
 [ext_resource type="PackedScene" uid="uid://cg4ijloqgw17j" path="res://src/tools/seed_station.tscn" id="3_flidp"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://caikcb1de6gpx" path="res://src/tools/bin.tscn" id="5_ejq71"]
 [ext_resource type="PackedScene" uid="uid://dedtyiyh76401" path="res://src/tools/cutting_board.tscn" id="6_4hknu"]
 [ext_resource type="PackedScene" uid="uid://dmsvo32nle07g" path="res://src/tools/pot.tscn" id="8_auif5"]
-[ext_resource type="PackedScene" uid="uid://b1db2m43043tu" path="res://assets/graphics/gltf/counter.gltf" id="9_0h4tp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m0y12"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -21,9 +20,6 @@ background_mode = 2
 sky = SubResource( "Sky_7knp0" )
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_xi1mh"]
-size = Vector3(5.35439, 1, 1)
 
 [node name="Game" type="Node3D"]
 
@@ -80,16 +76,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3022, 0.268619, -2.31408)
 
 [node name="Pot3" parent="." instance=ExtResource( "8_auif5" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17475, 0.268619, -5.96899)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.82145, 0, -0.307427)
-
-[node name="counter" parent="StaticBody3D" instance=ExtResource( "9_0h4tp" )]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0602899)
-shape = SubResource( "BoxShape3D_xi1mh" )
 
 [editable path="Character"]
 [editable path="Character/character"]
