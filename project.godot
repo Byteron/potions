@@ -79,6 +79,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://src/tools/seed_bag.gd"
 }, {
+"base": "Node3D",
+"class": &"Space",
+"language": &"GDScript",
+"path": "res://src/tools/space.gd"
+}, {
 "base": "Panel",
 "class": &"TitleScreen",
 "language": &"GDScript",
@@ -99,6 +104,7 @@ _global_script_class_icons={
 "Refiner": "",
 "Seed": "",
 "SeedBag": "",
+"Space": "",
 "TitleScreen": ""
 }
 
