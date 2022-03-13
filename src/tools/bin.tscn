@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://caikcb1de6gpx"]
+
+[ext_resource type="Script" path="res://src/tools/bin.gd" id="1_adh2x"]
+[ext_resource type="PackedScene" uid="uid://31skn8qsjy5s" path="res://src/deco/box.tscn" id="2_i0la0"]
+[ext_resource type="Script" path="res://src/character/interactable.gd" id="2_mkt3b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ls7a"]
+albedo_color = Color(0.360784, 0.360784, 0.360784, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t6mnk"]
+size = Vector3(1, 0.499104, 1)
+
+[node name="Bin" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268619, 0)
+script = ExtResource( "1_adh2x" )
+
+[node name="Box" parent="." instance=ExtResource( "2_i0la0" )]
+
+[node name="MeshInstance3D" parent="Box" index="0"]
+material_override = SubResource( "StandardMaterial3D_1ls7a" )
+
+[node name="Interactable" type="Area3D" parent="."]
+script = ExtResource( "2_mkt3b" )
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+shape = SubResource( "BoxShape3D_t6mnk" )
+
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+
+[editable path="Box"]

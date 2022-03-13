@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhnt7piyj3t7t"]
+[gd_scene load_steps=9 format=3 uid="uid://dhnt7piyj3t7t"]
 
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="2_gea1m"]
 [ext_resource type="PackedScene" uid="uid://ccyxho52ikox5" path="res://src/tools/seed_station.tscn" id="3_flidp"]
 [ext_resource type="PackedScene" uid="uid://f1n8k126mnsd" path="res://src/camera/camera.tscn" id="4_5itd5"]
 [ext_resource type="PackedScene" uid="uid://bcc3w2be250tf" path="res://src/tools/dirt_box.tscn" id="5_1kpv3"]
+[ext_resource type="PackedScene" uid="uid://caikcb1de6gpx" path="res://src/tools/bin.tscn" id="5_ejq71"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m0y12"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -59,5 +60,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49453, 0.268619, -7.3125)
 
 [node name="DirtBox8" parent="." instance=ExtResource( "5_1kpv3" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.97505, 0.268619, -7.3125)
+
+[node name="Bin" parent="." instance=ExtResource( "5_ejq71" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.55831, 0.268619, -7.53209)
 
 [editable path="Character"]
