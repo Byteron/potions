@@ -12,8 +12,6 @@ func _unhandled_input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("refine"):
 		refine()
-		if _character.anim.current_animation != "refine":
-			_character.anim.play("refine")
 	if Input.is_action_just_released("refine"):
 		_character.anim.play("normal")
 
@@ -25,7 +23,14 @@ func interact() -> void:
 
 
 func refine() -> void:
-	for area in get_overlapping_areas():
+	var areas = get_overlapping_areas()
+	
+	if areas.is_empty() and _character.anim.current_animation == "refine":
+		_character.anim.play("normal")
+
+	for area in areas:
 		if area is Refiner:
 			area.refine()
+			if _character.anim.current_animation != "refine":
+				_character.anim.play("refine")
 			return
