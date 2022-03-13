@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dedtyiyh76401"]
+[gd_scene load_steps=7 format=3 uid="uid://dedtyiyh76401"]
 
 [ext_resource type="Script" path="res://src/tools/cutting_board.gd" id="1_k0a6o"]
 [ext_resource type="PackedScene" uid="uid://31skn8qsjy5s" path="res://src/deco/box.tscn" id="2_kqika"]
 [ext_resource type="Script" path="res://src/character/interactable.gd" id="3_ci12t"]
 [ext_resource type="Texture2D" uid="uid://bcx0n6ho8dykr" path="res://assets/graphics/images/cutting_board.png" id="4_msosi"]
+[ext_resource type="Script" path="res://src/tools/refiner.gd" id="4_nlhxw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_86w6y"]
 size = Vector3(0.59664, 0.548702, 0.57093)
@@ -24,9 +25,17 @@ script = ExtResource( "3_ci12t" )
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.262748, 0)
 shape = SubResource( "BoxShape3D_86w6y" )
 
+[node name="Refiner" type="Area3D" parent="."]
+script = ExtResource( "4_nlhxw" )
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Refiner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.262748, 0)
+shape = SubResource( "BoxShape3D_86w6y" )
+
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.326089, 0)
 axis = 1
 texture = ExtResource( "4_msosi" )
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="refined" from="Refiner" to="." method="_on_refiner_refined"]
