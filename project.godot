@@ -9,30 +9,30 @@
 config_version=5
 
 _global_script_classes=[{
-"base": "Node",
-"class": &"Controller",
+"base": "CharacterBody3D",
+"class": &"Character",
 "language": &"GDScript",
-"path": "res://src/character/controller.gd"
+"path": "res://src/character/character.gd"
+}, {
+"base": "Node3D",
+"class": &"Dirt",
+"language": &"GDScript",
+"path": "res://src/tools/dirt.gd"
 }, {
 "base": "Area3D",
 "class": &"Interactable",
 "language": &"GDScript",
-"path": "res://src/tools/interactable.gd"
+"path": "res://src/character/interactable.gd"
 }, {
 "base": "Area3D",
 "class": &"Interacter",
 "language": &"GDScript",
 "path": "res://src/character/interacter.gd"
 }, {
-"base": "Area3D",
-"class": &"Pickable",
+"base": "Node3D",
+"class": &"Seed",
 "language": &"GDScript",
-"path": "res://src/tools/pickable.gd"
-}, {
-"base": "Area3D",
-"class": &"Picker",
-"language": &"GDScript",
-"path": "res://src/character/picker.gd"
+"path": "res://src/tools/seed.gd"
 }, {
 "base": "Panel",
 "class": &"TitleScreen",
@@ -40,11 +40,11 @@ _global_script_classes=[{
 "path": "res://src/menu/title_screen.gd"
 }]
 _global_script_class_icons={
-"Controller": "",
+"Character": "",
+"Dirt": "",
 "Interactable": "",
 "Interacter": "",
-"Pickable": "",
-"Picker": "",
+"Seed": "",
 "TitleScreen": ""
 }
 

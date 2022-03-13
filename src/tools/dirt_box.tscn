@@ -1,21 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://crcj6q03xogoe"]
+[gd_scene load_steps=3 format=3]
 
-[ext_resource type="PackedScene" uid="uid://cr5n7b61ucrh3" path="res://src/tools/pot.tscn" id="1_3rihx"]
+[ext_resource type="PackedScene" uid="uid://cr5n7b61ucrh3" path="res://src/tools/dirt.tscn" id="1_3rihx"]
+[ext_resource type="PackedScene" path="res://src/deco/box.tscn" id="2_06sb6"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_ah76e"]
-size = Vector3(1, 0.5, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_no23q"]
-size = Vector3(1, 0.5, 1)
-
-[node name="DirtBox" type="StaticBody3D"]
+[node name="DirtBox" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268619, 0)
 
-[node name="Pot" parent="." instance=ExtResource( "1_3rihx" )]
+[node name="Dirt" parent="." instance=ExtResource( "1_3rihx" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.253144, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource( "BoxMesh_ah76e" )
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource( "BoxShape3D_no23q" )
+[node name="Box" parent="." instance=ExtResource( "2_06sb6" )]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://src/character/interactable.gd" id="1_h3vo6"]
+[ext_resource type="Script" path="res://src/tools/dirt.gd" id="1_vfh7c"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_o0vnp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j3mo4"]
+size = Vector3(0.59664, 0.548702, 0.57093)
+
+[node name="Dirt" type="Node3D"]
+script = ExtResource( "1_vfh7c" )
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0.255275, 0)
+mesh = SubResource( "QuadMesh_o0vnp" )
+
+[node name="Interactable" type="Area3D" parent="."]
+script = ExtResource( "1_h3vo6" )
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.262748, 0)
+shape = SubResource( "BoxShape3D_j3mo4" )
+
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

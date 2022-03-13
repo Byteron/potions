@@ -1,23 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvynanvfw7c46"]
+[gd_scene load_steps=5 format=3]
 
-[ext_resource type="Script" path="res://src/tools/pickable.gd" id="1_20kl4"]
+[ext_resource type="Script" path="res://src/tools/seed.gd" id="1_c52bq"]
+[ext_resource type="Script" path="res://src/character/interactable.gd" id="1_mqxdw"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_1eb1j"]
 radius = 0.4
 height = 0.5
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_j3mo4"]
-size = Vector3(0.59664, 0.548702, 0.57093)
+[sub_resource type="BoxShape3D" id="BoxShape3D_vbl5y"]
+size = Vector3(0.757387, 0.457332, 0.757096)
 
 [node name="Seed" type="Node3D"]
+script = ExtResource( "1_c52bq" )
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.255275, 0)
 mesh = SubResource( "SphereMesh_1eb1j" )
 
-[node name="Pickable" type="Area3D" parent="."]
-script = ExtResource( "1_20kl4" )
+[node name="Interactable" type="Area3D" parent="."]
+script = ExtResource( "1_mqxdw" )
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pickable"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.262748, 0)
-shape = SubResource( "BoxShape3D_j3mo4" )
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.251184, 0)
+shape = SubResource( "BoxShape3D_vbl5y" )
+
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
