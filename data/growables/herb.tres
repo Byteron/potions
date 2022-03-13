@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://dnjnx3nwckkwc"]
+
+[ext_resource type="Resource" uid="uid://ccsxe6du16vrl" path="res://data/ingredients/herb.tres" id="1_qqeq7"]
+[ext_resource type="Script" path="res://src/data/growable_data.gd" id="2_s02wt"]
+[ext_resource type="Texture2D" uid="uid://cs52kfp5nivmi" path="res://assets/graphics/images/herb_sapling.png" id="3_rhwyk"]
+[ext_resource type="Texture2D" uid="uid://xht6dqxno8bx" path="res://assets/graphics/images/herb plant.png" id="4_pbeyl"]
+
+[resource]
+script = ExtResource( "2_s02wt" )
+name = "Herb"
+stages = [ExtResource( "3_rhwyk" ), ExtResource( "4_pbeyl" )]
+ingredient_data = ExtResource( "1_qqeq7" )

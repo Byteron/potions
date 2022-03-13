@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5ywi4vpkcsr5"]
+
+[ext_resource type="PackedScene" uid="uid://y30udydf5kh" path="res://src/tools/dirt.tscn" id="1_by3y0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4lw7"]
+albedo_color = Color(0.270588, 0.180392, 0.0627451, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bp1cq"]
+size = Vector3(5, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tnr7v"]
+size = Vector3(5, 0.5, 1)
+
+[node name="BigDirtBox" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268619, 0)
+
+[node name="Dirt" parent="." instance=ExtResource( "1_by3y0" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.94085, 0.253144, 0)
+
+[node name="Dirt5" parent="." instance=ExtResource( "1_by3y0" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.94085, 0.253144, 0)
+
+[node name="Dirt2" parent="." instance=ExtResource( "1_by3y0" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00753099, 0.253144, 0)
+
+[node name="Dirt3" parent="." instance=ExtResource( "1_by3y0" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03044, 0.253144, 0)
+
+[node name="Dirt4" parent="." instance=ExtResource( "1_by3y0" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.96735, 0.253144, 0)
+
+[node name="Box" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Box"]
+material_override = SubResource( "StandardMaterial3D_g4lw7" )
+mesh = SubResource( "BoxMesh_bp1cq" )
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Box"]
+shape = SubResource( "BoxShape3D_tnr7v" )

@@ -20,6 +20,7 @@ func _on_interactable_interacted(character: Character) -> void:
 
 	elif not character.has_item() and has_growable() and _growable.is_grown:
 		var ingredient = Ingredient.instantiate()
+		ingredient.data = _growable.data.ingredient_data as IngredientData
 		character.take_item(ingredient)
 		_growable.queue_free()
 		_growable = null
