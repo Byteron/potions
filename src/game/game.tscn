@@ -33,27 +33,33 @@ directional_shadow_max_distance = 250.0
 [node name="Character" parent="." instance=ExtResource( "2_gea1m" )]
 
 [node name="SeedStation" parent="." instance=ExtResource( "3_flidp" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.905008, 0.268619, -3.64465)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.53214, 0.268619, -5.89437)
 
 [node name="Camera" parent="." instance=ExtResource( "4_5itd5" )]
-_target_node = NodePath("../Character")
+
+[node name="Camera3D" parent="Camera" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 11.8893, 2.0176)
 
 [node name="DirtBox" parent="." instance=ExtResource( "5_1kpv3" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.97847, 0.268619, -3.51711)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51066, 0.268619, -3.51711)
 
 [node name="DirtBox2" parent="." instance=ExtResource( "5_1kpv3" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94555, 0.268619, -6.51184)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47773, 0.268619, -5.982)
+
+[node name="DirtBox3" parent="." instance=ExtResource( "5_1kpv3" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.47773, 0.268619, -8.51197)
 
 [node name="Bin" parent="." instance=ExtResource( "5_ejq71" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.04014, 0.268619, -3.58902)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.51316, 0.268619, -2.51085)
 
 [node name="CuttingBoard" parent="." instance=ExtResource( "6_4hknu" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.10565, 0.268619, -3.62403)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50244, 0.268619, -8.50717)
 
 [node name="CuttingBoard2" parent="." instance=ExtResource( "6_4hknu" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.69437, 0.268619, -3.62403)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.50758, 0.268619, -6.5336)
 
 [node name="CuttingBoard3" parent="." instance=ExtResource( "6_4hknu" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.2467, 0.268619, -3.62403)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.54617, 0.268619, -4.50083)
 
 [editable path="Character"]
+[editable path="Camera"]
