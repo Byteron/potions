@@ -3,12 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://b1db2m43043tu" path="res://assets/graphics/gltf/counter.gltf" id="1_daqwr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y57x1"]
-size = Vector3(5.41032, 0.779912, 1.1769)
+size = Vector3(5.86935, 0.681151, 1.1769)
 
 [node name="Counter" type="StaticBody3D"]
 
 [node name="counter" parent="." instance=ExtResource( "1_daqwr" )]
-transform = Transform3D(0.5, 0, 0, 0, 0.4, 0, 0, 0, 0.5, 0, 0.438434, 0)
+transform = Transform3D(1, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 0.4, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.438465, 0)

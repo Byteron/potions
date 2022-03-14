@@ -1,0 +1,14 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdjw4ihxmop33"]
+
+[ext_resource type="PackedScene" uid="uid://cuu0efh3sgwys" path="res://src/item/item.tscn" id="1_jsm6w"]
+[ext_resource type="Script" path="res://src/item/bottle.gd" id="2_urgg7"]
+[ext_resource type="Texture2D" uid="uid://c52giu6gdmjyj" path="res://assets/graphics/images/bottle_full.png" id="4_g4isn"]
+[ext_resource type="Texture2D" uid="uid://drd8ah7pfdlan" path="res://assets/graphics/images/bottle_empty.png" id="4_wdf2p"]
+
+[node name="Bottle" instance=ExtResource( "1_jsm6w" )]
+script = ExtResource( "2_urgg7" )
+empty_texture = ExtResource( "4_wdf2p" )
+filled_texture = ExtResource( "4_g4isn" )
+
+[node name="Sprite3D" parent="." index="0"]
+texture = ExtResource( "4_wdf2p" )

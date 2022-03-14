@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://0egyxol2chqk"]
+[gd_scene load_steps=15 format=3 uid="uid://0egyxol2chqk"]
 
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="1_7ggcj"]
 [ext_resource type="PackedScene" uid="uid://dmsvo32nle07g" path="res://src/tools/pot.tscn" id="3_obdbc"]
@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://cg4ijloqgw17j" path="res://src/tools/seed_station.tscn" id="5_rxpnb"]
 [ext_resource type="PackedScene" uid="uid://dfrmewrd2ij3h" path="res://src/deco/counter.tscn" id="7_e66xu"]
 [ext_resource type="PackedScene" uid="uid://bh4v2nonxlfdo" path="res://src/deco/table.tscn" id="7_pl1ub"]
+[ext_resource type="PackedScene" uid="uid://d014fhdoxeh0f" path="res://src/tools/cauldron.tscn" id="8_oosmm"]
 [ext_resource type="PackedScene" uid="uid://dn2wq7dt428xv" path="res://src/deco/big_table.tscn" id="9_17res"]
+[ext_resource type="PackedScene" uid="uid://cvennarng5skj" path="res://src/tools/bottle_station.tscn" id="9_f3ldj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jl2y6"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -101,4 +103,17 @@ surface_material_override/0 = SubResource( "StandardMaterial3D_qxxup" )
 [node name="Table3" parent="Workshop" instance=ExtResource( "9_17res" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -14.5)
 
+[node name="Cauldron" parent="Workshop" instance=ExtResource( "8_oosmm" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.268619, -18.5)
+
+[node name="Cauldron2" parent="Workshop" instance=ExtResource( "8_oosmm" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.268619, -18.5)
+
+[node name="Cauldron3" parent="Workshop" instance=ExtResource( "8_oosmm" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.268619, -18.5)
+
+[node name="BottleStation" parent="Workshop" instance=ExtResource( "9_f3ldj" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49766, 0.268619, -17.47)
+
 [editable path="Workshop/Table6"]
+[editable path="Workshop/Cauldron2"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvennarng5skj"]
+
+[ext_resource type="PackedScene" uid="uid://qh1l4j1n5gei" path="res://src/tools/bottle_bag.tscn" id="1_dj831"]
+[ext_resource type="PackedScene" uid="uid://31skn8qsjy5s" path="res://src/deco/box.tscn" id="2_qa4x8"]
+
+[node name="BottleStation" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268619, 0)
+
+[node name="BottleBag" parent="." instance=ExtResource( "1_dj831" )]
+
+[node name="Box" parent="." instance=ExtResource( "2_qa4x8" )]
