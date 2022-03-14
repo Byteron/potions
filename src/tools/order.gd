@@ -14,7 +14,7 @@ func finish() -> void:
 
 
 func get_time_left_modifier() -> float:
-	return timer.time_left / 20.0
+	return 1.0 + timer.time_left / 25.0
 
 
 func _on_timer_timeout() -> void:

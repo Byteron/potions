@@ -94,7 +94,7 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://src/tools/order.gd"
 }, {
-"base": "HBoxContainer",
+"base": "Control",
 "class": &"PotionEntry",
 "language": &"GDScript",
 "path": "res://src/hud/potion_entry.gd"
@@ -177,6 +177,7 @@ Recipes="*res://src/global/recipes.tscn"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 
 [input]
 

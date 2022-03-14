@@ -7,4 +7,4 @@
 script = ExtResource( "1_yggk7" )
 name = "Health Potion"
 ingredients = [ExtResource( "1_74ili" ), ExtResource( "1_74ili" )]
-score = 100
+score = 200

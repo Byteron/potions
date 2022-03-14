@@ -26,7 +26,7 @@ func _next_stage() -> void:
 	is_grown = data.stages.size() == _stage + 1
 	
 	if not is_grown:
-		_timer.start()
+		_timer.start(data.grow_time)
 	
 	animate()
 

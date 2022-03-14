@@ -2,6 +2,7 @@ extends Node3D
 class_name Brew
 
 const BREWING_TIME_PER_INGREDIENT := 4.0
+const BREWING_TIME := 8.0
 
 var _ingredients: Array[Ingredient] = []
 
@@ -32,7 +33,7 @@ func _on_interactable_interacted(character: Character) -> void:
 	if character.has_item() and character.item is Ingredient:
 		var ingredient = character.drop_item()
 		_ingredients.append(ingredient)
-		brewing_time = BREWING_TIME_PER_INGREDIENT * _ingredients.size()
+		brewing_time = BREWING_TIME + BREWING_TIME_PER_INGREDIENT * _ingredients.size()
 		cauldron.visible = true
 		cauldron_empty.visible = false
 
@@ -48,6 +49,6 @@ func _reset() -> void:
 	_ingredients = []
 	cauldron.visible = false
 	cauldron_empty.visible = true
-	brewing_time = BREWING_TIME_PER_INGREDIENT * _ingredients.size()
+	brewing_time = BREWING_TIME + BREWING_TIME_PER_INGREDIENT * _ingredients.size()
 	brewed_time = 0.0
 	is_brewed = false

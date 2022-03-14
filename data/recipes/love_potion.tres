@@ -7,4 +7,4 @@
 script = ExtResource( "1_aeg2q" )
 name = "Love Potion"
 ingredients = [ExtResource( "2_ffkv2" ), ExtResource( "2_ffkv2" ), ExtResource( "2_ffkv2" )]
-score = 200
+score = 450

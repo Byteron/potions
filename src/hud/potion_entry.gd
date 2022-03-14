@@ -1,8 +1,8 @@
-extends HBoxContainer
+extends Control
 class_name PotionEntry
 
-@onready var label: Label = $Label
-@onready var container: Control = $HBoxContainer
+@onready var label: Label = $HBoxContainer/Label
+@onready var container: Control = $HBoxContainer/HBoxContainer
 
 var order: Order = null
 
