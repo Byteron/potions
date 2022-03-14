@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://caq5r5k3s6uhm"]
+[gd_scene load_steps=3 format=3 uid="uid://caq5r5k3s6uhm"]
 
 [ext_resource type="Script" path="res://src/global/recipes.gd" id="1_ralvw"]
+[ext_resource type="PackedScene" uid="uid://b04idcv185fe3" path="res://src/tools/order.tscn" id="2_acmd1"]
 
 [node name="Recipes" type="Node"]
 script = ExtResource( "1_ralvw" )
+Order = ExtResource( "2_acmd1" )
+
+[node name="NewRecipeTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="Orders" type="Node" parent="."]
+
+[connection signal="timeout" from="NewRecipeTimer" to="." method="_on_new_recipe_timer_timeout"]

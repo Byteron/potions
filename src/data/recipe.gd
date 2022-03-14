@@ -3,7 +3,7 @@ class_name Recipe
 
 @export var name := ""
 @export var ingredients: Array[Resource] = []
-
+@export var score := 100
 
 func stringify() -> String:
 	var s = name + ": "

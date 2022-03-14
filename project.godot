@@ -89,6 +89,16 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://src/item/item.gd"
 }, {
+"base": "Node",
+"class": &"Order",
+"language": &"GDScript",
+"path": "res://src/tools/order.gd"
+}, {
+"base": "HBoxContainer",
+"class": &"PotionEntry",
+"language": &"GDScript",
+"path": "res://src/hud/potion_entry.gd"
+}, {
 "base": "Resource",
 "class": &"Recipe",
 "language": &"GDScript",
@@ -141,6 +151,8 @@ _global_script_class_icons={
 "Interactable": "",
 "Interacter": "",
 "Item": "",
+"Order": "",
+"PotionEntry": "",
 "Recipe": "",
 "RecipeIngredient": "",
 "Refiner": "",

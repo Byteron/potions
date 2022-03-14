@@ -7,3 +7,4 @@
 script = ExtResource( "1_p2ijc" )
 name = "Healing Potion"
 ingredients = [ExtResource( "1_sxegn" ), ExtResource( "1_sxegn" ), ExtResource( "1_sxegn" )]
+score = 550
