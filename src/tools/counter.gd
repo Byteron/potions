@@ -13,7 +13,8 @@ func sell_potion(bottle: Bottle) -> void:
 	print(bottle.stringify())
 	if is_valid_potion(bottle):
 		Recipes.score += 100 * bottle.ingredients.size()
-	print(Recipes.score)
+	else:
+		Recipes.score -= 50 * bottle.ingredients.size()
 
 
 func is_valid_potion(bottle: Bottle) -> bool:
