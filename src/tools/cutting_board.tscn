@@ -16,6 +16,7 @@ script = ExtResource( "1_k0a6o" )
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.338421, 0.486571)
 
 [node name="Interactable" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.299247, 0)
 script = ExtResource( "3_ci12t" )
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
@@ -23,6 +24,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.262748, 0)
 shape = SubResource( "BoxShape3D_86w6y" )
 
 [node name="Refiner" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.302173, 0)
 script = ExtResource( "4_nlhxw" )
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Refiner"]
