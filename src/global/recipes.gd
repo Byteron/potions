@@ -21,10 +21,7 @@ var score := 0
 
 func _ready() -> void:
 	randomize()
-
-	for recipe in recipes:
-		print(recipe.name)
-	
+	_on_new_recipe_timer_timeout()
 	_on_new_recipe_timer_timeout()
 	_on_new_recipe_timer_timeout()
 
@@ -34,7 +31,6 @@ func _on_new_recipe_timer_timeout() -> void:
 		return
 	
 	var index = randi() % recipes.size()
-	print("new order: ", index)
 	var recipe = recipes[index]
 	
 	var order: Order = Order.instantiate()
@@ -48,13 +44,13 @@ func _on_new_recipe_timer_timeout() -> void:
 
 
 func _on_order_expired(order: Order) -> void:
+	score -= 500
 	orders.erase(order)
 	orders_changed.emit()
 
 
 func _on_order_finished(order: Order) -> void:
 	var modifier: int = order.get_time_left_modifier()
-	print(order.recipe.score, " * ", modifier)
 	score += order.recipe.score * modifier
 	orders.erase(order)
 	orders_changed.emit()

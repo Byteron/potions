@@ -11,7 +11,7 @@ func _on_interactable_interacted(character: Character) -> void:
 		_ingredient = character.drop_item()
 		_container.add_child(_ingredient)
 
-	elif not character.has_item() and has_ingredient() and _ingredient.is_refined:
+	elif not character.has_item() and has_ingredient():
 		_container.remove_child(_ingredient)
 		character.take_item(_ingredient)
 		_ingredient = null

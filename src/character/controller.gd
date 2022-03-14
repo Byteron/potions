@@ -24,7 +24,6 @@ func _process(_delta: float) -> void:
 			particles.emitting = true
 	elif particles.emitting:
 		particles.emitting = false
-	
 
 	character.move_and_slide()
 

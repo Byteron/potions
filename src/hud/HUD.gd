@@ -16,7 +16,6 @@ func _process(delta: float) -> void:
 
 
 func _on_orders_changed() -> void:
-	print("_on_orders_changed")
 	for child in container.get_children():
 		container.remove_child(child)
 		child.queue_free()
