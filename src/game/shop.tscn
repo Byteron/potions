@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://0egyxol2chqk"]
+[gd_scene load_steps=16 format=3 uid="uid://0egyxol2chqk"]
 
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="1_7ggcj"]
 [ext_resource type="PackedScene" uid="uid://dmsvo32nle07g" path="res://src/tools/pot.tscn" id="3_obdbc"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d014fhdoxeh0f" path="res://src/tools/cauldron.tscn" id="8_oosmm"]
 [ext_resource type="PackedScene" uid="uid://dn2wq7dt428xv" path="res://src/deco/big_table.tscn" id="9_17res"]
 [ext_resource type="PackedScene" uid="uid://cvennarng5skj" path="res://src/tools/bottle_station.tscn" id="9_f3ldj"]
+[ext_resource type="PackedScene" uid="uid://culxk5mur1o0h" path="res://src/hud/HUD.tscn" id="10_wog8m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jl2y6"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -114,6 +115,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.268619, -18.5)
 
 [node name="BottleStation" parent="Workshop" instance=ExtResource( "9_f3ldj" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49766, 0.268619, -17.47)
+
+[node name="HUD" parent="." instance=ExtResource( "10_wog8m" )]
 
 [editable path="Workshop/Table6"]
 [editable path="Workshop/Cauldron2"]

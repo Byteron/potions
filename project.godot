@@ -59,6 +59,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://src/data/growable_data.gd"
 }, {
+"base": "CanvasLayer",
+"class": &"HUD",
+"language": &"GDScript",
+"path": "res://src/hud/HUD.gd"
+}, {
 "base": "Item",
 "class": &"Ingredient",
 "language": &"GDScript",
@@ -83,6 +88,16 @@ _global_script_classes=[{
 "class": &"Item",
 "language": &"GDScript",
 "path": "res://src/item/item.gd"
+}, {
+"base": "Resource",
+"class": &"Recipe",
+"language": &"GDScript",
+"path": "res://src/data/recipe.gd"
+}, {
+"base": "Resource",
+"class": &"RecipeIngredient",
+"language": &"GDScript",
+"path": "res://src/data/recipe_ingredient.gd"
 }, {
 "base": "Area3D",
 "class": &"Refiner",
@@ -120,11 +135,14 @@ _global_script_class_icons={
 "Dirt": "",
 "Growable": "",
 "GrowableData": "",
+"HUD": "",
 "Ingredient": "",
 "IngredientData": "",
 "Interactable": "",
 "Interacter": "",
 "Item": "",
+"Recipe": "",
+"RecipeIngredient": "",
 "Refiner": "",
 "Seed": "",
 "SeedBag": "",
@@ -138,6 +156,10 @@ config/name="Potions"
 run/main_scene="res://src/game/shop.tscn"
 config/icon="res://icon.png"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
+
+[autoload]
+
+Recipes="*res://src/global/recipes.tscn"
 
 [display]
 

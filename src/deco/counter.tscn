@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfrmewrd2ij3h"]
+[gd_scene load_steps=4 format=3 uid="uid://dfrmewrd2ij3h"]
 
 [ext_resource type="PackedScene" uid="uid://b1db2m43043tu" path="res://assets/graphics/gltf/counter.gltf" id="1_daqwr"]
+[ext_resource type="PackedScene" uid="uid://ba5lijsx7ewev" path="res://src/tools/counter.tscn" id="2_023qe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_y57x1"]
 size = Vector3(5.86935, 0.681151, 1.1769)
@@ -13,3 +14,21 @@ transform = Transform3D(1, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 0.4, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.438465, 0)
 shape = SubResource( "BoxShape3D_y57x1" )
+
+[node name="Counter" parent="." instance=ExtResource( "2_023qe" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49412, 0.820273, 0)
+
+[node name="Counter2" parent="." instance=ExtResource( "2_023qe" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.49412, 0.820273, 0)
+
+[node name="Counter3" parent="." instance=ExtResource( "2_023qe" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.494116, 0.820273, 0)
+
+[node name="Counter4" parent="." instance=ExtResource( "2_023qe" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.505884, 0.820273, 0)
+
+[node name="Counter5" parent="." instance=ExtResource( "2_023qe" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50588, 0.820273, 0)
+
+[node name="Counter6" parent="." instance=ExtResource( "2_023qe" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.50588, 0.820273, 0)

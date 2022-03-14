@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://culxk5mur1o0h"]
+
+[ext_resource type="Script" path="res://src/hud/HUD.gd" id="1_s8jmo"]
+[ext_resource type="PackedScene" uid="uid://ct3fykwqajjsj" path="res://src/hud/potion_entry.tscn" id="2_s1tio"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( "1_s8jmo" )
+RecipeEntry = ExtResource( "2_s1tio" )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -56.0
+offset_right = 56.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+vertical_alignment = 1

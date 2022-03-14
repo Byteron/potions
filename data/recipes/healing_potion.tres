@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cu5qquu2jux2h"]
+
+[ext_resource type="Script" path="res://src/data/recipe.gd" id="1_p2ijc"]
+[ext_resource type="Resource" uid="uid://bq07ppq614xqy" path="res://data/recipes/ingredients/cut_herb.tres" id="1_sxegn"]
+
+[resource]
+script = ExtResource( "1_p2ijc" )
+name = "Healing Potion"
+ingredients = [ExtResource( "1_sxegn" ), ExtResource( "1_sxegn" ), ExtResource( "1_sxegn" )]

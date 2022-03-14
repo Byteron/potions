@@ -150,7 +150,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925832, 0)
 shape = SubResource( "CapsuleShape3D_h4cxt" )
 
 [node name="character" parent="." instance=ExtResource( "2_8wlrt" )]
-transform = Transform3D(-0.430165, 0, -3.76062e-08, 0, 0.430165, 0, 3.76062e-08, 0, -0.430165, 0, 1.03926, 0)
+transform = Transform3D(-0.430165, 0, 1.09055e-06, 0, 0.430165, 0, -1.09055e-06, 0, -0.430165, 0, 1.03926, 0)
 
 [node name="Controller" type="Node" parent="."]
 script = ExtResource( "2_76uc0" )

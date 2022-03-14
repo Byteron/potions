@@ -41,3 +41,7 @@ func animate() -> void:
 	_sprite.scale = Vector3(0.4, 0.4, 0.4)
 	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).tween_property(_sprite, "scale", Vector3(0.6, 0.6, 0.6), 0.2)
 	tween.play()
+
+
+func stringify() -> String:
+	return data.name + " " + str(refinement)
