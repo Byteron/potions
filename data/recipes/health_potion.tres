@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://rqgojg5ncobd"]
+
+[ext_resource type="Resource" uid="uid://bue2qh1jcj2o5" path="res://data/recipes/ingredients/herb.tres" id="1_74ili"]
+[ext_resource type="Script" path="res://src/data/recipe.gd" id="1_yggk7"]
+
+[resource]
+script = ExtResource( "1_yggk7" )
+name = "Health Potion"
+ingredients = [ExtResource( "1_74ili" ), ExtResource( "1_74ili" )]
+score = 100

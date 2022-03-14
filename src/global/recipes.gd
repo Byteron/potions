@@ -6,7 +6,8 @@ signal orders_changed()
 
 var recipes: Array[Recipe] = [
 	load("data/recipes/love_potion.tres") as Recipe,
-	load("data/recipes/healing_potion.tres") as Recipe,
+	load("data/recipes/health_potion.tres") as Recipe,
+	load("data/recipes/youth_potion.tres") as Recipe,
 ]
 
 var orders: Array[Order]
