@@ -1,47 +1,61 @@
-[gd_scene load_steps=11 format=3 uid="uid://csb4thvmptxi0"]
+[gd_scene load_steps=18 format=3 uid="uid://csb4thvmptxi0"]
 
 [ext_resource type="Script" path="res://src/character/character.gd" id="1_mwdtg"]
-[ext_resource type="PackedScene" uid="uid://cqqduptqpmf6a" path="res://assets/graphics/gltf/character.gltf" id="2_8wlrt"]
 [ext_resource type="Script" path="res://src/character/controller.gd" id="2_76uc0"]
 [ext_resource type="Script" path="res://src/character/interacter.gd" id="2_if37b"]
+[ext_resource type="PackedScene" uid="uid://betx73dtq80qn" path="res://assets/graphics/gltf/character.gltf" id="4_1g8bx"]
+[ext_resource type="PackedScene" uid="uid://oeyokpwf8c62" path="res://assets/graphics/gltf/hand_left.gltf" id="5_d2g38"]
+[ext_resource type="PackedScene" uid="uid://b01ux5esg2jqk" path="res://assets/graphics/gltf/hand_right.gltf" id="6_xpkjd"]
 
 [sub_resource type="Animation" id="Animation_pfuni"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("character:position")
+tracks/0/path = NodePath("character/hand_left:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 1.03926, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("character:rotation")
+tracks/1/path = NodePath("character/hand_left:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 3.14159, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("character:scale")
+tracks/2/path = NodePath("character/hand_right:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.430165, 0.430165, 0.430165)]
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("character/hand_right:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_x3naf"]
@@ -50,26 +64,50 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("character:position")
+tracks/0/path = NodePath("character/hand_left:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 1.03926, 0)]
+"values": [Vector3(2.46309e-08, -0.878818, -0.281745)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("character:rotation")
+tracks/1/path = NodePath("character/hand_left:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 3.14159, 0)]
+"values": [Vector3(-1.19871, 1.5304e-07, -2.24008e-07)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("character/hand_right:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.46309e-08, -0.878818, -0.281745)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("character/hand_right:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.19871, 1.5304e-07, -2.24008e-07)]
 }
 
 [sub_resource type="Animation" id="Animation_himi2"]
@@ -78,56 +116,56 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("character:rotation")
+tracks/0/path = NodePath("character/hand_left:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 3.14159, 0)]
+"values": [Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("character:scale")
+tracks/1/path = NodePath("character/hand_left:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.430165, 0.430165, 0.430165)]
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("character/hand_right:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("character/hand_right:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_x3xl7"]
 resource_name = "refine"
 length = 0.5
 loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("character:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 1.03926, 0), Vector3(0, 1.21255, 0), Vector3(0, 1.31614, 0), Vector3(0, 1.21255, 0), Vector3(0, 1.03926, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("character:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -3.14159, 0), Vector3(1.31603e-08, -3.14159, -0.151111), Vector3(-4.24205e-08, -3.14159, 0.219493), Vector3(1.31603e-08, -3.14159, -0.151111), Vector3(0, -3.14159, 0)]
-}
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_h4cxt"]
 radius = 0.447411
@@ -135,6 +173,26 @@ height = 1.86137
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0xggk"]
 size = Vector3(0.709334, 1, 0.795445)
+
+[sub_resource type="Curve" id="Curve_r5ukg"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.475771, 0.309091), -1.37576, -1.37576, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+
+[sub_resource type="CurveTexture" id="CurveTexture_khbcg"]
+curve = SubResource( "Curve_r5ukg" )
+
+[sub_resource type="ParticlesMaterial" id="ParticlesMaterial_1bwvl"]
+emission_shape = 1
+emission_sphere_radius = 0.25
+gravity = Vector3(0, 3, 0)
+scale_min = 0.4
+scale_max = 0.6
+scale_curve = SubResource( "CurveTexture_khbcg" )
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j34jd"]
+albedo_color = Color(0.596078, 0.596078, 0.596078, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_8ba5c"]
+material = SubResource( "StandardMaterial3D_j34jd" )
 
 [node name="Character" type="CharacterBody3D"]
 script = ExtResource( "1_mwdtg" )
@@ -149,9 +207,6 @@ anims/refine = SubResource( "Animation_x3xl7" )
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.925832, 0)
 shape = SubResource( "CapsuleShape3D_h4cxt" )
 
-[node name="character" parent="." instance=ExtResource( "2_8wlrt" )]
-transform = Transform3D(-0.430165, 0, 1.09055e-06, 0, 0.430165, 0, -1.09055e-06, 0, -0.430165, 0, 1.03926, 0)
-
 [node name="Controller" type="Node" parent="."]
 script = ExtResource( "2_76uc0" )
 
@@ -165,4 +220,16 @@ shape = SubResource( "BoxShape3D_0xggk" )
 [node name="ItemContainer" type="Position3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.564917, -0.877625)
 
-[editable path="character"]
+[node name="character" parent="." instance=ExtResource( "4_1g8bx" )]
+transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 0, 1.13449, 0)
+
+[node name="hand_left" parent="character" instance=ExtResource( "5_d2g38" )]
+
+[node name="hand_right" parent="character" instance=ExtResource( "6_xpkjd" )]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="character"]
+transform = Transform3D(0, 0, 2, 0, 2, 0, -2, 0, 0, 0, -2.26897, 0)
+lifetime = 0.5
+local_coords = false
+process_material = SubResource( "ParticlesMaterial_1bwvl" )
+draw_pass_1 = SubResource( "SphereMesh_8ba5c" )

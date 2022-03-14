@@ -3,6 +3,7 @@ extends Node
 @export var _speed := 8
 
 @onready var character: Character = get_parent()
+@onready var particles: GPUParticles3D = $"../character/GPUParticles3D"
 
 var boost := 1.0
 
@@ -19,6 +20,11 @@ func _process(_delta: float) -> void:
 
 	if character.velocity != Vector3.ZERO:
 		character.look_at(character.position + character.velocity, Vector3.UP)
+		if not particles.emitting:
+			particles.emitting = true
+	elif particles.emitting:
+		particles.emitting = false
+	
 
 	character.move_and_slide()
 
