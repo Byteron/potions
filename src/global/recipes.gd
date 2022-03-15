@@ -17,10 +17,29 @@ var score := 0
 @export var Order: PackedScene = null
 
 @onready var order_container: Node = $Orders
+@onready var timer: Timer = $NewRecipeTimer
 
 
 func _ready() -> void:
 	randomize()
+
+
+func stop() -> void:
+	timer.stop()
+
+
+func start() -> void:
+	timer.start()
+
+
+func reset() -> void:
+	score = 0
+
+	for child in order_container.get_children():
+		order_container.remove_child(child)
+		child.queue_free()
+
+	orders.clear()
 
 
 func _on_new_recipe_timer_timeout() -> void:

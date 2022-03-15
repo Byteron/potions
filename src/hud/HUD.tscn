@@ -11,11 +11,25 @@ RecipeEntry = ExtResource( "2_s1tio" )
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ScoreLabel" type="Label" parent="."]
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -56.0
-offset_right = 56.0
-offset_bottom = 23.0
+offset_left = -84.0
+offset_right = 84.0
+offset_bottom = 50.0
+
+[node name="TimeLabel" type="Label" parent="VBoxContainer2"]
+offset_right = 168.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 24
+text = "Time: 300"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer2"]
+offset_top = 41.0
+offset_right = 168.0
+offset_bottom = 67.0
+text = "Score: 5000"
 horizontal_alignment = 1
 vertical_alignment = 1

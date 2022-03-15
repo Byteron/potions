@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://de4jsrcssn3fp"]
+[gd_scene load_steps=20 format=3 uid="uid://de4jsrcssn3fp"]
 
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="1_7ggcj"]
+[ext_resource type="Script" path="res://src/game/shop.gd" id="1_6107u"]
 [ext_resource type="PackedScene" uid="uid://dmsvo32nle07g" path="res://src/tools/pot.tscn" id="3_obdbc"]
 [ext_resource type="PackedScene" uid="uid://bcc3w2be250tf" path="res://src/tools/dirt_box.tscn" id="4_n7npy"]
 [ext_resource type="PackedScene" uid="uid://d1lyxdgdrti2h" path="res://src/tools/seed_bag.tscn" id="4_x0iy6"]
@@ -32,7 +33,12 @@ glow_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qxxup"]
 albedo_color = Color(0.376471, 0.196078, 0.109804, 1)
 
-[node name="Game" type="Node3D"]
+[node name="Shop" type="Node3D"]
+script = ExtResource( "1_6107u" )
+game_time = 180.0
+
+[node name="GameTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( "Environment_4xgxr" )
@@ -69,7 +75,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.269, -13.5)
 [node name="Floor" type="MeshInstance3D" parent="Greenhouse"]
 transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, -3, 0, -14)
 mesh = SubResource( "PlaneMesh_b0hr7" )
-skeleton = NodePath("../../Greenhouse")
 surface_material_override/0 = SubResource( "StandardMaterial3D_qxxup" )
 
 [node name="Seedbag" parent="Greenhouse" instance=ExtResource( "4_x0iy6" )]
@@ -125,5 +130,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49766, 0.268619, -17.47)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -16.5)
 
 [node name="HUD" parent="." instance=ExtResource( "10_wog8m" )]
+
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 
 [editable path="Workshop/Table6"]

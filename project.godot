@@ -130,6 +130,11 @@ _global_script_classes=[{
 "path": "res://src/tools/seed_bag.gd"
 }, {
 "base": "Node3D",
+"class": &"Shop",
+"language": &"GDScript",
+"path": "res://src/game/shop.gd"
+}, {
+"base": "Node3D",
 "class": &"Space",
 "language": &"GDScript",
 "path": "res://src/tools/space.gd"
@@ -164,6 +169,7 @@ _global_script_class_icons={
 "Refiner": "",
 "Seed": "",
 "SeedBag": "",
+"Shop": "",
 "Space": "",
 "TitleScreen": ""
 }
@@ -171,7 +177,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Potions"
-run/main_scene="res://src/game/shop.tscn"
+run/main_scene="res://src/menu/title_screen.tscn"
 config/icon="res://icon.png"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
 
