@@ -43,6 +43,7 @@ func _on_new_recipe_timer_timeout() -> void:
 func _on_order_expired(order: Order) -> void:
 	score -= 500
 	orders.erase(order)
+	order.queue_free()
 	orders_changed.emit()
 
 
@@ -50,4 +51,5 @@ func _on_order_finished(order: Order) -> void:
 	var modifier: int = order.get_time_left_modifier()
 	score += order.recipe.score * modifier
 	orders.erase(order)
+	order.queue_free()
 	orders_changed.emit()

@@ -19,4 +19,3 @@ func get_time_left_modifier() -> float:
 
 func _on_timer_timeout() -> void:
 	expired.emit(self)
-	queue_free()
