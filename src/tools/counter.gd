@@ -20,6 +20,7 @@ func validate_potion(bottle: Bottle) -> void:
 		if is_potion_of_recipe(bottle, order.recipe):
 			order.finish()
 			print("potion is ", order.recipe.name)
+			return
 
 
 func is_potion_of_recipe(bottle: Bottle, recipe: Recipe) -> bool:
