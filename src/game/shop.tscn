@@ -225,15 +225,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 1, -18.5)
 
 [node name="Greenhouse" type="Node3D" parent="."]
 
-[node name="Pot3" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.269, -17.5)
-
-[node name="Pot2" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.269, -17.5)
-
-[node name="Pot7" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.269, -17.5)
-
 [node name="Pot5" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.269, -13.5)
 
