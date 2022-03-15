@@ -35,7 +35,7 @@ albedo_color = Color(0.376471, 0.196078, 0.109804, 1)
 
 [node name="Shop" type="Node3D"]
 script = ExtResource( "1_6107u" )
-game_time = 180.0
+game_time = 200.0
 
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true
