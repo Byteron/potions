@@ -24,13 +24,34 @@ func validate_potion(bottle: Bottle) -> void:
 
 
 func is_potion_of_recipe(bottle: Bottle, recipe: Recipe) -> bool:
+	print("Check Recipe: ", recipe.name)
+
 	if bottle.ingredients.size() != recipe.ingredients.size():
 		print("not the same amount of ingredients for ", recipe.name)
 		return false
 	
+	var ingredients = bottle.ingredients.duplicate()
 	for ingredient in recipe.ingredients:
-		if not bottle.has_ingredient(ingredient):
+		print(ingredients)
+		if not has_ingredient(ingredients, ingredient):
 			print("ingredient ", ingredient.stringify(), " not precent in bottle")
 			return false
-
 	return true
+
+
+func has_ingredient(ingredients: Array, recipe_ingredient: RecipeIngredient) -> bool:
+	var boolean := false
+	var matched_ingredient: Ingredient = null
+
+	for ingredient in ingredients:
+		var same_name = ingredient.data.name == recipe_ingredient.name
+		var same_refinement = ingredient.refinement == recipe_ingredient.refinement
+		# print(ingredient.data.name, recipe_ingredient.name, same_name, ingredient.refinement, recipe_ingredient.refinement, same_refinement)
+		if same_name and same_refinement:
+			matched_ingredient = ingredient
+			boolean = true
+	
+	if boolean:
+		ingredients.erase(matched_ingredient)
+
+	return boolean
