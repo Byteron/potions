@@ -9,7 +9,7 @@
 size = Vector3(0.757387, 0.457332, 0.757096)
 
 [node name="BottleBag" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24358, 0.484765)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24358, -0.015235)
 script = ExtResource( "1_m7oik" )
 Bottle = ExtResource( "2_8y5ur" )
 
@@ -21,6 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.251184, 0)
 shape = SubResource( "BoxShape3D_vbl5y" )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
 offset = Vector2(0, 64)
 billboard = 1
 shaded = true

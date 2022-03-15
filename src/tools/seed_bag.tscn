@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bwpm8dyr2ay75" path="res://assets/graphics/images/seed.png" id="4_lannv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vbl5y"]
-size = Vector3(0.757387, 0.457332, 0.757096)
+size = Vector3(0.757387, 0.6944, 0.757096)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_se28d"]
 albedo_color = Color(0.247059, 0.333333, 0.2, 1)
@@ -25,7 +25,7 @@ Seed = ExtResource( "2_ypd7r" )
 script = ExtResource( "2_llbv3" )
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.251184, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.848956, 0)
 shape = SubResource( "BoxShape3D_vbl5y" )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
