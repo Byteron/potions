@@ -235,3 +235,7 @@ dash={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[rendering]
+
+anti_aliasing/quality/screen_space_aa=1

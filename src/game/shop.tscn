@@ -25,7 +25,9 @@ sky_material = SubResource( "ProceduralSkyMaterial_jl2y6" )
 [sub_resource type="Environment" id="Environment_4xgxr"]
 background_mode = 2
 sky = SubResource( "Sky_lsoa7" )
-tonemap_mode = 2
+tonemap_mode = 3
+ssao_enabled = true
+ssil_enabled = true
 glow_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_b0hr7"]
@@ -35,7 +37,7 @@ size = Vector2(7, 7)
 albedo_color = Color(0.376471, 0.196078, 0.109804, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5v7gd"]
-albedo_color = Color(0.180392, 0.180392, 0.180392, 1)
+albedo_color = Color(0.227451, 0.121569, 0.0431373, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gscet"]
 size = Vector3(0.5, 2, 7)
@@ -66,7 +68,7 @@ size = Vector2(6, 10)
 
 [node name="Shop" type="Node3D"]
 script = ExtResource( "1_6107u" )
-game_time = 200.0
+game_time = 240.0
 
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true
@@ -135,7 +137,7 @@ growable = ExtResource( "6_vr77g" )
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01387, 0.268619, -11.4859)
 
 [node name="Wall" type="MeshInstance3D" parent="Greenhouse"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3, 0, -14.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3, 1, -14.5)
 material_override = SubResource( "StandardMaterial3D_5v7gd" )
 mesh = SubResource( "BoxMesh_gscet" )
 
@@ -145,7 +147,7 @@ mesh = SubResource( "BoxMesh_gscet" )
 shape = SubResource( "ConcavePolygonShape3D_d1dne" )
 
 [node name="Wall5" type="MeshInstance3D" parent="Greenhouse"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3, 0, -14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3, 1, -14)
 material_override = SubResource( "StandardMaterial3D_5v7gd" )
 mesh = SubResource( "BoxMesh_pukkl" )
 
@@ -155,7 +157,7 @@ mesh = SubResource( "BoxMesh_pukkl" )
 shape = SubResource( "ConcavePolygonShape3D_cgc6k" )
 
 [node name="Wall2" type="MeshInstance3D" parent="Greenhouse"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.5, 0, -18.3)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.5, 1, -18.3)
 material_override = SubResource( "StandardMaterial3D_5v7gd" )
 mesh = SubResource( "BoxMesh_7adiw" )
 
@@ -175,13 +177,15 @@ mesh = SubResource( "BoxMesh_7adiw" )
 shape = SubResource( "ConcavePolygonShape3D_42p78" )
 
 [node name="Wall3" type="MeshInstance3D" parent="Greenhouse"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, -19.3)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 1, -19.3)
 material_override = SubResource( "StandardMaterial3D_5v7gd" )
 mesh = SubResource( "BoxMesh_1sa3x" )
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Greenhouse/Wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="@@112210" type="CollisionShape3D" parent="Greenhouse/Wall3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource( "ConcavePolygonShape3D_gto6a" )
 
 [node name="Wall6" type="MeshInstance3D" parent="Greenhouse"]
