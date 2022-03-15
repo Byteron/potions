@@ -1,7 +1,7 @@
-[gd_resource type="Resource" load_steps=3 format=3]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://diyuwqw4dn707"]
 
 [ext_resource type="Script" path="res://src/data/recipe.gd" id="1_aeg2q"]
-[ext_resource type="Resource" path="res://data/recipes/ingredients/chopped_herb.tres" id="2_ffkv2"]
+[ext_resource type="Resource" uid="uid://bq07ppq614xqy" path="res://data/recipes/ingredients/chopped_herb.tres" id="2_ffkv2"]
 
 [resource]
 script = ExtResource( "1_aeg2q" )

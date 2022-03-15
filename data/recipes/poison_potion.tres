@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bhmen555io88s"]
+
+[ext_resource type="Resource" uid="uid://wnub34tm0eff" path="res://data/recipes/ingredients/flower.tres" id="1_ji4ec"]
+[ext_resource type="Script" path="res://src/data/recipe.gd" id="1_x15i7"]
+
+[resource]
+script = ExtResource( "1_x15i7" )
+name = "Poison Potion"
+ingredients = [ExtResource( "1_ji4ec" ), ExtResource( "1_ji4ec" ), ExtResource( "1_ji4ec" )]
+score = 100

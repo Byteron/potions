@@ -8,6 +8,8 @@ var recipes: Array[Recipe] = [
 	load("data/recipes/love_potion.tres") as Recipe,
 	load("data/recipes/health_potion.tres") as Recipe,
 	load("data/recipes/youth_potion.tres") as Recipe,
+	load("data/recipes/beauty_potion.tres") as Recipe,
+	load("data/recipes/poison_potion.tres") as Recipe,
 ]
 
 var orders: Array[Order]
