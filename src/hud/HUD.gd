@@ -14,7 +14,7 @@ func _ready() -> void:
 	_on_orders_changed()
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	score_label.text = "Score: " + str(Recipes.score)
 
 

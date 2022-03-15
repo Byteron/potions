@@ -11,9 +11,9 @@ var _growable: Growable = null
 
 func _on_interactable_interacted(character: Character) -> void:
 	if character.has_item() and character.item is Seed and not has_growable():
-		var seed: Seed = character.item
+		var carried_seed: Seed = character.item
 		_growable = Growable.instantiate()
-		_growable.data = seed.data as GrowableData
+		_growable.data = carried_seed.data as GrowableData
 		_container.add_child(_growable)
 		var item = character.drop_item()
 		item.queue_free()

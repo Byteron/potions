@@ -10,7 +10,7 @@ var refine_progress := 0.0
 @onready var _container: Position3D = $Container
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not has_ingredient():
 		return
 	

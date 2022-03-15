@@ -17,15 +17,15 @@ func update_sprite() -> void:
 
 
 func has_ingredient(recipe_ingredient: RecipeIngredient) -> bool:
-	var has_ingredient := false
+	var has := false
 	for ingredient in ingredients:
 		var same_name = ingredient.data.name == recipe_ingredient.name
 		var same_refinement = ingredient.refinement == recipe_ingredient.refinement
 		# print(ingredient.data.name, recipe_ingredient.name, same_name, ingredient.refinement, recipe_ingredient.refinement, same_refinement)
 		if same_name and same_refinement:
-			has_ingredient = true
+			has = true
 
-	return has_ingredient
+	return has
 
 
 func stringify() -> String:

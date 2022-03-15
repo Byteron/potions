@@ -13,7 +13,7 @@ func _ready() -> void:
 	timer.start(game_time)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	hud.set_time_left(timer.time_left)
 
 

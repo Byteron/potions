@@ -6,7 +6,7 @@ class_name PotionEntry
 
 var order: Order = null
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	for ingredient in order.recipe.ingredients:
 		var rect = TextureRect.new()
@@ -15,5 +15,6 @@ func _ready() -> void:
 		rect.texture = ingredient.texture
 		container.add_child(rect)
 
-func _process(delta: float) -> void:
+
+func _process(_delta: float) -> void:
 	label.text = str(int(order.timer.time_left))

@@ -9,7 +9,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		interact()
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_pressed("refine"):
 		refine()
 	if Input.is_action_just_released("refine"):

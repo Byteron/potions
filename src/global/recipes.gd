@@ -69,7 +69,7 @@ func _on_order_expired(order: Order) -> void:
 
 
 func _on_order_finished(order: Order) -> void:
-	var modifier: int = order.get_time_left_modifier()
+	var modifier := int(order.get_time_left_modifier())
 	score += order.recipe.score * modifier
 	orders.erase(order)
 	order.queue_free()
