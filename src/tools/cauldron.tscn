@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bnoin51v7ki0j" path="res://src/tools/brew.tscn" id="1_03ebl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mgho5"]
-size = Vector3(1.24362, 0.618744, 1.23798)
+size = Vector3(0.91901, 0.74972, 1.00267)
 
 [node name="Cauldron" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268619, 0)
@@ -13,5 +13,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268619, 0)
 [node name="Box" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0356597, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.244276, 0)
 shape = SubResource( "BoxShape3D_mgho5" )
