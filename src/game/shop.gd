@@ -19,4 +19,5 @@ func _process(_delta: float) -> void:
 
 func _on_game_timer_timeout() -> void:
 	Recipes.stop()
+	Recipes.clear()
 	get_tree().change_scene("res://src/menu/title_screen.tscn")

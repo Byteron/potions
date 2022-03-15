@@ -37,12 +37,13 @@ func start() -> void:
 func reset() -> void:
 	score = 0
 
+
+func clear() -> void:
 	for child in order_container.get_children():
 		order_container.remove_child(child)
 		child.queue_free()
 
 	orders.clear()
-
 
 func _on_new_recipe_timer_timeout() -> void:
 	if order_container.get_child_count() == MAX_ORDERS:
