@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://wnub34tm0eff"]
+
+[ext_resource type="Script" path="res://src/data/recipe_ingredient.gd" id="1_ko6o4"]
+[ext_resource type="Texture2D" uid="uid://catofklt6sgqa" path="res://assets/graphics/images/lavender_item.png" id="2_ukwva"]
+
+[resource]
+script = ExtResource( "1_ko6o4" )
+name = "Flower"
+refinement = 0
+texture = ExtResource( "2_ukwva" )

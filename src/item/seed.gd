@@ -1,4 +1,7 @@
 extends Item
 class_name Seed
 
-@export var data: Resource = null
+var data: Resource = null
+
+func _ready() -> void:
+	pass

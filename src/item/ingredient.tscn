@@ -5,3 +5,4 @@
 
 [node name="Ingredient" instance=ExtResource( "1_0qo1s" )]
 script = ExtResource( "2_6vlte" )
+refinement_time = 1.0

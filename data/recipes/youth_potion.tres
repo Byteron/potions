@@ -1,11 +1,11 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cu5qquu2jux2h"]
+[gd_resource type="Resource" load_steps=4 format=3]
 
-[ext_resource type="Resource" uid="uid://bue2qh1jcj2o5" path="res://data/recipes/ingredients/herb.tres" id="1_udg7a"]
-[ext_resource type="Resource" uid="uid://bq07ppq614xqy" path="res://data/recipes/ingredients/cut_herb.tres" id="2_qbvmf"]
+[ext_resource type="Resource" uid="uid://bfsw4aeyd8utn" path="res://data/recipes/ingredients/chopped_flower.tres" id="2_dywm8"]
+[ext_resource type="Resource" path="res://data/recipes/ingredients/chopped_herb.tres" id="2_qbvmf"]
 [ext_resource type="Script" path="res://src/data/recipe.gd" id="3_8wo5a"]
 
 [resource]
 script = ExtResource( "3_8wo5a" )
 name = "Youth Potion"
-ingredients = [ExtResource( "1_udg7a" ), ExtResource( "2_qbvmf" )]
-score = 250
+ingredients = [ExtResource( "2_qbvmf" ), ExtResource( "2_dywm8" )]
+score = 300

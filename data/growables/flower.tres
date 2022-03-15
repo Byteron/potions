@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://bavu6wugthpew"]
+
+[ext_resource type="Resource" uid="uid://b6qnikd33i3ab" path="res://data/ingredients/flower.tres" id="1_x2uf0"]
+[ext_resource type="Script" path="res://src/data/growable_data.gd" id="1_yflqv"]
+[ext_resource type="Texture2D" uid="uid://du5hsh4mo2nsv" path="res://assets/graphics/images/lavender_sapling.png" id="2_1s4w5"]
+[ext_resource type="Texture2D" uid="uid://b6ha4jjp0dm2i" path="res://assets/graphics/images/lavender_plant.png" id="3_gxlfj"]
+
+[resource]
+script = ExtResource( "1_yflqv" )
+name = "Flower"
+stages = [ExtResource( "2_1s4w5" ), ExtResource( "3_gxlfj" )]
+grow_time = 6.0
+ingredient_data = ExtResource( "1_x2uf0" )
