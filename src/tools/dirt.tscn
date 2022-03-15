@@ -22,6 +22,7 @@ Ingredient = ExtResource( "3_pygpx" )
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.169544, 0)
+visible = false
 material_override = SubResource( "StandardMaterial3D_yuti4" )
 mesh = SubResource( "SphereMesh_r653o" )
 
