@@ -21,9 +21,6 @@ var score := 0
 
 func _ready() -> void:
 	randomize()
-	_on_new_recipe_timer_timeout()
-	_on_new_recipe_timer_timeout()
-	_on_new_recipe_timer_timeout()
 
 
 func _on_new_recipe_timer_timeout() -> void:
