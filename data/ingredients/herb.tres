@@ -9,3 +9,4 @@ script = ExtResource( "1_cvwax" )
 name = "Herb"
 default_texture = ExtResource( "2_kj4l6" )
 cut_texture = ExtResource( "1_5lc05" )
+dried_texture = ExtResource( "1_5lc05" )

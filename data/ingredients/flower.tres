@@ -9,3 +9,4 @@ script = ExtResource( "1_6dc21" )
 name = "Flower"
 default_texture = ExtResource( "2_ietaa" )
 cut_texture = ExtResource( "1_7su6m" )
+dried_texture = ExtResource( "1_7su6m" )
