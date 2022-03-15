@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://de4jsrcssn3fp"]
+[gd_scene load_steps=30 format=3 uid="uid://de4jsrcssn3fp"]
 
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="1_7ggcj"]
 [ext_resource type="Script" path="res://src/game/shop.gd" id="1_6107u"]
@@ -8,8 +8,8 @@
 [ext_resource type="Resource" uid="uid://bavu6wugthpew" path="res://data/growables/flower.tres" id="5_ah0gp"]
 [ext_resource type="Resource" uid="uid://dnjnx3nwckkwc" path="res://data/growables/herb.tres" id="6_vr77g"]
 [ext_resource type="PackedScene" uid="uid://dfrmewrd2ij3h" path="res://src/deco/counter.tscn" id="7_e66xu"]
-[ext_resource type="PackedScene" uid="uid://bh4v2nonxlfdo" path="res://src/deco/table.tscn" id="7_pl1ub"]
 [ext_resource type="PackedScene" uid="uid://d014fhdoxeh0f" path="res://src/tools/cauldron.tscn" id="8_oosmm"]
+[ext_resource type="PackedScene" uid="uid://b5ywi4vpkcsr5" path="res://src/tools/big_dirt_box.tscn" id="8_w1ttv"]
 [ext_resource type="PackedScene" uid="uid://dn2wq7dt428xv" path="res://src/deco/big_table.tscn" id="9_17res"]
 [ext_resource type="PackedScene" uid="uid://cvennarng5skj" path="res://src/tools/bottle_station.tscn" id="9_f3ldj"]
 [ext_resource type="PackedScene" uid="uid://culxk5mur1o0h" path="res://src/hud/HUD.tscn" id="10_wog8m"]
@@ -29,9 +29,40 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_b0hr7"]
+size = Vector2(7, 7)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qxxup"]
 albedo_color = Color(0.376471, 0.196078, 0.109804, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5v7gd"]
+albedo_color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gscet"]
+size = Vector3(0.5, 2, 7)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_d1dne"]
+data = PackedVector3Array(-0.25, 1, 3.5, 0.25, 1, 3.5, -0.25, -1, 3.5, 0.25, 1, 3.5, 0.25, -1, 3.5, -0.25, -1, 3.5, 0.25, 1, -3.5, -0.25, 1, -3.5, 0.25, -1, -3.5, -0.25, 1, -3.5, -0.25, -1, -3.5, 0.25, -1, -3.5, 0.25, 1, 3.5, 0.25, 1, -3.5, 0.25, -1, 3.5, 0.25, 1, -3.5, 0.25, -1, -3.5, 0.25, -1, 3.5, -0.25, 1, -3.5, -0.25, 1, 3.5, -0.25, -1, -3.5, -0.25, 1, 3.5, -0.25, -1, 3.5, -0.25, -1, -3.5, 0.25, 1, 3.5, -0.25, 1, 3.5, 0.25, 1, -3.5, -0.25, 1, 3.5, -0.25, 1, -3.5, 0.25, 1, -3.5, -0.25, -1, 3.5, 0.25, -1, 3.5, -0.25, -1, -3.5, 0.25, -1, 3.5, 0.25, -1, -3.5, -0.25, -1, -3.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pukkl"]
+size = Vector3(0.5, 2, 10)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_cgc6k"]
+data = PackedVector3Array(-0.25, 1, 5, 0.25, 1, 5, -0.25, -1, 5, 0.25, 1, 5, 0.25, -1, 5, -0.25, -1, 5, 0.25, 1, -5, -0.25, 1, -5, 0.25, -1, -5, -0.25, 1, -5, -0.25, -1, -5, 0.25, -1, -5, 0.25, 1, 5, 0.25, 1, -5, 0.25, -1, 5, 0.25, 1, -5, 0.25, -1, -5, 0.25, -1, 5, -0.25, 1, -5, -0.25, 1, 5, -0.25, -1, -5, -0.25, 1, 5, -0.25, -1, 5, -0.25, -1, -5, 0.25, 1, 5, -0.25, 1, 5, 0.25, 1, -5, -0.25, 1, 5, -0.25, 1, -5, 0.25, 1, -5, -0.25, -1, 5, 0.25, -1, 5, -0.25, -1, -5, 0.25, -1, 5, 0.25, -1, -5, -0.25, -1, -5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7adiw"]
+size = Vector3(0.5, 2, 7)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_42p78"]
+data = PackedVector3Array(-0.25, 1, 3.5, 0.25, 1, 3.5, -0.25, -1, 3.5, 0.25, 1, 3.5, 0.25, -1, 3.5, -0.25, -1, 3.5, 0.25, 1, -3.5, -0.25, 1, -3.5, 0.25, -1, -3.5, -0.25, 1, -3.5, -0.25, -1, -3.5, 0.25, -1, -3.5, 0.25, 1, 3.5, 0.25, 1, -3.5, 0.25, -1, 3.5, 0.25, 1, -3.5, 0.25, -1, -3.5, 0.25, -1, 3.5, -0.25, 1, -3.5, -0.25, 1, 3.5, -0.25, -1, -3.5, -0.25, 1, 3.5, -0.25, -1, 3.5, -0.25, -1, -3.5, 0.25, 1, 3.5, -0.25, 1, 3.5, 0.25, 1, -3.5, -0.25, 1, 3.5, -0.25, 1, -3.5, 0.25, 1, -3.5, -0.25, -1, 3.5, 0.25, -1, 3.5, -0.25, -1, -3.5, 0.25, -1, 3.5, 0.25, -1, -3.5, -0.25, -1, -3.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1sa3x"]
+size = Vector3(0.5, 2, 6)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_gto6a"]
+data = PackedVector3Array(-0.25, 1, 3, 0.25, 1, 3, -0.25, -1, 3, 0.25, 1, 3, 0.25, -1, 3, -0.25, -1, 3, 0.25, 1, -3, -0.25, 1, -3, 0.25, -1, -3, -0.25, 1, -3, -0.25, -1, -3, 0.25, -1, -3, 0.25, 1, 3, 0.25, 1, -3, 0.25, -1, 3, 0.25, 1, -3, 0.25, -1, -3, 0.25, -1, 3, -0.25, 1, -3, -0.25, 1, 3, -0.25, -1, -3, -0.25, 1, 3, -0.25, -1, 3, -0.25, -1, -3, 0.25, 1, 3, -0.25, 1, 3, 0.25, 1, -3, -0.25, 1, 3, -0.25, 1, -3, 0.25, 1, -3, -0.25, -1, 3, 0.25, -1, 3, -0.25, -1, -3, 0.25, -1, 3, 0.25, -1, -3, -0.25, -1, -3)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xv6av"]
+size = Vector2(6, 10)
 
 [node name="Shop" type="Node3D"]
 script = ExtResource( "1_6107u" )
@@ -44,70 +75,133 @@ one_shot = true
 environment = SubResource( "Environment_4xgxr" )
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.995691, -0.0803114, 0.0463678, 0, 0.5, 0.866025, -0.0927356, -0.862294, 0.497845, 1.94971, 15.5339, -4.52968)
+transform = Transform3D(0.995691, -0.0803114, 0.0463678, 0, 0.5, 0.866026, -0.0927356, -0.862294, 0.497845, 0.94971, 15.5339, -4.52968)
 fov = 40.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866024, -0.433016, 0.25, 0.453234, -0.468704, 0.758219, -0.211145, 0.769944, 0.602166, 0, 3.61131, 0)
+transform = Transform3D(-0.866024, -0.433016, 0.25, 0.439403, -0.420506, 0.793788, -0.238597, 0.79729, 0.554436, 0, 3.61131, 0)
 shadow_enabled = true
 directional_shadow_max_distance = 250.0
 
 [node name="Character" parent="." instance=ExtResource( "1_7ggcj" )]
-transform = Transform3D(-0.865906, 0.0143737, -0.5, 0.0165973, 0.999862, 0, 0.499931, -0.00829866, -0.866025, 2.98549, 9.53674e-07, -11.9799)
+transform = Transform3D(-0.865906, 0.0143737, -0.5, 0.0165973, 0.999862, 0, 0.499931, -0.00829866, -0.866025, 3.18996, 9.53674e-07, -11.2665)
 
 [node name="Greenhouse" type="Node3D" parent="."]
 
 [node name="Pot3" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.269, -16.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.269, -17.5)
 
 [node name="Pot2" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.269, -16.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.269, -17.5)
 
-[node name="DirtBox2" parent="Greenhouse" instance=ExtResource( "4_n7npy" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.269, -14.5)
+[node name="Pot7" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.269, -17.5)
+
+[node name="Pot5" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.269, -13.5)
+
+[node name="Pot8" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.269, -13.5)
+
+[node name="Pot6" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.269, -11.5)
+
+[node name="Pot4" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.269, -15.5)
+
+[node name="Pot9" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.269, -15.5)
 
 [node name="DirtBox3" parent="Greenhouse" instance=ExtResource( "4_n7npy" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.269, -11.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.269, -15.5)
 
 [node name="DirtBox" parent="Greenhouse" instance=ExtResource( "4_n7npy" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.269, -13.5)
 
 [node name="Floor" type="MeshInstance3D" parent="Greenhouse"]
-transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, -3, 0, -14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -14.5)
 mesh = SubResource( "PlaneMesh_b0hr7" )
 surface_material_override/0 = SubResource( "StandardMaterial3D_qxxup" )
 
 [node name="Seedbag" parent="Greenhouse" instance=ExtResource( "4_x0iy6" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.49512, 0, -13.4982)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.49512, 0, -13.4982)
 growable = ExtResource( "5_ah0gp" )
 
 [node name="Seedbag2" parent="Greenhouse" instance=ExtResource( "4_x0iy6" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.50326, 0, -14.5099)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.50326, 0, -15.5099)
 growable = ExtResource( "6_vr77g" )
+
+[node name="BigDirtBox" parent="Greenhouse" instance=ExtResource( "8_w1ttv" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01387, 0.268619, -11.4859)
+
+[node name="Wall" type="MeshInstance3D" parent="Greenhouse"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3, 0, -14.5)
+material_override = SubResource( "StandardMaterial3D_5v7gd" )
+mesh = SubResource( "BoxMesh_gscet" )
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Greenhouse/Wall"]
+
+[node name="@@109541" type="CollisionShape3D" parent="Greenhouse/Wall/StaticBody3D"]
+shape = SubResource( "ConcavePolygonShape3D_d1dne" )
+
+[node name="Wall5" type="MeshInstance3D" parent="Greenhouse"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3, 0, -14)
+material_override = SubResource( "StandardMaterial3D_5v7gd" )
+mesh = SubResource( "BoxMesh_pukkl" )
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Greenhouse/Wall5"]
+
+[node name="@@110132" type="CollisionShape3D" parent="Greenhouse/Wall5/StaticBody3D"]
+shape = SubResource( "ConcavePolygonShape3D_cgc6k" )
+
+[node name="Wall2" type="MeshInstance3D" parent="Greenhouse"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.5, 0, -18.3)
+material_override = SubResource( "StandardMaterial3D_5v7gd" )
+mesh = SubResource( "BoxMesh_7adiw" )
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Greenhouse/Wall2"]
+
+[node name="@@111619" type="CollisionShape3D" parent="Greenhouse/Wall2/StaticBody3D"]
+shape = SubResource( "ConcavePolygonShape3D_42p78" )
+
+[node name="Wall4" type="MeshInstance3D" parent="Greenhouse"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.5, 0, -10.6)
+material_override = SubResource( "StandardMaterial3D_5v7gd" )
+mesh = SubResource( "BoxMesh_7adiw" )
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Greenhouse/Wall4"]
+
+[node name="111619" type="CollisionShape3D" parent="Greenhouse/Wall4/StaticBody3D"]
+shape = SubResource( "ConcavePolygonShape3D_42p78" )
+
+[node name="Wall3" type="MeshInstance3D" parent="Greenhouse"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, -19.3)
+material_override = SubResource( "StandardMaterial3D_5v7gd" )
+mesh = SubResource( "BoxMesh_1sa3x" )
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Greenhouse/Wall3"]
+
+[node name="@@112210" type="CollisionShape3D" parent="Greenhouse/Wall3/StaticBody3D"]
+shape = SubResource( "ConcavePolygonShape3D_gto6a" )
+
+[node name="Wall6" type="MeshInstance3D" parent="Greenhouse"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, -8.7)
+material_override = SubResource( "StandardMaterial3D_5v7gd" )
+mesh = SubResource( "BoxMesh_1sa3x" )
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Greenhouse/Wall6"]
+
+[node name="112210" type="CollisionShape3D" parent="Greenhouse/Wall6/StaticBody3D"]
+shape = SubResource( "ConcavePolygonShape3D_gto6a" )
 
 [node name="Workshop" type="Node3D" parent="."]
 
-[node name="Table2" parent="Workshop" instance=ExtResource( "7_pl1ub" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -14)
-
-[node name="Table6" parent="Workshop" instance=ExtResource( "7_pl1ub" )]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 5, 0, -18.5)
-
-[node name="Space" parent="Workshop/Table6" index="2"]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 0.501368, 0.5)
-
-[node name="Space2" parent="Workshop/Table6" index="3"]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 0, 0.501368, -0.5)
-
 [node name="Counter" parent="Workshop" instance=ExtResource( "7_e66xu" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98847, -0.0219981, -9.35504)
-
-[node name="Pot" parent="Workshop" instance=ExtResource( "3_obdbc" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.269, -11.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98847, -0.0219981, -10.355)
 
 [node name="Floor" type="MeshInstance3D" parent="Workshop"]
-transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 5.5, 3, 0, -13.5)
-mesh = SubResource( "PlaneMesh_b0hr7" )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -14)
+mesh = SubResource( "PlaneMesh_xv6av" )
 skeleton = NodePath("../../Greenhouse")
 surface_material_override/0 = SubResource( "StandardMaterial3D_qxxup" )
 
@@ -115,22 +209,20 @@ surface_material_override/0 = SubResource( "StandardMaterial3D_qxxup" )
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -14.5)
 
 [node name="Cauldron" parent="Workshop" instance=ExtResource( "8_oosmm" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58944, 0.0212398, -18.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58944, 0.0212398, -18.5325)
 
 [node name="Cauldron2" parent="Workshop" instance=ExtResource( "8_oosmm" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90655, 0.0212398, -18.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90655, 0.0212398, -18.5325)
 
 [node name="Cauldron3" parent="Workshop" instance=ExtResource( "8_oosmm" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.22423, 0.0212398, -18.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.22423, 0.0212398, -18.5325)
 
 [node name="BottleStation" parent="Workshop" instance=ExtResource( "9_f3ldj" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49766, 0.268619, -17.47)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49766, 0.268619, -18.47)
 
 [node name="DryingRack" parent="Workshop" instance=ExtResource( "12_wvoaf" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -16.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -17.5)
 
 [node name="HUD" parent="." instance=ExtResource( "10_wog8m" )]
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
-
-[editable path="Workshop/Table6"]
