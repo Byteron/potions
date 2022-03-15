@@ -8,10 +8,6 @@ var data: IngredientData = null
 var is_refined := false
 var refinement := RefinementType.NONE
 
-var refinement_progress := 0.0
-
-@export var refinement_time := 2.0
-
 
 func _ready() -> void:
 	_sprite = $Sprite3D
@@ -27,13 +23,10 @@ func update_sprite() -> void:
 
 
 func refine(type: RefinementType) -> void:
-	refinement_progress += get_process_delta_time()
-
-	if refinement_progress > refinement_time:
-		is_refined = true
-		refinement = type
-		update_sprite()
-		animate()
+	is_refined = true
+	refinement = type
+	update_sprite()
+	animate()
 
 
 func animate() -> void:

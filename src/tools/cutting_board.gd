@@ -1,12 +1,18 @@
 extends Node3D
 class_name CuttingBoard
 
+const REFINE_TIME := 2.0
+
 var _ingredient: Ingredient = null
+
+var refine_progress := 0.0
+
 
 @onready var _container: Position3D = $Container
 
-
 func _on_interactable_interacted(character: Character) -> void:
+	refine_progress = 0
+
 	if character.has_item() and character.item is Ingredient and not has_ingredient():
 		_ingredient = character.drop_item()
 		_container.add_child(_ingredient)
@@ -25,4 +31,10 @@ func _on_refiner_refined() -> void:
 	if not has_ingredient():
 		return
 	
-	_ingredient.refine(Ingredient.RefinementType.CUT)
+	if _ingredient.is_refined:
+		return
+	
+	refine_progress += get_process_delta_time()
+
+	if refine_progress > REFINE_TIME:
+		_ingredient.refine(Ingredient.RefinementType.CUT)
