@@ -9,5 +9,5 @@
 [resource]
 script = ExtResource( "1_g70uu" )
 name = "Beauty Potion"
-ingredients = [ExtResource( "1_1ehjx" ), ExtResource( "3_nc2ng" ), ExtResource( "2_mxkub" ), ExtResource( "4_c0sr0" )]
+ingredients = [ExtResource( "1_1ehjx" ), ExtResource( "2_mxkub" ), ExtResource( "3_nc2ng" ), ExtResource( "4_c0sr0" )]
 score = 600

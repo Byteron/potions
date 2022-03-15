@@ -1,7 +1,7 @@
 extends CanvasLayer
 class_name HUD
 
-@export var RecipeEntry: PackedScene = null
+@export var OrderEntry: PackedScene = null
 
 @onready var score_label: Label = $VBoxContainer2/ScoreLabel
 @onready var time_label: Label = $VBoxContainer2/TimeLabel
@@ -28,6 +28,6 @@ func _on_orders_changed() -> void:
 		child.queue_free()
 
 	for order in Recipes.orders:
-		var entry: PotionEntry = RecipeEntry.instantiate()
+		var entry: OrderEntry = OrderEntry.instantiate()
 		entry.order = order
 		container.add_child(entry)

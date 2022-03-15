@@ -100,6 +100,11 @@ _global_script_classes=[{
 "path": "res://src/tools/order.gd"
 }, {
 "base": "Control",
+"class": &"OrderEntry",
+"language": &"GDScript",
+"path": "res://src/hud/order_entry.gd"
+}, {
+"base": "Control",
 "class": &"PotionEntry",
 "language": &"GDScript",
 "path": "res://src/hud/potion_entry.gd"
@@ -113,6 +118,11 @@ _global_script_classes=[{
 "class": &"RecipeIngredient",
 "language": &"GDScript",
 "path": "res://src/data/recipe_ingredient.gd"
+}, {
+"base": "Control",
+"class": &"RecipeMenu",
+"language": &"GDScript",
+"path": "res://src/menu/recipe_menu.gd"
 }, {
 "base": "Area3D",
 "class": &"Refiner",
@@ -163,9 +173,11 @@ _global_script_class_icons={
 "Interacter": "",
 "Item": "",
 "Order": "",
+"OrderEntry": "",
 "PotionEntry": "",
 "Recipe": "",
 "RecipeIngredient": "",
+"RecipeMenu": "",
 "Refiner": "",
 "Seed": "",
 "SeedBag": "",

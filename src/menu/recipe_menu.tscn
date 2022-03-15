@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://curthdcilvtq4"]
+
+[ext_resource type="Script" path="res://src/menu/recipe_menu.gd" id="1_hno5g"]
+[ext_resource type="PackedScene" uid="uid://ct3fykwqajjsj" path="res://src/hud/potion_entry.tscn" id="2_6n0xx"]
+
+[node name="RecipeMenu" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( "1_hno5g" )
+PotionEntry = ExtResource( "2_6n0xx" )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+offset_right = 1280.0
+offset_bottom = 666.0
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/CenterContainer"]
+offset_left = 640.0
+offset_top = 333.0
+offset_right = 640.0
+offset_bottom = 333.0
+columns = 4
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+rect_min_size = Vector2(120, 50)
+offset_left = 580.0
+offset_top = 670.0
+offset_right = 700.0
+offset_bottom = 720.0
+size_flags_horizontal = 4
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
