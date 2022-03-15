@@ -7,6 +7,5 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268619, 0)
 
 [node name="BottleBag" parent="." instance=ExtResource( "1_dj831" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24358, -0.015235)
 
 [node name="Box" parent="." instance=ExtResource( "2_qa4x8" )]

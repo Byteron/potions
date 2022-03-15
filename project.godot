@@ -25,9 +25,9 @@ _global_script_classes=[{
 "path": "res://src/tools/bottle_bag.gd"
 }, {
 "base": "Node3D",
-"class": &"Brew",
+"class": &"Cauldron",
 "language": &"GDScript",
-"path": "res://src/tools/brew.gd"
+"path": "res://src/tools/cauldron.gd"
 }, {
 "base": "CharacterBody3D",
 "class": &"Character",
@@ -148,7 +148,7 @@ _global_script_class_icons={
 "Bin": "",
 "Bottle": "",
 "BottleBag": "",
-"Brew": "",
+"Cauldron": "",
 "Character": "",
 "Counter": "",
 "CuttingBoard": "",

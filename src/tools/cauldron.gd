@@ -1,5 +1,5 @@
 extends Node3D
-class_name Brew
+class_name Cauldron
 
 const BREWING_TIME_PER_INGREDIENT := 4.0
 const BREWING_TIME := 8.0

@@ -1,21 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1lyxdgdrti2h"]
+[gd_scene load_steps=7 format=3 uid="uid://d1lyxdgdrti2h"]
 
 [ext_resource type="Script" path="res://src/tools/seed_bag.gd" id="1_7oesv"]
 [ext_resource type="Script" path="res://src/character/interactable.gd" id="2_llbv3"]
 [ext_resource type="PackedScene" uid="uid://b7sr6frnkfniv" path="res://src/item/seed.tscn" id="2_ypd7r"]
 [ext_resource type="Texture2D" uid="uid://bwpm8dyr2ay75" path="res://assets/graphics/images/seed.png" id="4_lannv"]
+[ext_resource type="PackedScene" uid="uid://31skn8qsjy5s" path="res://src/deco/box.tscn" id="5_0h0hl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vbl5y"]
 size = Vector3(0.757387, 0.6944, 0.757096)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_se28d"]
-albedo_color = Color(0.247059, 0.333333, 0.2, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_upijq"]
-size = Vector3(1, 0.5, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_lp33f"]
-size = Vector3(0.993039, 0.5, 1)
 
 [node name="Seedbag" type="Node3D"]
 script = ExtResource( "1_7oesv" )
@@ -41,15 +33,7 @@ billboard = 1
 shaded = true
 texture = ExtResource( "4_lannv" )
 
-[node name="Box" type="StaticBody3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Box"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25122, 0)
-material_override = SubResource( "StandardMaterial3D_se28d" )
-mesh = SubResource( "BoxMesh_upijq" )
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Box"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.254723, 0)
-shape = SubResource( "BoxShape3D_lp33f" )
+[node name="Box" parent="." instance=ExtResource( "5_0h0hl" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.237059, 0)
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
