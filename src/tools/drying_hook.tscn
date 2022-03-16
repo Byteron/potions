@@ -1,21 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://sudxav1ak3nc"]
+[gd_scene load_steps=3 format=3 uid="uid://sudxav1ak3nc"]
 
 [ext_resource type="Script" path="res://src/tools/drying_hook.gd" id="1_r50hl"]
-[ext_resource type="Script" path="res://src/character/interactable.gd" id="1_tlqx0"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_iujf7"]
+[ext_resource type="PackedScene" uid="uid://dkt4ajcywuap4" path="res://src/tools/interactable.tscn" id="2_wl4ys"]
 
 [node name="DryingHook" type="Node3D"]
 script = ExtResource( "1_r50hl" )
 
-[node name="Interactable" type="Area3D" parent="."]
-script = ExtResource( "1_tlqx0" )
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
-shape = SubResource( "BoxShape3D_iujf7" )
-
 [node name="Container" type="Position3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0536811, 0.7)
+
+[node name="Interactable" parent="." instance=ExtResource( "2_wl4ys" )]
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

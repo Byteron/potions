@@ -1,20 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://djgqvndknyjwh"]
+[gd_scene load_steps=3 format=3 uid="uid://djgqvndknyjwh"]
 
 [ext_resource type="Script" path="res://src/tools/space.gd" id="1_snikh"]
-[ext_resource type="Script" path="res://src/character/interactable.gd" id="4_dnlg4"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_j3mo4"]
+[ext_resource type="PackedScene" uid="uid://dkt4ajcywuap4" path="res://src/tools/interactable.tscn" id="2_jocox"]
 
 [node name="Space" type="Node3D"]
 script = ExtResource( "1_snikh" )
 
-[node name="Interactable" type="Area3D" parent="."]
-script = ExtResource( "4_dnlg4" )
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
-shape = SubResource( "BoxShape3D_j3mo4" )
-
 [node name="Container" type="Position3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.495723)
+
+[node name="Interactable" parent="." instance=ExtResource( "2_jocox" )]
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/tools/cutting_board.gd" id="1_k0a6o"]
 [ext_resource type="AudioStream" uid="uid://drg226kmqrqa3" path="res://assets/audio/sfx/chopping.wav" id="2_pmyyr"]
-[ext_resource type="Script" path="res://src/character/interactable.gd" id="3_ci12t"]
+[ext_resource type="PackedScene" uid="uid://dkt4ajcywuap4" path="res://src/tools/interactable.tscn" id="3_xq8iq"]
 [ext_resource type="Texture2D" uid="uid://bcx0n6ho8dykr" path="res://assets/graphics/images/cutting_board.png" id="4_msosi"]
 [ext_resource type="Script" path="res://src/tools/refiner.gd" id="4_nlhxw"]
 
@@ -17,11 +17,7 @@ stream = ExtResource( "2_pmyyr" )
 [node name="Container" type="Position3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.238421, 0.486571)
 
-[node name="Interactable" type="Area3D" parent="."]
-script = ExtResource( "3_ci12t" )
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
-shape = SubResource( "BoxShape3D_86w6y" )
+[node name="Interactable" parent="." instance=ExtResource( "3_xq8iq" )]
 
 [node name="Refiner" type="Area3D" parent="."]
 collision_layer = 2
@@ -36,6 +32,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126089, 0)
 axis = 1
 texture = ExtResource( "4_msosi" )
 
-[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
 [connection signal="finished" from="Refiner" to="." method="_on_refiner_finished"]
 [connection signal="refined" from="Refiner" to="." method="_on_refiner_refined"]

@@ -6,6 +6,8 @@ class_name Interacter
 @onready var interact_ray: RayCast3D = $InteractRayCast
 @onready var refine_ray: RayCast3D = $RefineRayCast
 
+var _interactable: Interactable = null
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
@@ -13,18 +15,26 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _process(_delta: float) -> void:
+	update_interactable()
+
 	if Input.is_action_pressed("refine"):
 		refine()
 	if Input.is_action_just_released("refine"):
 		_character.anim.play("normal")
 		finish_refine()
 
-func interact() -> void:
+
+func update_interactable() -> void:
 	if interact_ray.is_colliding():
 		var area = interact_ray.get_collider()
 		if area is Interactable:
-			area.interact(_character)
-			return
+			_change_interactable(area)
+	elif _interactable != null:
+		_change_interactable(null)
+
+func interact() -> void:
+	if _interactable != null:
+		_interactable.interact(_character)
 
 
 func refine() -> void:
@@ -47,3 +57,13 @@ func finish_refine() -> void:
 		var area = refine_ray.get_collider()
 		if area is Refiner:
 			area.finish()
+
+
+func _change_interactable(interactable: Interactable) -> void:
+	if _interactable != null:
+		_interactable.dehighlight()
+	
+	_interactable = interactable
+	
+	if _interactable != null:
+		_interactable.highlight()

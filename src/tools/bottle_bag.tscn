@@ -1,21 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://qh1l4j1n5gei"]
+[gd_scene load_steps=5 format=3 uid="uid://qh1l4j1n5gei"]
 
-[ext_resource type="Script" path="res://src/character/interactable.gd" id="1_lbsux"]
 [ext_resource type="Script" path="res://src/tools/bottle_bag.gd" id="1_m7oik"]
 [ext_resource type="PackedScene" uid="uid://bdjw4ihxmop33" path="res://src/item/bottle.tscn" id="2_8y5ur"]
+[ext_resource type="PackedScene" uid="uid://dkt4ajcywuap4" path="res://src/tools/interactable.tscn" id="4_cacgh"]
 [ext_resource type="Texture2D" uid="uid://drd8ah7pfdlan" path="res://assets/graphics/images/bottle_empty.png" id="4_qxomx"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vbl5y"]
 
 [node name="BottleBag" type="Node3D"]
 script = ExtResource( "1_m7oik" )
 Bottle = ExtResource( "2_8y5ur" )
-
-[node name="Interactable" type="Area3D" parent="."]
-script = ExtResource( "1_lbsux" )
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
-shape = SubResource( "BoxShape3D_vbl5y" )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
@@ -23,5 +15,7 @@ offset = Vector2(0, 64)
 billboard = 1
 shaded = true
 texture = ExtResource( "4_qxomx" )
+
+[node name="Interactable" parent="." instance=ExtResource( "4_cacgh" )]
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

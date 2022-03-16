@@ -1,17 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://ba5lijsx7ewev"]
+[gd_scene load_steps=3 format=3 uid="uid://ba5lijsx7ewev"]
 
 [ext_resource type="Script" path="res://src/tools/counter.gd" id="1_jnj7w"]
-[ext_resource type="Script" path="res://src/character/interactable.gd" id="2_26tve"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_3be3g"]
+[ext_resource type="PackedScene" uid="uid://dkt4ajcywuap4" path="res://src/tools/interactable.tscn" id="2_1cans"]
 
 [node name="Counter" type="Node3D"]
 script = ExtResource( "1_jnj7w" )
 
-[node name="Interactable" type="Area3D" parent="."]
-script = ExtResource( "2_26tve" )
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
-shape = SubResource( "BoxShape3D_3be3g" )
+[node name="Interactable" parent="." instance=ExtResource( "2_1cans" )]
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

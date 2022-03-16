@@ -1,23 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1lyxdgdrti2h"]
+[gd_scene load_steps=6 format=3 uid="uid://d1lyxdgdrti2h"]
 
 [ext_resource type="Script" path="res://src/tools/seed_bag.gd" id="1_7oesv"]
-[ext_resource type="Script" path="res://src/character/interactable.gd" id="2_llbv3"]
 [ext_resource type="PackedScene" uid="uid://b7sr6frnkfniv" path="res://src/item/seed.tscn" id="2_ypd7r"]
 [ext_resource type="Texture2D" uid="uid://bwpm8dyr2ay75" path="res://assets/graphics/images/seed.png" id="4_lannv"]
 [ext_resource type="PackedScene" uid="uid://31skn8qsjy5s" path="res://src/deco/box.tscn" id="5_0h0hl"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vbl5y"]
+[ext_resource type="PackedScene" uid="uid://dkt4ajcywuap4" path="res://src/tools/interactable.tscn" id="5_8dglx"]
 
 [node name="Seedbag" type="Node3D"]
 script = ExtResource( "1_7oesv" )
 Seed = ExtResource( "2_ypd7r" )
-
-[node name="Interactable" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-script = ExtResource( "2_llbv3" )
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
-shape = SubResource( "BoxShape3D_vbl5y" )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.7, 0, 0, 0, -0.0245273, 0.69957, 0, -0.69957, -0.0245273, -0.0151809, 0.556243, 0.470408)
@@ -34,5 +25,8 @@ texture = ExtResource( "4_lannv" )
 
 [node name="Box" parent="." instance=ExtResource( "5_0h0hl" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.237059, 0)
+
+[node name="Interactable" parent="." instance=ExtResource( "5_8dglx" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
