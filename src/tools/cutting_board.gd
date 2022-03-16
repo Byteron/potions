@@ -1,7 +1,7 @@
 extends Node3D
 class_name CuttingBoard
 
-const REFINE_TIME := 2.0
+const REFINE_TIME := 1.0
 
 var _ingredient: Ingredient = null
 

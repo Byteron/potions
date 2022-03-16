@@ -4,7 +4,6 @@
 [ext_resource type="Script" path="res://src/character/interactable.gd" id="1_tlqx0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iujf7"]
-size = Vector3(0.59664, 0.548702, 0.57093)
 
 [node name="DryingHook" type="Node3D"]
 script = ExtResource( "1_r50hl" )
@@ -17,6 +16,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 shape = SubResource( "BoxShape3D_iujf7" )
 
 [node name="Container" type="Position3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0536811, 0.7)
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

@@ -7,17 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://31skn8qsjy5s" path="res://src/deco/box.tscn" id="5_0h0hl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vbl5y"]
-size = Vector3(0.757387, 0.6944, 0.757096)
 
 [node name="Seedbag" type="Node3D"]
 script = ExtResource( "1_7oesv" )
 Seed = ExtResource( "2_ypd7r" )
 
 [node name="Interactable" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource( "2_llbv3" )
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.848956, 0)
 shape = SubResource( "BoxShape3D_vbl5y" )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]

@@ -9,7 +9,6 @@
 size = Vector3(0.652467, 0.74972, 0.739378)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3be3g"]
-size = Vector3(0.59664, 0.548702, 0.57093)
 
 [sub_resource type="ParticlesMaterial" id="ParticlesMaterial_d3fju"]
 emission_shape = 1

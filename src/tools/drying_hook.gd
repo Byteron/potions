@@ -30,7 +30,7 @@ func has_ingredient() -> bool:
 func _on_interactable_interacted(character: Character) -> void:
 	refine_progress = 0.0
 	
-	if character.has_item() and character.item is Ingredient and not has_ingredient():
+	if character.has_item() and character.item is Ingredient and not character.item.is_refined and not has_ingredient():
 		_ingredient = character.drop_item()
 		_container.add_child(_ingredient)
 

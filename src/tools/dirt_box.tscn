@@ -10,16 +10,16 @@ size = Vector3(4.01759, 0.5, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268619, 0)
 
 [node name="Dirt" parent="." instance=ExtResource( "1_3rihx" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44085, 0.253144, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.25, 0)
 
 [node name="Dirt2" parent="." instance=ExtResource( "1_3rihx" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.507531, 0.253144, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.25, 0)
 
 [node name="Dirt3" parent="." instance=ExtResource( "1_3rihx" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.530442, 0.253144, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.25, 0)
 
 [node name="Dirt4" parent="." instance=ExtResource( "1_3rihx" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46735, 0.253144, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.25, 0)
 
 [node name="Box" type="StaticBody3D" parent="."]
 

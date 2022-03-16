@@ -1,36 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://y30udydf5kh"]
+[gd_scene load_steps=6 format=3 uid="uid://y30udydf5kh"]
 
 [ext_resource type="Script" path="res://src/tools/dirt.gd" id="1_vfh7c"]
 [ext_resource type="PackedScene" uid="uid://jjc0gcemiqe8" path="res://src/growable/growable.tscn" id="2_favi3"]
 [ext_resource type="Script" path="res://src/character/interactable.gd" id="2_ri6w4"]
 [ext_resource type="PackedScene" uid="uid://dnbdkc0ar7p0q" path="res://src/item/ingredient.tscn" id="3_pygpx"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yuti4"]
-albedo_color = Color(0.454902, 0.305882, 0.219608, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_r653o"]
-radius = 0.4
-height = 0.5
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_j3mo4"]
-size = Vector3(0.59664, 0.548702, 0.57093)
 
 [node name="Dirt" type="Node3D"]
 script = ExtResource( "1_vfh7c" )
 Growable = ExtResource( "2_favi3" )
 Ingredient = ExtResource( "3_pygpx" )
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.169544, 0)
-visible = false
-material_override = SubResource( "StandardMaterial3D_yuti4" )
-mesh = SubResource( "SphereMesh_r653o" )
-
 [node name="Interactable" type="Area3D" parent="."]
 script = ExtResource( "2_ri6w4" )
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.262748, 0)
 shape = SubResource( "BoxShape3D_j3mo4" )
 
 [node name="Container" type="Position3D" parent="."]

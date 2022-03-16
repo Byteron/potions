@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://drd8ah7pfdlan" path="res://assets/graphics/images/bottle_empty.png" id="4_qxomx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vbl5y"]
-size = Vector3(0.757387, 0.457332, 0.757096)
 
 [node name="BottleBag" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24358, -0.015235)

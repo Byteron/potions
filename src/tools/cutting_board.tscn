@@ -6,33 +6,29 @@
 [ext_resource type="Script" path="res://src/tools/refiner.gd" id="4_nlhxw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_86w6y"]
-size = Vector3(0.59664, 0.548702, 0.57093)
 
 [node name="CuttingBoard" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268619, 0)
 script = ExtResource( "1_k0a6o" )
 
 [node name="Container" type="Position3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.338421, 0.486571)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.238421, 0.486571)
 
 [node name="Interactable" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.299247, 0)
 script = ExtResource( "3_ci12t" )
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.262748, 0)
 shape = SubResource( "BoxShape3D_86w6y" )
 
 [node name="Refiner" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.302173, 0)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( "4_nlhxw" )
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Refiner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.262748, 0)
 shape = SubResource( "BoxShape3D_86w6y" )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.326089, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126089, 0)
 axis = 1
 texture = ExtResource( "4_msosi" )
 

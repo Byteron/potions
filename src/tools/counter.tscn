@@ -4,7 +4,6 @@
 [ext_resource type="Script" path="res://src/character/interactable.gd" id="2_26tve"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3be3g"]
-size = Vector3(0.59664, 0.548702, 0.57093)
 
 [node name="Counter" type="Node3D"]
 script = ExtResource( "1_jnj7w" )
@@ -13,7 +12,6 @@ script = ExtResource( "1_jnj7w" )
 script = ExtResource( "2_26tve" )
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.262748, 0)
 shape = SubResource( "BoxShape3D_3be3g" )
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

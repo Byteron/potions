@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://csb4thvmptxi0"]
+[gd_scene load_steps=17 format=3 uid="uid://csb4thvmptxi0"]
 
 [ext_resource type="Script" path="res://src/character/character.gd" id="1_mwdtg"]
 [ext_resource type="Script" path="res://src/character/controller.gd" id="2_76uc0"]
@@ -195,9 +195,6 @@ tracks/1/keys = {
 radius = 0.447411
 height = 1.86137
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_0xggk"]
-size = Vector3(0.709334, 1, 0.795445)
-
 [sub_resource type="Curve" id="Curve_r5ukg"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.475771, 0.309091), -1.37576, -1.37576, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 
@@ -234,12 +231,22 @@ shape = SubResource( "CapsuleShape3D_h4cxt" )
 [node name="Controller" type="Node" parent="."]
 script = ExtResource( "2_76uc0" )
 
-[node name="Interacter" type="Area3D" parent="."]
+[node name="Interacter" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.555613, -0.779596)
 script = ExtResource( "2_if37b" )
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interacter"]
-shape = SubResource( "BoxShape3D_0xggk" )
+[node name="InteractRayCast" type="RayCast3D" parent="Interacter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.174151, 0.779596)
+target_position = Vector3(0, 0, -1.5)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="RefineRayCast" type="RayCast3D" parent="Interacter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.174151, 0.779596)
+target_position = Vector3(0, 0, -1.5)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
 
 [node name="ItemContainer" type="Position3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.564917, -0.877625)

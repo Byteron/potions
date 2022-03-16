@@ -1,7 +1,10 @@
-extends Area3D
+extends Node3D
 class_name Interacter
 
 @onready var _character: Character = get_parent()
+
+@onready var interact_ray: RayCast3D = $InteractRayCast
+@onready var refine_ray: RayCast3D = $RefineRayCast
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -15,20 +18,21 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_released("refine"):
 		_character.anim.play("normal")
 
+
 func interact() -> void:
-	for area in get_overlapping_areas():
+	if interact_ray.is_colliding():
+		var area = interact_ray.get_collider()
 		if area is Interactable:
 			area.interact(_character)
 			return
 
 
 func refine() -> void:
-	var areas = get_overlapping_areas()
-	
-	if areas.is_empty() and _character.anim.current_animation == "refine":
+	if not refine_ray.is_colliding() and _character.anim.current_animation == "refine":
 		_character.anim.play("normal")
-
-	for area in areas:
+	
+	if refine_ray.is_colliding():
+		var area = refine_ray.get_collider()
 		if area is Refiner:
 			area.refine()
 			if _character.anim.current_animation != "refine":
