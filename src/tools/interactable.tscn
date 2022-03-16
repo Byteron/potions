@@ -1,14 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dkt4ajcywuap4"]
+[gd_scene load_steps=4 format=3 uid="uid://dkt4ajcywuap4"]
 
 [ext_resource type="Script" path="res://src/character/interactable.gd" id="1_58asl"]
+[ext_resource type="PackedScene" uid="uid://b3o5lnp4i2dj3" path="res://assets/graphics/gltf/cursor_corner.gltf" id="2_hh6s4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_86w6y"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45kgr"]
-transparency = 1
-albedo_color = Color(1, 1, 1, 0.0784314)
-
-[sub_resource type="BoxMesh" id="BoxMesh_n7we6"]
 
 [node name="Interactable" type="Area3D"]
 script = ExtResource( "1_58asl" )
@@ -16,6 +11,17 @@ script = ExtResource( "1_58asl" )
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource( "BoxShape3D_86w6y" )
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = SubResource( "StandardMaterial3D_45kgr" )
-mesh = SubResource( "BoxMesh_n7we6" )
+[node name="Cursor" type="Node3D" parent="."]
+visible = false
+
+[node name="cursor_corner" parent="Cursor" instance=ExtResource( "2_hh6s4" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.3, 0.5)
+
+[node name="cursor_corner2" parent="Cursor" instance=ExtResource( "2_hh6s4" )]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0.3, -0.5)
+
+[node name="cursor_corner3" parent="Cursor" instance=ExtResource( "2_hh6s4" )]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.5, 0.3, -0.5)
+
+[node name="cursor_corner4" parent="Cursor" instance=ExtResource( "2_hh6s4" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0.3, 0.5)

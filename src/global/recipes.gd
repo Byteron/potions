@@ -70,22 +70,25 @@ func _on_new_recipe_timer_timeout() -> void:
 	order.recipe = recipe
 	orders.append(order)
 	order_container.add_child(order)
-
+	
+	get_tree().call_group("HUD", "add_order", order)
 	orders_changed.emit()
-
-
-func _on_order_expired(order: Order) -> void:
-	score -= 500
-	orders.erase(order)
-	order.queue_free()
-	orders_changed.emit()
-	failed += 1
 
 
 func _on_order_finished(order: Order) -> void:
 	var modifier := int(order.get_time_left_modifier())
 	score += order.recipe.score * modifier
+	get_tree().call_group("HUD", "remove_order", order, true)
 	orders.erase(order)
 	order.queue_free()
 	orders_changed.emit()
 	sold += 1
+
+
+func _on_order_expired(order: Order) -> void:
+	score -= 500
+	orders.erase(order)
+	get_tree().call_group("HUD", "remove_order", order, false)
+	order.queue_free()
+	orders_changed.emit()
+	failed += 1

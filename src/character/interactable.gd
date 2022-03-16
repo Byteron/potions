@@ -3,18 +3,18 @@ class_name Interactable
 
 signal interacted(character: Character)
 
-@onready var mesh_instance: MeshInstance3D = $MeshInstance3D 
+@onready var cursor: Node3D = $Cursor 
 
 func _ready() -> void:
-	mesh_instance.visible = false
+	cursor.visible = false
 
 
 func highlight() -> void:
-	mesh_instance.visible = true
+	cursor.visible = true
 
 
 func dehighlight() -> void:
-	mesh_instance.visible = false
+	cursor.visible = false
 
 
 func interact(character: Character) -> void:
