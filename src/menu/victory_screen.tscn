@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://cehs0lco42g71"]
+
+[ext_resource type="Script" path="res://src/menu/victory_screen.gd" id="1_jgnh0"]
+
+[node name="VictoryScreen" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( "1_jgnh0" )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+offset_right = 1280.0
+offset_bottom = 666.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/CenterContainer"]
+offset_left = 580.0
+offset_top = 286.0
+offset_right = 699.0
+offset_bottom = 379.0
+
+[node name="ScoreLabel" type="Label" parent="VBoxContainer/CenterContainer/VBoxContainer"]
+offset_right = 119.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 24
+text = "Score: 500"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatsLabel" type="Label" parent="VBoxContainer/CenterContainer/VBoxContainer"]
+offset_top = 41.0
+offset_right = 119.0
+offset_bottom = 93.0
+text = "Sold: 12
+Failed: 50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+rect_min_size = Vector2(120, 50)
+offset_left = 580.0
+offset_top = 670.0
+offset_right = 700.0
+offset_bottom = 720.0
+size_flags_horizontal = 4
+text = "Back to Menu"
+
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

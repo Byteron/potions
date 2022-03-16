@@ -32,5 +32,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126089, 0)
 axis = 1
 texture = ExtResource( "4_msosi" )
 
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
 [connection signal="finished" from="Refiner" to="." method="_on_refiner_finished"]
 [connection signal="refined" from="Refiner" to="." method="_on_refiner_refined"]

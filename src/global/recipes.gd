@@ -22,6 +22,9 @@ var recipes: Array[Recipe] = [
 var orders: Array[Order]
 
 var score := 0
+var sold := 0
+var failed := 0
+
 
 @export var Order: PackedScene = null
 
@@ -43,6 +46,8 @@ func start() -> void:
 
 func reset() -> void:
 	score = 0
+	sold = 0
+	failed = 0
 
 
 func clear() -> void:
@@ -74,6 +79,7 @@ func _on_order_expired(order: Order) -> void:
 	orders.erase(order)
 	order.queue_free()
 	orders_changed.emit()
+	failed += 1
 
 
 func _on_order_finished(order: Order) -> void:
@@ -82,3 +88,4 @@ func _on_order_finished(order: Order) -> void:
 	orders.erase(order)
 	order.queue_free()
 	orders_changed.emit()
+	sold += 1
