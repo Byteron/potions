@@ -278,7 +278,7 @@ skeleton = NodePath("../../Greenhouse")
 surface_material_override/0 = SubResource( "StandardMaterial3D_qxxup" )
 
 [node name="Table3" parent="Workshop" instance=ExtResource( "9_17res" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -13.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -14.5)
 
 [node name="Cauldron" parent="Workshop" instance=ExtResource( "8_oosmm" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, -18.5)
