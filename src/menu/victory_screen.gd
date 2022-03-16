@@ -6,8 +6,7 @@ class_name VictoryScreen
 
 func _ready() -> void:
 	score_label.text = "Score: " + str(Recipes.score)
-	stats_label.text = "Sold: " + str(Recipes.sold)
-	stats_label.text = "Failed: " + str(Recipes.failed)
+	stats_label.text = "Sold: " + str(Recipes.sold) + "\n" + "Failed: " + str(Recipes.failed)
 
 
 func _on_back_button_pressed() -> void:

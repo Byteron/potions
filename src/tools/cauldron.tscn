@@ -1,12 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://d014fhdoxeh0f"]
 
 [ext_resource type="Script" path="res://src/tools/cauldron.gd" id="1_ri5r0"]
-[ext_resource type="PackedScene" uid="uid://c7kx40w7l66vn" path="res://assets/graphics/gltf/cauldron_empty.gltf" id="2_7kut5"]
-[ext_resource type="PackedScene" uid="uid://bfmwqjo0hwaxs" path="res://assets/graphics/gltf/cauldron.gltf" id="3_32sis"]
+[ext_resource type="PackedScene" uid="uid://bveuv4e6v8w78" path="res://assets/graphics/gltf/cauldron_empty.gltf" id="2_7kut5"]
+[ext_resource type="PackedScene" uid="uid://dshe5s8y45usg" path="res://assets/graphics/gltf/cauldron.gltf" id="3_32sis"]
 [ext_resource type="PackedScene" uid="uid://dkt4ajcywuap4" path="res://src/tools/interactable.tscn" id="4_of3ea"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mgho5"]
-size = Vector3(0.652467, 0.74972, 0.739378)
 
 [sub_resource type="ParticlesMaterial" id="ParticlesMaterial_d3fju"]
 emission_shape = 1
@@ -32,7 +31,7 @@ script = ExtResource( "1_ri5r0" )
 [node name="Box" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Box"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.244276, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource( "BoxShape3D_mgho5" )
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
@@ -42,11 +41,10 @@ process_material = SubResource( "ParticlesMaterial_d3fju" )
 draw_pass_1 = SubResource( "SphereMesh_cmiqa" )
 
 [node name="cauldron_empty" parent="." instance=ExtResource( "2_7kut5" )]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.1, 0)
 
 [node name="cauldron" parent="." instance=ExtResource( "3_32sis" )]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0.17442, 0)
-visible = false
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.27442, 0)
 
 [node name="Interactable" parent="." instance=ExtResource( "4_of3ea" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

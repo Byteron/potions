@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c7kx40w7l66vn"
+uid="uid://bveuv4e6v8w78"
 path="res://.godot/imported/cauldron_empty.gltf-e09583fff0500333a8cb607b5a0cc3fa.scn"
 
 [deps]
@@ -17,12 +17,12 @@ nodes/root_type="Node3D"
 nodes/root_name="Scene Root"
 nodes/root_scale=1.0
 meshes/ensure_tangents=true
-meshes/generate_lods=true
+meshes/generate_lods=false
 meshes/create_shadow_meshes=true
 meshes/light_baking=1
 meshes/lightmap_texel_size=0.1
-skins/use_named_skins=true
-animation/import=true
+skins/use_named_skins=false
+animation/import=false
 animation/fps=30
 import_script/path=""
 _subresources={}
