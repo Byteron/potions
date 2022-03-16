@@ -5,13 +5,18 @@ const MAX_ORDERS = 5
 signal orders_changed()
 
 var recipes: Array[Recipe] = [
-	load("data/recipes/love_potion.tres") as Recipe,
 	load("data/recipes/health_potion.tres") as Recipe,
+	load("data/recipes/mana_potion.tres") as Recipe,
+	load("data/recipes/shrink_potion.tres") as Recipe,
+	load("data/recipes/love_potion.tres") as Recipe,
 	load("data/recipes/youth_potion.tres") as Recipe,
-	load("data/recipes/beauty_potion.tres") as Recipe,
+	load("data/recipes/luck_potion.tres") as Recipe,
+	load("data/recipes/cleansing_potion.tres") as Recipe,
 	load("data/recipes/poison_potion.tres") as Recipe,
-#	load("data/recipes/test_potion_1.tres") as Recipe,
-#	load("data/recipes/test_potion_2.tres") as Recipe,
+	load("data/recipes/sleep_potion.tres") as Recipe,
+	load("data/recipes/grow_potion.tres") as Recipe,
+	load("data/recipes/beauty_potion.tres") as Recipe,
+	load("data/recipes/ancient_potion.tres") as Recipe,
 ]
 
 var orders: Array[Order]

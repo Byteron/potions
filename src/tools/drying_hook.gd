@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 	refine_progress += get_process_delta_time()
 
 	if refine_progress > REFINE_TIME:
-		_ingredient.refine(Ingredient.RefinementType.CUT)
+		_ingredient.refine(Ingredient.RefinementType.DRIED)
 
 
 func has_ingredient() -> bool:

@@ -44,9 +44,8 @@ func has_ingredient(ingredients: Array, recipe_ingredient: RecipeIngredient) -> 
 	var matched_ingredient: Ingredient = null
 
 	for ingredient in ingredients:
-		var same_name = ingredient.data.name == recipe_ingredient.name
+		var same_name = ingredient.data.plant == recipe_ingredient.plant
 		var same_refinement = ingredient.refinement == recipe_ingredient.refinement
-		# print(ingredient.data.name, recipe_ingredient.name, same_name, ingredient.refinement, recipe_ingredient.refinement, same_refinement)
 		if same_name and same_refinement:
 			matched_ingredient = ingredient
 			boolean = true

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://c3web1vmrdod6"]
+
+[ext_resource type="Script" path="res://src/data/recipe_ingredient.gd" id="1_bpo4a"]
+[ext_resource type="Texture2D" uid="uid://bopas1attn1eq" path="res://assets/graphics/images/herb_dried.png" id="2_k518i"]
+
+[resource]
+script = ExtResource( "1_bpo4a" )
+name = "Herb"
+refinement = 2
+texture = ExtResource( "2_k518i" )

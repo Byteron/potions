@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://deqpa3xiboo3x"]
+
+[ext_resource type="Script" path="res://src/data/recipe.gd" id="1_nwlrs"]
+[ext_resource type="Resource" uid="uid://bue2qh1jcj2o5" path="res://data/recipes/ingredients/herb.tres" id="1_wqbvr"]
+[ext_resource type="Resource" uid="uid://bq07ppq614xqy" path="res://data/recipes/ingredients/chopped_herb.tres" id="2_n6t82"]
+
+[resource]
+script = ExtResource( "1_nwlrs" )
+name = "Cleansing Potion"
+ingredients = [ExtResource( "1_wqbvr" ), ExtResource( "1_wqbvr" ), ExtResource( "2_n6t82" )]
+score = 400

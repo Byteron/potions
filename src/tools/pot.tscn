@@ -1,28 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmsvo32nle07g"]
+[gd_scene load_steps=4 format=3 uid="uid://dmsvo32nle07g"]
 
 [ext_resource type="PackedScene" uid="uid://y30udydf5kh" path="res://src/tools/dirt.tscn" id="1_6n2q8"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4lw7"]
-albedo_color = Color(0.270588, 0.180392, 0.0627451, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_h6ya1"]
-bottom_radius = 0.4
-height = 0.5
+[ext_resource type="PackedScene" uid="uid://c5d1lgufmn351" path="res://assets/graphics/gltf/plant_pot.gltf" id="2_vmvtk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_alxmm"]
-size = Vector3(1, 0.5, 1)
+size = Vector3(1, 0.687624, 1)
 
-[node name="Pot" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268619, 0)
+[node name="Pot" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource( "BoxShape3D_alxmm" )
 
 [node name="Dirt" parent="." instance=ExtResource( "1_6n2q8" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00231361, 0.253144, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00231361, 0.521763, 0)
 
-[node name="Box" type="StaticBody3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Box"]
-material_override = SubResource( "StandardMaterial3D_g4lw7" )
-mesh = SubResource( "CylinderMesh_h6ya1" )
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Box"]
-shape = SubResource( "BoxShape3D_alxmm" )
+[node name="plant_pot" parent="." instance=ExtResource( "2_vmvtk" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268619, 0)

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dpue7c0ethk2"]
+
+[ext_resource type="Script" path="res://src/data/recipe.gd" id="1_b82kn"]
+[ext_resource type="Resource" uid="uid://c3web1vmrdod6" path="res://data/recipes/ingredients/dried_herb.tres" id="1_hd7ar"]
+
+[resource]
+script = ExtResource( "1_b82kn" )
+name = "Shrink Potion"
+ingredients = [ExtResource( "1_hd7ar" ), ExtResource( "1_hd7ar" )]
+score = 300

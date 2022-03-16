@@ -1,12 +1,14 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://b6qnikd33i3ab"]
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://b6qnikd33i3ab"]
 
 [ext_resource type="Script" path="res://src/data/ingredient_data.gd" id="1_6dc21"]
 [ext_resource type="Texture2D" uid="uid://boggbq1jo1mk5" path="res://assets/graphics/images/lavender_chopped.png" id="1_7su6m"]
 [ext_resource type="Texture2D" uid="uid://catofklt6sgqa" path="res://assets/graphics/images/lavender_item.png" id="2_ietaa"]
+[ext_resource type="Texture2D" uid="uid://crl2kjxswfms3" path="res://assets/graphics/images/lavender_dried.png" id="3_sa7e4"]
 
 [resource]
 script = ExtResource( "1_6dc21" )
-name = "Flower"
+plant = 2
 default_texture = ExtResource( "2_ietaa" )
 cut_texture = ExtResource( "1_7su6m" )
-dried_texture = ExtResource( "1_7su6m" )
+dried_texture = ExtResource( "3_sa7e4" )
+ground_texture = ExtResource( "1_7su6m" )

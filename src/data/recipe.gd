@@ -8,5 +8,5 @@ class_name Recipe
 func stringify() -> String:
 	var s = name + ": "
 	for ingredient in ingredients:
-		s += "\n" + ingredient.name + " " + str(ingredient.refinement)
+		s += "\n" + ingredient.stringify()
 	return s

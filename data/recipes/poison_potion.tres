@@ -1,10 +1,11 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bhmen555io88s"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bhmen555io88s"]
 
-[ext_resource type="Resource" uid="uid://wnub34tm0eff" path="res://data/recipes/ingredients/flower.tres" id="1_ji4ec"]
+[ext_resource type="Resource" uid="uid://bfsw4aeyd8utn" path="res://data/recipes/ingredients/chopped_flower.tres" id="1_frovj"]
 [ext_resource type="Script" path="res://src/data/recipe.gd" id="1_x15i7"]
+[ext_resource type="Resource" uid="uid://b726eisaeke6b" path="res://data/recipes/ingredients/dried_flower.tres" id="2_yhhvk"]
 
 [resource]
 script = ExtResource( "1_x15i7" )
 name = "Poison Potion"
-ingredients = [ExtResource( "1_ji4ec" ), ExtResource( "1_ji4ec" ), ExtResource( "1_ji4ec" )]
-score = 100
+ingredients = [ExtResource( "1_frovj" ), ExtResource( "2_yhhvk" ), ExtResource( "2_yhhvk" )]
+score = 500

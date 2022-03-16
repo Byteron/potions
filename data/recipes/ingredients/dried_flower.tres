@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b726eisaeke6b"]
+
+[ext_resource type="Script" path="res://src/data/recipe_ingredient.gd" id="1_rk7m7"]
+[ext_resource type="Texture2D" uid="uid://crl2kjxswfms3" path="res://assets/graphics/images/lavender_dried.png" id="2_p8mp8"]
+
+[resource]
+script = ExtResource( "1_rk7m7" )
+plant = 2
+refinement = 2
+texture = ExtResource( "2_p8mp8" )

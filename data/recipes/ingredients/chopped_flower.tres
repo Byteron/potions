@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource( "1_oduw8" )
-name = "Flower"
+plant = 2
 refinement = 1
 texture = ExtResource( "2_2oq4o" )

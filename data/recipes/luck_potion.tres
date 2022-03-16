@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://ds0k8dsknusht"]
+
+[ext_resource type="Resource" uid="uid://bq07ppq614xqy" path="res://data/recipes/ingredients/chopped_herb.tres" id="1_ow275"]
+[ext_resource type="Resource" uid="uid://wnub34tm0eff" path="res://data/recipes/ingredients/flower.tres" id="2_65l1x"]
+[ext_resource type="Resource" uid="uid://b726eisaeke6b" path="res://data/recipes/ingredients/dried_flower.tres" id="3_rqovw"]
+[ext_resource type="Script" path="res://src/data/recipe.gd" id="4_6e01v"]
+
+[resource]
+script = ExtResource( "4_6e01v" )
+name = "Luck Potion"
+ingredients = [ExtResource( "2_65l1x" ), ExtResource( "1_ow275" ), ExtResource( "3_rqovw" )]
+score = 500

@@ -1,12 +1,14 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://ccsxe6du16vrl"]
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://ccsxe6du16vrl"]
 
 [ext_resource type="Texture2D" uid="uid://byq34paum0haw" path="res://assets/graphics/images/herb_cut.png" id="1_5lc05"]
 [ext_resource type="Script" path="res://src/data/ingredient_data.gd" id="1_cvwax"]
 [ext_resource type="Texture2D" uid="uid://cx1k8jjs82hif" path="res://assets/graphics/images/herb.png" id="2_kj4l6"]
+[ext_resource type="Texture2D" uid="uid://bopas1attn1eq" path="res://assets/graphics/images/herb_dried.png" id="3_6xvjw"]
 
 [resource]
 script = ExtResource( "1_cvwax" )
 name = "Herb"
 default_texture = ExtResource( "2_kj4l6" )
 cut_texture = ExtResource( "1_5lc05" )
-dried_texture = ExtResource( "1_5lc05" )
+dried_texture = ExtResource( "3_6xvjw" )
+ground_texture = ExtResource( "1_5lc05" )

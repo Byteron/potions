@@ -1,7 +1,8 @@
 extends Item
 class_name Ingredient
 
-enum RefinementType { NONE, CUT, DRIED }
+enum RefinementType { NONE, CUT, DRIED, GROUND }
+enum PlantType { HERB, ROOT, FLOWER }
 
 var data: IngredientData = null
 
@@ -20,6 +21,10 @@ func update_sprite() -> void:
 			_sprite.texture = data.default_texture
 		RefinementType.CUT:
 			_sprite.texture = data.cut_texture
+		RefinementType.DRIED:
+			_sprite.texture = data.dried_texture
+		RefinementType.GROUND:
+			_sprite.texture = data.ground_texture
 
 
 func refine(type: RefinementType) -> void:
@@ -37,4 +42,4 @@ func animate() -> void:
 
 
 func stringify() -> String:
-	return data.name + " " + str(refinement)
+	return str(data.plant) + " " + str(refinement)
