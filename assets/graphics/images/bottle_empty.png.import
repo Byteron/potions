@@ -3,21 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drd8ah7pfdlan"
-path.s3tc="res://.godot/imported/bottle_empty.png-4a7c570e918ee3582bb9a0eefdafb0f9.s3tc.ctex"
-path.etc2="res://.godot/imported/bottle_empty.png-4a7c570e918ee3582bb9a0eefdafb0f9.etc2.ctex"
+path="res://.godot/imported/bottle_empty.png-4a7c570e918ee3582bb9a0eefdafb0f9.ctex"
 metadata={
-"imported_formats": ["s3tc", "etc2"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/graphics/images/bottle_empty.png"
-dest_files=["res://.godot/imported/bottle_empty.png-4a7c570e918ee3582bb9a0eefdafb0f9.s3tc.ctex", "res://.godot/imported/bottle_empty.png-4a7c570e918ee3582bb9a0eefdafb0f9.etc2.ctex"]
+dest_files=["res://.godot/imported/bottle_empty.png-4a7c570e918ee3582bb9a0eefdafb0f9.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/bptc_ldr=0

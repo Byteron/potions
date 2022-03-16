@@ -3,21 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bopas1attn1eq"
-path.s3tc="res://.godot/imported/herb_dried.png-91117cdaeb88626c67d9dc2e52b20b24.s3tc.ctex"
-path.etc2="res://.godot/imported/herb_dried.png-91117cdaeb88626c67d9dc2e52b20b24.etc2.ctex"
+path="res://.godot/imported/herb_dried.png-91117cdaeb88626c67d9dc2e52b20b24.ctex"
 metadata={
-"imported_formats": ["s3tc", "etc2"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/graphics/images/herb_dried.png"
-dest_files=["res://.godot/imported/herb_dried.png-91117cdaeb88626c67d9dc2e52b20b24.s3tc.ctex", "res://.godot/imported/herb_dried.png-91117cdaeb88626c67d9dc2e52b20b24.etc2.ctex"]
+dest_files=["res://.godot/imported/herb_dried.png-91117cdaeb88626c67d9dc2e52b20b24.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/bptc_ldr=0

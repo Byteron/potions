@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/bottle_full.png-e5cbcebd45f3d5230c63491762872
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/bptc_ldr=0

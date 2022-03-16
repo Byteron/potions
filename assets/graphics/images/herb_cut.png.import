@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/herb_cut.png-cce231dc6b843f34ba8983c34f9545f1
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/bptc_ldr=0

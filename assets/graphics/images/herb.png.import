@@ -3,21 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cx1k8jjs82hif"
-path.s3tc="res://.godot/imported/herb.png-8f28f45c234fdcaf4b4dcf9d76f62efb.s3tc.ctex"
-path.etc2="res://.godot/imported/herb.png-8f28f45c234fdcaf4b4dcf9d76f62efb.etc2.ctex"
+path="res://.godot/imported/herb.png-8f28f45c234fdcaf4b4dcf9d76f62efb.ctex"
 metadata={
-"imported_formats": ["s3tc", "etc2"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/graphics/images/herb.png"
-dest_files=["res://.godot/imported/herb.png-8f28f45c234fdcaf4b4dcf9d76f62efb.s3tc.ctex", "res://.godot/imported/herb.png-8f28f45c234fdcaf4b4dcf9d76f62efb.etc2.ctex"]
+dest_files=["res://.godot/imported/herb.png-8f28f45c234fdcaf4b4dcf9d76f62efb.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/bptc_ldr=0
