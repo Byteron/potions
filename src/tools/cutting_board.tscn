@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dedtyiyh76401"]
+[gd_scene load_steps=7 format=3 uid="uid://dedtyiyh76401"]
 
 [ext_resource type="Script" path="res://src/tools/cutting_board.gd" id="1_k0a6o"]
+[ext_resource type="AudioStream" uid="uid://drg226kmqrqa3" path="res://assets/audio/sfx/chopping.wav" id="2_pmyyr"]
 [ext_resource type="Script" path="res://src/character/interactable.gd" id="3_ci12t"]
 [ext_resource type="Texture2D" uid="uid://bcx0n6ho8dykr" path="res://assets/graphics/images/cutting_board.png" id="4_msosi"]
 [ext_resource type="Script" path="res://src/tools/refiner.gd" id="4_nlhxw"]
@@ -9,6 +10,9 @@
 
 [node name="CuttingBoard" type="Node3D"]
 script = ExtResource( "1_k0a6o" )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "2_pmyyr" )
 
 [node name="Container" type="Position3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.238421, 0.486571)
@@ -33,4 +37,5 @@ axis = 1
 texture = ExtResource( "4_msosi" )
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="finished" from="Refiner" to="." method="_on_refiner_finished"]
 [connection signal="refined" from="Refiner" to="." method="_on_refiner_refined"]

@@ -17,7 +17,7 @@ func _process(_delta: float) -> void:
 		refine()
 	if Input.is_action_just_released("refine"):
 		_character.anim.play("normal")
-
+		finish_refine()
 
 func interact() -> void:
 	if interact_ray.is_colliding():
@@ -38,3 +38,12 @@ func refine() -> void:
 			if _character.anim.current_animation != "refine":
 				_character.anim.play("refine")
 			return
+
+
+func finish_refine() -> void:
+	_character.anim.play("normal")
+	
+	if refine_ray.is_colliding():
+		var area = refine_ray.get_collider()
+		if area is Refiner:
+			area.finish()

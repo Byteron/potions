@@ -9,6 +9,8 @@ var refine_progress := 0.0
 
 
 @onready var _container: Position3D = $Container
+@onready var audio_player: AudioStreamPlayer3D = $AudioStreamPlayer3D
+
 
 func _on_interactable_interacted(character: Character) -> void:
 	refine_progress = 0
@@ -33,8 +35,15 @@ func _on_refiner_refined() -> void:
 	
 	if _ingredient.is_refined:
 		return
+
+	if not audio_player.playing:
+		audio_player.play()
 	
 	refine_progress += get_process_delta_time()
 
 	if refine_progress > REFINE_TIME:
 		_ingredient.refine(Ingredient.RefinementType.CUT)
+		audio_player.stop()
+
+func _on_refiner_finished() -> void:
+	audio_player.stop()

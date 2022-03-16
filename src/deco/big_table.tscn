@@ -28,7 +28,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.501876, -1)
 [node name="Space6" parent="." instance=ExtResource( "1_o3abt" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.501876, 0)
 
-[node name="CuttingBoard2" parent="." instance=ExtResource( "2_hotyo" )]
+[node name="CuttingBoard" parent="." instance=ExtResource( "2_hotyo" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, -1)
 
 [node name="table" parent="." instance=ExtResource( "3_pqs7f" )]
