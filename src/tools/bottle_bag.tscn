@@ -8,7 +8,6 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_vbl5y"]
 
 [node name="BottleBag" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24358, -0.015235)
 script = ExtResource( "1_m7oik" )
 Bottle = ExtResource( "2_8y5ur" )
 
@@ -16,7 +15,6 @@ Bottle = ExtResource( "2_8y5ur" )
 script = ExtResource( "1_lbsux" )
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.251184, 0)
 shape = SubResource( "BoxShape3D_vbl5y" )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]

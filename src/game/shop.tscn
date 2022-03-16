@@ -226,19 +226,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 1, -18.5)
 [node name="Greenhouse" type="Node3D" parent="."]
 
 [node name="Pot5" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.269, -13.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -13.5)
 
 [node name="Pot8" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.269, -13.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -13.5)
 
 [node name="Pot6" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0.269, -11.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -11.5)
 
 [node name="Pot4" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.269, -15.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -15.5)
 
 [node name="Pot9" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.269, -15.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -15.5)
 
 [node name="DirtBox3" parent="Greenhouse" instance=ExtResource( "4_n7npy" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.269, -15.5)
@@ -260,7 +260,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.50326, 0, -15.5099)
 growable = ExtResource( "6_vr77g" )
 
 [node name="BigDirtBox" parent="Greenhouse" instance=ExtResource( "8_w1ttv" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01387, 0.268619, -11.4859)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.25, -11.5)
 
 [node name="Workshop" type="Node3D" parent="."]
 

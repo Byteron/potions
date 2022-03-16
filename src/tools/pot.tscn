@@ -4,16 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://c5d1lgufmn351" path="res://assets/graphics/gltf/plant_pot.gltf" id="2_vmvtk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_alxmm"]
-size = Vector3(1, 0.687624, 1)
+size = Vector3(1, 0.7, 1)
 
 [node name="Pot" type="StaticBody3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
 shape = SubResource( "BoxShape3D_alxmm" )
+
+[node name="plant_pot" parent="." instance=ExtResource( "2_vmvtk" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
 
 [node name="Dirt" parent="." instance=ExtResource( "1_6n2q8" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00231361, 0.521763, 0)
-
-[node name="plant_pot" parent="." instance=ExtResource( "2_vmvtk" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268619, 0)
