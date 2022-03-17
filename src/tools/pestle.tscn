@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://cafloviv11kv1"]
+
+[ext_resource type="Script" path="res://src/tools/pestle.gd" id="1_54pxj"]
+[ext_resource type="AudioStream" uid="uid://drg226kmqrqa3" path="res://assets/audio/sfx/chopping.wav" id="2_xc41r"]
+[ext_resource type="PackedScene" uid="uid://dkt4ajcywuap4" path="res://src/tools/interactable.tscn" id="3_84fnf"]
+[ext_resource type="Script" path="res://src/tools/refiner.gd" id="4_btprc"]
+[ext_resource type="Texture2D" uid="uid://dd66r3a2d7hrf" path="res://assets/graphics/images/pestle.png" id="5_xvpsh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_86w6y"]
+
+[node name="Pestle" type="Node3D"]
+script = ExtResource( "1_54pxj" )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "2_xc41r" )
+
+[node name="Container" type="Position3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.238421, 0.486571)
+
+[node name="Interactable" parent="." instance=ExtResource( "3_84fnf" )]
+
+[node name="Refiner" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( "4_btprc" )
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Refiner"]
+shape = SubResource( "BoxShape3D_86w6y" )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126089, 0)
+axis = 1
+texture = ExtResource( "5_xvpsh" )
+
+[connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
+[connection signal="finished" from="Refiner" to="." method="_on_refiner_finished"]
+[connection signal="refined" from="Refiner" to="." method="_on_refiner_refined"]

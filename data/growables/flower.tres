@@ -9,6 +9,6 @@
 script = ExtResource( "1_yflqv" )
 name = "Flower"
 stages = [ExtResource( "2_1s4w5" ), ExtResource( "3_gxlfj" )]
-grow_time = 6.0
+grow_time = 8.0
 amount = 3
 ingredient_data = ExtResource( "1_x2uf0" )

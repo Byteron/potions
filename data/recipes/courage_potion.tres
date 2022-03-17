@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://bcer4pqdtctfo"]
+
+[ext_resource type="Script" path="res://src/data/recipe.gd" id="1_mkfcp"]
+[ext_resource type="Resource" uid="uid://dewnqgp4combt" path="res://data/recipes/ingredients/root.tres" id="1_ure3n"]
+[ext_resource type="Resource" uid="uid://bue2qh1jcj2o5" path="res://data/recipes/ingredients/herb.tres" id="2_0t12l"]
+[ext_resource type="Resource" uid="uid://wnub34tm0eff" path="res://data/recipes/ingredients/flower.tres" id="3_vba6n"]
+
+[resource]
+script = ExtResource( "1_mkfcp" )
+name = "Courage Potion"
+ingredients = [ExtResource( "1_ure3n" ), ExtResource( "2_0t12l" ), ExtResource( "3_vba6n" )]
+score = 300

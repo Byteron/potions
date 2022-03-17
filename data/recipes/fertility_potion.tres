@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://csrb6mjs6616r"]
+
+[ext_resource type="Script" path="res://src/data/recipe.gd" id="1_1wyw7"]
+[ext_resource type="Resource" uid="uid://wnub34tm0eff" path="res://data/recipes/ingredients/flower.tres" id="1_x6cs8"]
+[ext_resource type="Resource" uid="uid://b1o1d7f81ky2s" path="res://data/recipes/ingredients/chopped_root.tres" id="2_wpqnf"]
+[ext_resource type="Resource" uid="uid://c3web1vmrdod6" path="res://data/recipes/ingredients/dried_herb.tres" id="3_nb24j"]
+
+[resource]
+script = ExtResource( "1_1wyw7" )
+name = "Fertility Potion"
+ingredients = [ExtResource( "1_x6cs8" ), ExtResource( "2_wpqnf" ), ExtResource( "3_nb24j" )]
+score = 500

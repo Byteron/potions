@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://bn2bb436exhrd"]
+
+[ext_resource type="Texture2D" uid="uid://dv1h61vrcaniv" path="res://assets/graphics/images/curcuma_chopped.png" id="1_gegnu"]
+[ext_resource type="Script" path="res://src/data/ingredient_data.gd" id="1_n4o3l"]
+[ext_resource type="Texture2D" uid="uid://g1vyy0dxlhg5" path="res://assets/graphics/images/curcuma_item.png" id="2_1qryr"]
+[ext_resource type="Texture2D" uid="uid://m545sqkkcwcq" path="res://assets/graphics/images/curcuma_dried.png" id="3_k373p"]
+[ext_resource type="Texture2D" uid="uid://p6prl42jmumk" path="res://assets/graphics/images/curcuma_ground.png" id="3_mcli3"]
+
+[resource]
+script = ExtResource( "1_n4o3l" )
+plant = 1
+default_texture = ExtResource( "2_1qryr" )
+cut_texture = ExtResource( "1_gegnu" )
+dried_texture = ExtResource( "3_k373p" )
+ground_texture = ExtResource( "3_mcli3" )

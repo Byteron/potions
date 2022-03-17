@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://de4jsrcssn3fp"]
+[gd_scene load_steps=25 format=3 uid="uid://de4jsrcssn3fp"]
 
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="1_7ggcj"]
 [ext_resource type="Script" path="res://src/game/shop.gd" id="1_6107u"]
@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://dnjnx3nwckkwc" path="res://data/growables/herb.tres" id="6_vr77g"]
 [ext_resource type="PackedScene" uid="uid://dfrmewrd2ij3h" path="res://src/deco/counter.tscn" id="7_e66xu"]
 [ext_resource type="PackedScene" uid="uid://d014fhdoxeh0f" path="res://src/tools/cauldron.tscn" id="8_oosmm"]
+[ext_resource type="Resource" uid="uid://jrhw42osr18p" path="res://data/growables/root.tres" id="8_qed3o"]
 [ext_resource type="PackedScene" uid="uid://dn2wq7dt428xv" path="res://src/deco/big_table.tscn" id="9_17res"]
 [ext_resource type="PackedScene" uid="uid://cvennarng5skj" path="res://src/tools/bottle_station.tscn" id="9_f3ldj"]
 [ext_resource type="PackedScene" uid="uid://culxk5mur1o0h" path="res://src/hud/HUD.tscn" id="10_wog8m"]
@@ -229,13 +230,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 1, -18.5)
 [node name="Greenhouse" type="Node3D" parent="."]
 
 [node name="Pot6" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -11.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -11.5)
 
 [node name="Pot7" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -11.5)
-
-[node name="Pot8" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -11.5)
 
 [node name="DirtBox" parent="Greenhouse" instance=ExtResource( "4_n7npy" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.25, -13.5)
@@ -254,6 +252,10 @@ surface_material_override/0 = SubResource( "StandardMaterial3D_qxxup" )
 [node name="Seedbag" parent="Greenhouse" instance=ExtResource( "4_x0iy6" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49512, 0, -13.4982)
 growable = ExtResource( "5_ah0gp" )
+
+[node name="Seedbag3" parent="Greenhouse" instance=ExtResource( "4_x0iy6" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49512, 0, -11.4982)
+growable = ExtResource( "8_qed3o" )
 
 [node name="Seedbag2" parent="Greenhouse" instance=ExtResource( "4_x0iy6" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50326, 0, -15.5099)

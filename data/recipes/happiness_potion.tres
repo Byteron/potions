@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://630ew0dfw1cj"]
+
+[ext_resource type="Resource" uid="uid://dewnqgp4combt" path="res://data/recipes/ingredients/root.tres" id="1_861ik"]
+[ext_resource type="Script" path="res://src/data/recipe.gd" id="1_jf12u"]
+[ext_resource type="Resource" uid="uid://b1o1d7f81ky2s" path="res://data/recipes/ingredients/chopped_root.tres" id="2_ndymr"]
+
+[resource]
+script = ExtResource( "1_jf12u" )
+name = "Happiness Potion"
+ingredients = [ExtResource( "1_861ik" ), ExtResource( "1_861ik" ), ExtResource( "2_ndymr" )]
+score = 400

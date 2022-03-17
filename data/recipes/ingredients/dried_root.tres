@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cnr6kle3hvowf"]
+
+[ext_resource type="Script" path="res://src/data/recipe_ingredient.gd" id="1_bdtaa"]
+[ext_resource type="Texture2D" uid="uid://m545sqkkcwcq" path="res://assets/graphics/images/curcuma_dried.png" id="2_p47m4"]
+
+[resource]
+script = ExtResource( "1_bdtaa" )
+plant = 1
+refinement = 2
+texture = ExtResource( "2_p47m4" )
