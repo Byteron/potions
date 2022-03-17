@@ -1,11 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://gawuvru5mnvt"]
+[gd_scene load_steps=3 format=3 uid="uid://gawuvru5mnvt"]
 
 [ext_resource type="Script" path="res://src/menu/title_screen.gd" id="1_0odrm"]
+[ext_resource type="Texture2D" uid="uid://b8nwejxsg6ryq" path="res://assets/graphics/images/background.png" id="1_8tiu5"]
 
 [node name="TitleScreen" type="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( "1_0odrm" )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( "1_8tiu5" )
+ignore_texture_size = true
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0

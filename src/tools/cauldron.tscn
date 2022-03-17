@@ -45,6 +45,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.1, 0)
 
 [node name="cauldron" parent="." instance=ExtResource( "3_32sis" )]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.27442, 0)
+visible = false
 
 [node name="Interactable" parent="." instance=ExtResource( "4_of3ea" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
