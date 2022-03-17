@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://sudxav1ak3nc"]
+[gd_scene load_steps=4 format=3 uid="uid://sudxav1ak3nc"]
 
 [ext_resource type="Script" path="res://src/tools/drying_hook.gd" id="1_r50hl"]
 [ext_resource type="PackedScene" uid="uid://dkt4ajcywuap4" path="res://src/tools/interactable.tscn" id="2_wl4ys"]
+[ext_resource type="AudioStream" uid="uid://brer25p0liuyw" path="res://assets/audio/sfx/wood-small.wav" id="3_0tjy2"]
 
 [node name="DryingHook" type="Node3D"]
 script = ExtResource( "1_r50hl" )
@@ -10,5 +11,8 @@ script = ExtResource( "1_r50hl" )
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0536811, 0.7)
 
 [node name="Interactable" parent="." instance=ExtResource( "2_wl4ys" )]
+
+[node name="HangPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "3_0tjy2" )
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

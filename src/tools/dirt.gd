@@ -8,6 +8,8 @@ var _growable: Growable = null
 
 @onready var _container: Position3D = $Container
 
+@onready var plant_player: AudioStreamPlayer3D = $PlantPlayer
+
 
 func _on_interactable_interacted(character: Character) -> void:
 	if character.has_item() and character.item is Seed and not has_growable():
@@ -17,6 +19,7 @@ func _on_interactable_interacted(character: Character) -> void:
 		_container.add_child(_growable)
 		var item = character.drop_item()
 		item.queue_free()
+		plant_player.play()
 
 	elif not character.has_item() and has_growable() and _growable.is_grown:
 		var ingredient = Ingredient.instantiate()

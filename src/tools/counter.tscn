@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba5lijsx7ewev"]
+[gd_scene load_steps=4 format=3 uid="uid://ba5lijsx7ewev"]
 
 [ext_resource type="Script" path="res://src/tools/counter.gd" id="1_jnj7w"]
 [ext_resource type="PackedScene" uid="uid://dkt4ajcywuap4" path="res://src/tools/interactable.tscn" id="2_1cans"]
+[ext_resource type="AudioStream" uid="uid://dg758rgoaqyib" path="res://assets/audio/sfx/coin.wav" id="3_smrgj"]
 
 [node name="Counter" type="Node3D"]
 script = ExtResource( "1_jnj7w" )
 
 [node name="Interactable" parent="." instance=ExtResource( "2_1cans" )]
+
+[node name="CoinPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "3_smrgj" )
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

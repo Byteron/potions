@@ -15,6 +15,9 @@ var is_brewed := false
 @onready var cauldron: Node3D = $cauldron
 @onready var cauldron_empty: Node3D = $cauldron_empty
 
+@onready var fill_bottle_player: AudioStreamPlayer3D = $FillBottlePlayer
+@onready var add_ingredient_player: AudioStreamPlayer3D = $AddIngredientPlayer
+
 
 func _process(delta: float) -> void:
 	if _ingredients.is_empty():
@@ -36,12 +39,14 @@ func _on_interactable_interacted(character: Character) -> void:
 		brewing_time = BREWING_TIME + BREWING_TIME_PER_INGREDIENT * _ingredients.size()
 		cauldron.visible = true
 		cauldron_empty.visible = false
-
+		add_ingredient_player.play()
+	
 	elif character.has_item()  and character.item is Bottle and is_brewed:
 		var bottle: Bottle = character.item
 		bottle.ingredients = _ingredients
 		bottle.is_filled = true
 		bottle.update_sprite()
+		fill_bottle_player.play()
 		_reset()
 
 

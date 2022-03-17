@@ -35,6 +35,8 @@ var failed := 0
 @onready var order_container: Node = $Orders
 @onready var timer: Timer = $NewRecipeTimer
 
+@onready var ring_player: AudioStreamPlayer = $RingPlayer
+
 
 func _ready() -> void:
 	randomize()
@@ -77,6 +79,7 @@ func _on_new_recipe_timer_timeout() -> void:
 	
 	get_tree().call_group("HUD", "add_order", order)
 	orders_changed.emit()
+	ring_player.play()
 
 
 func _on_order_finished(order: Order) -> void:

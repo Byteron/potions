@@ -7,10 +7,14 @@ var item: Item = null
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
 
+@onready var take_player: AudioStreamPlayer3D = $TakePlayer
+@onready var drop_player: AudioStreamPlayer3D = $DropPlayer
+
 func take_item(new_item: Item) -> void:
 	self.item = new_item
 	_item_container.add_child(new_item)
 	anim.play("carry")
+	take_player.play()
 
 
 func drop_item() -> Item:
@@ -18,6 +22,7 @@ func drop_item() -> Item:
 	var dropping_item = self.item
 	self.item = null
 	anim.play("normal")
+	drop_player.play()
 	return dropping_item
 
 

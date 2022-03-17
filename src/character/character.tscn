@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://csb4thvmptxi0"]
+[gd_scene load_steps=19 format=3 uid="uid://csb4thvmptxi0"]
 
 [ext_resource type="Script" path="res://src/character/character.gd" id="1_mwdtg"]
 [ext_resource type="Script" path="res://src/character/controller.gd" id="2_76uc0"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://betx73dtq80qn" path="res://assets/graphics/gltf/character.gltf" id="4_1g8bx"]
 [ext_resource type="PackedScene" uid="uid://oeyokpwf8c62" path="res://assets/graphics/gltf/hand_left.gltf" id="5_d2g38"]
 [ext_resource type="PackedScene" uid="uid://b01ux5esg2jqk" path="res://assets/graphics/gltf/hand_right.gltf" id="6_xpkjd"]
+[ext_resource type="AudioStream" uid="uid://vld4t0rnypa1" path="res://assets/audio/sfx/interface2.wav" id="7_rc7ou"]
+[ext_resource type="AudioStream" uid="uid://bvbk7yltiuw6q" path="res://assets/audio/sfx/interface1.wav" id="8_q15b7"]
 
 [sub_resource type="Animation" id="Animation_pfuni"]
 length = 0.001
@@ -264,3 +266,11 @@ lifetime = 0.5
 local_coords = false
 process_material = SubResource( "ParticlesMaterial_1bwvl" )
 draw_pass_1 = SubResource( "SphereMesh_8ba5c" )
+
+[node name="TakePlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "7_rc7ou" )
+unit_db = -6.0
+
+[node name="DropPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "8_q15b7" )
+unit_db = -6.0

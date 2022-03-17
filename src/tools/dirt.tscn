@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://y30udydf5kh"]
+[gd_scene load_steps=6 format=3 uid="uid://y30udydf5kh"]
 
 [ext_resource type="Script" path="res://src/tools/dirt.gd" id="1_vfh7c"]
 [ext_resource type="PackedScene" uid="uid://jjc0gcemiqe8" path="res://src/growable/growable.tscn" id="2_favi3"]
 [ext_resource type="PackedScene" uid="uid://dnbdkc0ar7p0q" path="res://src/item/ingredient.tscn" id="3_pygpx"]
 [ext_resource type="PackedScene" uid="uid://dkt4ajcywuap4" path="res://src/tools/interactable.tscn" id="4_r4cdb"]
+[ext_resource type="AudioStream" uid="uid://b432cd086devq" path="res://assets/audio/sfx/beads.wav" id="5_y2dh3"]
 
 [node name="Dirt" type="Node3D"]
 script = ExtResource( "1_vfh7c" )
@@ -14,5 +15,8 @@ Ingredient = ExtResource( "3_pygpx" )
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.495723)
 
 [node name="Interactable" parent="." instance=ExtResource( "4_r4cdb" )]
+
+[node name="PlantPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "5_y2dh3" )
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
