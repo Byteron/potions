@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dppsipda2n64m"]
+
+[ext_resource type="Script" path="res://src/global/debug.gd" id="1_28i7e"]
+
+[node name="Debug" type="CanvasLayer"]
+layer = 2
+script = ExtResource( "1_28i7e" )
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+vertical_alignment = 2
