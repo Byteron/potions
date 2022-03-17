@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://curthdcilvtq4"]
+[gd_scene load_steps=4 format=3 uid="uid://c41es2ibk5q3d"]
 
 [ext_resource type="Script" path="res://src/menu/recipe_menu.gd" id="1_hno5g"]
 [ext_resource type="PackedScene" uid="uid://ct3fykwqajjsj" path="res://src/hud/potion_entry.tscn" id="2_6n0xx"]
-[ext_resource type="Texture2D" uid="uid://b8nwejxsg6ryq" path="res://assets/graphics/images/background.png" id="3_tmrs4"]
+[ext_resource type="PackedScene" uid="uid://ba6tywsi0ujhh" path="res://src/menu/background.tscn" id="3_0886x"]
 
 [node name="RecipeMenu" type="PanelContainer"]
 anchor_right = 1.0
@@ -10,11 +10,11 @@ anchor_bottom = 1.0
 script = ExtResource( "1_hno5g" )
 PotionEntry = ExtResource( "2_6n0xx" )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" parent="." instance=ExtResource( "3_0886x" )]
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_right = 1280.0
 offset_bottom = 720.0
-texture = ExtResource( "3_tmrs4" )
-ignore_texture_size = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1280.0

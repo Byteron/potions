@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://de4jsrcssn3fp"]
+[gd_scene load_steps=26 format=3 uid="uid://de4jsrcssn3fp"]
 
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="1_7ggcj"]
 [ext_resource type="Script" path="res://src/game/shop.gd" id="1_6107u"]
+[ext_resource type="AudioStream" uid="uid://cwpcg0kdf08t2" path="res://assets/audio/sfx/game_over.wav" id="2_0hif6"]
 [ext_resource type="PackedScene" uid="uid://byjv08rirv7xu" path="res://src/deco/wall.tscn" id="3_c8n2d"]
 [ext_resource type="PackedScene" uid="uid://dmsvo32nle07g" path="res://src/tools/pot.tscn" id="3_obdbc"]
 [ext_resource type="PackedScene" uid="uid://bcc3w2be250tf" path="res://src/tools/dirt_box.tscn" id="4_n7npy"]
@@ -53,6 +54,9 @@ game_time = 240.0
 
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="GameOverPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( "2_0hif6" )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( "Environment_4xgxr" )

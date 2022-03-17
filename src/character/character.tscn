@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://betx73dtq80qn" path="res://assets/graphics/gltf/character.gltf" id="4_1g8bx"]
 [ext_resource type="PackedScene" uid="uid://oeyokpwf8c62" path="res://assets/graphics/gltf/hand_left.gltf" id="5_d2g38"]
 [ext_resource type="PackedScene" uid="uid://b01ux5esg2jqk" path="res://assets/graphics/gltf/hand_right.gltf" id="6_xpkjd"]
-[ext_resource type="AudioStream" uid="uid://vld4t0rnypa1" path="res://assets/audio/sfx/interface2.wav" id="7_rc7ou"]
+[ext_resource type="AudioStream" uid="uid://vx63a6o88fra" path="res://assets/audio/sfx/pickup.wav" id="7_6es6r"]
 [ext_resource type="AudioStream" uid="uid://bvbk7yltiuw6q" path="res://assets/audio/sfx/interface1.wav" id="8_q15b7"]
 
 [sub_resource type="Animation" id="Animation_pfuni"]
@@ -268,7 +268,7 @@ process_material = SubResource( "ParticlesMaterial_1bwvl" )
 draw_pass_1 = SubResource( "SphereMesh_8ba5c" )
 
 [node name="TakePlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource( "7_rc7ou" )
+stream = ExtResource( "7_6es6r" )
 unit_db = -6.0
 
 [node name="DropPlayer" type="AudioStreamPlayer3D" parent="."]

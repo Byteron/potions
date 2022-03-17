@@ -9,6 +9,7 @@ var _growable: Growable = null
 @onready var _container: Position3D = $Container
 
 @onready var plant_player: AudioStreamPlayer3D = $PlantPlayer
+@onready var harvest_player: AudioStreamPlayer3D = $HarvestPlayer
 
 
 func _on_interactable_interacted(character: Character) -> void:
@@ -25,7 +26,8 @@ func _on_interactable_interacted(character: Character) -> void:
 		var ingredient = Ingredient.instantiate()
 		ingredient.data = _growable.data.ingredient_data as IngredientData
 		character.take_item(ingredient)
-		
+		harvest_player.play()
+
 		_growable.amount -= 1
 		
 		if _growable.amount == 0:

@@ -5,6 +5,7 @@ class_name SeedBag
 @export var growable: Resource = null
 
 @onready var sprite: Sprite3D = $Sprite3D
+@onready var pickup_player: AudioStreamPlayer3D = $PickupPlayer
 
 
 func _ready() -> void:
@@ -16,3 +17,4 @@ func _on_interactable_interacted(character: Character) -> void:
 		var seed: Seed = Seed.instantiate()
 		seed.data = growable
 		character.take_item(seed)
+		pickup_player.play()

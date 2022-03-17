@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1lyxdgdrti2h"]
+[gd_scene load_steps=7 format=3 uid="uid://d1lyxdgdrti2h"]
 
 [ext_resource type="Script" path="res://src/tools/seed_bag.gd" id="1_7oesv"]
 [ext_resource type="PackedScene" uid="uid://b7sr6frnkfniv" path="res://src/item/seed.tscn" id="2_ypd7r"]
 [ext_resource type="Texture2D" uid="uid://bwpm8dyr2ay75" path="res://assets/graphics/images/seed.png" id="4_lannv"]
 [ext_resource type="PackedScene" uid="uid://31skn8qsjy5s" path="res://src/deco/box.tscn" id="5_0h0hl"]
 [ext_resource type="PackedScene" uid="uid://dkt4ajcywuap4" path="res://src/tools/interactable.tscn" id="5_8dglx"]
+[ext_resource type="AudioStream" uid="uid://vx63a6o88fra" path="res://assets/audio/sfx/pickup.wav" id="6_m5fvb"]
 
 [node name="Seedbag" type="Node3D"]
 script = ExtResource( "1_7oesv" )
@@ -28,5 +29,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.237059, 0)
 
 [node name="Interactable" parent="." instance=ExtResource( "5_8dglx" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="PickupPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( "6_m5fvb" )
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]

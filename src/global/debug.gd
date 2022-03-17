@@ -14,6 +14,7 @@ func _input(event: InputEvent) -> void:
 
 func _ready() -> void:
 	write("logging enabled")
+	visible = false
 
 
 func write(string: String) -> void:

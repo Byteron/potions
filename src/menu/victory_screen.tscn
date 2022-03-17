@@ -1,18 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cehs0lco42g71"]
+[gd_scene load_steps=3 format=3 uid="uid://fmqy6err8dph"]
 
 [ext_resource type="Script" path="res://src/menu/victory_screen.gd" id="1_jgnh0"]
-[ext_resource type="Texture2D" uid="uid://b8nwejxsg6ryq" path="res://assets/graphics/images/background.png" id="2_cgdbk"]
+[ext_resource type="PackedScene" uid="uid://ba6tywsi0ujhh" path="res://src/menu/background.tscn" id="2_gfykl"]
 
 [node name="VictoryScreen" type="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( "1_jgnh0" )
 
-[node name="TextureRect" type="TextureRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( "2_cgdbk" )
-ignore_texture_size = true
+[node name="Background" parent="." instance=ExtResource( "2_gfykl" )]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1280.0
@@ -25,33 +21,35 @@ anchor_bottom = 1.0
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
 offset_right = 1280.0
-offset_bottom = 666.0
+offset_bottom = 720.0
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/CenterContainer"]
-offset_left = 580.0
-offset_top = 286.0
-offset_right = 699.0
-offset_bottom = 379.0
+offset_left = 523.0
+offset_top = 271.0
+offset_right = 757.0
+offset_bottom = 449.0
+theme_override_constants/separation = 12
 
 [node name="ScoreLabel" type="Label" parent="VBoxContainer/CenterContainer/VBoxContainer"]
-offset_right = 119.0
-offset_bottom = 37.0
-theme_override_font_sizes/font_size = 24
+offset_right = 234.0
+offset_bottom = 70.0
+theme_override_font_sizes/font_size = 48
 text = "Score: 500"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StatsLabel" type="Label" parent="VBoxContainer/CenterContainer/VBoxContainer"]
-offset_top = 41.0
-offset_right = 119.0
-offset_bottom = 93.0
+offset_top = 82.0
+offset_right = 234.0
+offset_bottom = 178.0
+theme_override_font_sizes/font_size = 32
 text = "Sold: 12
 Failed: 50"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BackButton" type="Button" parent="VBoxContainer"]
+[node name="BackButton" type="Button" parent="."]
 rect_min_size = Vector2(120, 50)
 offset_left = 580.0
 offset_top = 670.0
@@ -60,4 +58,4 @@ offset_bottom = 720.0
 size_flags_horizontal = 4
 text = "Back to Menu"
 
-[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

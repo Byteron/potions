@@ -10,12 +10,11 @@ Order = ExtResource( "2_acmd1" )
 
 [node name="NewRecipeTimer" type="Timer" parent="."]
 wait_time = 15.0
-autostart = true
 
 [node name="Orders" type="Node" parent="."]
 
 [node name="RingPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( "3_pwhfk" )
-volume_db = -6.0
+volume_db = -12.0
 
 [connection signal="timeout" from="NewRecipeTimer" to="." method="_on_new_recipe_timer_timeout"]

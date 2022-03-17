@@ -1,0 +1,207 @@
+[gd_scene load_steps=14 format=3 uid="uid://ba6tywsi0ujhh"]
+
+[ext_resource type="Texture2D" uid="uid://b8nwejxsg6ryq" path="res://assets/graphics/images/background.png" id="1_wfp6h"]
+[ext_resource type="Texture2D" uid="uid://m545sqkkcwcq" path="res://assets/graphics/images/curcuma_dried.png" id="2_80nsn"]
+[ext_resource type="Texture2D" uid="uid://cx1k8jjs82hif" path="res://assets/graphics/images/herb.png" id="2_ppbgx"]
+[ext_resource type="Texture2D" uid="uid://bopas1attn1eq" path="res://assets/graphics/images/herb_dried.png" id="3_40y08"]
+[ext_resource type="Texture2D" uid="uid://catofklt6sgqa" path="res://assets/graphics/images/lavender_item.png" id="3_i54nf"]
+[ext_resource type="Texture2D" uid="uid://g1vyy0dxlhg5" path="res://assets/graphics/images/curcuma_item.png" id="4_pxssx"]
+[ext_resource type="Texture2D" uid="uid://crl2kjxswfms3" path="res://assets/graphics/images/lavender_dried.png" id="4_wor27"]
+[ext_resource type="Texture2D" uid="uid://dv1h61vrcaniv" path="res://assets/graphics/images/curcuma_chopped.png" id="5_esdmg"]
+[ext_resource type="Texture2D" uid="uid://boggbq1jo1mk5" path="res://assets/graphics/images/lavender_chopped.png" id="6_7jqwu"]
+[ext_resource type="Texture2D" uid="uid://byq34paum0haw" path="res://assets/graphics/images/herb_cut.png" id="7_f78y0"]
+[ext_resource type="Texture2D" uid="uid://p6prl42jmumk" path="res://assets/graphics/images/curcuma_ground.png" id="8_rq5vp"]
+[ext_resource type="Texture2D" uid="uid://cg0movuk3uu36" path="res://assets/graphics/images/herb_ground.png" id="9_i4shl"]
+[ext_resource type="Texture2D" uid="uid://08e1a7jqg80q" path="res://assets/graphics/images/lavender_ground.png" id="10_1shk4"]
+
+[node name="Background" type="TextureRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( "1_wfp6h" )
+ignore_texture_size = true
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 36.0
+offset_top = 197.0
+offset_right = 361.0
+offset_bottom = 549.0
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+offset_right = 325.0
+offset_bottom = 352.0
+theme_override_constants/separation = -20
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+offset_right = 325.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 32
+text = "Ingredients"
+horizontal_alignment = 1
+
+[node name="Fresh" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+offset_top = 28.0
+offset_right = 325.0
+offset_bottom = 124.0
+theme_override_constants/separation = -21
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Fresh"]
+rect_min_size = Vector2(100, 0)
+offset_top = 35.0
+offset_right = 100.0
+offset_bottom = 61.0
+text = "Fresh:"
+
+[node name="TextureRect3" type="TextureRect" parent="PanelContainer/VBoxContainer/Fresh"]
+rect_min_size = Vector2(96, 96)
+offset_left = 79.0
+offset_right = 175.0
+offset_bottom = 96.0
+texture = ExtResource( "2_ppbgx" )
+ignore_texture_size = true
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/VBoxContainer/Fresh"]
+rect_min_size = Vector2(96, 96)
+offset_left = 154.0
+offset_right = 250.0
+offset_bottom = 96.0
+texture = ExtResource( "3_i54nf" )
+ignore_texture_size = true
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/Fresh"]
+rect_min_size = Vector2(96, 96)
+offset_left = 229.0
+offset_right = 325.0
+offset_bottom = 96.0
+texture = ExtResource( "4_pxssx" )
+ignore_texture_size = true
+
+[node name="Chopped2" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+offset_top = 104.0
+offset_right = 325.0
+offset_bottom = 200.0
+theme_override_constants/separation = -21
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Chopped2"]
+rect_min_size = Vector2(100, 0)
+offset_top = 35.0
+offset_right = 100.0
+offset_bottom = 61.0
+text = "Chopped:"
+
+[node name="TextureRect3" type="TextureRect" parent="PanelContainer/VBoxContainer/Chopped2"]
+rect_min_size = Vector2(96, 96)
+offset_left = 79.0
+offset_right = 175.0
+offset_bottom = 96.0
+texture = ExtResource( "7_f78y0" )
+ignore_texture_size = true
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/VBoxContainer/Chopped2"]
+rect_min_size = Vector2(96, 96)
+offset_left = 154.0
+offset_right = 250.0
+offset_bottom = 96.0
+texture = ExtResource( "6_7jqwu" )
+ignore_texture_size = true
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/Chopped2"]
+rect_min_size = Vector2(96, 96)
+offset_left = 229.0
+offset_right = 325.0
+offset_bottom = 96.0
+texture = ExtResource( "5_esdmg" )
+ignore_texture_size = true
+
+[node name="Dried" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+offset_top = 180.0
+offset_right = 325.0
+offset_bottom = 276.0
+theme_override_constants/separation = -21
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Dried"]
+rect_min_size = Vector2(100, 0)
+offset_top = 35.0
+offset_right = 100.0
+offset_bottom = 61.0
+text = "Dried:"
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/VBoxContainer/Dried"]
+rect_min_size = Vector2(96, 96)
+offset_left = 79.0
+offset_right = 175.0
+offset_bottom = 96.0
+texture = ExtResource( "3_40y08" )
+ignore_texture_size = true
+
+[node name="TextureRect3" type="TextureRect" parent="PanelContainer/VBoxContainer/Dried"]
+rect_min_size = Vector2(96, 96)
+offset_left = 154.0
+offset_right = 250.0
+offset_bottom = 96.0
+texture = ExtResource( "4_wor27" )
+ignore_texture_size = true
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/Dried"]
+rect_min_size = Vector2(96, 96)
+offset_left = 229.0
+offset_right = 325.0
+offset_bottom = 96.0
+texture = ExtResource( "2_80nsn" )
+ignore_texture_size = true
+
+[node name="Ground" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+offset_top = 256.0
+offset_right = 325.0
+offset_bottom = 352.0
+theme_override_constants/separation = -21
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/Ground"]
+rect_min_size = Vector2(100, 0)
+offset_top = 35.0
+offset_right = 100.0
+offset_bottom = 61.0
+text = "Ground: "
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/VBoxContainer/Ground"]
+rect_min_size = Vector2(96, 96)
+offset_left = 79.0
+offset_right = 175.0
+offset_bottom = 96.0
+texture = ExtResource( "9_i4shl" )
+ignore_texture_size = true
+
+[node name="TextureRect3" type="TextureRect" parent="PanelContainer/VBoxContainer/Ground"]
+rect_min_size = Vector2(96, 96)
+offset_left = 154.0
+offset_right = 250.0
+offset_bottom = 96.0
+texture = ExtResource( "10_1shk4" )
+ignore_texture_size = true
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/Ground"]
+rect_min_size = Vector2(96, 96)
+offset_left = 229.0
+offset_right = 325.0
+offset_bottom = 96.0
+texture = ExtResource( "8_rq5vp" )
+ignore_texture_size = true
