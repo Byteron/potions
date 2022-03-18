@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d014fhdoxeh0f"]
+[gd_scene load_steps=12 format=3 uid="uid://d014fhdoxeh0f"]
 
 [ext_resource type="Script" path="res://src/tools/cauldron.gd" id="1_ri5r0"]
 [ext_resource type="PackedScene" uid="uid://dkt4ajcywuap4" path="res://src/tools/interactable.tscn" id="4_of3ea"]
@@ -10,14 +10,13 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mgho5"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i2obt"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktiip"]
+resource_local_to_scene = true
 
 [sub_resource type="SphereMesh" id="SphereMesh_bagux"]
 
 [sub_resource type="Curve" id="Curve_8b0co"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.362205, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktiip"]
 
 [node name="Cauldron" type="Node3D"]
 script = ExtResource( "1_ri5r0" )
@@ -30,7 +29,7 @@ shape = SubResource( "BoxShape3D_mgho5" )
 
 [node name="BrewingParticles" type="CPUParticles3D" parent="."]
 transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.498526, 0)
-material_override = SubResource( "StandardMaterial3D_i2obt" )
+material_override = SubResource( "StandardMaterial3D_ktiip" )
 emitting = false
 amount = 4
 lifetime = 1.2
@@ -51,7 +50,7 @@ scale_amount_curve = SubResource( "Curve_8b0co" )
 
 [node name="BrewDoneParticles" type="CPUParticles3D" parent="."]
 transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.498526, 0)
-material_override = SubResource( "StandardMaterial3D_i2obt" )
+material_override = SubResource( "StandardMaterial3D_ktiip" )
 emitting = false
 amount = 32
 lifetime = 0.8

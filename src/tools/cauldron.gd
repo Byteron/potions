@@ -47,7 +47,8 @@ func _on_interactable_interacted(character: Character) -> void:
 		is_brewed = false
 		liquid.visible = true
 		add_ingredient_player.play()
-	
+		update_color()
+
 	elif character.has_item()  and character.item is Bottle and is_brewed:
 		var bottle: Bottle = character.item
 		bottle.ingredients = _ingredients
@@ -55,6 +56,13 @@ func _on_interactable_interacted(character: Character) -> void:
 		bottle.update_sprite()
 		fill_bottle_player.play()
 		_reset()
+
+
+func update_color() -> void:
+	var color = Color.BLACK
+	for ingredient in _ingredients:
+		color += ingredient.data.color
+	liquid.material_override.set("albedo_color", color / _ingredients.size())
 
 
 func _reset() -> void:

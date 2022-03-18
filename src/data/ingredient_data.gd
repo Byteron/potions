@@ -7,3 +7,4 @@ class_name IngredientData
 @export var cut_texture: Texture
 @export var dried_texture: Texture
 @export var ground_texture: Texture
+@export var color: Color
