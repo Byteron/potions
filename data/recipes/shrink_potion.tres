@@ -1,10 +1,12 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dpue7c0ethk2"]
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://dpue7c0ethk2"]
 
 [ext_resource type="Script" path="res://src/data/recipe.gd" id="1_b82kn"]
 [ext_resource type="Resource" uid="uid://c3web1vmrdod6" path="res://data/recipes/ingredients/dried_herb.tres" id="1_hd7ar"]
+[ext_resource type="Resource" uid="uid://b726eisaeke6b" path="res://data/recipes/ingredients/dried_flower.tres" id="2_eala5"]
+[ext_resource type="Resource" uid="uid://cnr6kle3hvowf" path="res://data/recipes/ingredients/dried_root.tres" id="3_txd8a"]
 
 [resource]
 script = ExtResource( "1_b82kn" )
 name = "Shrink Potion"
-ingredients = [ExtResource( "1_hd7ar" ), ExtResource( "1_hd7ar" )]
-score = 300
+ingredients = [ExtResource( "1_hd7ar" ), ExtResource( "2_eala5" ), ExtResource( "3_txd8a" )]
+score = 600

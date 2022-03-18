@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://src/data/recipe.gd" id="1_jg055"]
 [ext_resource type="Resource" uid="uid://bfsw4aeyd8utn" path="res://data/recipes/ingredients/chopped_flower.tres" id="1_sofqr"]
-[ext_resource type="Resource" uid="uid://b726eisaeke6b" path="res://data/recipes/ingredients/dried_flower.tres" id="2_bkwrc"]
-[ext_resource type="Resource" uid="uid://wnub34tm0eff" path="res://data/recipes/ingredients/flower.tres" id="2_c00yu"]
-[ext_resource type="Resource" uid="uid://bue2qh1jcj2o5" path="res://data/recipes/ingredients/herb.tres" id="3_ttn87"]
+[ext_resource type="Resource" uid="uid://b1o1d7f81ky2s" path="res://data/recipes/ingredients/chopped_root.tres" id="3_a7nyp"]
+[ext_resource type="Resource" uid="uid://c5c0oaxelgd3w" path="res://data/recipes/ingredients/ground_flower.tres" id="4_8ge6e"]
 [ext_resource type="Resource" uid="uid://bq07ppq614xqy" path="res://data/recipes/ingredients/chopped_herb.tres" id="4_s07os"]
-[ext_resource type="Resource" uid="uid://c3web1vmrdod6" path="res://data/recipes/ingredients/dried_herb.tres" id="5_bow5w"]
+[ext_resource type="Resource" uid="uid://bp2ddfjkygnb3" path="res://data/recipes/ingredients/ground_herb.tres" id="5_p2xwv"]
+[ext_resource type="Resource" uid="uid://d2dyhu87v0485" path="res://data/recipes/ingredients/ground_root.tres" id="6_33twm"]
 
 [resource]
 script = ExtResource( "1_jg055" )
 name = "Ancient Potion"
-ingredients = [ExtResource( "3_ttn87" ), ExtResource( "2_c00yu" ), ExtResource( "4_s07os" ), ExtResource( "1_sofqr" ), ExtResource( "5_bow5w" ), ExtResource( "2_bkwrc" )]
-score = 1000
+ingredients = [ExtResource( "1_sofqr" ), ExtResource( "4_s07os" ), ExtResource( "3_a7nyp" ), ExtResource( "4_8ge6e" ), ExtResource( "5_p2xwv" ), ExtResource( "6_33twm" )]
+score = 1500

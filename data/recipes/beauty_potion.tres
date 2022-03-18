@@ -2,12 +2,12 @@
 
 [ext_resource type="Resource" uid="uid://bue2qh1jcj2o5" path="res://data/recipes/ingredients/herb.tres" id="1_1ehjx"]
 [ext_resource type="Script" path="res://src/data/recipe.gd" id="1_g70uu"]
-[ext_resource type="Resource" uid="uid://wnub34tm0eff" path="res://data/recipes/ingredients/flower.tres" id="2_mxkub"]
 [ext_resource type="Resource" uid="uid://bq07ppq614xqy" path="res://data/recipes/ingredients/chopped_herb.tres" id="3_nc2ng"]
 [ext_resource type="Resource" uid="uid://bfsw4aeyd8utn" path="res://data/recipes/ingredients/chopped_flower.tres" id="4_c0sr0"]
+[ext_resource type="Resource" uid="uid://b1o1d7f81ky2s" path="res://data/recipes/ingredients/chopped_root.tres" id="4_w64gl"]
 
 [resource]
 script = ExtResource( "1_g70uu" )
 name = "Beauty Potion"
-ingredients = [ExtResource( "1_1ehjx" ), ExtResource( "2_mxkub" ), ExtResource( "3_nc2ng" ), ExtResource( "4_c0sr0" )]
-score = 600
+ingredients = [ExtResource( "1_1ehjx" ), ExtResource( "3_nc2ng" ), ExtResource( "4_c0sr0" ), ExtResource( "4_w64gl" )]
+score = 700

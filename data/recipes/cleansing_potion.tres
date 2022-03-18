@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://src/data/recipe.gd" id="1_nwlrs"]
 [ext_resource type="Resource" uid="uid://bue2qh1jcj2o5" path="res://data/recipes/ingredients/herb.tres" id="1_wqbvr"]
-[ext_resource type="Resource" uid="uid://bq07ppq614xqy" path="res://data/recipes/ingredients/chopped_herb.tres" id="2_n6t82"]
+[ext_resource type="Resource" uid="uid://dewnqgp4combt" path="res://data/recipes/ingredients/root.tres" id="2_hcag3"]
 
 [resource]
 script = ExtResource( "1_nwlrs" )
 name = "Cleansing Potion"
-ingredients = [ExtResource( "1_wqbvr" ), ExtResource( "1_wqbvr" ), ExtResource( "2_n6t82" )]
+ingredients = [ExtResource( "1_wqbvr" ), ExtResource( "1_wqbvr" ), ExtResource( "2_hcag3" ), ExtResource( "2_hcag3" )]
 score = 400
