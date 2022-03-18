@@ -3,7 +3,7 @@ extends Node
 @export var _speed := 8
 
 @onready var character: Character = get_parent()
-@onready var particles: GPUParticles3D = $"../character/GPUParticles3D"
+@onready var particles: CPUParticles3D = $"../character/CPUParticles3D"
 @onready var run_player: AudioStreamPlayer3D = $RunPlayer
 
 var boost := 1.0

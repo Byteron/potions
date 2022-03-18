@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://csb4thvmptxi0"]
+[gd_scene load_steps=17 format=3 uid="uid://csb4thvmptxi0"]
 
 [ext_resource type="Script" path="res://src/character/character.gd" id="1_mwdtg"]
 [ext_resource type="Script" path="res://src/character/controller.gd" id="2_76uc0"]
@@ -198,25 +198,10 @@ tracks/1/keys = {
 radius = 0.447411
 height = 1.86137
 
-[sub_resource type="Curve" id="Curve_r5ukg"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.475771, 0.309091), -1.37576, -1.37576, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+[sub_resource type="SphereMesh" id="SphereMesh_b726x"]
 
-[sub_resource type="CurveTexture" id="CurveTexture_khbcg"]
-curve = SubResource( "Curve_r5ukg" )
-
-[sub_resource type="ParticlesMaterial" id="ParticlesMaterial_1bwvl"]
-emission_shape = 1
-emission_sphere_radius = 0.25
-gravity = Vector3(0, 3, 0)
-scale_min = 0.4
-scale_max = 0.6
-scale_curve = SubResource( "CurveTexture_khbcg" )
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j34jd"]
-albedo_color = Color(0.596078, 0.596078, 0.596078, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_8ba5c"]
-material = SubResource( "StandardMaterial3D_j34jd" )
+[sub_resource type="Curve" id="Curve_iooo3"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.330677, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 
 [node name="Character" type="CharacterBody3D"]
 script = ExtResource( "1_mwdtg" )
@@ -264,12 +249,18 @@ transform = Transform3D(-0.499255, -0.0272839, -1.26759e-06, -0.0272839, 0.49925
 
 [node name="hand_right" parent="character" instance=ExtResource( "6_xpkjd" )]
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="character"]
-transform = Transform3D(0, 0, 2, 0, 2, 0, -2, 0, 0, 0, -2.26897, 0)
+[node name="CPUParticles3D" type="CPUParticles3D" parent="character"]
+transform = Transform3D(0, -7.4499e-09, 2, 0, 2, 7.45126e-09, -2, -2.84217e-14, 0, 7.45058e-09, -2.26897, 5.59552e-14)
+amount = 12
 lifetime = 0.5
 local_coords = false
-process_material = SubResource( "ParticlesMaterial_1bwvl" )
-draw_pass_1 = SubResource( "SphereMesh_8ba5c" )
+mesh = SubResource( "SphereMesh_b726x" )
+emission_shape = 1
+emission_sphere_radius = 0.2
+gravity = Vector3(0, 2, 0)
+scale_amount_min = 0.04
+scale_amount_max = 0.2
+scale_amount_curve = SubResource( "Curve_iooo3" )
 
 [node name="TakePlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( "7_6es6r" )

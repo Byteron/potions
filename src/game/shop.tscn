@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://de4jsrcssn3fp"]
+[gd_scene load_steps=30 format=3 uid="uid://de4jsrcssn3fp"]
 
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="1_7ggcj"]
 [ext_resource type="Script" path="res://src/game/shop.gd" id="1_6107u"]
@@ -50,6 +50,9 @@ albedo_color = Color(0.0980392, 0.211765, 0.0980392, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_q4g81"]
 size = Vector2(50, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3gag8"]
+resource_local_to_scene = true
 
 [node name="Shop" type="Node3D"]
 script = ExtResource( "1_6107u" )
@@ -297,6 +300,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -14.5)
 
 [node name="Cauldron" parent="Workshop" instance=ExtResource( "8_oosmm" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, -18.5)
+
+[node name="BrewingParticles" parent="Workshop/Cauldron" index="1"]
+material_override = SubResource( "StandardMaterial3D_3gag8" )
+
+[node name="BrewDoneParticles" parent="Workshop/Cauldron" index="2"]
+material_override = SubResource( "StandardMaterial3D_3gag8" )
+
+[node name="Cauldron" parent="Workshop/Cauldron/cauldron" index="0"]
+material_override = SubResource( "StandardMaterial3D_3gag8" )
 
 [node name="Cauldron2" parent="Workshop" instance=ExtResource( "8_oosmm" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -18.5)
