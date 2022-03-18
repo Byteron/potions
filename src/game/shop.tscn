@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="1_7ggcj"]
 [ext_resource type="Script" path="res://src/game/shop.gd" id="1_6107u"]
-[ext_resource type="AudioStream" uid="uid://cwpcg0kdf08t2" path="res://assets/audio/sfx/game_over.wav" id="2_0hif6"]
+[ext_resource type="AudioStream" uid="uid://c2meixmpb01wi" path="res://assets/audio/sfx/game over 2.wav" id="2_jd8pm"]
 [ext_resource type="PackedScene" uid="uid://byjv08rirv7xu" path="res://src/deco/wall.tscn" id="3_c8n2d"]
 [ext_resource type="PackedScene" uid="uid://dmsvo32nle07g" path="res://src/tools/pot.tscn" id="3_obdbc"]
 [ext_resource type="PackedScene" uid="uid://bcc3w2be250tf" path="res://src/tools/dirt_box.tscn" id="4_n7npy"]
@@ -55,8 +55,11 @@ game_time = 240.0
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="GameOverTimer" type="Timer" parent="."]
+one_shot = true
+
 [node name="GameOverPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( "2_0hif6" )
+stream = ExtResource( "2_jd8pm" )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( "Environment_4xgxr" )
@@ -307,3 +310,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -17.5)
 [node name="HUD" parent="." instance=ExtResource( "10_wog8m" )]
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]

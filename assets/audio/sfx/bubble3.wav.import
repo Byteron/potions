@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamSample"
-uid="uid://7wk1kmvw7prh"
+uid="uid://mhmmjugvmmvj"
 path="res://.godot/imported/bubble3.wav-f57eaba63c4008cdeffcd971a2c7797f.sample"
 
 [deps]
@@ -16,7 +16,7 @@ force/8_bit=false
 force/mono=false
 force/max_rate=false
 force/max_rate_hz=44100
-edit/trim=true
+edit/trim=false
 edit/normalize=false
 edit/loop=false
 compress/mode=0

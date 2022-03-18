@@ -2,9 +2,6 @@ extends Node3D
 class_name Counter
 
 
-@onready var coin_player: AudioStreamPlayer3D = $CoinPlayer
-
-
 func _on_interactable_interacted(character: Character) -> void:
 	if character.has_item() and character.item is Bottle and character.item.is_filled:
 		var bottle = character.drop_item()
@@ -22,7 +19,6 @@ func validate_potion(bottle: Bottle) -> void:
 		print(order.recipe.stringify())
 		if is_potion_of_recipe(bottle, order.recipe):
 			order.finish()
-			coin_player.play()
 			print("potion is ", order.recipe.name)
 			return
 

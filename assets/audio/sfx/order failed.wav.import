@@ -1,0 +1,22 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+uid="uid://byncejjbam1nj"
+path="res://.godot/imported/order failed.wav-b28a9b2bc1ee3f3d58a7b37eca8580a7.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/order failed.wav"
+dest_files=["res://.godot/imported/order failed.wav-b28a9b2bc1ee3f3d58a7b37eca8580a7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

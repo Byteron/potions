@@ -1,8 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://caq5r5k3s6uhm"]
+[gd_scene load_steps=14 format=3 uid="uid://caq5r5k3s6uhm"]
 
 [ext_resource type="Script" path="res://src/global/recipes.gd" id="1_ralvw"]
 [ext_resource type="PackedScene" uid="uid://b04idcv185fe3" path="res://src/tools/order.tscn" id="2_acmd1"]
-[ext_resource type="AudioStream" uid="uid://dqvseta223brm" path="res://assets/audio/sfx/metal-ringing.wav" id="3_pwhfk"]
+[ext_resource type="AudioStream" uid="uid://dwfu8s4goc6js" path="res://assets/audio/sfx/order appeared 1.wav" id="3_ral17"]
+[ext_resource type="AudioStream" uid="uid://c5ydvwyplkp42" path="res://assets/audio/sfx/order appeared 2.wav" id="4_7bmmo"]
+[ext_resource type="AudioStream" uid="uid://bnhtpc1a2wib6" path="res://assets/audio/sfx/order appeared 3.wav" id="5_l20yd"]
+[ext_resource type="AudioStream" uid="uid://dffm5chlb7w3u" path="res://assets/audio/sfx/order appeared 4.wav" id="6_h13vi"]
+[ext_resource type="AudioStream" uid="uid://du66isqiesx4y" path="res://assets/audio/sfx/order appeared 5.wav" id="7_dutyx"]
+[ext_resource type="AudioStream" uid="uid://bykiebh2redvq" path="res://assets/audio/sfx/order fulfilled 2.wav" id="8_xpejb"]
+[ext_resource type="AudioStream" uid="uid://buo0d18dxti35" path="res://assets/audio/sfx/order fulfilled 3.wav" id="9_vp54j"]
+[ext_resource type="AudioStream" uid="uid://b5w2vmgrag4an" path="res://assets/audio/sfx/order fulfilled.wav" id="10_5a0u7"]
+[ext_resource type="AudioStream" uid="uid://byncejjbam1nj" path="res://assets/audio/sfx/order failed.wav" id="11_cntcp"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mmeha"]
+streams_count = 5
+stream_0/stream = ExtResource( "3_ral17" )
+stream_0/weight = 1.0
+stream_1/stream = ExtResource( "4_7bmmo" )
+stream_1/weight = 1.0
+stream_2/stream = ExtResource( "5_l20yd" )
+stream_2/weight = 1.0
+stream_3/stream = ExtResource( "6_h13vi" )
+stream_3/weight = 1.0
+stream_4/stream = ExtResource( "7_dutyx" )
+stream_4/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_86wjd"]
+streams_count = 3
+stream_0/stream = ExtResource( "8_xpejb" )
+stream_0/weight = 1.0
+stream_1/stream = ExtResource( "9_vp54j" )
+stream_1/weight = 1.0
+stream_2/stream = ExtResource( "10_5a0u7" )
+stream_2/weight = 1.0
 
 [node name="Recipes" type="Node"]
 script = ExtResource( "1_ralvw" )
@@ -14,7 +44,12 @@ wait_time = 15.0
 [node name="Orders" type="Node" parent="."]
 
 [node name="RingPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( "3_pwhfk" )
-volume_db = -12.0
+stream = SubResource( "AudioStreamRandomizer_mmeha" )
+
+[node name="FulfilledPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource( "AudioStreamRandomizer_86wjd" )
+
+[node name="FailedPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( "11_cntcp" )
 
 [connection signal="timeout" from="NewRecipeTimer" to="." method="_on_new_recipe_timer_timeout"]

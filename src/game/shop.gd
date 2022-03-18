@@ -5,6 +5,7 @@ class_name Shop
 
 @onready var hud: HUD = $HUD
 @onready var timer: Timer = $GameTimer
+@onready var sound_timer: Timer = $GameOverTimer
 
 @onready var game_over_player: AudioStreamPlayer = $GameOverPlayer
 @onready var character: Character = $Character
@@ -14,6 +15,7 @@ func _ready() -> void:
 	Recipes.reset()
 	Recipes.start()
 	timer.start(game_time)
+	sound_timer.start(game_time - 10)
 
 
 func _process(_delta: float) -> void:
@@ -25,6 +27,9 @@ func _on_game_timer_timeout() -> void:
 	Recipes.stop()
 	Recipes.clear()
 	character.disable()
-	game_over_player.play()
 	await timer.timeout
 	get_tree().change_scene("res://src/menu/victory_screen.tscn")
+
+
+func _on_game_over_timer_timeout() -> void:
+	game_over_player.play()

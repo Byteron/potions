@@ -4,6 +4,7 @@ extends Node
 
 @onready var character: Character = get_parent()
 @onready var particles: GPUParticles3D = $"../character/GPUParticles3D"
+@onready var run_player: AudioStreamPlayer3D = $RunPlayer
 
 var boost := 1.0
 
@@ -27,7 +28,11 @@ func _process(_delta: float) -> void:
 		if not particles.emitting:
 			particles.emitting = true
 		
+		if not run_player.playing:
+			run_player.play()
+
 	elif particles.emitting:
 		particles.emitting = false
+		run_player.stop()
 
 	character.move_and_slide()

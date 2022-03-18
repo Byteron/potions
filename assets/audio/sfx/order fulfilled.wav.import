@@ -1,0 +1,22 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+uid="uid://b5w2vmgrag4an"
+path="res://.godot/imported/order fulfilled.wav-f09bdfa893fb22de953110af525bf6e9.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/order fulfilled.wav"
+dest_files=["res://.godot/imported/order fulfilled.wav-f09bdfa893fb22de953110af525bf6e9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

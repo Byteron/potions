@@ -2,8 +2,6 @@ extends Node
 
 const MAX_ORDERS = 5
 
-signal orders_changed()
-
 var recipes: Array[Recipe] = [
 	load("data/recipes/health_potion.tres") as Recipe,
 	load("data/recipes/mana_potion.tres") as Recipe,
@@ -36,6 +34,8 @@ var failed := 0
 @onready var timer: Timer = $NewRecipeTimer
 
 @onready var ring_player: AudioStreamPlayer = $RingPlayer
+@onready var fulfilled_player: AudioStreamPlayer = $FulfilledPlayer
+@onready var failed_player: AudioStreamPlayer = $FailedPlayer
 
 
 func _ready() -> void:
@@ -63,6 +63,7 @@ func clear() -> void:
 
 	orders.clear()
 
+
 func _on_new_recipe_timer_timeout() -> void:
 	if order_container.get_child_count() == MAX_ORDERS:
 		return
@@ -78,7 +79,6 @@ func _on_new_recipe_timer_timeout() -> void:
 	order_container.add_child(order)
 	
 	get_tree().call_group("HUD", "add_order", order)
-	orders_changed.emit()
 	ring_player.play()
 
 
@@ -88,7 +88,7 @@ func _on_order_finished(order: Order) -> void:
 	get_tree().call_group("HUD", "remove_order", order, true)
 	orders.erase(order)
 	order.queue_free()
-	orders_changed.emit()
+	fulfilled_player.play()
 	sold += 1
 
 
@@ -97,5 +97,5 @@ func _on_order_expired(order: Order) -> void:
 	orders.erase(order)
 	get_tree().call_group("HUD", "remove_order", order, false)
 	order.queue_free()
-	orders_changed.emit()
+	failed_player.play()
 	failed += 1

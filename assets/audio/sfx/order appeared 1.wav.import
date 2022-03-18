@@ -1,0 +1,22 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+uid="uid://dwfu8s4goc6js"
+path="res://.godot/imported/order appeared 1.wav-9db1a42f4acbff05a74e577d7a987c23.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/order appeared 1.wav"
+dest_files=["res://.godot/imported/order appeared 1.wav-9db1a42f4acbff05a74e577d7a987c23.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

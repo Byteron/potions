@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://csb4thvmptxi0"]
+[gd_scene load_steps=20 format=3 uid="uid://csb4thvmptxi0"]
 
 [ext_resource type="Script" path="res://src/character/character.gd" id="1_mwdtg"]
 [ext_resource type="Script" path="res://src/character/controller.gd" id="2_76uc0"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b01ux5esg2jqk" path="res://assets/graphics/gltf/hand_right.gltf" id="6_xpkjd"]
 [ext_resource type="AudioStream" uid="uid://vx63a6o88fra" path="res://assets/audio/sfx/pickup.wav" id="7_6es6r"]
 [ext_resource type="AudioStream" uid="uid://bvbk7yltiuw6q" path="res://assets/audio/sfx/interface1.wav" id="8_q15b7"]
+[ext_resource type="AudioStream" uid="uid://cfxf5tjkrq1e" path="res://assets/audio/sfx/running.wav" id="9_cxeff"]
 
 [sub_resource type="Animation" id="Animation_pfuni"]
 length = 0.001
@@ -232,6 +233,9 @@ shape = SubResource( "CapsuleShape3D_h4cxt" )
 
 [node name="Controller" type="Node" parent="."]
 script = ExtResource( "2_76uc0" )
+
+[node name="RunPlayer" type="AudioStreamPlayer3D" parent="Controller"]
+stream = ExtResource( "9_cxeff" )
 
 [node name="Interacter" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.555613, -0.779596)

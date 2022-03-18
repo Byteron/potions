@@ -1,0 +1,22 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+uid="uid://bhq4vdb7fhvql"
+path="res://.godot/imported/game over.wav-11eac8a70402493ea6fd8c589d99bfae.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/game over.wav"
+dest_files=["res://.godot/imported/game over.wav-11eac8a70402493ea6fd8c589d99bfae.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

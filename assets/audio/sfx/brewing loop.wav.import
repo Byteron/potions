@@ -1,0 +1,22 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+uid="uid://bb8r0lyj20td"
+path="res://.godot/imported/brewing loop.wav-c61933bf65a91275dffae69b53227b35.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/brewing loop.wav"
+dest_files=["res://.godot/imported/brewing loop.wav-c61933bf65a91275dffae69b53227b35.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

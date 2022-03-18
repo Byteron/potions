@@ -1,0 +1,22 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+uid="uid://c2meixmpb01wi"
+path="res://.godot/imported/game over 2.wav-90a6e4629aced345df2654f4380da2ba.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx/game over 2.wav"
+dest_files=["res://.godot/imported/game over 2.wav-90a6e4629aced345df2654f4380da2ba.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

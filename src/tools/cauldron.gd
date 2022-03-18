@@ -10,13 +10,16 @@ var brewing_time := 0.0
 var brewed_time := 0.0
 var is_brewed := false
 
-@onready var particles: GPUParticles3D = $GPUParticles3D
+@onready var particles: GPUParticles3D = $BrewingParticles
+@onready var done_particles: GPUParticles3D = $BrewDoneParticles
 
 @onready var cauldron: Node3D = $cauldron
 @onready var cauldron_empty: Node3D = $cauldron_empty
 
 @onready var fill_bottle_player: AudioStreamPlayer3D = $FillBottlePlayer
 @onready var add_ingredient_player: AudioStreamPlayer3D = $AddIngredientPlayer
+@onready var brewing_player: AudioStreamPlayer3D = $BrewingPlayer
+@onready var brew_done_player: AudioStreamPlayer3D = $BrewDonePlayer
 
 
 func _process(delta: float) -> void:
@@ -26,10 +29,15 @@ func _process(delta: float) -> void:
 	if brewed_time < brewing_time:
 		particles.emitting = true
 		brewed_time += delta
+		if not brewing_player.playing:
+			brewing_player.play()
 	
-	if not _ingredients.is_empty() and brewed_time > brewing_time:
+	if not is_brewed and not _ingredients.is_empty() and brewed_time > brewing_time:
 		is_brewed = true
 		particles.emitting = false
+		done_particles.emitting = true
+		brewing_player.stop()
+		brew_done_player.play()
 
 
 func _on_interactable_interacted(character: Character) -> void:
