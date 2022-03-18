@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://de4jsrcssn3fp"]
+[gd_scene load_steps=29 format=3 uid="uid://de4jsrcssn3fp"]
 
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="1_7ggcj"]
 [ext_resource type="Script" path="res://src/game/shop.gd" id="1_6107u"]
@@ -14,8 +14,11 @@
 [ext_resource type="Resource" uid="uid://jrhw42osr18p" path="res://data/growables/root.tres" id="8_qed3o"]
 [ext_resource type="PackedScene" uid="uid://dn2wq7dt428xv" path="res://src/deco/big_table.tscn" id="9_17res"]
 [ext_resource type="PackedScene" uid="uid://cvennarng5skj" path="res://src/tools/bottle_station.tscn" id="9_f3ldj"]
+[ext_resource type="Texture2D" uid="uid://bao7o3r5cv1si" path="res://assets/graphics/images/lavender_bag.png" id="9_gc1s7"]
 [ext_resource type="PackedScene" uid="uid://culxk5mur1o0h" path="res://src/hud/HUD.tscn" id="10_wog8m"]
+[ext_resource type="Texture2D" uid="uid://tvy8ef5e3uc2" path="res://assets/graphics/images/curcuma_bag.png" id="11_fpf1w"]
 [ext_resource type="PackedScene" uid="uid://c2xcl8utxh6p4" path="res://src/tools/drying_rack.tscn" id="12_wvoaf"]
+[ext_resource type="Texture2D" uid="uid://dbocecvauwvyo" path="res://assets/graphics/images/herb_bag.png" id="13_gekh3"]
 [ext_resource type="PackedScene" uid="uid://caikcb1de6gpx" path="res://src/tools/bin.tscn" id="15_swe82"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jl2y6"]
@@ -243,13 +246,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -11.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -11.5)
 
 [node name="DirtBox" parent="Greenhouse" instance=ExtResource( "4_n7npy" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.25, -13.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7, 0.25, -13.5)
 
 [node name="DirtBox3" parent="Greenhouse" instance=ExtResource( "4_n7npy" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.25, -15.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7, 0.25, -15.5)
 
 [node name="DirtBox2" parent="Greenhouse" instance=ExtResource( "4_n7npy" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.25, -11.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7, 0.25, -11.5)
 
 [node name="Floor" type="MeshInstance3D" parent="Greenhouse"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -14.5)
@@ -257,16 +260,19 @@ mesh = SubResource( "PlaneMesh_b0hr7" )
 surface_material_override/0 = SubResource( "StandardMaterial3D_qxxup" )
 
 [node name="Seedbag" parent="Greenhouse" instance=ExtResource( "4_x0iy6" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49512, 0, -13.4982)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.49512, 0, -14.4982)
 growable = ExtResource( "5_ah0gp" )
+bag_texture = ExtResource( "9_gc1s7" )
 
 [node name="Seedbag3" parent="Greenhouse" instance=ExtResource( "4_x0iy6" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.49512, 0, -11.4982)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.49512, 0, -12.4982)
 growable = ExtResource( "8_qed3o" )
+bag_texture = ExtResource( "11_fpf1w" )
 
 [node name="Seedbag2" parent="Greenhouse" instance=ExtResource( "4_x0iy6" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50326, 0, -15.5099)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.50326, 0, -16.5099)
 growable = ExtResource( "6_vr77g" )
+bag_texture = ExtResource( "13_gekh3" )
 
 [node name="Workshop" type="Node3D" parent="."]
 

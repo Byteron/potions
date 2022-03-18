@@ -1,8 +1,8 @@
 extends Node3D
 class_name Cauldron
 
-const BREWING_TIME_PER_INGREDIENT := 4.0
-const BREWING_TIME := 8.0
+const BREWING_TIME_PER_INGREDIENT := 2.5
+const BREWING_TIME := 5.0
 
 var _ingredients: Array[Ingredient] = []
 
@@ -13,8 +13,7 @@ var is_brewed := false
 @onready var particles: GPUParticles3D = $BrewingParticles
 @onready var done_particles: GPUParticles3D = $BrewDoneParticles
 
-@onready var cauldron: Node3D = $cauldron
-@onready var cauldron_empty: Node3D = $cauldron_empty
+@onready var liquid: Node3D = $cauldron/Cauldron
 
 @onready var fill_bottle_player: AudioStreamPlayer3D = $FillBottlePlayer
 @onready var add_ingredient_player: AudioStreamPlayer3D = $AddIngredientPlayer
@@ -32,7 +31,7 @@ func _process(delta: float) -> void:
 		if not brewing_player.playing:
 			brewing_player.play()
 	
-	if not is_brewed and not _ingredients.is_empty() and brewed_time > brewing_time:
+	if brewed_time > brewing_time and not is_brewed:
 		is_brewed = true
 		particles.emitting = false
 		done_particles.emitting = true
@@ -45,8 +44,8 @@ func _on_interactable_interacted(character: Character) -> void:
 		var ingredient = character.drop_item()
 		_ingredients.append(ingredient)
 		brewing_time = BREWING_TIME + BREWING_TIME_PER_INGREDIENT * _ingredients.size()
-		cauldron.visible = true
-		cauldron_empty.visible = false
+		is_brewed = false
+		liquid.visible = true
 		add_ingredient_player.play()
 	
 	elif character.has_item()  and character.item is Bottle and is_brewed:
@@ -60,8 +59,7 @@ func _on_interactable_interacted(character: Character) -> void:
 
 func _reset() -> void:
 	_ingredients = []
-	cauldron.visible = false
-	cauldron_empty.visible = true
+	liquid.visible = false
 	brewing_time = BREWING_TIME + BREWING_TIME_PER_INGREDIENT * _ingredients.size()
 	brewed_time = 0.0
 	is_brewed = false

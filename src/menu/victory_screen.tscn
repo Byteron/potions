@@ -13,7 +13,7 @@ script = ExtResource( "1_jgnh0" )
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1280.0
 offset_bottom = 720.0
-color = Color(0, 0, 0, 0.470588)
+color = Color(0, 0, 0, 0.705882)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
