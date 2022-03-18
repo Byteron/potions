@@ -317,3 +317,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 0, -17.5)
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
+
+[editable path="Workshop/Cauldron"]
+[editable path="Workshop/Cauldron/cauldron"]

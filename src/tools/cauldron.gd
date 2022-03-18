@@ -10,8 +10,8 @@ var brewing_time := 0.0
 var brewed_time := 0.0
 var is_brewed := false
 
-@onready var particles: GPUParticles3D = $BrewingParticles
-@onready var done_particles: GPUParticles3D = $BrewDoneParticles
+@onready var particles: CPUParticles3D = $BrewingParticles
+@onready var done_particles: CPUParticles3D = $BrewDoneParticles
 
 @onready var liquid: Node3D = $cauldron/Cauldron
 
