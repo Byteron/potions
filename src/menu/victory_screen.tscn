@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://fmqy6err8dph"]
+[gd_scene load_steps=4 format=3 uid="uid://ct30ku46nnib7"]
 
 [ext_resource type="Script" path="res://src/menu/victory_screen.gd" id="1_jgnh0"]
 [ext_resource type="PackedScene" uid="uid://ba6tywsi0ujhh" path="res://src/menu/background.tscn" id="2_gfykl"]
+[ext_resource type="PackedScene" uid="uid://cdk2ias047p7b" path="res://src/menu/credits_entry.tscn" id="3_m0psj"]
 
 [node name="VictoryScreen" type="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( "1_jgnh0" )
+CreditsEntry = ExtResource( "3_m0psj" )
 
 [node name="Background" parent="." instance=ExtResource( "2_gfykl" )]
 
@@ -57,5 +59,16 @@ offset_right = 700.0
 offset_bottom = 720.0
 size_flags_horizontal = 4
 text = "Back to Menu"
+
+[node name="Credits" type="VBoxContainer" parent="."]
+offset_left = 886.0
+offset_top = 131.0
+offset_right = 1192.0
+offset_bottom = 591.0
+theme_override_constants/separation = 20
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
