@@ -12,6 +12,7 @@ one_shot = true
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 offset = Vector2(10, 130)
+modulate = Color(0.823529, 0.823529, 0.823529, 1)
 billboard = 1
 shaded = true
 texture = ExtResource( "2_on2bp" )
