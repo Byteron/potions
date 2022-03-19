@@ -94,6 +94,12 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
 visible = false
 material_override = SubResource( "StandardMaterial3D_ktiip" )
 
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1.37358, 0)
+light_energy = 3.0
+spot_range = 1.51594
+spot_angle = 27.1872
+
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
 
 [editable path="cauldron"]
