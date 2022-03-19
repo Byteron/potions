@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://de4jsrcssn3fp"]
+[gd_scene load_steps=33 format=3 uid="uid://de4jsrcssn3fp"]
 
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="1_7ggcj"]
 [ext_resource type="Script" path="res://src/game/shop.gd" id="1_6107u"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d1lyxdgdrti2h" path="res://src/tools/seed_bag.tscn" id="4_x0iy6"]
 [ext_resource type="Resource" uid="uid://bavu6wugthpew" path="res://data/growables/flower.tres" id="5_ah0gp"]
 [ext_resource type="Resource" uid="uid://dnjnx3nwckkwc" path="res://data/growables/herb.tres" id="6_vr77g"]
-[ext_resource type="PackedScene" path="res://src/deco/counter.tscn" id="7_e66xu"]
+[ext_resource type="PackedScene" uid="uid://dfrmewrd2ij3h" path="res://src/deco/counter.tscn" id="7_e66xu"]
 [ext_resource type="PackedScene" uid="uid://d014fhdoxeh0f" path="res://src/tools/cauldron.tscn" id="8_oosmm"]
 [ext_resource type="Resource" uid="uid://jrhw42osr18p" path="res://data/growables/root.tres" id="8_qed3o"]
 [ext_resource type="PackedScene" uid="uid://dn2wq7dt428xv" path="res://src/deco/big_table.tscn" id="9_17res"]
@@ -18,12 +18,12 @@
 [ext_resource type="Texture2D" uid="uid://tvy8ef5e3uc2" path="res://assets/graphics/images/curcuma_bag.png" id="11_fpf1w"]
 [ext_resource type="PackedScene" uid="uid://c2xcl8utxh6p4" path="res://src/tools/drying_rack.tscn" id="12_wvoaf"]
 [ext_resource type="Texture2D" uid="uid://dbocecvauwvyo" path="res://assets/graphics/images/herb_bag.png" id="13_gekh3"]
-[ext_resource type="PackedScene" uid="uid://o2icchwwonqp" path="res://assets/graphics/gltf/greenhouse_wallpiece.gltf" id="13_vv4r3"]
-[ext_resource type="PackedScene" uid="uid://lvo4a7pma221" path="res://assets/graphics/gltf/greenhouse_pillar.gltf" id="14_hdbs4"]
+[ext_resource type="PackedScene" uid="uid://b4deylmuhkhl6" path="res://src/deco/greenhouse_invisible_wall_piece.tscn" id="14_kfhtt"]
 [ext_resource type="PackedScene" uid="uid://caikcb1de6gpx" path="res://src/tools/bin.tscn" id="15_swe82"]
+[ext_resource type="PackedScene" uid="uid://dj0fvvwk2ru0c" path="res://src/deco/greenhouse_wall_piece.tscn" id="15_wtwgj"]
 [ext_resource type="PackedScene" uid="uid://cpjgto4cykfo" path="res://assets/graphics/gltf/fireplace.gltf" id="21_2fq7l"]
 [ext_resource type="PackedScene" uid="uid://6goue3xektq4" path="res://assets/graphics/gltf/brick_wall.gltf" id="21_spkdq"]
-[ext_resource type="PackedScene" uid="uid://cng5uw0gkxt8y" path="res://assets/graphics/gltf/brick.gltf" id="22_teqb0"]
+[ext_resource type="PackedScene" uid="uid://cpwpg72t056ce" path="res://src/deco/brick_wall.tscn" id="22_bdny5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jl2y6"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -38,19 +38,23 @@ sky = SubResource( "Sky_lsoa7" )
 tonemap_mode = 3
 ssao_enabled = true
 ssil_enabled = true
+sdfgi_use_occlusion = true
 glow_enabled = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_b0hr7"]
-size = Vector2(6, 6)
+size = Vector2(8.5, 6)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qxxup"]
 albedo_color = Color(0.376471, 0.196078, 0.109804, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xv6av"]
-size = Vector2(7, 11)
+size = Vector2(6, 11)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3gag8"]
-resource_local_to_scene = true
+[sub_resource type="PlaneMesh" id="PlaneMesh_xccii"]
+size = Vector2(6, 3)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ejewa"]
+size = Vector2(3, 2.5)
 
 [node name="Shop" type="Node3D"]
 script = ExtResource( "1_6107u" )
@@ -73,7 +77,7 @@ transform = Transform3D(0.995691, -0.0803114, 0.0463678, 0, 0.5, 0.866026, -0.09
 fov = 40.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.731763, -0.673338, 0.105536, 0.399325, -0.298085, 0.866998, -0.552324, 0.67658, 0.487008, 0, 14.4343, 0)
+transform = Transform3D(-0.747618, -0.155559, -0.645654, -0.400241, -0.67027, 0.624937, -0.529977, 0.725631, 0.438845, -0.326733, 5.5664, -13)
 shadow_enabled = true
 directional_shadow_max_distance = 250.0
 
@@ -83,89 +87,78 @@ transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, 3.18996,
 [node name="Greenhouse" type="Node3D" parent="."]
 
 [node name="Pot6" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22116, 0, -15.5)
-
-[node name="Pot7" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -17.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.12116, 0, -13.5)
 
 [node name="DirtBox" parent="Greenhouse" instance=ExtResource( "4_n7npy" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7, 0.25, -13.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7, 0.25, -13.5)
 
 [node name="DirtBox3" parent="Greenhouse" instance=ExtResource( "4_n7npy" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7, 0.25, -15.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7, 0.25, -15.5)
 
 [node name="DirtBox2" parent="Greenhouse" instance=ExtResource( "4_n7npy" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7, 0.25, -11.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7, 0.25, -11.5)
 
 [node name="Floor" type="MeshInstance3D" parent="Greenhouse"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -14)
 mesh = SubResource( "PlaneMesh_b0hr7" )
 surface_material_override/0 = SubResource( "StandardMaterial3D_qxxup" )
 
+[node name="Ceiling" type="MeshInstance3D" parent="Greenhouse"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.76885, 2.6, -13.9)
+visible = false
+transparency = 1.0
+mesh = SubResource( "PlaneMesh_b0hr7" )
+surface_material_override/0 = SubResource( "StandardMaterial3D_qxxup" )
+
 [node name="Seedbag" parent="Greenhouse" instance=ExtResource( "4_x0iy6" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.49512, 0, -14.4982)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.49512, 0, -14.4982)
 growable = ExtResource( "5_ah0gp" )
 bag_texture = ExtResource( "9_gc1s7" )
 
 [node name="Seedbag3" parent="Greenhouse" instance=ExtResource( "4_x0iy6" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.49512, 0, -12.4982)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.49512, 0, -12.4982)
 growable = ExtResource( "8_qed3o" )
 bag_texture = ExtResource( "11_fpf1w" )
 
 [node name="Seedbag2" parent="Greenhouse" instance=ExtResource( "4_x0iy6" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.50326, 0, -16.5099)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.50326, 0, -16.5099)
 growable = ExtResource( "6_vr77g" )
 bag_texture = ExtResource( "13_gekh3" )
 
 [node name="Walls" type="Node3D" parent="Greenhouse"]
 
-[node name="greenhouse_wallpiece" parent="Greenhouse/Walls" instance=ExtResource( "13_vv4r3" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.941018, -6.929, 0, -11.967)
+[node name="GreenhouseWallPiece" parent="Greenhouse/Walls" instance=ExtResource( "15_wtwgj" )]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -1, 0, -17)
 
-[node name="greenhouse_wallpiece2" parent="Greenhouse/Walls" instance=ExtResource( "13_vv4r3" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9, -6.929, 0, -14)
+[node name="GreenhouseWallPiece2" parent="Greenhouse/Walls" instance=ExtResource( "15_wtwgj" )]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -3, 0, -17)
 
-[node name="greenhouse_wallpiece3" parent="Greenhouse/Walls" instance=ExtResource( "13_vv4r3" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9, -6.929, 0, -16)
+[node name="GreenhouseWallPiece3" parent="Greenhouse/Walls" instance=ExtResource( "15_wtwgj" )]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -5, 0, -17)
 
-[node name="greenhouse_wallpiece4" parent="Greenhouse/Walls" instance=ExtResource( "13_vv4r3" )]
-transform = Transform3D(-4.37114e-08, 0, -0.9, 0, 1, 0, 1, 0, -3.93403e-08, -6, 0, -16.929)
+[node name="GreenhouseWallPiece4" parent="Greenhouse/Walls" instance=ExtResource( "15_wtwgj" )]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -7, 0, -17)
 
-[node name="greenhouse_wallpiece5" parent="Greenhouse/Walls" instance=ExtResource( "13_vv4r3" )]
-transform = Transform3D(-4.37114e-08, 0, -0.9, 0, 1, 0, 1, 0, -3.93403e-08, -4, 0, -16.929)
+[node name="GreenhouseWallPiece5" parent="Greenhouse/Walls" instance=ExtResource( "15_wtwgj" )]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -8, 0, -16)
 
-[node name="greenhouse_wallpiece6" parent="Greenhouse/Walls" instance=ExtResource( "13_vv4r3" )]
-transform = Transform3D(-4.37114e-08, 0, -0.9, 0, 1, 0, 1, 0, -3.93403e-08, -2, 0, -16.929)
+[node name="GreenhouseWallPiece6" parent="Greenhouse/Walls" instance=ExtResource( "15_wtwgj" )]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -8, 0, -14)
 
-[node name="greenhouse_pillar" parent="Greenhouse/Walls" instance=ExtResource( "14_hdbs4" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -10.9303)
+[node name="GreenhouseWallPiece7" parent="Greenhouse/Walls" instance=ExtResource( "15_wtwgj" )]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -8, 0, -12)
 
-[node name="greenhouse_pillar2" parent="Greenhouse/Walls" instance=ExtResource( "14_hdbs4" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -13)
+[node name="GreenhouseWallPiece8" parent="Greenhouse/Walls" instance=ExtResource( "14_kfhtt" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7, 0, -11)
 
-[node name="greenhouse_pillar3" parent="Greenhouse/Walls" instance=ExtResource( "14_hdbs4" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -15)
+[node name="GreenhouseWallPiece9" parent="Greenhouse/Walls" instance=ExtResource( "14_kfhtt" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0, -11)
 
-[node name="greenhouse_pillar4" parent="Greenhouse/Walls" instance=ExtResource( "14_hdbs4" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -17)
+[node name="GreenhouseWallPiece10" parent="Greenhouse/Walls" instance=ExtResource( "14_kfhtt" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 0, -11)
 
-[node name="greenhouse_pillar5" parent="Greenhouse/Walls" instance=ExtResource( "14_hdbs4" )]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5, 0, -17)
-
-[node name="greenhouse_pillar6" parent="Greenhouse/Walls" instance=ExtResource( "14_hdbs4" )]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3, 0, -17)
-
-[node name="greenhouse_pillar8" parent="Greenhouse/Walls" instance=ExtResource( "14_hdbs4" )]
-transform = Transform3D(0, 2.43107, 1.50996e-07, 1, 3.20913e-14, -8.74228e-08, -8.74228e-08, 3.67082e-07, -1, -7.092, 2.635, -17)
-
-[node name="greenhouse_pillar9" parent="Greenhouse/Walls" instance=ExtResource( "14_hdbs4" )]
-transform = Transform3D(-1.19209e-07, 0, -1, 1, 0, -1.19209e-07, 0, -2.418, 0, -7.00229, 2.63512, -10.8295)
-
-[node name="greenhouse_pillar10" parent="Greenhouse/Walls" instance=ExtResource( "14_hdbs4" )]
-transform = Transform3D(-8.47033e-22, 2.31721, 1.50996e-07, 1, 3.05883e-14, -8.74228e-08, -8.74228e-08, 3.49889e-07, -1, -6.89208, 0.178464, -10.8961)
-
-[node name="greenhouse_pillar7" parent="Greenhouse/Walls" instance=ExtResource( "14_hdbs4" )]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0, -17)
+[node name="GreenhouseWallPiece11" parent="Greenhouse/Walls" instance=ExtResource( "14_kfhtt" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, -11)
 
 [node name="Workshop" type="Node3D" parent="."]
 
@@ -173,150 +166,118 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98847, -0.0219981, -10.355)
 
 [node name="Floor" type="MeshInstance3D" parent="Workshop"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -13.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -13.5)
 mesh = SubResource( "PlaneMesh_xv6av" )
 skeleton = NodePath("../../Greenhouse")
 surface_material_override/0 = SubResource( "StandardMaterial3D_qxxup" )
 
+[node name="Ceiling" type="MeshInstance3D" parent="Workshop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.7, -13.5)
+transparency = 1.0
+mesh = SubResource( "PlaneMesh_xv6av" )
+skeleton = NodePath("../../Greenhouse")
+surface_material_override/0 = SubResource( "StandardMaterial3D_qxxup" )
+
+[node name="InvisibleWall" type="MeshInstance3D" parent="Workshop"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 3, 1.44888, -7.9)
+transparency = 1.0
+mesh = SubResource( "PlaneMesh_xccii" )
+skeleton = NodePath("../../Greenhouse")
+surface_material_override/0 = SubResource( "StandardMaterial3D_qxxup" )
+
+[node name="InvisibleWall2" type="MeshInstance3D" parent="Workshop"]
+transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -4.47035e-08, 1.44888, -9.4)
+transparency = 1.0
+mesh = SubResource( "PlaneMesh_ejewa" )
+skeleton = NodePath("../../Greenhouse")
+surface_material_override/0 = SubResource( "StandardMaterial3D_qxxup" )
+
 [node name="Table3" parent="Workshop" instance=ExtResource( "9_17res" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -14.5)
-
-[node name="Cauldron" parent="Workshop" instance=ExtResource( "8_oosmm" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0, -18.5)
-
-[node name="BrewingParticles" parent="Workshop/Cauldron" index="1"]
-material_override = SubResource( "StandardMaterial3D_3gag8" )
-
-[node name="BrewDoneParticles" parent="Workshop/Cauldron" index="2"]
-material_override = SubResource( "StandardMaterial3D_3gag8" )
-
-[node name="Cauldron" parent="Workshop/Cauldron/cauldron" index="0"]
-material_override = SubResource( "StandardMaterial3D_3gag8" )
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -14.5)
 
 [node name="Cauldron2" parent="Workshop" instance=ExtResource( "8_oosmm" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -18.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -18.5)
+
+[node name="Cauldron4" parent="Workshop" instance=ExtResource( "8_oosmm" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 0, -18.5)
 
 [node name="Cauldron3" parent="Workshop" instance=ExtResource( "8_oosmm" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, 0, -18.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 0, -18.5)
 
 [node name="BottleStation" parent="Workshop" instance=ExtResource( "9_f3ldj" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49766, 0.268619, -17.47)
 
 [node name="DryingRack" parent="Workshop" instance=ExtResource( "12_wvoaf" )]
-transform = Transform3D(1, 0.000140582, -0.000176215, -0.000140582, 1, 2.57934e-05, 0.000176215, -2.57934e-05, 1, -0.4, 0, -11.5)
+transform = Transform3D(1, 0.000140582, -0.000176215, -0.000140582, 1, 2.57934e-05, 0.000176215, -2.57934e-05, 1, -1.8, 0, -11.5)
 
 [node name="Bin" parent="Workshop" instance=ExtResource( "15_swe82" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -11.5)
 
 [node name="fireplace2" parent="Workshop" instance=ExtResource( "21_2fq7l" )]
-transform = Transform3D(-4.37114e-08, 0, -1.21852, 0, 1, 0, 1, 0, -5.3263e-08, 2, 0, -19.0601)
+transform = Transform3D(-4.37114e-08, 0, -1.21852, 0, 1, 0, 1, 0, -5.3263e-08, 3, 0, -19.0601)
 
 [node name="Walls" type="Node3D" parent="Workshop"]
 
-[node name="brick_wall2" parent="Workshop/Walls" instance=ExtResource( "21_spkdq" )]
-transform = Transform3D(1, 0, 0, 0, 0.99, 0, 0, 0, 1.04141, -0.936693, -2.38419e-07, -18.1488)
+[node name="BrickWall" parent="Workshop/Walls" instance=ExtResource( "22_bdny5" )]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, -19)
 
-[node name="brick_wall" parent="Workshop/Walls" instance=ExtResource( "21_spkdq" )]
-transform = Transform3D(1, 0, 0, 0, 0.99, 0, 0, 0, 1.04141, -0.936693, -2.38419e-07, -18.1488)
+[node name="BrickWall4" parent="Workshop/Walls" instance=ExtResource( "22_bdny5" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18)
 
-[node name="brick_wall3" parent="Workshop/Walls" instance=ExtResource( "21_spkdq" )]
-transform = Transform3D(0, 0, -3.5, 0, 0.99, 0, 1, 0, 0, 2.53858, 0, -19)
+[node name="BrickWall2" parent="Workshop/Walls" instance=ExtResource( "22_bdny5" )]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, -19)
+
+[node name="BrickWall3" parent="Workshop/Walls" instance=ExtResource( "22_bdny5" )]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 0, -19)
+
+[node name="BrickWall5" parent="Workshop/Walls" instance=ExtResource( "22_bdny5" )]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6, 0, -18)
+
+[node name="BrickWall6" parent="Workshop/Walls" instance=ExtResource( "22_bdny5" )]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6, 0, -16)
+
+[node name="BrickWall7" parent="Workshop/Walls" instance=ExtResource( "22_bdny5" )]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6, 0, -14)
+
+[node name="BrickWall11" parent="Workshop/Walls" instance=ExtResource( "22_bdny5" )]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6, 0, -15)
+
+[node name="BrickWall8" parent="Workshop/Walls" instance=ExtResource( "22_bdny5" )]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6, 0, -12)
+
+[node name="BrickWall9" parent="Workshop/Walls" instance=ExtResource( "22_bdny5" )]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6, 0, -10)
+
+[node name="BrickWall10" parent="Workshop/Walls" instance=ExtResource( "22_bdny5" )]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6, 0, -9)
 
 [node name="brick_wall5" parent="Workshop/Walls" instance=ExtResource( "21_spkdq" )]
 transform = Transform3D(0, 0, -0.893356, 0, 0.082, 0, 1, 0, 0, 5.10825, 0, -7.79628)
 
 [node name="brick_wall6" parent="Workshop/Walls" instance=ExtResource( "21_spkdq" )]
-transform = Transform3D(0, 0, -2.13419, 0, 0.082, 0, 1, 0, 0, 0.940064, 0, -7.796)
+transform = Transform3D(0, 0, -0.893356, 0, 0.082, 0, 1, 0, 0, 0.70825, 0, -7.79628)
+
+[node name="brick_wall9" parent="Workshop/Walls" instance=ExtResource( "21_spkdq" )]
+transform = Transform3D(0, 0, -0.893356, 0, 0.082, 0, 1, 0, 0, 2.00825, 0, -7.79628)
 
 [node name="brick_wall7" parent="Workshop/Walls" instance=ExtResource( "21_spkdq" )]
-transform = Transform3D(1, 0, 6.55671e-08, 0, 0.082, 0, -4.37114e-08, 0, 1.5, -1, 0, -9.31745)
+transform = Transform3D(1, 0, 6.55671e-08, 0, 0.082, 0, -4.37114e-08, 0, 1.5, 0, 0, -9.31745)
 
-[node name="brick_wall4" parent="Workshop/Walls" instance=ExtResource( "21_spkdq" )]
-transform = Transform3D(-1, 0, 8.60229e-07, 0, 0.99, 0, -1.50996e-07, 0, -5.69703, 6, 0, -13.5)
+[node name="OmniLight3D3" type="OmniLight3D" parent="Workshop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2, -14.5)
+omni_range = 16.008
 
-[node name="brick" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.984294, 0.987769, -17.6422)
-
-[node name="brick2" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.984294, 1.20324, -17.8273)
-
-[node name="brick3" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1.3, 0, 0, -0.357336, 2.65599, -19.0683)
-
-[node name="brick4" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.58733, 2.45824, -19.0376)
-
-[node name="brick5" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.317218, 1.62722, -19.0376)
-
-[node name="brick14" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.827744, 0.194289, -19.0376)
-
-[node name="brick15" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.246886, 0.186574, -19.0376)
-
-[node name="brick16" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.573928, 0.466165, -19.0376)
-
-[node name="brick17" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.573928, 0.466165, -19.0376)
-
-[node name="brick18" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.869188, 1.08996, -19.0376)
-
-[node name="brick6" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.3316, 0.147916, -19.0376)
-
-[node name="brick7" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.7611, 0.148633, -19.0376)
-
-[node name="brick8" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.03086, 0.379811, -19.0376)
-
-[node name="brick9" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.63581, 1.09962, -19.0376)
-
-[node name="brick10" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.35512, 1.32508, -19.0376)
-
-[node name="brick11" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.45559, 2.45215, -19.0376)
-
-[node name="brick19" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1.3, 0, 0, 4.16693, 2.64376, -19.0683)
-
-[node name="brick20" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1.3, 0, 0, 0.77527, 2.64376, -19.0683)
-
-[node name="brick21" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(1.4, 0, 0, 0, 1, 0, 0, 0, 1, 6.08928, 2.64376, -18.6931)
-
-[node name="brick22" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(1.4, 0, 0, 0, 1, 0, 0, 0, 1, 6.08928, 2.64376, -14.0367)
-
-[node name="brick23" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(1.4, 0, 0, 0, 1, 0, 0, 0, 1, 6.08928, 2.64376, -12.9914)
-
-[node name="brick24" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(1.4, 0, 0, 0, 1, 0, 0, 0, 1, 6.08928, 2.64376, -10.2517)
-
-[node name="brick12" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.98647, 2.42064, -19.0376)
-
-[node name="brick13" parent="Workshop/Walls" instance=ExtResource( "22_teqb0" )]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.68777, 2.21413, -19.0376)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Workshop"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -16)
+[node name="OmniLight3D5" type="OmniLight3D" parent="Workshop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, -10.5)
+omni_range = 4.84547
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Workshop"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.159118, -18.2275)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.159118, -18.2275)
+visible = false
 light_color = Color(1, 0.87451, 0.501961, 1)
+omni_range = 11.5448
 
 [node name="HUD" parent="." instance=ExtResource( "10_wog8m" )]
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
-
-[editable path="Workshop/Cauldron"]
-[editable path="Workshop/Cauldron/cauldron"]

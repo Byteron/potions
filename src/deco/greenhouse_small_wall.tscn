@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvpxll8qnhf4y"]
+
+[ext_resource type="PackedScene" uid="uid://lvo4a7pma221" path="res://assets/graphics/gltf/greenhouse_pillar.gltf" id="1_cp50j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6oddx"]
+size = Vector3(2.2, 1, 0.2)
+
+[node name="GreenHouseSmallWall" type="StaticBody3D"]
+
+[node name="greenhouse_pillar" parent="." instance=ExtResource( "1_cp50j" )]
+transform = Transform3D(0, 0.875, 0, -1, 0, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1, 0.4, 0)
+shape = SubResource( "BoxShape3D_6oddx" )
