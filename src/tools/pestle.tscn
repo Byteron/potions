@@ -28,7 +28,7 @@ script = ExtResource( "4_btprc" )
 shape = SubResource( "BoxShape3D_86w6y" )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126089, 0)
+transform = Transform3D(1, 0, 0, 0, 0.914275, -0.405094, 0, 0.405094, 0.914275, 0, 0.037826, 0.199205)
 axis = 1
 texture = ExtResource( "5_xvpsh" )
 
