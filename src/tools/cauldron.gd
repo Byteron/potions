@@ -14,6 +14,7 @@ var is_brewed := false
 @onready var done_particles: CPUParticles3D = $BrewDoneParticles
 
 @onready var liquid: Node3D = $cauldron/Cauldron
+@onready var light: SpotLight3D = $SpotLight3D
 
 @onready var fill_bottle_player: AudioStreamPlayer3D = $FillBottlePlayer
 @onready var add_ingredient_player: AudioStreamPlayer3D = $AddIngredientPlayer
@@ -62,7 +63,9 @@ func update_color() -> void:
 	var color = Color.BLACK
 	for ingredient in _ingredients:
 		color += ingredient.data.color
-	liquid.material_override.set("albedo_color", color / _ingredients.size())
+	color = color / _ingredients.size()
+	liquid.material_override.set("albedo_color", color)
+	light.light_color = color
 
 
 func _reset() -> void:
