@@ -1,12 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvennarng5skj"]
+[gd_scene load_steps=4 format=3 uid="uid://cvennarng5skj"]
 
 [ext_resource type="PackedScene" uid="uid://qh1l4j1n5gei" path="res://src/tools/bottle_bag.tscn" id="1_dj831"]
-[ext_resource type="PackedScene" uid="uid://31skn8qsjy5s" path="res://src/deco/box.tscn" id="2_qa4x8"]
+[ext_resource type="PackedScene" uid="uid://n3frrallvoyj" path="res://assets/graphics/gltf/table_for_bottles.gltf" id="2_qrxg0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eoi0l"]
+size = Vector3(0.993039, 1.2, 2)
 
 [node name="BottleStation" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268619, 0)
 
 [node name="BottleBag" parent="." instance=ExtResource( "1_dj831" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24358, -0.015235)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.96046e-08, 0.24358, -0.015235)
 
-[node name="Box" parent="." instance=ExtResource( "2_qa4x8" )]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource( "BoxShape3D_eoi0l" )
+
+[node name="table_for_bottles" parent="." instance=ExtResource( "2_qrxg0" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.3, 0)

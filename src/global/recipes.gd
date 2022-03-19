@@ -2,6 +2,9 @@ extends Node
 
 const MAX_ORDERS = 5
 
+signal orders_changed()
+
+
 var recipes: Array[Recipe] = [
 	load("data/recipes/health_potion.tres") as Recipe,
 	load("data/recipes/mana_potion.tres") as Recipe,
@@ -80,6 +83,7 @@ func _on_new_recipe_timer_timeout() -> void:
 	
 	get_tree().call_group("HUD", "add_order", order)
 	ring_player.play()
+	orders_changed.emit()
 
 
 func _on_order_finished(order: Order) -> void:
@@ -90,7 +94,7 @@ func _on_order_finished(order: Order) -> void:
 	order.queue_free()
 	fulfilled_player.play()
 	sold += 1
-
+	orders_changed.emit()
 
 func _on_order_expired(order: Order) -> void:
 	score -= 500
@@ -99,3 +103,4 @@ func _on_order_expired(order: Order) -> void:
 	order.queue_free()
 	failed_player.play()
 	failed += 1
+	orders_changed.emit()
