@@ -9,7 +9,6 @@ class_name VictoryScreen
 
 @onready var credits_container: Control = $Credits
 
-
 var credit_entries := [
 	{
 		name = "Aaron Winter",
