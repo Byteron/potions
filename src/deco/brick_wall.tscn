@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpwpg72t056ce"]
+[gd_scene load_steps=3 format=3 uid="uid://cpwpg72t056ce"]
 
 [ext_resource type="PackedScene" uid="uid://6goue3xektq4" path="res://assets/graphics/gltf/brick_wall.gltf" id="1_yhxkk"]
-[ext_resource type="PackedScene" uid="uid://cng5uw0gkxt8y" path="res://assets/graphics/gltf/brick.gltf" id="2_jmyv2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_py7fy"]
 size = Vector3(0.2, 2.6, 2)
@@ -10,15 +9,6 @@ size = Vector3(0.2, 2.6, 2)
 
 [node name="brick_wall3" parent="." instance=ExtResource( "1_yhxkk" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0)
-
-[node name="brick3" parent="." instance=ExtResource( "2_jmyv2" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 2.3, 0.5)
-
-[node name="brick6" parent="." instance=ExtResource( "2_jmyv2" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.7, 0.3)
-
-[node name="brick5" parent="." instance=ExtResource( "2_jmyv2" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 1.7, -0.7)
 
 [node name="BrickWall" type="StaticBody3D" parent="."]
 
