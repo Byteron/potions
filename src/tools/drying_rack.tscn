@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://sudxav1ak3nc" path="res://src/tools/drying_hook.tscn" id="1_xt5is"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0ht0q"]
-size = Vector3(3.14237, 1, 1)
+size = Vector3(2, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eh5ch"]
 albedo_color = Color(0.286275, 0.172549, 0.121569, 1)
@@ -11,7 +11,7 @@ albedo_color = Color(0.286275, 0.172549, 0.121569, 1)
 [sub_resource type="CylinderMesh" id="CylinderMesh_afwkg"]
 top_radius = 0.05
 bottom_radius = 0.05
-height = 3.2
+height = 2.2
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_lrgvh"]
 material = SubResource( "StandardMaterial3D_eh5ch" )
@@ -34,7 +34,7 @@ mesh = SubResource( "CylinderMesh_afwkg" )
 skeleton = NodePath("../..")
 
 [node name="LeftStand" type="Node3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/LeftStand"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 0.5, -0.2)
@@ -47,7 +47,7 @@ mesh = SubResource( "CylinderMesh_lrgvh" )
 skeleton = NodePath("../../..")
 
 [node name="RightStand" type="Node3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/RightStand"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0.5, 0.2)
@@ -60,26 +60,18 @@ mesh = SubResource( "CylinderMesh_lrgvh" )
 skeleton = NodePath("../../..")
 
 [node name="DryingHook" parent="." instance=ExtResource( "1_xt5is" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94838, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.94838, 0)
 
 [node name="Cursor" parent="DryingHook/Interactable" index="1"]
 transform = Transform3D(1, 0, 0, 0, 0.510258, -0.860022, 0, 0.860022, 0.510258, 0, -0.34676, 0.0494163)
 
 [node name="DryingHook2" parent="." instance=ExtResource( "1_xt5is" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.94838, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.94838, 0)
 
 [node name="Cursor" parent="DryingHook2/Interactable" index="1"]
-transform = Transform3D(1, 0, 0, 0, 0.510258, -0.860022, 0, 0.860022, 0.510258, 0, -0.34676, 0.0494163)
-
-[node name="DryingHook3" parent="." instance=ExtResource( "1_xt5is" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.94838, 0)
-
-[node name="Cursor" parent="DryingHook3/Interactable" index="1"]
 transform = Transform3D(1, 0, 0, 0, 0.510258, -0.860022, 0, 0.860022, 0.510258, 0, -0.34676, 0.0494163)
 
 [editable path="DryingHook"]
 [editable path="DryingHook/Interactable"]
 [editable path="DryingHook2"]
 [editable path="DryingHook2/Interactable"]
-[editable path="DryingHook3"]
-[editable path="DryingHook3/Interactable"]
