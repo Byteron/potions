@@ -73,7 +73,7 @@ stream = ExtResource( "2_jd8pm" )
 environment = SubResource( "Environment_4xgxr" )
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.995691, -0.0803114, 0.0463678, 0, 0.5, 0.866026, -0.0927356, -0.862294, 0.497845, -0.499028, 15.5339, -4.52968)
+transform = Transform3D(0.991576, -0.11217, 0.0647613, -1.23982e-08, 0.5, 0.866026, -0.129523, -0.858731, 0.495788, -0.801787, 13.5675, -5.72894)
 fov = 40.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -196,13 +196,13 @@ surface_material_override/0 = SubResource( "StandardMaterial3D_qxxup" )
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -14.5)
 
 [node name="Cauldron2" parent="Workshop" instance=ExtResource( "8_oosmm" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -18.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -18.4)
 
 [node name="Cauldron4" parent="Workshop" instance=ExtResource( "8_oosmm" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 0, -18.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 0, -18.4)
 
 [node name="Cauldron3" parent="Workshop" instance=ExtResource( "8_oosmm" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 0, -18.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3, 0, -18.4)
 
 [node name="BottleStation" parent="Workshop" instance=ExtResource( "9_f3ldj" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49766, 0.268619, -17.47)
