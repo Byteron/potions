@@ -17,7 +17,7 @@ func initialize(position: Vector3, text: String) -> void:
 	self.text = text
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var camera = get_viewport().get_camera_3d()
 	
 	if camera == null:
