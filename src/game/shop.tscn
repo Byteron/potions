@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://de4jsrcssn3fp"]
+[gd_scene load_steps=72 format=3 uid="uid://de4jsrcssn3fp"]
 
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="1_7ggcj"]
 [ext_resource type="Script" path="res://src/game/shop.gd" id="1_6107u"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://ca8ktkqproeo2" path="res://assets/graphics/images/43-All-Cards.png" id="32_ajx1o"]
 [ext_resource type="Texture2D" uid="uid://drulftcuesog7" path="res://assets/graphics/images/how_to_brew.png" id="33_knnlf"]
 [ext_resource type="Texture2D" uid="uid://cjg3nuke5hpyw" path="res://assets/graphics/images/how_to_move.png" id="34_q0gcd"]
+[ext_resource type="Texture2D" uid="uid://cihwwdph5cgly" path="res://assets/graphics/images/overbrewed-text.png" id="39_1bw5t"]
 [ext_resource type="Texture2D" uid="uid://ghtltiq0jfgn" path="res://assets/graphics/images/grass_card.png" id="40_woebg"]
 
 [sub_resource type="Animation" id="Animation_fvxtk"]
@@ -331,6 +332,7 @@ size = Vector2(4, 4)
 [node name="Shop" type="Node3D"]
 script = ExtResource( "1_6107u" )
 game_time = 240.0
+skip_intro = true
 
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true
@@ -1202,7 +1204,7 @@ pixel_size = 0.0005
 texture = ExtResource( "31_ovkc0" )
 
 [node name="Sprite3D4" type="Sprite3D" parent="Intro"]
-transform = Transform3D(-4.35882e-08, 3.27895e-09, -1, 0.0750135, 0.997182, 0, 0.997182, -0.0750135, -4.37114e-08, 5.85004, 2.0419, 0.547116)
+transform = Transform3D(-4.35882e-08, 3.27895e-09, -1, 0.0750135, 0.997182, 0, 0.997182, -0.0750135, -4.37114e-08, 5.85004, 2.03158, 0.547893)
 visibility_range_begin = 5.0
 visibility_range_begin_margin = 5.0
 visibility_range_end = 6.0
@@ -1222,6 +1224,17 @@ visibility_range_fade_mode = 1
 modulate = Color(0.623529, 0.623529, 0.623529, 1)
 pixel_size = 0.0005
 texture = ExtResource( "34_q0gcd" )
+
+[node name="Sprite3D6" type="Sprite3D" parent="Intro"]
+transform = Transform3D(-4.36365e-08, -2.55809e-09, -1, -0.0585223, 0.998286, 0, 0.998286, 0.0585223, -4.37114e-08, 5.71281, 2.20371, 1.08646)
+visibility_range_begin = 5.0
+visibility_range_begin_margin = 5.0
+visibility_range_end = 6.0
+visibility_range_end_margin = 6.0
+visibility_range_fade_mode = 1
+modulate = Color(0.623529, 0.623529, 0.623529, 1)
+pixel_size = 0.001
+texture = ExtResource( "39_1bw5t" )
 
 [node name="Sprite3D3" type="Sprite3D" parent="Intro"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.85004, 2.0419, -0.565579)
