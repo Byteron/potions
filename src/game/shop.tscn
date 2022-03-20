@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://de4jsrcssn3fp"]
+[gd_scene load_steps=71 format=3 uid="uid://de4jsrcssn3fp"]
 
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="1_7ggcj"]
 [ext_resource type="Script" path="res://src/game/shop.gd" id="1_6107u"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://ca8ktkqproeo2" path="res://assets/graphics/images/43-All-Cards.png" id="32_ajx1o"]
 [ext_resource type="Texture2D" uid="uid://drulftcuesog7" path="res://assets/graphics/images/how_to_brew.png" id="33_knnlf"]
 [ext_resource type="Texture2D" uid="uid://cjg3nuke5hpyw" path="res://assets/graphics/images/how_to_move.png" id="34_q0gcd"]
+[ext_resource type="Texture2D" uid="uid://ghtltiq0jfgn" path="res://assets/graphics/images/grass_card.png" id="40_woebg"]
 
 [sub_resource type="Animation" id="Animation_fvxtk"]
 length = 0.001
@@ -320,19 +321,17 @@ albedo_texture = ExtResource( "25_6huq0" )
 [sub_resource type="PlaneMesh" id="PlaneMesh_xv6av"]
 material = SubResource( "StandardMaterial3D_bib80" )
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h41lu"]
-albedo_color = Color(0.788235, 1, 0.639216, 1)
-albedo_texture = ExtResource( "15_l5wv2" )
-uv1_scale = Vector3(8, 6, 1)
-uv2_scale = Vector3(8, 1, 8)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oj0cd"]
+albedo_color = Color(0.2, 0.25, 0.0785714, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_66y6s"]
-material = SubResource( "StandardMaterial3D_h41lu" )
-size = Vector2(8, 6)
+[sub_resource type="PlaneMesh" id="PlaneMesh_k5q6p"]
+material = SubResource( "StandardMaterial3D_oj0cd" )
+size = Vector2(4, 4)
 
 [node name="Shop" type="Node3D"]
 script = ExtResource( "1_6107u" )
 game_time = 240.0
+skip_intro = true
 
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true
@@ -1241,30 +1240,642 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0, 0, 0, 1)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -8)
-visible = false
-mesh = SubResource( "PlaneMesh_66y6s" )
+[node name="Outside" type="Node3D" parent="."]
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -14)
-visible = false
-mesh = SubResource( "PlaneMesh_66y6s" )
+[node name="Grass33" type="MeshInstance3D" parent="Outside"]
+transform = Transform3D(905.939, 0, -423.409, 0, 1000, 0, 423.409, 0, 905.939, -4.62908, -0.214974, 1.58822)
+mesh = SubResource( "PlaneMesh_k5q6p" )
+skeleton = NodePath("../..")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -20)
-visible = false
-mesh = SubResource( "PlaneMesh_66y6s" )
+[node name="Sprite3D" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -0.581174, 0.319676, 2.39653)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -20)
-visible = false
-mesh = SubResource( "PlaneMesh_66y6s" )
+[node name="Sprite3D20" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -1.64327, 0.29789, 2.32967)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -8)
-visible = false
-mesh = SubResource( "PlaneMesh_66y6s" )
+[node name="Sprite3D21" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -2.57456, 0.299696, 2.33521)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D22" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -3.54746, 0.289342, 2.30343)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D23" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -5.68583, 0.285704, 2.29227)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D24" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -7.79491, 0.288936, 2.30219)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D17" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -2.91223, 0.338586, 2.45457)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D34" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -3.10987, 0.338586, -5.39403)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D35" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -1.45942, 0.338586, -5.32134)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D36" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -4.32263, 0.338586, -4.82749)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D37" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -6.13397, 0.338586, -4.87796)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D18" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -5.28434, 0.309715, 2.36596)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D19" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -6.86701, 0.34157, 2.46373)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D3" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.149079, 0, 0, 0, 0.202007, 0.379691, 0, -0.0658194, 1.16531, -4.32629, 0.238382, 2.3388)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D5" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.149079, 0, 0, 0, 0.202007, 0.379691, 0, -0.0658194, 1.16531, -4.7524, 0.238382, 2.28026)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D6" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.149079, 0, 0, 0, 0.202007, 0.379691, 0, -0.0658194, 1.16531, -3.826, 0.238382, 2.29518)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D7" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.149079, 0, 0, 0, 0.202007, 0.379691, 0, -0.0658194, 1.16531, -3.57357, 0.238382, 2.38663)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D49" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.138751, -0.0471194, 0.35641, 1.86265e-09, 0.168936, 0.743233, -0.0545213, -0.119914, 0.907027, -4.61483, 0.238382, 3.65261)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D50" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147802, -0.00859571, 0.152185, -1.03378e-09, 0.202007, 0.379691, -0.019469, -0.0652557, 1.15533, -3.47877, 0.238382, 3.32049)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D102" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147802, -0.00859571, 0.152185, -1.03378e-09, 0.202007, 0.379691, -0.019469, -0.0652557, 1.15533, -3.16379, 0.0413411, 2.48404)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D103" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147802, -0.00859571, 0.152185, -1.03378e-09, 0.202007, 0.379691, -0.019469, -0.0652557, 1.15533, -4.35205, 0.0399833, 2.40882)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D8" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.132388, 0, 0, 0, 0.172471, 0.361602, 0, -0.0561956, 1.1098, -3.09675, 0.240212, 2.32531)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D9" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.149079, 0, 0, 0, 0.202007, 0.379691, 0, -0.0658194, 1.16531, -2.5187, 0.238382, 2.37779)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D10" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.149079, 0, 0, 0, 0.202007, 0.379691, 0, -0.0658194, 1.16531, -2.18192, 0.238382, 2.27906)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D11" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.149079, 0, 0, 0, 0.202007, 0.379691, 0, -0.0658194, 1.16531, -1.78189, 0.238382, 2.39556)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D12" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.149079, 0, 0, 0, 0.202007, 0.379691, 0, -0.0658194, 1.16531, -1.40178, 0.238382, 2.30762)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D2" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.12686, -0.00532576, 0.0958584, 0, 0.184996, 0.353496, -0.0112528, -0.0600409, 1.08068, -0.817697, 0.306296, 2.30698)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D4" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.175316, 0.00154046, -0.023746, 6.13614e-10, 0.225943, 0.369753, 0.00366929, -0.0736022, 1.13457, -6.07521, 0.171093, 2.26831)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D25" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.149079, 0, 0, 0, 0.202007, 0.379691, 0, -0.0658194, 1.16531, -4.32629, 0.238382, -4.57989)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D26" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.149079, 0, 0, 0, 0.202007, 0.379691, 0, -0.0658194, 1.16531, -3.46788, 0.238382, -4.32977)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D27" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.175316, 0.00154046, -0.023746, 6.13614e-10, 0.225943, 0.369753, 0.00366929, -0.0736022, 1.13457, -6.07521, 0.171093, -4.65039)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D28" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.149079, 0, 0, 0, 0.202007, 0.379691, 0, -0.0658194, 1.16531, -4.76999, 0.238382, -5.07218)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D40" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -3.72781, 0.338586, -6.54907)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D41" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.149079, 0, 0, 0, 0.202007, 0.379691, 0, -0.0658194, 1.16531, -3.73147, 0.238382, -6.30148)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D42" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.149079, 0, 0, 0, 0.202007, 0.379691, 0, -0.0658194, 1.16531, -4.17517, 0.238382, -6.79376)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D54" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.125231, -0.0496259, 0.688308, 0, 0.290778, 0.428164, -0.0770036, -0.0807067, 1.1194, -8.54415, 0.338586, -0.793083)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D55" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.126992, -0.0344757, 0.610383, 0, 0.202007, 0.379691, -0.0780863, -0.056068, 0.992668, -9.0534, 0.238382, -0.767199)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D56" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.125231, -0.0496259, 0.688308, 0, 0.290778, 0.428164, -0.0770036, -0.0807067, 1.1194, -3.83205, 0.338586, 3.80642)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D90" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.138751, -0.0240716, 0.426181, 0, 0.202007, 0.379691, -0.0545213, -0.0612597, 1.08459, -1.25912, 0.238382, -8.66236)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D91" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.125231, -0.0496259, 0.688308, 0, 0.290778, 0.428164, -0.0770036, -0.0807067, 1.1194, -0.476333, 0.338586, -8.50854)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D84" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.125231, -0.0496259, 0.688308, 0, 0.290778, 0.428164, -0.0770036, -0.0807067, 1.1194, -6.9972, 0.338586, 5.14416)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D57" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.126992, -0.0344757, 0.610383, 0, 0.202007, 0.379691, -0.0780863, -0.056068, 0.992668, -4.3413, 0.238381, 3.8323)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D96" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.117636, 0.0404319, -0.715835, -1.03378e-09, 0.202007, 0.379691, 0.0915768, -0.051937, 0.919531, 8.87383, 0.233839, -8.07801)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D97" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.142758, 0.0226268, -0.313832, 1.86609e-09, 0.290778, 0.428164, 0.0351095, -0.0920018, 1.27606, 8.27977, 0.334043, -7.9884)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D99" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.117636, 0.0404319, -0.715835, -1.03378e-09, 0.202007, 0.379691, 0.0915768, -0.051937, 0.919531, 9.55605, 0.233839, -9.41421)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D100" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.142758, 0.0226268, -0.313832, 1.86609e-09, 0.290778, 0.428164, 0.0351095, -0.0920018, 1.27606, 8.61604, 0.334043, -9.61335)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D98" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.144765, 0.0157191, -0.278302, 1.89233e-09, 0.202007, 0.379691, 0.0356032, -0.0639148, 1.13159, 7.80089, 0.233839, -8.82958)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D101" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.102057, 0.0479779, -0.849436, 2.97091e-09, 0.202007, 0.379691, 0.108668, -0.045059, 0.797757, 9.25565, 0.233838, -6.95104)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D65" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.138751, -0.0240716, 0.426181, 0, 0.202007, 0.379691, -0.0545213, -0.0612597, 1.08459, -10.3782, 0.238382, -7.15347)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D66" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147802, -0.00859571, 0.152185, -1.03378e-09, 0.202007, 0.379691, -0.019469, -0.0652557, 1.15533, -7.45629, 0.238382, -7.31189)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D67" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.126992, -0.0344757, 0.610383, 0, 0.202007, 0.379691, -0.0780863, -0.056068, 0.992668, -8.31882, 0.238381, -6.80007)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D68" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.138751, -0.0240716, 0.426181, 0, 0.202007, 0.379691, -0.0545213, -0.0612597, 1.08459, -6.20611, 0.238383, -6.95814)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D94" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.138751, -0.0240716, 0.426181, 0, 0.202007, 0.379691, -0.0545213, -0.0612597, 1.08459, -12.88, 0.238383, -5.02721)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D95" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.138751, -0.0240716, 0.426181, 0, 0.202007, 0.379691, -0.0545213, -0.0612597, 1.08459, -11.444, 0.238383, -6.53397)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D69" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147802, -0.00859571, 0.152185, -1.03378e-09, 0.202007, 0.379691, -0.019469, -0.0652557, 1.15533, -5.07004, 0.238383, -7.29025)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D70" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.126992, -0.0344757, 0.610383, 0, 0.202007, 0.379691, -0.0780863, -0.056068, 0.992668, -5.2834, 0.238382, -6.16186)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D71" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.138751, -0.0240716, 0.426181, 0, 0.202007, 0.379691, -0.0545213, -0.0612597, 1.08459, -10.5945, 0.238382, -3.36424)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D72" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147802, -0.00859571, 0.152185, -1.03378e-09, 0.202007, 0.379691, -0.019469, -0.0652557, 1.15533, -9.45839, 0.238382, -3.69636)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D73" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.126992, -0.0344757, 0.610383, 0, 0.202007, 0.379691, -0.0780863, -0.056068, 0.992668, -10.3209, 0.238381, -3.18454)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D62" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.138751, -0.0240716, 0.426181, 0, 0.202007, 0.379691, -0.0545213, -0.0612597, 1.08459, -6.98794, 0.238382, 3.39218)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D74" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.138751, -0.0240716, 0.426181, 0, 0.202007, 0.379691, -0.0545213, -0.0612597, 1.08459, -10.0045, 0.238382, -1.11564)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D64" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.138751, -0.0240716, 0.426181, 0, 0.202007, 0.379691, -0.0545213, -0.0612597, 1.08459, -7.42985, 0.238382, 2.69821)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D63" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.126992, -0.0344757, 0.610383, 0, 0.202007, 0.379691, -0.0780863, -0.056068, 0.992668, -6.71441, 0.238381, 3.57187)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D58" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.125231, -0.0496259, 0.688308, 0, 0.290778, 0.428164, -0.0770036, -0.0807067, 1.1194, -4.96284, 0.338586, 2.90125)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D59" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.126992, -0.0646708, 0.522439, 0, 0.172902, 0.712238, -0.0780863, -0.105174, 0.849645, -5.47209, 0.238381, 2.92713)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D60" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.125231, -0.0496259, 0.688308, 0, 0.290778, 0.428164, -0.0770036, -0.0807067, 1.1194, -6.37209, 0.338586, 3.91492)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D85" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.138751, -0.0240716, 0.426181, 0, 0.202007, 0.379691, -0.0545213, -0.0612597, 1.08459, -9.14863, 0.238382, 1.63636)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D88" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -8.44541, 0.288936, 1.10049)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D89" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.138751, -0.0240716, 0.426181, 0, 0.202007, 0.379691, -0.0545213, -0.0612597, 1.08459, -9.79913, 0.238382, 0.434662)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D86" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.126992, -0.0344757, 0.610383, 0, 0.202007, 0.379691, -0.0780863, -0.056068, 0.992668, -8.87509, 0.238381, 1.81606)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D87" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.125231, -0.0496259, 0.688308, 0, 0.290778, 0.428164, -0.0770036, -0.0807067, 1.1194, -8.53277, 0.338586, 2.15911)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D80" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.138751, -0.0240716, 0.426181, 0, 0.202007, 0.379691, -0.0545213, -0.0612597, 1.08459, -8.41708, 0.238382, 3.78583)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D81" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.126992, -0.0344757, 0.610383, 0, 0.202007, 0.379691, -0.0780863, -0.056068, 0.992668, -8.2531, 0.238381, 2.89132)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D82" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.125231, -0.0496259, 0.688308, 0, 0.290778, 0.428164, -0.0770036, -0.0807067, 1.1194, -8.01084, 0.338585, 3.81358)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D61" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.126992, -0.0344757, 0.610383, 0, 0.202007, 0.379691, -0.0780863, -0.056068, 0.992668, -6.88134, 0.238381, 3.94081)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D83" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.126992, -0.0344757, 0.610383, 0, 0.202007, 0.379691, -0.0780863, -0.056068, 0.992668, -6.86254, 0.238381, 4.83493)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D51" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -0.631269, 0.338586, 2.90105)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D52" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.149079, 0, 0, 0, 0.195583, 0.478707, 0, -0.0829839, 1.12826, -0.733744, 0.238381, 3.19882)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D53" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.149079, 0, 0, 0, 0.202007, 0.379691, 0, -0.0658194, 1.16531, -1.07863, 0.238381, 2.65636)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D75" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.143291, -0.0181611, 0.321537, 0, 0.202007, 0.379691, -0.0411342, -0.0632643, 1.12008, -6.97253, 0.238382, 5.44284)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D76" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.143291, -0.0195502, 0.318814, 0, 0.200297, 0.408734, -0.0411342, -0.0681035, 1.11059, -5.7443, 0.238381, 4.6714)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D77" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.126992, -0.0344757, 0.610383, 0, 0.202007, 0.379691, -0.0780863, -0.056068, 0.992668, -3.32403, 0.238381, 4.3792)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D78" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.143291, -0.0181611, 0.321537, 0, 0.202007, 0.379691, -0.0411342, -0.0632643, 1.12008, -2.18699, 0.238381, 5.10979)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D29" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.149079, 0, 0, 0, 0.202007, 0.379691, 0, -0.0658194, 1.16531, -3.68644, 0.238382, -4.7899)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D30" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.175316, 0.00154046, -0.023746, 6.13614e-10, 0.225943, 0.369753, 0.00366929, -0.0736022, 1.13457, -6.5189, 0.171093, -5.14267)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D43" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.120714, -0.0540754, 0.750022, 0, 0.290778, 0.428164, -0.0839078, -0.0777956, 1.07902, -9.08528, 0.338586, -3.22954)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D44" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.14605, -0.040744, 0.628064, 6.95252e-10, 0.225943, 0.369753, -0.0970501, -0.0613154, 0.945168, -9.55244, 0.171093, -3.22719)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D45" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.137738, -0.0331163, 0.459321, 0, 0.290778, 0.428164, -0.051386, -0.0887672, 1.2312, -7.4955, 0.338586, -5.5343)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D46" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.165541, -0.0242834, 0.374325, 6.95252e-10, 0.225943, 0.369753, -0.0578418, -0.069498, 1.0713, -8.73358, 0.171093, -5.35046)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D47" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.137738, -0.0331163, 0.459321, 0, 0.290778, 0.428164, -0.051386, -0.0887672, 1.2312, -1.61235, 0.338586, 3.69565)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D48" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.165541, -0.055861, 0.276184, 3.72529e-09, 0.166705, 0.850573, -0.0578418, -0.159872, 0.790425, -2.06553, 0.171094, 3.58219)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D79" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.165541, -0.0477698, 0.312137, 0, 0.188406, 0.727371, -0.0578418, -0.136715, 0.893323, -0.704042, 0.171094, 4.16184)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D31" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.149079, 0, 0, 0, 0.202007, 0.379691, 0, -0.0658194, 1.16531, -1.65632, 0.238382, -5.65176)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D32" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.149079, 0, 0, 0, 0.202007, 0.379691, 0, -0.0658194, 1.16531, -0.903606, 0.238382, -5.60393)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D33" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.175316, 0.00154046, -0.023746, 6.13614e-10, 0.225943, 0.369753, 0.00366929, -0.0736022, 1.13457, -3.40524, 0.171093, -5.72225)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D92" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.149079, 0, 0, 0, 0.202007, 0.379691, 0, -0.0658194, 1.16531, -3.82062, 0.238382, -8.12569)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D93" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.175316, 0.00154046, -0.023746, 6.13614e-10, 0.225943, 0.369753, 0.00366929, -0.0736022, 1.13457, -3.40669, 0.171093, -7.75539)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D38" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -1.58948, 0.338586, -6.34561)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D39" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.175316, 0.00154046, -0.023746, 6.13614e-10, 0.225943, 0.369753, 0.00366929, -0.0736022, 1.13457, -1.88485, 0.171093, -7.42962)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D104" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -0.498829, 0.338586, -6.58607)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D105" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.175316, 0.00154046, -0.023746, 6.13614e-10, 0.225943, 0.369753, 0.00366929, -0.0736022, 1.13457, -0.673112, 0.171093, -7.7629)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D13" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.175316, 0.00154046, -0.023746, 6.13614e-10, 0.225943, 0.369753, 0.00366929, -0.0736022, 1.13457, -5.42066, 0.171093, 2.35901)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D14" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.175316, 0.00154046, -0.023746, 6.13614e-10, 0.225943, 0.369753, 0.00366929, -0.0736022, 1.13457, -6.68843, 0.171093, 2.2667)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D15" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.175316, 0.00154046, -0.023746, 6.13614e-10, 0.225943, 0.369753, 0.00366929, -0.0736022, 1.13457, -7.1111, 0.171093, 2.38226)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D16" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.175316, 0.00154046, -0.023746, 6.13614e-10, 0.225943, 0.369753, 0.00366929, -0.0736022, 1.13457, -7.68988, 0.171093, 2.2919)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
