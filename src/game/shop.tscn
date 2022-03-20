@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d1lyxdgdrti2h" path="res://src/tools/seed_bag.tscn" id="4_x0iy6"]
 [ext_resource type="Resource" uid="uid://bavu6wugthpew" path="res://data/growables/flower.tres" id="5_ah0gp"]
 [ext_resource type="Resource" uid="uid://dnjnx3nwckkwc" path="res://data/growables/herb.tres" id="6_vr77g"]
-[ext_resource type="PackedScene" path="res://src/deco/counter.tscn" id="7_e66xu"]
+[ext_resource type="PackedScene" uid="uid://dfrmewrd2ij3h" path="res://src/deco/counter.tscn" id="7_e66xu"]
 [ext_resource type="PackedScene" uid="uid://d014fhdoxeh0f" path="res://src/tools/cauldron.tscn" id="8_oosmm"]
 [ext_resource type="Resource" uid="uid://jrhw42osr18p" path="res://data/growables/root.tres" id="8_qed3o"]
 [ext_resource type="PackedScene" uid="uid://dn2wq7dt428xv" path="res://src/deco/big_table.tscn" id="9_17res"]
@@ -148,18 +148,19 @@ stream = ExtResource( "2_jd8pm" )
 environment = SubResource( "Environment_4xgxr" )
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.991576, -0.11217, 0.0647613, -1.23982e-08, 0.5, 0.866026, -0.129523, -0.858731, 0.495788, -0.801787, 13.5675, -5.72894)
+transform = Transform3D(0.991576, -0.11217, 0.0647615, -1.23982e-08, 0.5, 0.866026, -0.129523, -0.85873, 0.495788, -0.801787, 13.5675, 7.27106)
 fov = 40.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.747618, -0.155559, -0.645654, -0.400241, -0.67027, 0.624937, -0.529977, 0.725631, 0.438845, -0.326733, 5.5664, -13)
+transform = Transform3D(-0.747618, -0.155559, -0.645654, -0.400241, -0.67027, 0.624937, -0.529977, 0.725631, 0.438844, -0.326733, 5.5664, 0)
 shadow_enabled = true
 directional_shadow_max_distance = 250.0
 
 [node name="Character" parent="." instance=ExtResource( "1_7ggcj" )]
-transform = Transform3D(0.99939, 0.0348995, 0, -0.0348995, 0.999391, 0, 0, 0, 1, 3.18996, 9.53674e-07, -11.2665)
+transform = Transform3D(0.99939, 0.0348995, 0, -0.0348995, 0.999391, 0, 0, 0, 1, 3.18996, 9.53674e-07, 1.7335)
 
 [node name="Greenhouse" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13)
 
 [node name="Pot6" parent="Greenhouse" instance=ExtResource( "3_obdbc" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.12116, 0, -11.5)
@@ -391,6 +392,7 @@ mesh = SubResource( "BoxMesh_flky6" )
 skeleton = NodePath("../Floor19")
 
 [node name="Workshop" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13)
 
 [node name="Counter" parent="Workshop" instance=ExtResource( "7_e66xu" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98847, -0.0219981, -10.355)
@@ -810,6 +812,7 @@ mesh = SubResource( "PlaneMesh_xv6av" )
 skeleton = NodePath("../../../Greenhouse")
 
 [node name="Customers" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13)
 script = ExtResource( "25_vpuh0" )
 
 [node name="customer" parent="Customers" instance=ExtResource( "26_fu76m" )]

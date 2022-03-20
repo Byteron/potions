@@ -22,12 +22,12 @@ var credit_entries := [
 	},
 	{
 		name = "Ramita",
-		score = "???",
+		score = "",
 		roles = "Sound Effects",
 	},
 	{
 		name = "Vikfro",
-		score = "???",
+		score = "",
 		roles = "3D Art and Music",
 	},
 ]
@@ -50,6 +50,7 @@ func _ready() -> void:
 		tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT).tween_property(entry, "modulate:a", 1.0, 0.5).set_delay(0.5)
 
 	tween.tween_callback(back_button.show).set_delay(0.5)
+	tween.tween_callback(back_button.grab_focus)
 
 
 func _process(delta: float) -> void:

@@ -4,6 +4,7 @@ class_name RecipeMenu
 @export var PotionEntry: PackedScene = null
 
 @onready var container: Control = $VBoxContainer/CenterContainer/GridContainer
+@onready var back_button: Button = $VBoxContainer/BackButton
 
 
 func _input(event: InputEvent) -> void:
@@ -18,6 +19,7 @@ func _ready() -> void:
 		container.add_child(entry)
 		entry.update_info()
 
+	back_button.grab_focus()
 
 
 func _on_back_button_pressed() -> void:
