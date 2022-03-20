@@ -30,7 +30,7 @@ var credit_entries := [
 	{
 		name = "Geoffrey Muller",
 		score = "",
-		roles = "Key art, logo design",
+		roles = "Key Art and Logo Design",
 	},
 	{
 		name = "Ramita",
