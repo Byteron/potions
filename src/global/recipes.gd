@@ -90,9 +90,10 @@ func _on_new_recipe_timer_timeout() -> void:
 
 func _on_order_finished(order: Order, position: Vector3) -> void:
 	var modifier := int(order.get_time_left_modifier())
-	score += order.recipe.score * modifier
+	var potion_score = order.recipe.score * modifier
+	score += potion_score
 	var label: FloatingLabel = FloatingLabel.instantiate()
-	label.initialize(position, str(score))
+	label.initialize(position, str(potion_score))
 	get_tree().current_scene.add_child(label)
 	
 	get_tree().call_group("HUD", "remove_order", order, true)
