@@ -1,20 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://qh1l4j1n5gei"]
+[gd_scene load_steps=4 format=3 uid="uid://qh1l4j1n5gei"]
 
 [ext_resource type="Script" path="res://src/tools/bottle_bag.gd" id="1_m7oik"]
-[ext_resource type="PackedScene" uid="uid://bdjw4ihxmop33" path="res://src/item/bottle.tscn" id="2_8y5ur"]
+[ext_resource type="PackedScene" path="res://src/item/bottle.tscn" id="2_8y5ur"]
 [ext_resource type="PackedScene" uid="uid://dkt4ajcywuap4" path="res://src/tools/interactable.tscn" id="4_cacgh"]
-[ext_resource type="Texture2D" uid="uid://drd8ah7pfdlan" path="res://assets/graphics/images/bottle_empty.png" id="4_qxomx"]
 
 [node name="BottleBag" type="Node3D"]
 script = ExtResource( "1_m7oik" )
 Bottle = ExtResource( "2_8y5ur" )
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
-offset = Vector2(0, 64)
-billboard = 1
-shaded = true
-texture = ExtResource( "4_qxomx" )
 
 [node name="Interactable" parent="." instance=ExtResource( "4_cacgh" )]
 
