@@ -247,8 +247,7 @@ size = Vector2(8, 6)
 
 [node name="Shop" type="Node3D"]
 script = ExtResource( "1_6107u" )
-game_time = 20.0
-skip_intro = true
+game_time = 240.0
 
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true
