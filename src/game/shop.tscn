@@ -247,7 +247,8 @@ size = Vector2(8, 6)
 
 [node name="Shop" type="Node3D"]
 script = ExtResource( "1_6107u" )
-game_time = 240.0
+game_time = 20.0
+skip_intro = true
 
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true
@@ -268,7 +269,7 @@ anims/intro = SubResource( "Animation_px7b8" )
 environment = SubResource( "Environment_4xgxr" )
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.00144362, 0.0155004, -0.999879, -8.3819e-09, 0.99988, 0.0155004, 0.999999, 2.23839e-05, -0.00144339, 4.39754, 2.09575, -3.33653)
+transform = Transform3D(-0.00144362, 0.0155004, -0.999879, -8.3819e-09, 0.99988, 0.0155004, 0.999999, 2.23839e-05, -0.00144339, 4.391, 2.096, 0.999)
 fov = 40.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
