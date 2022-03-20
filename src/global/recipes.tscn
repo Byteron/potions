@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://caq5r5k3s6uhm"]
+[gd_scene load_steps=15 format=3 uid="uid://caq5r5k3s6uhm"]
 
 [ext_resource type="Script" path="res://src/global/recipes.gd" id="1_ralvw"]
 [ext_resource type="PackedScene" uid="uid://b04idcv185fe3" path="res://src/tools/order.tscn" id="2_acmd1"]
+[ext_resource type="PackedScene" uid="uid://csp7ypmd1o6qg" path="res://src/hud/floating_label.tscn" id="3_rakj6"]
 [ext_resource type="AudioStream" uid="uid://dwfu8s4goc6js" path="res://assets/audio/sfx/order appeared 1.wav" id="3_ral17"]
 [ext_resource type="AudioStream" uid="uid://c5ydvwyplkp42" path="res://assets/audio/sfx/order appeared 2.wav" id="4_7bmmo"]
 [ext_resource type="AudioStream" uid="uid://bnhtpc1a2wib6" path="res://assets/audio/sfx/order appeared 3.wav" id="5_l20yd"]
@@ -37,6 +38,7 @@ stream_2/weight = 1.0
 [node name="Recipes" type="Node"]
 script = ExtResource( "1_ralvw" )
 Order = ExtResource( "2_acmd1" )
+FloatingLabel = ExtResource( "3_rakj6" )
 
 [node name="NewRecipeTimer" type="Timer" parent="."]
 wait_time = 15.0

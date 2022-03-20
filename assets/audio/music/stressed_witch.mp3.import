@@ -1,0 +1,16 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8be2qhtta007"
+path="res://.godot/imported/stressed_witch.mp3-cc12f3f340feb8096b50ced7cfdd64e3.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/music/stressed_witch.mp3"
+dest_files=["res://.godot/imported/stressed_witch.mp3-cc12f3f340feb8096b50ced7cfdd64e3.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0

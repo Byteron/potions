@@ -1,8 +1,9 @@
-[gd_scene load_steps=57 format=3 uid="uid://de4jsrcssn3fp"]
+[gd_scene load_steps=58 format=3 uid="uid://de4jsrcssn3fp"]
 
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="1_7ggcj"]
 [ext_resource type="Script" path="res://src/game/shop.gd" id="1_6107u"]
 [ext_resource type="AudioStream" uid="uid://c2meixmpb01wi" path="res://assets/audio/sfx/game over 2.wav" id="2_jd8pm"]
+[ext_resource type="AudioStream" uid="uid://8be2qhtta007" path="res://assets/audio/music/stressed_witch.mp3" id="3_76giy"]
 [ext_resource type="PackedScene" uid="uid://dmsvo32nle07g" path="res://src/tools/pot.tscn" id="3_obdbc"]
 [ext_resource type="PackedScene" uid="uid://bcc3w2be250tf" path="res://src/tools/dirt_box.tscn" id="4_n7npy"]
 [ext_resource type="PackedScene" uid="uid://d1lyxdgdrti2h" path="res://src/tools/seed_bag.tscn" id="4_x0iy6"]
@@ -248,6 +249,7 @@ size = Vector2(8, 6)
 [node name="Shop" type="Node3D"]
 script = ExtResource( "1_6107u" )
 game_time = 240.0
+skip_intro = true
 
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true
@@ -263,6 +265,10 @@ anims/RESET = SubResource( "Animation_fvxtk" )
 anims/camera_in = SubResource( "Animation_r7giu" )
 anims/camera_out = SubResource( "Animation_qnd1h" )
 anims/intro = SubResource( "Animation_px7b8" )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( "3_76giy" )
+volume_db = -20.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( "Environment_4xgxr" )

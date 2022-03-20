@@ -18,7 +18,7 @@ func validate_potion(bottle: Bottle) -> void:
 	for order in Recipes.orders:
 		print(order.recipe.stringify())
 		if is_potion_of_recipe(bottle, order.recipe):
-			order.finish()
+			order.finish(global_transform.origin)
 			print("potion is ", order.recipe.name)
 			return
 

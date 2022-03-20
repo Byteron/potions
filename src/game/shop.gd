@@ -12,14 +12,14 @@ class_name Shop
 @onready var character: Character = $Character
 
 @onready var anim: AnimationPlayer = $AnimationPlayer
+@onready var player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var rect: ColorRect = $Intro/ColorRect
-
 
 func _ready() -> void:
 	if Recipes.play_intro and not skip_intro:
-		Recipes.play_intro = false
 		anim.play("intro")
 		await anim.animation_finished
+		Recipes.play_intro = false
 	else:
 		rect.visible = false
 	hud.show_menu()
@@ -32,6 +32,7 @@ func start() -> void:
 	timer.start(game_time)
 	sound_timer.start(game_time - 10)
 	character.enable()
+	player.play()
 
 
 func _process(_delta: float) -> void:
@@ -43,6 +44,7 @@ func _on_game_timer_timeout() -> void:
 	Recipes.stop()
 	Recipes.clear()
 	character.disable()
+	player.stop()
 	await timer.timeout
 	hud.show_score()
 

@@ -33,6 +33,7 @@ var failed := 0
 var play_intro := true
 
 @export var Order: PackedScene = null
+@export var FloatingLabel: PackedScene = null
 
 @onready var order_container: Node = $Orders
 @onready var timer: Timer = $NewRecipeTimer
@@ -87,9 +88,13 @@ func _on_new_recipe_timer_timeout() -> void:
 	orders_changed.emit()
 
 
-func _on_order_finished(order: Order) -> void:
+func _on_order_finished(order: Order, position: Vector3) -> void:
 	var modifier := int(order.get_time_left_modifier())
 	score += order.recipe.score * modifier
+	var label: FloatingLabel = FloatingLabel.instantiate()
+	label.initialize(position, str(score))
+	get_tree().current_scene.add_child(label)
+	
 	get_tree().call_group("HUD", "remove_order", order, true)
 	orders.erase(order)
 	order.queue_free()

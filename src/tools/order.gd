@@ -2,15 +2,15 @@ extends Node
 class_name Order
 
 signal expired(order: Order)
-signal finished(order: Order)
+signal finished(order: Order, position: Vector3)
 
 var recipe: Recipe
 
 @onready var timer: Timer = $Timer
 
 
-func finish() -> void:
-	finished.emit(self)
+func finish(position: Vector3) -> void:
+	finished.emit(self, position)
 
 
 func get_time_left_modifier() -> float:
