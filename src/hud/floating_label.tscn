@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://csp7ypmd1o6qg"]
+
+[ext_resource type="Script" path="res://src/hud/floating_label.gd" id="1_ceg4p"]
+
+[node name="FloatingLabel" type="Control"]
+script = ExtResource( "1_ceg4p" )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = -61.0
+offset_right = 156.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "1600"
+horizontal_alignment = 1
+vertical_alignment = 1
+__meta__ = {
+"_edit_layout_mode": 1,
+"_edit_use_custom_anchors": false
+}

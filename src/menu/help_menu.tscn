@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bltwvjyvx4brh"]
+
+[ext_resource type="Script" path="res://src/menu/help_menu.gd" id="1_qqjjn"]
+[ext_resource type="PackedScene" uid="uid://ba6tywsi0ujhh" path="res://src/menu/background.tscn" id="2_cb7rj"]
+
+[node name="HelpMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( "1_qqjjn" )
+
+[node name="Background" parent="." instance=ExtResource( "2_cb7rj" )]
+
+[node name="BackButton" type="Button" parent="."]
+rect_min_size = Vector2(120, 50)
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -50.0
+offset_right = 60.0
+text = "BACK"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

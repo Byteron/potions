@@ -73,7 +73,7 @@ func start() -> void:
 	tween.tween_callback(back_button.grab_focus)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	score_label.text = "Score: " + str(score)
 	stats_label.text = "Sold: " + str(sold) + "\n" + "Failed: " + str(failed)
 

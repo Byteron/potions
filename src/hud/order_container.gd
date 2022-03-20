@@ -59,5 +59,5 @@ func animate_out(entry: OrderEntry, successful: bool) -> void:
 	tween.play()
 
 
-func _on_entry_faded(entry: OrderEntry) -> void:
+func _on_entry_faded(_entry: OrderEntry) -> void:
 	animate_all_up()

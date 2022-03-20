@@ -2,6 +2,9 @@ extends Node3D
 class_name Counter
 
 
+@onready var wrong_player: AudioStreamPlayer3D = $AudioStreamPlayer3D
+
+
 func _on_interactable_interacted(character: Character) -> void:
 	if character.has_item() and character.item is Bottle and character.item.is_filled:
 		var bottle = character.drop_item()
@@ -18,9 +21,11 @@ func validate_potion(bottle: Bottle) -> void:
 	for order in Recipes.orders:
 		print(order.recipe.stringify())
 		if is_potion_of_recipe(bottle, order.recipe):
-			order.finish()
+			order.finish(global_transform.origin)
 			print("potion is ", order.recipe.name)
 			return
+
+	wrong_player.play()
 
 
 func is_potion_of_recipe(bottle: Bottle, recipe: Recipe) -> bool:

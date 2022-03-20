@@ -64,6 +64,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://src/tools/drying_hook.gd"
 }, {
+"base": "Control",
+"class": &"FloatingLabel",
+"language": &"GDScript",
+"path": "res://src/hud/floating_label.gd"
+}, {
 "base": "Node3D",
 "class": &"Growable",
 "language": &"GDScript",
@@ -78,6 +83,11 @@ _global_script_classes=[{
 "class": &"HUD",
 "language": &"GDScript",
 "path": "res://src/hud/HUD.gd"
+}, {
+"base": "Control",
+"class": &"HelpMenu",
+"language": &"GDScript",
+"path": "res://src/menu/help_menu.gd"
 }, {
 "base": "Item",
 "class": &"Ingredient",
@@ -191,9 +201,11 @@ _global_script_class_icons={
 "CuttingBoard": "",
 "Dirt": "",
 "DryingHook": "",
+"FloatingLabel": "",
 "Growable": "",
 "GrowableData": "",
 "HUD": "",
+"HelpMenu": "",
 "Ingredient": "",
 "IngredientData": "",
 "Interactable": "",
