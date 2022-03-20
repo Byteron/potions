@@ -38,6 +38,8 @@ theme_override_constants/separation = 12
 [node name="ScoreLabel" type="Label" parent="VBoxContainer/CenterContainer/VBoxContainer"]
 offset_right = 183.0
 offset_bottom = 69.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = SubResource( "Font_6pkig" )
 theme_override_font_sizes/font_size = 48
 text = "Score: 500"
@@ -48,6 +50,8 @@ vertical_alignment = 1
 offset_top = 81.0
 offset_right = 183.0
 offset_bottom = 175.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = SubResource( "Font_5g1k5" )
 theme_override_font_sizes/font_size = 32
 text = "Sold: 12
