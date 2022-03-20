@@ -36,3 +36,19 @@ func _process(_delta: float) -> void:
 		run_player.stop()
 
 	character.move_and_slide()
+
+
+func enable() -> void:
+	set_process(true)
+	set_process_unhandled_input(true)
+	set_physics_process(true)
+	set_process_input(true)
+
+
+func disable() -> void:
+	set_process(false)
+	set_process_unhandled_input(false)
+	set_physics_process(false)
+	set_process_input(false)
+	particles.emitting = false
+	run_player.stop()

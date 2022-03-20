@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://culxk5mur1o0h"]
+[gd_scene load_steps=7 format=3 uid="uid://culxk5mur1o0h"]
 
 [ext_resource type="Script" path="res://src/hud/HUD.gd" id="1_s8jmo"]
 [ext_resource type="Script" path="res://src/hud/order_container.gd" id="3_lhsno"]
 [ext_resource type="PackedScene" uid="uid://clhx0yri5w45r" path="res://src/hud/order_entry.tscn" id="3_sua2s"]
+[ext_resource type="PackedScene" uid="uid://gawuvru5mnvt" path="res://src/menu/title_screen.tscn" id="4_t6mnv"]
+[ext_resource type="PackedScene" uid="uid://c41es2ibk5q3d" path="res://src/menu/recipe_menu.tscn" id="5_pivg1"]
+[ext_resource type="PackedScene" uid="uid://ct30ku46nnib7" path="res://src/menu/victory_screen.tscn" id="6_5uf8b"]
 
 [node name="HUD" type="CanvasLayer" groups=["HUD"]]
 script = ExtResource( "1_s8jmo" )
@@ -33,3 +36,15 @@ offset_bottom = 67.0
 text = "Score: 5000"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TitleScreen" parent="." instance=ExtResource( "4_t6mnv" )]
+
+[node name="RecipeMenu" parent="." instance=ExtResource( "5_pivg1" )]
+
+[node name="VictoryScreen" parent="." instance=ExtResource( "6_5uf8b" )]
+
+[connection signal="help_pressed" from="TitleScreen" to="." method="_on_title_screen_help_pressed"]
+[connection signal="play_pressed" from="TitleScreen" to="." method="_on_title_screen_play_pressed"]
+[connection signal="recipe_pressed" from="TitleScreen" to="." method="_on_title_screen_recipe_pressed"]
+[connection signal="back_pressed" from="RecipeMenu" to="." method="_on_recipe_menu_back_pressed"]
+[connection signal="back_pressed" from="VictoryScreen" to="." method="_on_victory_screen_back_pressed"]

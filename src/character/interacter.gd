@@ -25,6 +25,20 @@ func _process(_delta: float) -> void:
 		finish_refine()
 
 
+func enable() -> void:
+	set_process(true)
+	set_process_unhandled_input(true)
+	set_physics_process(true)
+	set_process_input(true)
+
+
+func disable() -> void:
+	set_process(false)
+	set_process_unhandled_input(false)
+	set_physics_process(false)
+	set_process_input(false)
+
+
 func update_interactable() -> void:
 	if interact_ray.is_colliding():
 		var area = interact_ray.get_collider()

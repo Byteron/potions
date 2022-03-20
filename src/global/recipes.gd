@@ -30,6 +30,7 @@ var score := 0
 var sold := 0
 var failed := 0
 
+var play_intro := true
 
 @export var Order: PackedScene = null
 

@@ -169,12 +169,12 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://src/tools/space.gd"
 }, {
-"base": "Panel",
+"base": "Control",
 "class": &"TitleScreen",
 "language": &"GDScript",
 "path": "res://src/menu/title_screen.gd"
 }, {
-"base": "Panel",
+"base": "Control",
 "class": &"VictoryScreen",
 "language": &"GDScript",
 "path": "res://src/menu/victory_screen.gd"
@@ -219,7 +219,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Overbrewed"
-run/main_scene="res://src/menu/title_screen.tscn"
+run/main_scene="res://src/game/shop.tscn"
 config/icon="res://icon.png"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
 

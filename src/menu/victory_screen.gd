@@ -1,5 +1,7 @@
-extends Panel
+extends Control
 class_name VictoryScreen
+
+signal back_pressed()
 
 @export var CreditsEntry: PackedScene = null
 
@@ -40,7 +42,25 @@ var failed := 0
 func _ready() -> void:
 	_init_credits()
 
+
+func enable() -> void:
+	show()
+	start()
+
+
+func disable() -> void:
+	hide()
+
+
+func start() -> void:
+	score = 0
+	sold = 0
+	failed = 0
 	back_button.visible = false
+	
+	for entry in credits_container.get_children():
+		entry.modulate.a = 0
+
 	var tween = get_tree().create_tween()
 	tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).tween_property(self, "score", Recipes.score, 3).set_delay(0.25)
 	tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).tween_property(self, "sold", Recipes.sold, 1).set_delay(0.25)
@@ -67,5 +87,6 @@ func _init_credits() -> void:
 		entry.roles = dict.roles
 		credits_container.add_child(entry)
 
+
 func _on_back_button_pressed() -> void:
-	get_tree().change_scene("res://src/menu/title_screen.tscn")
+	back_pressed.emit()

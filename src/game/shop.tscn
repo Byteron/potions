@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://de4jsrcssn3fp"]
+[gd_scene load_steps=55 format=3 uid="uid://de4jsrcssn3fp"]
 
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="1_7ggcj"]
 [ext_resource type="Script" path="res://src/game/shop.gd" id="1_6107u"]
@@ -29,6 +29,120 @@
 [ext_resource type="Texture2D" uid="uid://wgyr206p6m2g" path="res://assets/graphics/images/wood_floor.png" id="25_6huq0"]
 [ext_resource type="Script" path="res://src/game/customers.gd" id="25_vpuh0"]
 [ext_resource type="PackedScene" uid="uid://dn2evgsxnwbm5" path="res://assets/graphics/gltf/customer.gltf" id="26_fu76m"]
+[ext_resource type="Texture2D" uid="uid://wrqr4cyjjwsw" path="res://assets/graphics/images/Wildling-Wallpaper 1080.png" id="30_yfsha"]
+[ext_resource type="Texture2D" uid="uid://ckejykbophvmq" path="res://assets/graphics/images/43-Theme.png" id="31_ovkc0"]
+[ext_resource type="Texture2D" uid="uid://ca8ktkqproeo2" path="res://assets/graphics/images/43-All-Cards.png" id="32_ajx1o"]
+
+[sub_resource type="Animation" id="Animation_fvxtk"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_r7giu"]
+resource_name = "camera_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 3),
+"update": 0,
+"values": [Vector3(0.544025, 11.4118, 7.74346), Vector3(4.391, 2.096, 0.999)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.943573, 0.167906, -0.0263344), Vector3(-0.015501, -1.57224, -8.38291e-09)]
+}
+
+[sub_resource type="Animation" id="Animation_2ykrf"]
+resource_name = "camera_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 3, 1),
+"update": 0,
+"values": [Vector3(4.39126, 2.09575, 0.998644), Vector3(1.34788, 2.14293, 0.994237), Vector3(0.544025, 11.4118, 7.74346)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.015501, -1.57224, -8.38291e-09), Vector3(-0.015501, -1.57224, -8.38291e-09), Vector3(-0.943573, 0.167906, -0.0263344)]
+}
+
+[sub_resource type="Animation" id="Animation_px7b8"]
+resource_name = "intro"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(4.39754, 2.09575, -3.33653), Vector3(4.39126, 2.09575, 0.998644)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.015501, -1.57224, -7.33505e-09), Vector3(-0.015501, -1.57224, -8.38291e-09)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Intro/ColorRect:color")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 2.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Intro/ColorRect:visible")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6, 2.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jl2y6"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -123,7 +237,7 @@ material = SubResource( "StandardMaterial3D_bib80" )
 
 [node name="Shop" type="Node3D"]
 script = ExtResource( "1_6107u" )
-game_time = 240.0
+game_time = 20.0
 
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true
@@ -134,11 +248,17 @@ one_shot = true
 [node name="GameOverPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( "2_jd8pm" )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( "Animation_fvxtk" )
+anims/camera_in = SubResource( "Animation_r7giu" )
+anims/camera_out = SubResource( "Animation_2ykrf" )
+anims/intro = SubResource( "Animation_px7b8" )
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( "Environment_4xgxr" )
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.991576, -0.11217, 0.0647615, -1.23982e-08, 0.5, 0.866026, -0.129523, -0.85873, 0.495788, -0.801787, 13.5675, 7.27106)
+transform = Transform3D(-0.00144815, 0.0155004, -0.999879, -8.3819e-09, 0.99988, 0.0155004, 0.999999, 2.24537e-05, -0.00144792, 4.39754, 2.09575, -3.33653)
 fov = 40.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -147,7 +267,7 @@ shadow_enabled = true
 directional_shadow_max_distance = 250.0
 
 [node name="Character" parent="." instance=ExtResource( "1_7ggcj" )]
-transform = Transform3D(0.99939, 0.0348995, 0, -0.0348995, 0.999391, 0, 0, 0, 1, 3.18996, 9.53674e-07, 1.7335)
+transform = Transform3D(-0.523131, -0.0182682, -0.852056, -0.0348995, 0.999391, 3.57139e-09, 0.851536, 0.0297363, -0.523451, 1.09767, 9.53674e-07, -3.49051)
 
 [node name="Greenhouse" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13)
@@ -807,5 +927,44 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 5, 0, -9)
 
 [node name="HUD" parent="." instance=ExtResource( "10_wog8m" )]
 
+[node name="Intro" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Intro"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.85004, 2.06349, -3.38966)
+visibility_range_begin = 5.0
+visibility_range_begin_margin = 5.0
+visibility_range_end = 6.0
+visibility_range_end_margin = 6.0
+visibility_range_fade_mode = 1
+pixel_size = 0.0005
+texture = ExtResource( "30_yfsha" )
+
+[node name="Sprite3D2" type="Sprite3D" parent="Intro"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.85004, 2.0419, -2.10171)
+visibility_range_begin = 5.0
+visibility_range_begin_margin = 5.0
+visibility_range_end = 6.0
+visibility_range_end_margin = 6.0
+visibility_range_fade_mode = 1
+pixel_size = 0.0005
+texture = ExtResource( "31_ovkc0" )
+
+[node name="Sprite3D3" type="Sprite3D" parent="Intro"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.85004, 2.0419, -0.565579)
+visibility_range_begin = 5.0
+visibility_range_begin_margin = 5.0
+visibility_range_end = 6.0
+visibility_range_end_margin = 6.0
+visibility_range_fade_mode = 1
+pixel_size = 0.0005
+texture = ExtResource( "32_ajx1o" )
+
+[node name="ColorRect" type="ColorRect" parent="Intro"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
+[connection signal="back_pressed" from="HUD" to="." method="_on_hud_back_pressed"]
+[connection signal="play_pressed" from="HUD" to="." method="_on_hud_play_pressed"]

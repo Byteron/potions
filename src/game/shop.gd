@@ -10,12 +10,27 @@ class_name Shop
 @onready var game_over_player: AudioStreamPlayer = $GameOverPlayer
 @onready var character: Character = $Character
 
+@onready var anim: AnimationPlayer = $AnimationPlayer
+@onready var rect: ColorRect = $Intro/ColorRect
+
 
 func _ready() -> void:
+	if Recipes.play_intro:
+		Recipes.play_intro = false
+		anim.play("intro")
+		await anim.animation_finished
+	else:
+		rect.visible = false
+	hud.show_menu()
+
+
+func start() -> void:
+	hud.show_labels()
 	Recipes.reset()
 	Recipes.start()
 	timer.start(game_time)
 	sound_timer.start(game_time - 10)
+	character.enable()
 
 
 func _process(_delta: float) -> void:
@@ -28,8 +43,20 @@ func _on_game_timer_timeout() -> void:
 	Recipes.clear()
 	character.disable()
 	await timer.timeout
-	get_tree().change_scene("res://src/menu/victory_screen.tscn")
+	hud.show_score()
 
 
 func _on_game_over_timer_timeout() -> void:
 	game_over_player.play()
+
+
+func _on_hud_play_pressed() -> void:
+	anim.play("camera_out")
+	await anim.animation_finished
+	start()
+
+
+func _on_hud_back_pressed() -> void:
+	anim.play("camera_in")
+	await anim.animation_finished
+	get_tree().reload_current_scene()

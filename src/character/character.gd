@@ -6,7 +6,6 @@ var item: Item = null
 @onready var _item_container: Position3D = $ItemContainer
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
-
 @onready var take_player: AudioStreamPlayer3D = $TakePlayer
 @onready var drop_player: AudioStreamPlayer3D = $DropPlayer
 
@@ -14,9 +13,14 @@ var item: Item = null
 @onready var interacter = $Interacter
 
 
+func enable() -> void:
+	controller.enable()
+	interacter.enable()
+
+
 func disable() -> void:
-	controller.queue_free()
-	interacter.queue_free()
+	controller.disable()
+	interacter.disable()
 
 
 func take_item(new_item: Item) -> void:
