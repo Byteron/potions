@@ -14,12 +14,12 @@ signal back_pressed()
 var credit_entries := [
 	{
 		name = "Aaron Winter",
-		score = "Score: 18300",
+		score = "19900",
 		roles = "Game Design and Programming",
 	},
 	{
 		name = "Zowie van Dillen",
-		score = "Score: 15600",
+		score = "15600",
 		roles = "2D and 3D Art",
 	},
 	{
