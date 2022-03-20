@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvennarng5skj"]
+[gd_scene load_steps=5 format=3 uid="uid://cvennarng5skj"]
 
 [ext_resource type="PackedScene" uid="uid://qh1l4j1n5gei" path="res://src/tools/bottle_bag.tscn" id="1_dj831"]
 [ext_resource type="PackedScene" uid="uid://n3frrallvoyj" path="res://assets/graphics/gltf/table_for_bottles.gltf" id="2_qrxg0"]
+[ext_resource type="Texture2D" uid="uid://drd8ah7pfdlan" path="res://assets/graphics/images/bottle_empty.png" id="3_xyev2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eoi0l"]
 size = Vector3(0.993039, 1.2, 2)
@@ -10,7 +11,10 @@ size = Vector3(0.993039, 1.2, 2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268619, 0)
 
 [node name="BottleBag" parent="." instance=ExtResource( "1_dj831" )]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.96046e-08, 0.24358, -0.015235)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.244, -0.5)
+
+[node name="BottleBag2" parent="." instance=ExtResource( "1_dj831" )]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 8.74228e-08, 0.244, 0.5)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -20,3 +24,27 @@ shape = SubResource( "BoxShape3D_eoi0l" )
 
 [node name="table_for_bottles" parent="." instance=ExtResource( "2_qrxg0" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.3, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0811257, 0.240411, 0.435091)
+offset = Vector2(0, 64)
+modulate = Color(0.823529, 0.823529, 0.823529, 1)
+billboard = 1
+shaded = true
+texture = ExtResource( "3_xyev2" )
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.00580224, 0.240411, -0.832163)
+offset = Vector2(0, 64)
+modulate = Color(0.894118, 0.894118, 0.894118, 1)
+billboard = 1
+shaded = true
+texture = ExtResource( "3_xyev2" )
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.142923, 0.240411, -0.549054)
+offset = Vector2(0, 64)
+modulate = Color(0.760784, 0.760784, 0.760784, 1)
+billboard = 1
+shaded = true
+texture = ExtResource( "3_xyev2" )
