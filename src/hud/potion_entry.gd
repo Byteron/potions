@@ -14,6 +14,10 @@ func update_info() -> void:
 		var rect = TextureRect.new()
 		rect.ignore_texture_size = true
 		rect.rect_min_size = Vector2(32, 32)
-		rect.texture = ingredient.texture
+		var texture = AtlasTexture.new()
+		texture.atlas = ingredient.texture
+		texture.region = ingredient.texture.get_image().get_used_rect()
+		rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		rect.texture = texture
 		container.add_child(rect)
 

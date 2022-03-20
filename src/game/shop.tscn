@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d1lyxdgdrti2h" path="res://src/tools/seed_bag.tscn" id="4_x0iy6"]
 [ext_resource type="Resource" uid="uid://bavu6wugthpew" path="res://data/growables/flower.tres" id="5_ah0gp"]
 [ext_resource type="Resource" uid="uid://dnjnx3nwckkwc" path="res://data/growables/herb.tres" id="6_vr77g"]
-[ext_resource type="PackedScene" path="res://src/deco/counter.tscn" id="7_e66xu"]
+[ext_resource type="PackedScene" uid="uid://dfrmewrd2ij3h" path="res://src/deco/counter.tscn" id="7_e66xu"]
 [ext_resource type="PackedScene" uid="uid://d014fhdoxeh0f" path="res://src/tools/cauldron.tscn" id="8_oosmm"]
 [ext_resource type="Resource" uid="uid://jrhw42osr18p" path="res://data/growables/root.tres" id="8_qed3o"]
 [ext_resource type="PackedScene" uid="uid://dn2wq7dt428xv" path="res://src/deco/big_table.tscn" id="9_17res"]
