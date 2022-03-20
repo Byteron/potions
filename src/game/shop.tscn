@@ -3,14 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="1_7ggcj"]
 [ext_resource type="Script" path="res://src/game/shop.gd" id="1_6107u"]
 [ext_resource type="AudioStream" uid="uid://c2meixmpb01wi" path="res://assets/audio/sfx/game over 2.wav" id="2_jd8pm"]
-[ext_resource type="AudioStream" uid="uid://8be2qhtta007" path="res://assets/audio/music/stressed_witch.mp3" id="3_76giy"]
+[ext_resource type="AudioStream" uid="uid://cd0x7l0bci1sq" path="res://assets/audio/music/lo_fi_witch.ogg" id="3_3a5w4"]
 [ext_resource type="PackedScene" uid="uid://dmsvo32nle07g" path="res://src/tools/pot.tscn" id="3_obdbc"]
 [ext_resource type="PackedScene" uid="uid://bcc3w2be250tf" path="res://src/tools/dirt_box.tscn" id="4_n7npy"]
 [ext_resource type="PackedScene" uid="uid://d1lyxdgdrti2h" path="res://src/tools/seed_bag.tscn" id="4_x0iy6"]
 [ext_resource type="Resource" uid="uid://bavu6wugthpew" path="res://data/growables/flower.tres" id="5_ah0gp"]
 [ext_resource type="PackedScene" uid="uid://c5d1lgufmn351" path="res://assets/graphics/gltf/plant_pot.gltf" id="6_iq6v1"]
 [ext_resource type="Resource" uid="uid://dnjnx3nwckkwc" path="res://data/growables/herb.tres" id="6_vr77g"]
-[ext_resource type="PackedScene" path="res://src/deco/counter.tscn" id="7_e66xu"]
+[ext_resource type="PackedScene" uid="uid://dfrmewrd2ij3h" path="res://src/deco/counter.tscn" id="7_e66xu"]
 [ext_resource type="PackedScene" uid="uid://d014fhdoxeh0f" path="res://src/tools/cauldron.tscn" id="8_oosmm"]
 [ext_resource type="Resource" uid="uid://jrhw42osr18p" path="res://data/growables/root.tres" id="8_qed3o"]
 [ext_resource type="PackedScene" uid="uid://dn2wq7dt428xv" path="res://src/deco/big_table.tscn" id="9_17res"]
@@ -349,7 +349,7 @@ anims/camera_out = SubResource( "Animation_qnd1h" )
 anims/intro = SubResource( "Animation_px7b8" )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( "3_76giy" )
+stream = ExtResource( "3_3a5w4" )
 volume_db = -20.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

@@ -28,7 +28,7 @@ var credit_entries := [
 		roles = "3D Art and Music",
 	},
 	{
-		name = "Geoffrey Mueller",
+		name = "Geoffrey Muller",
 		score = "",
 		roles = "2D Art",
 	},
