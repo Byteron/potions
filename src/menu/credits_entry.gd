@@ -14,3 +14,5 @@ func _ready() -> void:
 	score_label.text = score
 	roles_label.text = roles
 
+	if score.is_empty():
+		score_label.hide()

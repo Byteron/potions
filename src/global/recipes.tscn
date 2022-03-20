@@ -39,7 +39,7 @@ script = ExtResource( "1_ralvw" )
 Order = ExtResource( "2_acmd1" )
 
 [node name="NewRecipeTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 15.0
 
 [node name="Orders" type="Node" parent="."]
 

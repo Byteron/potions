@@ -25,6 +25,10 @@ theme_override_constants/separation = 10
 rect_min_size = Vector2(150, 50)
 offset_right = 150.0
 offset_bottom = 50.0
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../RecipeButton")
+focus_next = NodePath("../RecipeButton")
+focus_previous = NodePath("../QuitButton")
 text = "PLAY"
 
 [node name="RecipeButton" type="Button" parent="CenterContainer/VBoxContainer"]
@@ -32,6 +36,10 @@ rect_min_size = Vector2(150, 50)
 offset_top = 60.0
 offset_right = 150.0
 offset_bottom = 110.0
+focus_neighbor_top = NodePath("../PlayButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+focus_next = NodePath("../QuitButton")
+focus_previous = NodePath("../PlayButton")
 text = "RECIPES"
 
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
@@ -39,6 +47,10 @@ rect_min_size = Vector2(150, 50)
 offset_top = 120.0
 offset_right = 150.0
 offset_bottom = 170.0
+focus_neighbor_top = NodePath("../RecipeButton")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath("../PlayButton")
+focus_previous = NodePath("../RecipeButton")
 text = "QUIT"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
