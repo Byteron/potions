@@ -2,6 +2,7 @@ extends Node3D
 class_name Shop
 
 @export var game_time := 300.0
+@export var skip_intro = false
 
 @onready var hud: HUD = $HUD
 @onready var timer: Timer = $GameTimer
@@ -15,7 +16,7 @@ class_name Shop
 
 
 func _ready() -> void:
-	if Recipes.play_intro:
+	if Recipes.play_intro and not skip_intro:
 		Recipes.play_intro = false
 		anim.play("intro")
 		await anim.animation_finished
