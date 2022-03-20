@@ -1,12 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://culxk5mur1o0h"]
+[gd_scene load_steps=14 format=3 uid="uid://culxk5mur1o0h"]
 
 [ext_resource type="Script" path="res://src/hud/HUD.gd" id="1_s8jmo"]
 [ext_resource type="Script" path="res://src/hud/order_container.gd" id="3_lhsno"]
 [ext_resource type="PackedScene" uid="uid://clhx0yri5w45r" path="res://src/hud/order_entry.tscn" id="3_sua2s"]
 [ext_resource type="PackedScene" uid="uid://gawuvru5mnvt" path="res://src/menu/title_screen.tscn" id="4_t6mnv"]
+[ext_resource type="FontData" uid="uid://bqueq63bg8q65" path="res://assets/fonts/Fredoka_One.ttf" id="4_uhjjy"]
+[ext_resource type="FontData" uid="uid://kjddtufiquwy" path="res://assets/fonts/Patrick_Hand.ttf" id="5_mtsqn"]
 [ext_resource type="PackedScene" uid="uid://c41es2ibk5q3d" path="res://src/menu/recipe_menu.tscn" id="5_pivg1"]
 [ext_resource type="PackedScene" uid="uid://ct30ku46nnib7" path="res://src/menu/victory_screen.tscn" id="6_5uf8b"]
-[ext_resource type="PackedScene" uid="uid://bltwvjyvx4brh" path="res://src/menu/help_menu.tscn" id="7_e6fg4"]
+[ext_resource type="PackedScene" uid="uid://bp7th857lirja" path="res://src/menu/help_menu.tscn" id="7_e6fg4"]
+
+[sub_resource type="Font" id="Font_earka"]
+data/0 = ExtResource( "4_uhjjy" )
+
+[sub_resource type="Font" id="Font_460g0"]
+data/0 = ExtResource( "4_uhjjy" )
+
+[sub_resource type="Font" id="Font_gtbv4"]
+data/0 = ExtResource( "4_uhjjy" )
+
+[sub_resource type="Font" id="Font_hmu83"]
+data/0 = ExtResource( "5_mtsqn" )
 
 [node name="HUD" type="CanvasLayer" groups=["HUD"]]
 script = ExtResource( "1_s8jmo" )
@@ -15,6 +29,51 @@ script = ExtResource( "1_s8jmo" )
 script = ExtResource( "3_lhsno" )
 OrderEntry = ExtResource( "3_sua2s" )
 
+[node name="TimeLabel" type="Label" parent="."]
+offset_left = 234.0
+offset_top = 607.0
+offset_right = 423.0
+offset_bottom = 650.0
+theme_override_fonts/font = SubResource( "Font_earka" )
+theme_override_font_sizes/font_size = 32
+text = "300"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SecondsLabel" type="Label" parent="TimeLabel"]
+offset_left = 197.0
+offset_right = 365.0
+offset_bottom = 42.0
+theme_override_fonts/font = SubResource( "Font_460g0" )
+theme_override_font_sizes/font_size = 28
+text = "seconds"
+vertical_alignment = 1
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 254.0
+offset_top = 649.0
+offset_right = 422.0
+offset_bottom = 680.0
+theme_override_fonts/font = SubResource( "Font_gtbv4" )
+theme_override_font_sizes/font_size = 22
+text = "5000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PointsLabel" type="Label" parent="ScoreLabel"]
+offset_left = 177.0
+offset_top = -4.0
+offset_right = 345.0
+offset_bottom = 33.0
+theme_override_fonts/font = SubResource( "Font_hmu83" )
+theme_override_font_sizes/font_size = 24
+text = "points"
+vertical_alignment = 1
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
@@ -22,29 +81,17 @@ offset_left = -84.0
 offset_right = 84.0
 offset_bottom = 50.0
 
-[node name="TimeLabel" type="Label" parent="VBoxContainer2"]
-offset_right = 168.0
-offset_bottom = 37.0
-theme_override_font_sizes/font_size = 24
-text = "Time: 300"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ScoreLabel" type="Label" parent="VBoxContainer2"]
-offset_top = 41.0
-offset_right = 168.0
-offset_bottom = 67.0
-text = "Score: 5000"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="TitleScreen" parent="." instance=ExtResource( "4_t6mnv" )]
+visible = false
 
 [node name="RecipeMenu" parent="." instance=ExtResource( "5_pivg1" )]
+visible = false
 
 [node name="VictoryScreen" parent="." instance=ExtResource( "6_5uf8b" )]
+visible = false
 
 [node name="HelpMenu" parent="." instance=ExtResource( "7_e6fg4" )]
+visible = false
 
 [connection signal="help_pressed" from="TitleScreen" to="." method="_on_title_screen_help_pressed"]
 [connection signal="play_pressed" from="TitleScreen" to="." method="_on_title_screen_play_pressed"]

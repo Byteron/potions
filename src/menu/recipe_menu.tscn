@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c41es2ibk5q3d"]
+[gd_scene load_steps=5 format=3 uid="uid://c41es2ibk5q3d"]
 
 [ext_resource type="Script" path="res://src/menu/recipe_menu.gd" id="1_hno5g"]
 [ext_resource type="PackedScene" uid="uid://ct3fykwqajjsj" path="res://src/hud/potion_entry.tscn" id="2_6n0xx"]
+[ext_resource type="FontData" uid="uid://kjddtufiquwy" path="res://assets/fonts/Patrick_Hand.ttf" id="3_xopyt"]
+
+[sub_resource type="Font" id="Font_eisjw"]
+data/0 = ExtResource( "3_xopyt" )
 
 [node name="RecipeMenu" type="Control"]
 anchor_right = 1.0
@@ -36,6 +40,8 @@ offset_top = 670.0
 offset_right = 700.0
 offset_bottom = 720.0
 size_flags_horizontal = 4
+theme_override_fonts/font = SubResource( "Font_eisjw" )
+theme_override_font_sizes/font_size = 28
 text = "Back"
 
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

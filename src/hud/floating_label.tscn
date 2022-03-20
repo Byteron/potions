@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://csp7ypmd1o6qg"]
+[gd_scene load_steps=4 format=3 uid="uid://c0v7et3tfgns7"]
 
 [ext_resource type="Script" path="res://src/hud/floating_label.gd" id="1_ceg4p"]
+[ext_resource type="FontData" uid="uid://kjddtufiquwy" path="res://assets/fonts/Patrick_Hand.ttf" id="2_5c6i5"]
+
+[sub_resource type="Font" id="Font_5muwj"]
+data/0 = ExtResource( "2_5c6i5" )
 
 [node name="FloatingLabel" type="Control"]
 script = ExtResource( "1_ceg4p" )
@@ -16,6 +20,10 @@ offset_right = 156.0
 offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0.247059, 0.00392157, 0, 1)
+theme_override_colors/font_color = Color(0.72549, 0.784314, 0.356863, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = SubResource( "Font_5muwj" )
 theme_override_font_sizes/font_size = 64
 text = "1600"
 horizontal_alignment = 1

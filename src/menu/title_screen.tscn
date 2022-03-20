@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://gawuvru5mnvt"]
+[gd_scene load_steps=7 format=3 uid="uid://gawuvru5mnvt"]
 
 [ext_resource type="Script" path="res://src/menu/title_screen.gd" id="1_0odrm"]
+[ext_resource type="FontData" uid="uid://kjddtufiquwy" path="res://assets/fonts/Patrick_Hand.ttf" id="2_ylbgk"]
+
+[sub_resource type="Font" id="Font_j6dfy"]
+data/0 = ExtResource( "2_ylbgk" )
+
+[sub_resource type="Font" id="Font_crww2"]
+data/0 = ExtResource( "2_ylbgk" )
+
+[sub_resource type="Font" id="Font_pwrj0"]
+data/0 = ExtResource( "2_ylbgk" )
+
+[sub_resource type="Font" id="Font_7sdy4"]
+data/0 = ExtResource( "2_ylbgk" )
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
@@ -26,7 +39,10 @@ focus_neighbor_top = NodePath("../QuitButton")
 focus_neighbor_bottom = NodePath("../RecipeButton")
 focus_next = NodePath("../RecipeButton")
 focus_previous = NodePath("../QuitButton")
+theme_override_fonts/font = SubResource( "Font_j6dfy" )
+theme_override_font_sizes/font_size = 28
 text = "PLAY"
+flat = true
 
 [node name="RecipeButton" type="Button" parent="CenterContainer/VBoxContainer"]
 rect_min_size = Vector2(150, 50)
@@ -37,7 +53,10 @@ focus_neighbor_top = NodePath("../PlayButton")
 focus_neighbor_bottom = NodePath("../HelpButton")
 focus_next = NodePath("../HelpButton")
 focus_previous = NodePath("../PlayButton")
+theme_override_fonts/font = SubResource( "Font_crww2" )
+theme_override_font_sizes/font_size = 20
 text = "RECIPES"
+flat = true
 
 [node name="HelpButton" type="Button" parent="CenterContainer/VBoxContainer"]
 rect_min_size = Vector2(150, 50)
@@ -48,7 +67,10 @@ focus_neighbor_top = NodePath("../RecipeButton")
 focus_neighbor_bottom = NodePath("../QuitButton")
 focus_next = NodePath("../QuitButton")
 focus_previous = NodePath("../RecipeButton")
+theme_override_fonts/font = SubResource( "Font_pwrj0" )
+theme_override_font_sizes/font_size = 20
 text = "HELP"
+flat = true
 
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
 rect_min_size = Vector2(150, 50)
@@ -59,7 +81,10 @@ focus_neighbor_top = NodePath("../HelpButton")
 focus_neighbor_bottom = NodePath("../PlayButton")
 focus_next = NodePath("../PlayButton")
 focus_previous = NodePath("../HelpButton")
+theme_override_fonts/font = SubResource( "Font_7sdy4" )
+theme_override_font_sizes/font_size = 20
 text = "QUIT"
+flat = true
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/RecipeButton" to="." method="_on_recipe_button_pressed"]

@@ -1,7 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://ct30ku46nnib7"]
+[gd_scene load_steps=7 format=3 uid="uid://ct30ku46nnib7"]
 
 [ext_resource type="Script" path="res://src/menu/victory_screen.gd" id="1_jgnh0"]
+[ext_resource type="FontData" uid="uid://kjddtufiquwy" path="res://assets/fonts/Patrick_Hand.ttf" id="3_6qr6l"]
 [ext_resource type="PackedScene" uid="uid://cdk2ias047p7b" path="res://src/menu/credits_entry.tscn" id="3_m0psj"]
+
+[sub_resource type="Font" id="Font_6pkig"]
+data/0 = ExtResource( "3_6qr6l" )
+
+[sub_resource type="Font" id="Font_5g1k5"]
+data/0 = ExtResource( "3_6qr6l" )
+
+[sub_resource type="Font" id="Font_xuqqo"]
+data/0 = ExtResource( "3_6qr6l" )
 
 [node name="VictoryScreen" type="Control"]
 anchor_right = 1.0
@@ -19,24 +29,26 @@ offset_bottom = 720.0
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/CenterContainer"]
-offset_left = 523.0
-offset_top = 271.0
-offset_right = 757.0
-offset_bottom = 449.0
+offset_left = 548.0
+offset_top = 272.0
+offset_right = 731.0
+offset_bottom = 447.0
 theme_override_constants/separation = 12
 
 [node name="ScoreLabel" type="Label" parent="VBoxContainer/CenterContainer/VBoxContainer"]
-offset_right = 234.0
-offset_bottom = 70.0
+offset_right = 183.0
+offset_bottom = 69.0
+theme_override_fonts/font = SubResource( "Font_6pkig" )
 theme_override_font_sizes/font_size = 48
 text = "Score: 500"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StatsLabel" type="Label" parent="VBoxContainer/CenterContainer/VBoxContainer"]
-offset_top = 82.0
-offset_right = 234.0
-offset_bottom = 178.0
+offset_top = 81.0
+offset_right = 183.0
+offset_bottom = 175.0
+theme_override_fonts/font = SubResource( "Font_5g1k5" )
 theme_override_font_sizes/font_size = 32
 text = "Sold: 12
 Failed: 50"
@@ -45,12 +57,19 @@ vertical_alignment = 1
 
 [node name="BackButton" type="Button" parent="."]
 rect_min_size = Vector2(120, 50)
-offset_left = 580.0
-offset_top = 670.0
-offset_right = 700.0
-offset_bottom = 720.0
+offset_left = 552.0
+offset_top = 661.0
+offset_right = 721.0
+offset_bottom = 711.0
 size_flags_horizontal = 4
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = SubResource( "Font_xuqqo" )
+theme_override_font_sizes/font_size = 28
 text = "Back to Menu"
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
 
 [node name="Credits" type="VBoxContainer" parent="."]
 offset_left = 886.0

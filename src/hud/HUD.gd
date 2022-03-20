@@ -4,8 +4,8 @@ class_name HUD
 signal play_pressed()
 signal back_pressed()
 
-@onready var score_label: Label = $VBoxContainer2/ScoreLabel
-@onready var time_label: Label = $VBoxContainer2/TimeLabel
+@onready var score_label: Label = $ScoreLabel
+@onready var time_label: Label = $TimeLabel
 
 @onready var container: OrderContainer = $OrderContainer
 
@@ -26,7 +26,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	score_label.text = "Score: " + str(Recipes.score)
+	score_label.text = str(Recipes.score)
 
 
 func show_score() -> void:
@@ -55,7 +55,7 @@ func remove_order(order: Order, successful := false) -> void:
 
 
 func set_time_left(time_left: float) -> void:
-	time_label.text = "Time: " + str(int(time_left))
+	time_label.text = str(int(time_left))
 
 
 func _on_title_screen_help_pressed() -> void:

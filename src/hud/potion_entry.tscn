@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://ct3fykwqajjsj"]
+[gd_scene load_steps=4 format=3 uid="uid://ct3fykwqajjsj"]
 
 [ext_resource type="Script" path="res://src/hud/potion_entry.gd" id="1_wihsm"]
+[ext_resource type="FontData" uid="uid://kjddtufiquwy" path="res://assets/fonts/Patrick_Hand.ttf" id="2_6dhhi"]
+
+[sub_resource type="Font" id="Font_nv0qd"]
+data/0 = ExtResource( "2_6dhhi" )
 
 [node name="PotionEntry" type="Panel"]
 rect_min_size = Vector2(220, 62)
@@ -15,14 +19,15 @@ offset_bottom = 40.0
 [node name="Label" type="Label" parent="HBoxContainer"]
 rect_min_size = Vector2(50, 0)
 offset_right = 220.0
-offset_bottom = 26.0
+offset_bottom = 25.0
+theme_override_fonts/font = SubResource( "Font_nv0qd" )
 text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
 rect_min_size = Vector2(0, 32)
-offset_top = 30.0
+offset_top = 29.0
 offset_right = 220.0
-offset_bottom = 62.0
+offset_bottom = 61.0
 alignment = 1
