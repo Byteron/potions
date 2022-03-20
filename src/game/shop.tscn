@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://de4jsrcssn3fp"]
+[gd_scene load_steps=57 format=3 uid="uid://de4jsrcssn3fp"]
 
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="1_7ggcj"]
 [ext_resource type="Script" path="res://src/game/shop.gd" id="1_6107u"]
@@ -234,6 +234,16 @@ albedo_texture = ExtResource( "25_6huq0" )
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_xv6av"]
 material = SubResource( "StandardMaterial3D_bib80" )
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h41lu"]
+albedo_color = Color(0.788235, 1, 0.639216, 1)
+albedo_texture = ExtResource( "15_l5wv2" )
+uv1_scale = Vector3(8, 6, 1)
+uv2_scale = Vector3(8, 1, 8)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_66y6s"]
+material = SubResource( "StandardMaterial3D_h41lu" )
+size = Vector2(8, 6)
 
 [node name="Shop" type="Node3D"]
 script = ExtResource( "1_6107u" )
@@ -482,6 +492,21 @@ mesh = SubResource( "BoxMesh_flky6" )
 skeleton = NodePath("../Floor19")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Greenhouse/Floor"]
+transform = Transform3D(0.00639586, 0, 3.56916, 0, 0.117229, 0, -0.260215, 0, 0.087727, -2.07861, -0.0276175, -14.1952)
+mesh = SubResource( "BoxMesh_flky6" )
+skeleton = NodePath("../Floor19")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="Greenhouse/Floor"]
+transform = Transform3D(0.00518223, 0, 3.36738, 0, 0.117229, 0, -0.259285, 0, 0.0673026, -2.07897, -0.0276175, -14.4822)
+mesh = SubResource( "BoxMesh_flky6" )
+skeleton = NodePath("../Floor19")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="Greenhouse/Floor"]
+transform = Transform3D(0.00639586, 0, 3.56916, 0, 0.117229, 0, -0.260215, 0, 0.087727, -1.91618, -0.0276175, -14.7743)
+mesh = SubResource( "BoxMesh_flky6" )
+skeleton = NodePath("../Floor19")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="Greenhouse/Floor"]
 transform = Transform3D(0.00639586, 0, 3.56916, 0, 0.117229, 0, -0.260215, 0, 0.087727, -2.07861, -0.0276175, -14.1952)
 mesh = SubResource( "BoxMesh_flky6" )
 skeleton = NodePath("../Floor19")
@@ -911,19 +936,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13)
 script = ExtResource( "25_vpuh0" )
 
 [node name="customer" parent="Customers" instance=ExtResource( "26_fu76m" )]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 1, 0, -9)
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.791457, 0, -9.26415)
 
 [node name="customer2" parent="Customers" instance=ExtResource( "26_fu76m" )]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 2, 0, -9)
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 2, 0, -9.12261)
 
 [node name="customer3" parent="Customers" instance=ExtResource( "26_fu76m" )]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 3, 0, -9)
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 3.10975, 0, -9.32202)
 
 [node name="customer4" parent="Customers" instance=ExtResource( "26_fu76m" )]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 4, 0, -9)
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 4.10107, 0, -9.1308)
 
 [node name="customer5" parent="Customers" instance=ExtResource( "26_fu76m" )]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 5, 0, -9)
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 5.14755, 0, -9.35133)
 
 [node name="HUD" parent="." instance=ExtResource( "10_wog8m" )]
 
@@ -963,6 +988,31 @@ texture = ExtResource( "32_ajx1o" )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color(0, 0, 0, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -8)
+visible = false
+mesh = SubResource( "PlaneMesh_66y6s" )
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -14)
+visible = false
+mesh = SubResource( "PlaneMesh_66y6s" )
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -20)
+visible = false
+mesh = SubResource( "PlaneMesh_66y6s" )
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -20)
+visible = false
+mesh = SubResource( "PlaneMesh_66y6s" )
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -8)
+visible = false
+mesh = SubResource( "PlaneMesh_66y6s" )
 
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
