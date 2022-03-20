@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://de4jsrcssn3fp"]
+[gd_scene load_steps=72 format=3 uid="uid://de4jsrcssn3fp"]
 
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="1_7ggcj"]
 [ext_resource type="Script" path="res://src/game/shop.gd" id="1_6107u"]
@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://bavu6wugthpew" path="res://data/growables/flower.tres" id="5_ah0gp"]
 [ext_resource type="PackedScene" uid="uid://c5d1lgufmn351" path="res://assets/graphics/gltf/plant_pot.gltf" id="6_iq6v1"]
 [ext_resource type="Resource" uid="uid://dnjnx3nwckkwc" path="res://data/growables/herb.tres" id="6_vr77g"]
-[ext_resource type="PackedScene" uid="uid://dfrmewrd2ij3h" path="res://src/deco/counter.tscn" id="7_e66xu"]
+[ext_resource type="PackedScene" path="res://src/deco/counter.tscn" id="7_e66xu"]
 [ext_resource type="PackedScene" uid="uid://d014fhdoxeh0f" path="res://src/tools/cauldron.tscn" id="8_oosmm"]
 [ext_resource type="Resource" uid="uid://jrhw42osr18p" path="res://data/growables/root.tres" id="8_qed3o"]
 [ext_resource type="PackedScene" uid="uid://dn2wq7dt428xv" path="res://src/deco/big_table.tscn" id="9_17res"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://wgyr206p6m2g" path="res://assets/graphics/images/wood_floor.png" id="25_6huq0"]
 [ext_resource type="Script" path="res://src/game/customers.gd" id="25_vpuh0"]
 [ext_resource type="PackedScene" uid="uid://dn2evgsxnwbm5" path="res://assets/graphics/gltf/customer.gltf" id="26_fu76m"]
+[ext_resource type="PackedScene" uid="uid://uq6pxd0f1knt" path="res://assets/graphics/gltf/fireplace_floor.gltf" id="28_8x2gm"]
 [ext_resource type="Texture2D" uid="uid://wrqr4cyjjwsw" path="res://assets/graphics/images/Wildling-Wallpaper 1080.png" id="30_yfsha"]
 [ext_resource type="Texture2D" uid="uid://ckejykbophvmq" path="res://assets/graphics/images/43-Theme.png" id="31_ovkc0"]
 [ext_resource type="Texture2D" uid="uid://ca8ktkqproeo2" path="res://assets/graphics/images/43-All-Cards.png" id="32_ajx1o"]
@@ -792,6 +793,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -11.5)
 [node name="fireplace2" parent="Workshop" instance=ExtResource( "21_2fq7l" )]
 transform = Transform3D(-4.37114e-08, 0, -1.21852, 0, 1, 0, 1, 0, -5.3263e-08, 3, -0.0415627, -18.905)
 
+[node name="fireplace_floor" parent="Workshop/fireplace2" instance=ExtResource( "28_8x2gm" )]
+transform = Transform3D(1, 0, 1.77636e-14, 0, 1, 0, 0, 0, 0.911438, 0, 0.0198941, 0)
+
 [node name="Walls" type="Node3D" parent="Workshop"]
 
 [node name="BrickWall" parent="Workshop/Walls" instance=ExtResource( "22_bdny5" )]
@@ -1530,6 +1534,30 @@ texture = ExtResource( "40_woebg" )
 
 [node name="Sprite3D101" type="Sprite3D" parent="Outside"]
 transform = Transform3D(0.102057, 0.0479779, -0.849436, 2.97091e-09, 0.202007, 0.379691, 0.108668, -0.045059, 0.797757, 9.25565, 0.233838, -6.95104)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D106" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.0702902, 0.0832123, -1.15415, 1.88338e-09, 0.290778, 0.428164, 0.129119, -0.0452991, 0.628296, 10.662, 0.334043, -5.77526)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D107" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.011645, 0.0656183, -1.16175, -6.45468e-10, 0.202007, 0.379691, 0.148623, -0.00514118, 0.0910242, 12.5755, 0.233839, -5.79354)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D108" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.0077036, 0.0657315, -1.16376, -3.24388e-09, 0.202007, 0.379691, 0.148879, -0.00340114, 0.0602159, 10.1235, 0.233838, -3.70649)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D109" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.0253106, 0.0648638, -1.1484, -3.24388e-09, 0.202007, 0.379691, 0.146914, -0.0111748, 0.197846, 11.4139, 0.233838, -2.21763)
 cast_shadow = 0
 double_sided = false
 texture = ExtResource( "40_woebg" )
