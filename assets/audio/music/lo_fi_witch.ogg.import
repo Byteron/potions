@@ -1,0 +1,16 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOGGVorbis"
+uid="uid://cd0x7l0bci1sq"
+path="res://.godot/imported/lo_fi_witch.ogg-6af844e4a31a92dd5606abad142a6793.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/lo_fi_witch.ogg"
+dest_files=["res://.godot/imported/lo_fi_witch.ogg-6af844e4a31a92dd5606abad142a6793.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
