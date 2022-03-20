@@ -24,5 +24,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 stream = ExtResource( "4_xd0pi" )
 
 [node name="trash" parent="." instance=ExtResource( "4_typ6t" )]
+transform = Transform3D(1.34666, 0, 0, 0, 1.11502, 0, 0, 0, 1.34666, 0, 0, 0)
 
 [connection signal="interacted" from="Interactable" to="." method="_on_interactable_interacted"]
