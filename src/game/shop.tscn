@@ -332,7 +332,7 @@ size = Vector2(4, 4)
 
 [node name="Shop" type="Node3D"]
 script = ExtResource( "1_6107u" )
-game_time = 240.0
+game_time = 45.0
 
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true

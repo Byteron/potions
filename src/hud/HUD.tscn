@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://culxk5mur1o0h"]
+[gd_scene load_steps=13 format=3 uid="uid://culxk5mur1o0h"]
 
 [ext_resource type="Script" path="res://src/hud/HUD.gd" id="1_s8jmo"]
 [ext_resource type="Script" path="res://src/hud/order_container.gd" id="3_lhsno"]
@@ -8,7 +8,6 @@
 [ext_resource type="FontData" uid="uid://kjddtufiquwy" path="res://assets/fonts/Patrick_Hand.ttf" id="5_mtsqn"]
 [ext_resource type="PackedScene" uid="uid://c41es2ibk5q3d" path="res://src/menu/recipe_menu.tscn" id="5_pivg1"]
 [ext_resource type="PackedScene" uid="uid://ct30ku46nnib7" path="res://src/menu/victory_screen.tscn" id="6_5uf8b"]
-[ext_resource type="PackedScene" uid="uid://bp7th857lirja" path="res://src/menu/help_menu.tscn" id="7_e6fg4"]
 
 [sub_resource type="Font" id="Font_earka"]
 data/0 = ExtResource( "4_uhjjy" )
@@ -90,12 +89,7 @@ visible = false
 [node name="VictoryScreen" parent="." instance=ExtResource( "6_5uf8b" )]
 visible = false
 
-[node name="HelpMenu" parent="." instance=ExtResource( "7_e6fg4" )]
-visible = false
-
-[connection signal="help_pressed" from="TitleScreen" to="." method="_on_title_screen_help_pressed"]
 [connection signal="play_pressed" from="TitleScreen" to="." method="_on_title_screen_play_pressed"]
 [connection signal="recipe_pressed" from="TitleScreen" to="." method="_on_title_screen_recipe_pressed"]
 [connection signal="back_pressed" from="RecipeMenu" to="." method="_on_recipe_menu_back_pressed"]
 [connection signal="back_pressed" from="VictoryScreen" to="." method="_on_victory_screen_back_pressed"]
-[connection signal="back_pressed" from="HelpMenu" to="." method="_on_help_menu_back_pressed"]

@@ -22,7 +22,9 @@ func _ready() -> void:
 		Recipes.play_intro = false
 	else:
 		rect.visible = false
+
 	hud.show_menu()
+	character.disable()
 
 
 func start() -> void:

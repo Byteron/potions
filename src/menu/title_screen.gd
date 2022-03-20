@@ -2,7 +2,6 @@ extends Control
 class_name TitleScreen
 
 signal play_pressed()
-signal help_pressed()
 signal recipe_pressed()
 
 @onready var play_button: Button = $CenterContainer/VBoxContainer/PlayButton
@@ -28,10 +27,6 @@ func _on_play_button_pressed() -> void:
 
 func _on_recipe_button_pressed() -> void:
 	recipe_pressed.emit()
-
-
-func _on_help_button_pressed() -> void:
-	help_pressed.emit()
 
 
 func _on_quit_button_pressed() -> void:
