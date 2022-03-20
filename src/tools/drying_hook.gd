@@ -1,7 +1,7 @@
 extends Node3D
 class_name DryingHook
 
-const REFINE_TIME := 8.0
+const REFINE_TIME := 6.0
 
 var _ingredient: Ingredient = null
 
