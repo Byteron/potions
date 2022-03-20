@@ -15,15 +15,15 @@ data/0 = ExtResource( "3_jjw4r" )
 
 [node name="CreditsEntry" type="VBoxContainer"]
 offset_right = 306.0
-offset_bottom = 100.0
-size_flags_vertical = 3
+offset_bottom = 79.0
 alignment = 1
 script = ExtResource( "1_yjmrf" )
 
 [node name="Name" type="Label" parent="."]
 offset_right = 306.0
-offset_bottom = 26.0
+offset_bottom = 23.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -5
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = SubResource( "Font_mme0t" )
 theme_override_font_sizes/font_size = 18
@@ -32,11 +32,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Score" type="Label" parent="."]
-offset_top = 36.0
+offset_top = 27.0
 offset_right = 306.0
-offset_bottom = 65.0
+offset_bottom = 53.0
 size_flags_vertical = 6
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -5
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = SubResource( "Font_0yatr" )
 theme_override_font_sizes/font_size = 21
@@ -45,10 +46,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Roles" type="Label" parent="."]
-offset_top = 75.0
+offset_top = 57.0
 offset_right = 306.0
-offset_bottom = 100.0
+offset_bottom = 79.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -5
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = SubResource( "Font_1jbt1" )
 text = "Game Design and Programming"

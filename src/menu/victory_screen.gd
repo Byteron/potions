@@ -23,14 +23,19 @@ var credit_entries := [
 		roles = "2D and 3D Art",
 	},
 	{
-		name = "Ramita",
-		score = "",
-		roles = "Sound Effects",
-	},
-	{
 		name = "Vikfro",
 		score = "",
 		roles = "3D Art and Music",
+	},
+	{
+		name = "Geoffrey Mueller",
+		score = "",
+		roles = "2D Art",
+	},
+	{
+		name = "Ramita",
+		score = "",
+		roles = "Sound Effects",
 	},
 ]
 
