@@ -43,11 +43,11 @@ tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Camera3D:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0.544025, 11.4118, 7.74346), Vector3(4.391, 2.096, 0.999)]
 }
@@ -59,25 +59,25 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(2, 1),
 "update": 0,
 "values": [Vector3(-0.943573, 0.167906, -0.0263344), Vector3(-0.015501, -1.57224, -8.38291e-09)]
 }
 
-[sub_resource type="Animation" id="Animation_2ykrf"]
+[sub_resource type="Animation" id="Animation_qnd1h"]
 resource_name = "camera_out"
 length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Camera3D:position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 3, 1),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(4.39126, 2.09575, 0.998644), Vector3(1.34788, 2.14293, 0.994237), Vector3(0.544025, 11.4118, 7.74346)]
+"values": [Vector3(4.391, 2.096, 0.999), Vector3(0.544025, 11.4118, 7.74346)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -86,10 +86,10 @@ tracks/1/path = NodePath("Camera3D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
-"values": [Vector3(-0.015501, -1.57224, -8.38291e-09), Vector3(-0.015501, -1.57224, -8.38291e-09), Vector3(-0.943573, 0.167906, -0.0263344)]
+"values": [Vector3(-0.015501, -1.57224, -8.38291e-09), Vector3(-0.943573, 0.167906, -0.0263344)]
 }
 
 [sub_resource type="Animation" id="Animation_px7b8"]
@@ -248,7 +248,6 @@ size = Vector2(8, 6)
 [node name="Shop" type="Node3D"]
 script = ExtResource( "1_6107u" )
 game_time = 240.0
-skip_intro = true
 
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true
@@ -262,14 +261,14 @@ stream = ExtResource( "2_jd8pm" )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( "Animation_fvxtk" )
 anims/camera_in = SubResource( "Animation_r7giu" )
-anims/camera_out = SubResource( "Animation_2ykrf" )
+anims/camera_out = SubResource( "Animation_qnd1h" )
 anims/intro = SubResource( "Animation_px7b8" )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( "Environment_4xgxr" )
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.00144815, 0.0155004, -0.999879, -8.3819e-09, 0.99988, 0.0155004, 0.999999, 2.24537e-05, -0.00144792, 4.39754, 2.09575, -3.33653)
+transform = Transform3D(-0.00144362, 0.0155004, -0.999879, -8.3819e-09, 0.99988, 0.0155004, 0.999999, 2.23839e-05, -0.00144339, 4.39754, 2.09575, -3.33653)
 fov = 40.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -956,17 +955,17 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 5.14755, 0, -9.35133)
 [node name="Intro" type="Node3D" parent="."]
 
 [node name="Sprite3D" type="Sprite3D" parent="Intro"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.85004, 2.06349, -3.38966)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.85004, 2.06349, -3.3352)
 visibility_range_begin = 5.0
 visibility_range_begin_margin = 5.0
 visibility_range_end = 6.0
 visibility_range_end_margin = 6.0
 visibility_range_fade_mode = 1
-pixel_size = 0.0005
+pixel_size = 0.001
 texture = ExtResource( "30_yfsha" )
 
 [node name="Sprite3D2" type="Sprite3D" parent="Intro"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.85004, 2.0419, -2.10171)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.85004, 2.0419, -1.01098)
 visibility_range_begin = 5.0
 visibility_range_begin_margin = 5.0
 visibility_range_end = 6.0
@@ -977,6 +976,7 @@ texture = ExtResource( "31_ovkc0" )
 
 [node name="Sprite3D3" type="Sprite3D" parent="Intro"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.85004, 2.0419, -0.565579)
+visible = false
 visibility_range_begin = 5.0
 visibility_range_begin_margin = 5.0
 visibility_range_end = 6.0
