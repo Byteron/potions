@@ -8,14 +8,14 @@
 data/0 = ExtResource( "2_wfpbe" )
 
 [sub_resource type="Font" id="Font_0yatr"]
-data/0 = ExtResource( "2_wfpbe" )
+data/0 = ExtResource( "3_jjw4r" )
 
 [sub_resource type="Font" id="Font_1jbt1"]
 data/0 = ExtResource( "3_jjw4r" )
 
 [node name="CreditsEntry" type="VBoxContainer"]
 offset_right = 306.0
-offset_bottom = 79.0
+offset_bottom = 78.0
 alignment = 1
 script = ExtResource( "1_yjmrf" )
 
@@ -34,21 +34,21 @@ vertical_alignment = 1
 [node name="Score" type="Label" parent="."]
 offset_top = 27.0
 offset_right = 306.0
-offset_bottom = 53.0
+offset_bottom = 52.0
 size_flags_vertical = 6
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = -5
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = SubResource( "Font_0yatr" )
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 18
 text = "18300"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Roles" type="Label" parent="."]
-offset_top = 57.0
+offset_top = 56.0
 offset_right = 306.0
-offset_bottom = 79.0
+offset_bottom = 78.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = -5
 theme_override_constants/outline_size = 4
