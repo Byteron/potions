@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://c2absafivs6vl"]
+
+[ext_resource type="Resource" uid="uid://bue2qh1jcj2o5" path="res://data/recipes/ingredients/herb.tres" id="1_jwobl"]
+[ext_resource type="Resource" uid="uid://wnub34tm0eff" path="res://data/recipes/ingredients/flower.tres" id="2_0n81m"]
+[ext_resource type="Resource" uid="uid://dewnqgp4combt" path="res://data/recipes/ingredients/root.tres" id="3_gcm64"]
+[ext_resource type="Script" path="res://src/data/recipe.gd" id="4_x7nt7"]
+
+[resource]
+script = ExtResource( "4_x7nt7" )
+name = "Aroma Potion"
+ingredients = [ExtResource( "1_jwobl" ), ExtResource( "2_0n81m" ), ExtResource( "3_gcm64" )]
+score = 300

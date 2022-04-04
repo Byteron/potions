@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmsvo32nle07g"]
+[gd_scene load_steps=4 format=3 uid="uid://dmsvo32nle07g"]
 
 [ext_resource type="PackedScene" uid="uid://y30udydf5kh" path="res://src/tools/dirt.tscn" id="1_6n2q8"]
+[ext_resource type="PackedScene" uid="uid://c5d1lgufmn351" path="res://assets/graphics/gltf/plant_pot.gltf" id="2_ftb6e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_alxmm"]
 size = Vector3(1, 0.7, 1)
@@ -13,3 +14,6 @@ shape = SubResource( "BoxShape3D_alxmm" )
 
 [node name="Dirt" parent="." instance=ExtResource( "1_6n2q8" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00231361, 0.521763, 0)
+
+[node name="plant_pot" parent="." instance=ExtResource( "2_ftb6e" )]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

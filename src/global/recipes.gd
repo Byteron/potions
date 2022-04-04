@@ -1,14 +1,13 @@
 extends Node
 
-const MAX_ORDERS = 5
-
 signal orders_changed()
-
 
 var recipes: Array[Recipe] = [
 	load("data/recipes/health_potion.tres") as Recipe,
 	load("data/recipes/mana_potion.tres") as Recipe,
 	load("data/recipes/love_potion.tres") as Recipe,
+	load("data/recipes/energy_potion.tres") as Recipe,
+	load("data/recipes/aroma_potion.tres") as Recipe,
 	load("data/recipes/youth_potion.tres") as Recipe,
 	load("data/recipes/insight_potion.tres") as Recipe,
 	load("data/recipes/shrink_potion.tres") as Recipe,
@@ -23,6 +22,8 @@ var recipes: Array[Recipe] = [
 	load("data/recipes/beauty_potion.tres") as Recipe,
 	load("data/recipes/ancient_potion.tres") as Recipe,
 ]
+
+var difficulty: Difficulty = null
 
 var orders: Array[Order]
 
@@ -44,6 +45,7 @@ var play_intro := true
 
 
 func _ready() -> void:
+	recipes.sort_custom(func(a: Recipe, b: Recipe): return a.score < b.score)
 	randomize()
 
 
@@ -52,7 +54,7 @@ func stop() -> void:
 
 
 func start() -> void:
-	timer.start()
+	timer.start(difficulty.order_spawn_time)
 
 
 func reset() -> void:
@@ -70,11 +72,11 @@ func clear() -> void:
 
 
 func _on_new_recipe_timer_timeout() -> void:
-	if order_container.get_child_count() == MAX_ORDERS:
+	if order_container.get_child_count() == difficulty.max_orders:
 		return
 	
-	var index = randi() % recipes.size()
-	var recipe = recipes[index]
+	var index = randi() % difficulty.recipes.size()
+	var recipe = difficulty.recipes[index]
 	
 	var order: Order = Order.instantiate()
 	order.expired.connect(_on_order_expired)
@@ -82,7 +84,7 @@ func _on_new_recipe_timer_timeout() -> void:
 	order.recipe = recipe
 	orders.append(order)
 	order_container.add_child(order)
-	
+	order.start(difficulty.order_time)
 	get_tree().call_group("HUD", "add_order", order)
 	ring_player.play()
 	orders_changed.emit()
@@ -103,8 +105,9 @@ func _on_order_finished(order: Order, position: Vector3) -> void:
 	sold += 1
 	orders_changed.emit()
 
+
 func _on_order_expired(order: Order) -> void:
-	score -= 500
+	score -= difficulty.order_failed_penalty
 	orders.erase(order)
 	get_tree().call_group("HUD", "remove_order", order, false)
 	order.queue_free()

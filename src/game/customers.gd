@@ -5,7 +5,6 @@ class_name Customers
 
 
 func _ready() -> void:
-
 	for customer in customers:
 		customer.rotation.y = deg2rad(randf_range(0, 360))
 		var mesh_instance: MeshInstance3D = customer.get_node("Sphere001")
@@ -20,7 +19,7 @@ func _update_customers() -> void:
 	
 	customers.shuffle()
 
-	for i in range(Recipes.orders.size(), 5):
+	for i in range(Recipes.orders.size(), customers.size()):
 		var mesh_instance: MeshInstance3D = customers[i].get_node("Sphere001")
 		tween.parallel().tween_property(mesh_instance, "transparency", 1.0, 0.1)
 

@@ -54,6 +54,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://src/tools/cutting_board.gd"
 }, {
+"base": "Resource",
+"class": &"Difficulty",
+"language": &"GDScript",
+"path": "res://src/data/difficulty.gd"
+}, {
 "base": "Node3D",
 "class": &"Dirt",
 "language": &"GDScript",
@@ -113,6 +118,11 @@ _global_script_classes=[{
 "class": &"Item",
 "language": &"GDScript",
 "path": "res://src/item/item.gd"
+}, {
+"base": "Node3D",
+"class": &"Level",
+"language": &"GDScript",
+"path": "res://src/game/levels/level.gd"
 }, {
 "base": "Node",
 "class": &"Order",
@@ -199,6 +209,7 @@ _global_script_class_icons={
 "CreditsEntry": "",
 "Customers": "",
 "CuttingBoard": "",
+"Difficulty": "",
 "Dirt": "",
 "DryingHook": "",
 "FloatingLabel": "",
@@ -211,6 +222,7 @@ _global_script_class_icons={
 "Interactable": "",
 "Interacter": "",
 "Item": "",
+"Level": "",
 "Order": "",
 "OrderContainer": "",
 "OrderEntry": "",
@@ -314,4 +326,6 @@ debug={
 
 [rendering]
 
+shadows/shadows/soft_shadow_quality=5
+shadows/shadows/soft_shadow_quality.mobile=5
 anti_aliasing/quality/screen_space_aa=1

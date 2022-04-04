@@ -9,6 +9,10 @@ var recipe: Recipe
 @onready var timer: Timer = $Timer
 
 
+func start(time: float) -> void:
+	timer.start(time)
+
+
 func finish(position: Vector3) -> void:
 	finished.emit(self, position)
 

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c71tm5xlb6wa7"]
+
+[ext_resource type="FontData" uid="uid://kjddtufiquwy" path="res://assets/fonts/Patrick_Hand.ttf" id="1_jyx2f"]
+
+[sub_resource type="Font" id="Font_j6dfy"]
+data/0 = ExtResource( "1_jyx2f" )
+
+[node name="EasyButton" type="Button"]
+rect_min_size = Vector2(150, 50)
+offset_right = 150.0
+offset_bottom = 50.0
+focus_neighbor_top = NodePath("../HardButton")
+focus_neighbor_bottom = NodePath("../NormalButton")
+focus_next = NodePath("../NormalButton")
+focus_previous = NodePath("../HardButton")
+theme_override_fonts/font = SubResource( "Font_j6dfy" )
+theme_override_font_sizes/font_size = 28
+text = "EASY"
+flat = true
