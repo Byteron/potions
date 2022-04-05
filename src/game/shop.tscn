@@ -1,10 +1,9 @@
-[gd_scene load_steps=38 format=3 uid="uid://de4jsrcssn3fp"]
+[gd_scene load_steps=37 format=3 uid="uid://de4jsrcssn3fp"]
 
 [ext_resource type="Script" path="res://src/game/shop.gd" id="1_6107u"]
 [ext_resource type="PackedScene" uid="uid://bl5mk0u3l6nab" path="res://src/game/levels/level1.tscn" id="2_7dbyx"]
 [ext_resource type="AudioStream" uid="uid://c2meixmpb01wi" path="res://assets/audio/sfx/game over 2.wav" id="2_jd8pm"]
 [ext_resource type="AudioStream" uid="uid://cd0x7l0bci1sq" path="res://assets/audio/music/lo_fi_witch.ogg" id="3_3a5w4"]
-[ext_resource type="PackedScene" uid="uid://c53pulv4yorfp" path="res://src/game/levels/level3.tscn" id="3_cm50u"]
 [ext_resource type="PackedScene" uid="uid://dfrmewrd2ij3h" path="res://src/deco/counter.tscn" id="7_e66xu"]
 [ext_resource type="PackedScene" uid="uid://d014fhdoxeh0f" path="res://src/tools/cauldron.tscn" id="8_oosmm"]
 [ext_resource type="PackedScene" uid="uid://cvennarng5skj" path="res://src/tools/bottle_station.tscn" id="9_f3ldj"]
@@ -181,7 +180,7 @@ size = Vector2(4, 4)
 [node name="Shop" type="Node3D"]
 script = ExtResource( "1_6107u" )
 skip_intro = true
-levels = [ExtResource( "2_7dbyx" ), ExtResource( "3_cm50u" )]
+levels = [ExtResource( "2_7dbyx" )]
 
 [node name="GameTimer" type="Timer" parent="."]
 one_shot = true

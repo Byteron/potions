@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://bavu6wugthpew" path="res://data/growables/flower.tres" id="5_ah0gp"]
 [ext_resource type="PackedScene" uid="uid://c5d1lgufmn351" path="res://assets/graphics/gltf/plant_pot.gltf" id="6_iq6v1"]
 [ext_resource type="Resource" uid="uid://dnjnx3nwckkwc" path="res://data/growables/herb.tres" id="6_vr77g"]
-[ext_resource type="PackedScene" path="res://src/deco/counter.tscn" id="7_e66xu"]
+[ext_resource type="PackedScene" uid="uid://dfrmewrd2ij3h" path="res://src/deco/counter.tscn" id="7_e66xu"]
 [ext_resource type="PackedScene" uid="uid://d014fhdoxeh0f" path="res://src/tools/cauldron.tscn" id="8_oosmm"]
 [ext_resource type="Resource" uid="uid://jrhw42osr18p" path="res://data/growables/root.tres" id="8_qed3o"]
 [ext_resource type="PackedScene" uid="uid://cvennarng5skj" path="res://src/tools/bottle_station.tscn" id="9_f3ldj"]
@@ -316,7 +316,6 @@ size = Vector2(4, 4)
 
 [node name="Shop" type="Node3D"]
 script = ExtResource( "1_6107u" )
-game_time = 240.0
 skip_intro = true
 
 [node name="GameTimer" type="Timer" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bl5mk0u3l6nab"]
+[gd_scene load_steps=40 format=3 uid="uid://bl5mk0u3l6nab"]
 
 [ext_resource type="PackedScene" uid="uid://dmsvo32nle07g" path="res://src/tools/pot.tscn" id="1_dqohl"]
 [ext_resource type="Script" path="res://src/game/levels/level.gd" id="1_yfvk3"]
@@ -13,9 +13,13 @@
 [ext_resource type="Texture2D" uid="uid://dbocecvauwvyo" path="res://assets/graphics/images/herb_bag.png" id="10_3tkcj"]
 [ext_resource type="PackedScene" uid="uid://dj0fvvwk2ru0c" path="res://src/deco/greenhouse_wall_piece.tscn" id="11_ma48c"]
 [ext_resource type="PackedScene" uid="uid://b4deylmuhkhl6" path="res://src/deco/greenhouse_invisible_wall_piece.tscn" id="12_d8fui"]
+[ext_resource type="Resource" uid="uid://jrhw42osr18p" path="res://data/growables/root.tres" id="12_hs05b"]
+[ext_resource type="Resource" uid="uid://bavu6wugthpew" path="res://data/growables/flower.tres" id="13_i47ny"]
+[ext_resource type="Texture2D" uid="uid://tvy8ef5e3uc2" path="res://assets/graphics/images/curcuma_bag.png" id="13_ni3rp"]
 [ext_resource type="PackedScene" uid="uid://ds6e2s1n5itjc" path="res://assets/graphics/gltf/gh_triangle_beam.gltf" id="13_woskc"]
 [ext_resource type="PackedScene" uid="uid://c7btkf4khwr0y" path="res://src/deco/bench.tscn" id="14_6jquk"]
 [ext_resource type="PackedScene" uid="uid://b02ydsq7uwd6w" path="res://assets/graphics/gltf/gh_triangle_rods.gltf" id="14_uxvs1"]
+[ext_resource type="Texture2D" uid="uid://bao7o3r5cv1si" path="res://assets/graphics/images/lavender_bag.png" id="15_tkr0x"]
 [ext_resource type="Texture2D" uid="uid://dq7doqjgi0inu" path="res://assets/graphics/images/dirt.png" id="16_xbxlr"]
 [ext_resource type="Script" path="res://src/game/customers.gd" id="19_pgre3"]
 [ext_resource type="PackedScene" uid="uid://dn2evgsxnwbm5" path="res://assets/graphics/gltf/customer.gltf" id="20_ik5ex"]
@@ -24,16 +28,10 @@
 [sub_resource type="Resource" id="Resource_xgy6l"]
 script = ExtResource( "6_3ai0r" )
 max_orders = 3
-order_spawn_time = 30
+order_spawn_time = 20
 order_time = 120
 order_failed_penalty = 0
 recipes = [ExtResource( "2_4egud" ), ExtResource( "3_xjeem" ), ExtResource( "4_8mbrc" ), ExtResource( "5_e1c3v" )]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_b0hr7"]
-size = Vector2(8.5, 6)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qxxup"]
-albedo_color = Color(0.376471, 0.196078, 0.109804, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ct1h2"]
 resource_name = "greenhouse"
@@ -170,32 +168,38 @@ difficulty = SubResource( "Resource_xgy6l" )
 
 [node name="Greenhouse" type="Node3D" parent="."]
 
-[node name="Pot" parent="Greenhouse" instance=ExtResource( "1_dqohl" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0, -0.5)
-
 [node name="Pot2" parent="Greenhouse" instance=ExtResource( "1_dqohl" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, 0, -0.5)
-
-[node name="Pot3" parent="Greenhouse" instance=ExtResource( "1_dqohl" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0, -1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
 
 [node name="Pot4" parent="Greenhouse" instance=ExtResource( "1_dqohl" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, 0, -1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -2.5)
+
+[node name="Pot5" parent="Greenhouse" instance=ExtResource( "1_dqohl" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -0.5)
 
 [node name="DirtBox2" parent="Greenhouse" instance=ExtResource( "3_3wj18" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9, 0.25, 1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, 0.25, 1.5)
 
-[node name="Ceiling" type="MeshInstance3D" parent="Greenhouse"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.76885, 2.6, -0.9)
-visible = false
-transparency = 1.0
-mesh = SubResource( "PlaneMesh_b0hr7" )
-surface_material_override/0 = SubResource( "StandardMaterial3D_qxxup" )
+[node name="DirtBox3" parent="Greenhouse" instance=ExtResource( "3_3wj18" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, 0.25, -0.5)
+
+[node name="DirtBox4" parent="Greenhouse" instance=ExtResource( "3_3wj18" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9, 0.25, -2.5)
 
 [node name="Seedbag2" parent="Greenhouse" instance=ExtResource( "4_c5v0k" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.21212, 0, -3.5099)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.41212, 0, -3.5099)
 growable = ExtResource( "9_8wiqk" )
 bag_texture = ExtResource( "10_3tkcj" )
+
+[node name="Seedbag4" parent="Greenhouse" instance=ExtResource( "4_c5v0k" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.41212, 0, -1.5099)
+growable = ExtResource( "13_i47ny" )
+bag_texture = ExtResource( "15_tkr0x" )
+
+[node name="Seedbag3" parent="Greenhouse" instance=ExtResource( "4_c5v0k" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.41212, 0, 0.4901)
+growable = ExtResource( "12_hs05b" )
+bag_texture = ExtResource( "13_ni3rp" )
 
 [node name="Walls" type="Node3D" parent="Greenhouse"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13)
@@ -206,23 +210,29 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -1, 0, -
 [node name="GreenhouseWallPiece2" parent="Greenhouse/Walls" instance=ExtResource( "11_ma48c" )]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -3, 0, -17)
 
+[node name="GreenhouseWallPiece3" parent="Greenhouse/Walls" instance=ExtResource( "11_ma48c" )]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -5, 0, -17)
+
 [node name="GreenhouseWallPiece5" parent="Greenhouse/Walls" instance=ExtResource( "11_ma48c" )]
-transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -4, 0, -16)
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -6, 0, -16)
 
 [node name="GreenhouseWallPiece6" parent="Greenhouse/Walls" instance=ExtResource( "11_ma48c" )]
-transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -4, 0, -14)
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -6, 0, -14)
 
 [node name="GreenhouseWallPiece7" parent="Greenhouse/Walls" instance=ExtResource( "11_ma48c" )]
-transform = Transform3D(1, 0, 1.80558e-07, 0, 1, 0, -1.74846e-07, 0, 1.03267, -4, 0, -11.928)
+transform = Transform3D(1, 0, 1.80558e-07, 0, 1, 0, -1.74846e-07, 0, 1.03267, -6, 0, -11.928)
 
 [node name="GreenhouseWallPiece10" parent="Greenhouse/Walls" instance=ExtResource( "12_d8fui" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 0, -10.8918)
+
+[node name="GreenhouseWallPiece12" parent="Greenhouse/Walls" instance=ExtResource( "12_d8fui" )]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0, -10.8918)
 
 [node name="GreenhouseWallPiece11" parent="Greenhouse/Walls" instance=ExtResource( "12_d8fui" )]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1, 0, -10.8918)
 
 [node name="gh_triangle_beam" parent="Greenhouse/Walls" instance=ExtResource( "13_woskc" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.05702, -3.9997, -0.0320461, -13.9622)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.05702, -5.9997, -0.0320461, -13.9622)
 
 [node name="gh_triangle_rods" parent="Greenhouse/Walls/gh_triangle_beam" instance=ExtResource( "14_uxvs1" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0634542, 0, 0)
@@ -315,6 +325,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -14)
 mesh = SubResource( "PlaneMesh_c756a" )
 skeleton = NodePath("../..")
 
+[node name="Floor25" type="MeshInstance3D" parent="Greenhouse/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -14)
+mesh = SubResource( "PlaneMesh_c756a" )
+skeleton = NodePath("../..")
+
+[node name="Floor28" type="MeshInstance3D" parent="Greenhouse/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -12)
+mesh = SubResource( "PlaneMesh_c756a" )
+skeleton = NodePath("../..")
+
+[node name="Floor26" type="MeshInstance3D" parent="Greenhouse/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -16)
+mesh = SubResource( "PlaneMesh_c756a" )
+skeleton = NodePath("../..")
+
+[node name="Floor27" type="MeshInstance3D" parent="Greenhouse/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -16)
+mesh = SubResource( "PlaneMesh_c756a" )
+skeleton = NodePath("../..")
+
 [node name="Floor23" type="MeshInstance3D" parent="Greenhouse/Floor"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 0, -12)
 mesh = SubResource( "PlaneMesh_c756a" )
@@ -352,6 +382,16 @@ transform = Transform3D(-0.00921125, 0, 3.56801, 0, 0.117229, 0, -0.260131, 0, -
 mesh = SubResource( "BoxMesh_flky6" )
 skeleton = NodePath("../Floor19")
 
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Greenhouse/Floor"]
+transform = Transform3D(0.00639586, 0, 3.56916, 0, 0.117229, 0, -0.260215, 0, 0.087727, -3.94754, -0.0276175, -16.3327)
+mesh = SubResource( "BoxMesh_flky6" )
+skeleton = NodePath("../Floor19")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Greenhouse/Floor"]
+transform = Transform3D(-0.00921125, 0, 3.56801, 0, 0.117229, 0, -0.260131, 0, -0.126343, -4.02405, -0.0276175, -16.6958)
+mesh = SubResource( "BoxMesh_flky6" )
+skeleton = NodePath("../Floor19")
+
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="Greenhouse/Floor"]
 transform = Transform3D(0.00518223, 0, 3.36738, 0, 0.117229, 0, -0.259285, 0, 0.0673026, -2.04284, -0.0276175, -12.4389)
 mesh = SubResource( "BoxMesh_flky6" )
@@ -364,6 +404,21 @@ skeleton = NodePath("../Floor19")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="Greenhouse/Floor"]
 transform = Transform3D(0.00639586, 0, 3.56916, 0, 0.117229, 0, -0.260215, 0, 0.087727, -2.0493, -0.0276175, -12.7475)
+mesh = SubResource( "BoxMesh_flky6" )
+skeleton = NodePath("../Floor19")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Greenhouse/Floor"]
+transform = Transform3D(0.00518223, 0, 3.36738, 0, 0.117229, 0, -0.259285, 0, 0.0673026, -4.04284, -0.0276175, -12.4389)
+mesh = SubResource( "BoxMesh_flky6" )
+skeleton = NodePath("../Floor19")
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="Greenhouse/Floor"]
+transform = Transform3D(0.0139794, 0, 3.36316, 0, 0.117229, 0, -0.25896, 0, 0.181553, -3.86182, -0.0276175, -12.1062)
+mesh = SubResource( "BoxMesh_flky6" )
+skeleton = NodePath("../Floor19")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Greenhouse/Floor"]
+transform = Transform3D(0.00639586, 0, 3.56916, 0, 0.117229, 0, -0.260215, 0, 0.087727, -4.0493, -0.0276175, -12.7475)
 mesh = SubResource( "BoxMesh_flky6" )
 skeleton = NodePath("../Floor19")
 
@@ -387,7 +442,25 @@ transform = Transform3D(0.00639586, 0, 3.56916, 0, 0.117229, 0, -0.260215, 0, 0.
 mesh = SubResource( "BoxMesh_flky6" )
 skeleton = NodePath("../Floor19")
 
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Greenhouse/Floor"]
+transform = Transform3D(0.00639586, 0, 3.56916, 0, 0.117229, 0, -0.260215, 0, 0.087727, -3.91618, -0.0276175, -14.7743)
+mesh = SubResource( "BoxMesh_flky6" )
+skeleton = NodePath("../Floor19")
+
+[node name="MeshInstance3D20" type="MeshInstance3D" parent="Greenhouse/Floor"]
+transform = Transform3D(0.00518223, 0, 3.36738, 0, 0.117229, 0, -0.259285, 0, 0.0673026, -4.07897, -0.0276175, -14.4822)
+mesh = SubResource( "BoxMesh_flky6" )
+skeleton = NodePath("../Floor19")
+
+[node name="MeshInstance3D21" type="MeshInstance3D" parent="Greenhouse/Floor"]
+transform = Transform3D(0.00639586, 0, 3.56916, 0, 0.117229, 0, -0.260215, 0, 0.087727, -4.07861, -0.0276175, -14.1952)
+mesh = SubResource( "BoxMesh_flky6" )
+skeleton = NodePath("../Floor19")
+
 [node name="Workshop" type="Node3D" parent="."]
+
+[node name="Bench" parent="Workshop" instance=ExtResource( "14_6jquk" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.25, -1)
 
 [node name="Customers" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13)
@@ -404,9 +477,3 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 4.60755, 0, -9.35133)
 
 [node name="Character" parent="." instance=ExtResource( "21_v1io0" )]
 transform = Transform3D(-0.523131, -0.0182682, -0.852056, -0.0348995, 0.999391, 3.57139e-09, 0.851536, 0.0297363, -0.523451, 1.09767, 9.53674e-07, -3.49051)
-
-[node name="Bench" parent="." instance=ExtResource( "14_6jquk" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.25, -1)
-
-[node name="Bench2" parent="." instance=ExtResource( "14_6jquk" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4, 0.25, -1)
