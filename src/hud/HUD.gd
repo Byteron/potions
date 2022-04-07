@@ -1,7 +1,7 @@
 extends CanvasLayer
 class_name HUD
 
-signal play_pressed()
+signal level_selected(level: int)
 signal back_pressed()
 
 @onready var score_label: Label = $ScoreLabel
@@ -10,6 +10,7 @@ signal back_pressed()
 @onready var container: OrderContainer = $OrderContainer
 
 @onready var title_screen: TitleScreen = $TitleScreen
+@onready var level_screen: LevelScreen = $LevelScreen
 @onready var recipe_menu: RecipeMenu = $RecipeMenu
 @onready var victory_screen: VictoryScreen = $VictoryScreen
 
@@ -18,6 +19,7 @@ func _ready() -> void:
 	recipe_menu.disable()
 	victory_screen.disable()
 	title_screen.disable()
+	level_screen.disable()
 	score_label.hide()
 	time_label.hide()
 	container.hide()
@@ -58,7 +60,7 @@ func set_time_left(time_left: float) -> void:
 
 func _on_title_screen_play_pressed() -> void:
 	title_screen.disable()
-	play_pressed.emit()
+	level_screen.enable()
 
 
 func _on_title_screen_recipe_pressed() -> void:
@@ -74,3 +76,12 @@ func _on_recipe_menu_back_pressed() -> void:
 func _on_victory_screen_back_pressed() -> void:
 	back_pressed.emit()
 	victory_screen.disable()
+
+func _on_level_screen_level_selected(level: int) -> void:
+	level_screen.disable()
+	level_selected.emit(level)
+
+
+func _on_level_screen_back_pressed() -> void:
+	level_screen.disable()
+	title_screen.enable()

@@ -5,7 +5,7 @@
 [sub_resource type="Font" id="Font_j6dfy"]
 data/0 = ExtResource( "1_jyx2f" )
 
-[node name="EasyButton" type="Button"]
+[node name="LevelButton" type="Button"]
 rect_min_size = Vector2(150, 50)
 offset_right = 150.0
 offset_bottom = 50.0

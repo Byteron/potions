@@ -66,12 +66,11 @@ func _on_game_over_timer_timeout() -> void:
 	game_over_player.play()
 
 
-func _on_hud_play_pressed() -> void:
-	_change_level(randi() % levels.size())
+func _on_hud_level_selected(level: int) -> void:
+	_change_level(level)
 	anim.play("camera_out")
 	await anim.animation_finished
 	start()
-
 
 func _on_hud_back_pressed() -> void:
 	anim.play("camera_in")

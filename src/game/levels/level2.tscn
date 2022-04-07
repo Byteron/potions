@@ -1,14 +1,25 @@
-[gd_scene load_steps=38 format=3 uid="uid://c8c2v717l28dv"]
+[gd_scene load_steps=50 format=3 uid="uid://c8c2v717l28dv"]
 
+[ext_resource type="Script" path="res://src/game/levels/level.gd" id="1_7wtis"]
 [ext_resource type="PackedScene" uid="uid://dmsvo32nle07g" path="res://src/tools/pot.tscn" id="1_h28aq"]
+[ext_resource type="Script" path="res://src/data/difficulty.gd" id="2_62luq"]
+[ext_resource type="Resource" uid="uid://rqgojg5ncobd" path="res://data/recipes/health_potion.tres" id="2_petau"]
 [ext_resource type="PackedScene" uid="uid://c5d1lgufmn351" path="res://assets/graphics/gltf/plant_pot.gltf" id="2_xp84d"]
 [ext_resource type="PackedScene" uid="uid://bcc3w2be250tf" path="res://src/tools/dirt_box.tscn" id="3_0s3b0"]
+[ext_resource type="Resource" uid="uid://drhxueks8mlbk" path="res://data/recipes/mana_potion.tres" id="3_563v4"]
+[ext_resource type="Resource" uid="uid://cewsejibx366t" path="res://data/recipes/energy_potion.tres" id="4_2bymu"]
 [ext_resource type="PackedScene" uid="uid://d1lyxdgdrti2h" path="res://src/tools/seed_bag.tscn" id="4_4jovg"]
+[ext_resource type="Resource" uid="uid://diyuwqw4dn707" path="res://data/recipes/love_potion.tres" id="5_b38o2"]
 [ext_resource type="Resource" uid="uid://bavu6wugthpew" path="res://data/growables/flower.tres" id="5_wxked"]
+[ext_resource type="Resource" uid="uid://c2absafivs6vl" path="res://data/recipes/aroma_potion.tres" id="6_gdb6f"]
 [ext_resource type="Texture2D" uid="uid://bao7o3r5cv1si" path="res://assets/graphics/images/lavender_bag.png" id="6_ms3hw"]
+[ext_resource type="Resource" uid="uid://cexgmqextg6mc" path="res://data/recipes/youth_potion.tres" id="7_a3k4b"]
 [ext_resource type="Resource" uid="uid://jrhw42osr18p" path="res://data/growables/root.tres" id="7_lhgkd"]
+[ext_resource type="Resource" uid="uid://deqpa3xiboo3x" path="res://data/recipes/cleansing_potion.tres" id="8_tqt6k"]
 [ext_resource type="Texture2D" uid="uid://tvy8ef5e3uc2" path="res://assets/graphics/images/curcuma_bag.png" id="8_yfthr"]
+[ext_resource type="Resource" uid="uid://630ew0dfw1cj" path="res://data/recipes/happiness_potion.tres" id="9_al37w"]
 [ext_resource type="Resource" uid="uid://dnjnx3nwckkwc" path="res://data/growables/herb.tres" id="9_bcant"]
+[ext_resource type="Resource" uid="uid://bljt0v21fok55" path="res://data/recipes/beauty_potion.tres" id="10_eqfbs"]
 [ext_resource type="Texture2D" uid="uid://dbocecvauwvyo" path="res://assets/graphics/images/herb_bag.png" id="10_hm72f"]
 [ext_resource type="PackedScene" uid="uid://dj0fvvwk2ru0c" path="res://src/deco/greenhouse_wall_piece.tscn" id="11_gkc40"]
 [ext_resource type="PackedScene" uid="uid://b4deylmuhkhl6" path="res://src/deco/greenhouse_invisible_wall_piece.tscn" id="12_o6bjd"]
@@ -21,6 +32,14 @@
 [ext_resource type="Script" path="res://src/game/customers.gd" id="19_u1s6v"]
 [ext_resource type="PackedScene" uid="uid://dn2evgsxnwbm5" path="res://assets/graphics/gltf/customer.gltf" id="20_6icd4"]
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="21_5vuyk"]
+
+[sub_resource type="Resource" id="Resource_2187t"]
+script = ExtResource( "2_62luq" )
+max_orders = 4
+order_spawn_time = 20
+order_time = 60
+order_failed_penalty = 250
+recipes = [ExtResource( "2_petau" ), ExtResource( "3_563v4" ), ExtResource( "4_2bymu" ), ExtResource( "5_b38o2" ), ExtResource( "6_gdb6f" ), ExtResource( "7_a3k4b" ), ExtResource( "8_tqt6k" ), ExtResource( "9_al37w" ), ExtResource( "10_eqfbs" )]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_b0hr7"]
 size = Vector2(8.5, 6)
@@ -158,6 +177,8 @@ albedo_color = Color(0.27451, 0.180392, 0.145098, 1)
 material = SubResource( "StandardMaterial3D_c4onp" )
 
 [node name="Level2" type="Node3D"]
+script = ExtResource( "1_7wtis" )
+difficulty = SubResource( "Resource_2187t" )
 
 [node name="Greenhouse" type="Node3D" parent="."]
 
