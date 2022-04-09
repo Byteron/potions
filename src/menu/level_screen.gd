@@ -12,7 +12,7 @@ signal back_pressed()
 func _ready() -> void:
 	for level in 3:
 		var button: Button = LevelButton.instantiate()
-		button.text = "Level %d" % (level + 1)
+		button.text = ["Easy", "Medium", "Hard"][level]
 		button.pressed.connect(_on_level_selected.bind(level))
 		container.add_child(button)
 
