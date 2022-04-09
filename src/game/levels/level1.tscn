@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bl5mk0u3l6nab"]
+[gd_scene load_steps=42 format=3 uid="uid://bl5mk0u3l6nab"]
 
 [ext_resource type="PackedScene" uid="uid://dmsvo32nle07g" path="res://src/tools/pot.tscn" id="1_dqohl"]
 [ext_resource type="Script" path="res://src/game/levels/level.gd" id="1_yfvk3"]
@@ -17,13 +17,14 @@
 [ext_resource type="Resource" uid="uid://bavu6wugthpew" path="res://data/growables/flower.tres" id="13_i47ny"]
 [ext_resource type="Texture2D" uid="uid://tvy8ef5e3uc2" path="res://assets/graphics/images/curcuma_bag.png" id="13_ni3rp"]
 [ext_resource type="PackedScene" uid="uid://ds6e2s1n5itjc" path="res://assets/graphics/gltf/gh_triangle_beam.gltf" id="13_woskc"]
-[ext_resource type="PackedScene" uid="uid://c7btkf4khwr0y" path="res://src/deco/bench.tscn" id="14_6jquk"]
 [ext_resource type="PackedScene" uid="uid://b02ydsq7uwd6w" path="res://assets/graphics/gltf/gh_triangle_rods.gltf" id="14_uxvs1"]
 [ext_resource type="Texture2D" uid="uid://bao7o3r5cv1si" path="res://assets/graphics/images/lavender_bag.png" id="15_tkr0x"]
 [ext_resource type="Texture2D" uid="uid://dq7doqjgi0inu" path="res://assets/graphics/images/dirt.png" id="16_xbxlr"]
 [ext_resource type="Script" path="res://src/game/customers.gd" id="19_pgre3"]
 [ext_resource type="PackedScene" uid="uid://dn2evgsxnwbm5" path="res://assets/graphics/gltf/customer.gltf" id="20_ik5ex"]
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="21_v1io0"]
+[ext_resource type="PackedScene" uid="uid://djgqvndknyjwh" path="res://src/tools/space.tscn" id="21_vrqb1"]
+[ext_resource type="PackedScene" uid="uid://bjyhsc357d05l" path="res://assets/graphics/gltf/table_big.gltf" id="22_5ybsm"]
 
 [sub_resource type="Resource" id="Resource_xgy6l"]
 script = ExtResource( "6_3ai0r" )
@@ -162,6 +163,9 @@ albedo_color = Color(0.27451, 0.180392, 0.145098, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_flky6"]
 material = SubResource( "StandardMaterial3D_c4onp" )
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6f18l"]
+size = Vector3(2, 0.5, 3)
+
 [node name="Level1" type="Node3D"]
 script = ExtResource( "1_yfvk3" )
 difficulty = SubResource( "Resource_xgy6l" )
@@ -238,65 +242,94 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.05702, -5.9997, -0.0320461, -1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0634542, 0, 0)
 
 [node name="greenhouse roof" type="Node3D" parent="Greenhouse/Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 
 [node name="Cube005" type="MeshInstance3D" parent="Greenhouse/Walls/greenhouse roof"]
-transform = Transform3D(-4.38618e-08, 1.82621, 0, -1.00344, -7.9826e-08, 0, 0, 0, 1.06066, -2.52107, 3.96677, -13.9622)
+transform = Transform3D(-4.38618e-08, 2.44652, 0, -1.00344, -1.06941e-07, 0, 0, 0, 1.06066, -1.5685, 3.96677, -13.9622)
 transparency = 1.0
 gi_mode = 1
 mesh = SubResource( "ArrayMesh_s4e0b" )
 skeleton = NodePath("")
 
-[node name="greenhouse window4" type="MeshInstance3D" parent="Greenhouse/Walls/greenhouse roof"]
-transform = Transform3D(-4.37114e-08, 1.59274e-15, -1.02284, 0.910518, 0.41347, -4.0709e-08, 0.41347, -0.910518, -1.84861e-08, -2.91987, 3.37653, -12.4198)
-transparency = 1.0
-gi_mode = 1
-mesh = SubResource( "ArrayMesh_xjtes" )
-skeleton = NodePath("")
-
 [node name="greenhouse window5" type="MeshInstance3D" parent="Greenhouse/Walls/greenhouse roof"]
-transform = Transform3D(-4.37114e-08, 1.59274e-15, -1.02284, 0.910518, 0.41347, -4.0709e-08, 0.41347, -0.910518, -1.84861e-08, -0.919873, 3.37653, -12.4198)
+transform = Transform3D(-4.37114e-08, 1.59274e-15, -1.02284, 0.910518, 0.41347, -4.0709e-08, 0.41347, -0.910518, -1.84861e-08, -0.914421, 3.377, -12.42)
 transparency = 1.0
 gi_mode = 1
 mesh = SubResource( "ArrayMesh_xjtes" )
 skeleton = NodePath("")
 
 [node name="greenhouse window6" type="MeshInstance3D" parent="Greenhouse/Walls/greenhouse roof"]
-transform = Transform3D(-4.37114e-08, 1.59274e-15, -1.02284, 0.910518, 0.41347, -4.0709e-08, 0.41347, -0.910518, -1.84861e-08, -0.919873, 2.85204, -11.2648)
+transform = Transform3D(-4.37114e-08, 1.59274e-15, -1.02284, 0.910518, 0.41347, -4.0709e-08, 0.41347, -0.910518, -1.84861e-08, -0.914421, 2.852, -11.265)
 transparency = 1.0
 gi_mode = 1
 mesh = SubResource( "ArrayMesh_xjtes" )
 skeleton = NodePath("")
 
-[node name="greenhouse window7" type="MeshInstance3D" parent="Greenhouse/Walls/greenhouse roof"]
-transform = Transform3D(-4.37114e-08, 1.59274e-15, -1.02284, 0.910518, 0.41347, -4.0709e-08, 0.41347, -0.910518, -1.84861e-08, -2.96555, 2.85204, -11.2648)
+[node name="greenhouse window8" type="MeshInstance3D" parent="Greenhouse/Walls/greenhouse roof"]
+transform = Transform3D(-4.37114e-08, 1.59274e-15, -1.02284, 0.910518, 0.41347, -4.0709e-08, 0.41347, -0.910518, -1.84861e-08, 1.08558, 3.377, -12.42)
+transparency = 1.0
+gi_mode = 1
+mesh = SubResource( "ArrayMesh_xjtes" )
+skeleton = NodePath("")
+
+[node name="greenhouse window9" type="MeshInstance3D" parent="Greenhouse/Walls/greenhouse roof"]
+transform = Transform3D(-4.37114e-08, 1.59274e-15, -1.02284, 0.910518, 0.41347, -4.0709e-08, 0.41347, -0.910518, -1.84861e-08, 1.08558, 2.852, -11.265)
 transparency = 1.0
 gi_mode = 1
 mesh = SubResource( "ArrayMesh_xjtes" )
 skeleton = NodePath("")
 
 [node name="greenhouse window10" type="MeshInstance3D" parent="Greenhouse/Walls/greenhouse roof"]
-transform = Transform3D(7.56469e-09, 7.96e-08, 1.02284, 0.910518, 0.41347, -4.0709e-08, -0.41347, 0.910518, -7.09333e-08, -0.988391, 3.37653, -15.3624)
+transform = Transform3D(-4.37114e-08, 1.59274e-15, -1.02284, 0.910518, 0.41347, -4.0709e-08, 0.41347, -0.910518, -1.84861e-08, -2.91442, 3.377, -12.42)
+transparency = 1.0
+gi_mode = 1
+mesh = SubResource( "ArrayMesh_xjtes" )
+skeleton = NodePath("")
+
+[node name="greenhouse window15" type="MeshInstance3D" parent="Greenhouse/Walls/greenhouse roof"]
+transform = Transform3D(-4.37114e-08, 1.59274e-15, -1.02284, 0.910518, 0.41347, -4.0709e-08, 0.41347, -0.910518, -1.84861e-08, -2.91442, 2.852, -11.265)
+transparency = 1.0
+gi_mode = 1
+mesh = SubResource( "ArrayMesh_xjtes" )
+skeleton = NodePath("")
+
+[node name="greenhouse window7" type="MeshInstance3D" parent="Greenhouse/Walls/greenhouse roof"]
+transform = Transform3D(7.56469e-09, 7.96e-08, 1.02284, 0.910518, 0.41347, -4.0709e-08, -0.41347, 0.910518, -7.09334e-08, -0.914421, 3.377, -15.4941)
 transparency = 1.0
 gi_mode = 1
 mesh = SubResource( "ArrayMesh_xjtes" )
 skeleton = NodePath("")
 
 [node name="greenhouse window11" type="MeshInstance3D" parent="Greenhouse/Walls/greenhouse roof"]
-transform = Transform3D(7.56469e-09, 7.96e-08, 1.02284, 0.910518, 0.41347, -4.0709e-08, -0.41347, 0.910518, -7.09333e-08, -2.98839, 3.37653, -15.3624)
+transform = Transform3D(7.56469e-09, 7.96e-08, 1.02284, 0.910518, 0.41347, -4.0709e-08, -0.41347, 0.910518, -7.09334e-08, -0.914421, 2.852, -16.6491)
+transparency = 1.0
+gi_mode = 1
+mesh = SubResource( "ArrayMesh_xjtes" )
+skeleton = NodePath("")
+
+[node name="greenhouse window12" type="MeshInstance3D" parent="Greenhouse/Walls/greenhouse roof"]
+transform = Transform3D(7.56469e-09, 7.96e-08, 1.02284, 0.910518, 0.41347, -4.0709e-08, -0.41347, 0.910518, -7.09334e-08, -2.91442, 3.377, -15.4941)
+transparency = 1.0
+gi_mode = 1
+mesh = SubResource( "ArrayMesh_xjtes" )
+skeleton = NodePath("")
+
+[node name="greenhouse window13" type="MeshInstance3D" parent="Greenhouse/Walls/greenhouse roof"]
+transform = Transform3D(7.56469e-09, 7.96e-08, 1.02284, 0.910518, 0.41347, -4.0709e-08, -0.41347, 0.910518, -7.09334e-08, -2.91442, 2.852, -16.6491)
+transparency = 1.0
+gi_mode = 1
+mesh = SubResource( "ArrayMesh_xjtes" )
+skeleton = NodePath("")
+
+[node name="greenhouse window14" type="MeshInstance3D" parent="Greenhouse/Walls/greenhouse roof"]
+transform = Transform3D(7.56469e-09, 7.96e-08, 1.02284, 0.910518, 0.41347, -4.0709e-08, -0.41347, 0.910518, -7.09334e-08, 1.08558, 3.377, -15.4941)
 transparency = 1.0
 gi_mode = 1
 mesh = SubResource( "ArrayMesh_xjtes" )
 skeleton = NodePath("")
 
 [node name="greenhouse window16" type="MeshInstance3D" parent="Greenhouse/Walls/greenhouse roof"]
-transform = Transform3D(7.56469e-09, 7.96e-08, 1.02284, 0.910518, 0.41347, -4.0709e-08, -0.41347, 0.910518, -7.09333e-08, -2.89703, 2.85204, -16.5174)
-transparency = 1.0
-gi_mode = 1
-mesh = SubResource( "ArrayMesh_xjtes" )
-skeleton = NodePath("")
-
-[node name="greenhouse window17" type="MeshInstance3D" parent="Greenhouse/Walls/greenhouse roof"]
-transform = Transform3D(7.56469e-09, 7.96e-08, 1.02284, 0.910518, 0.41347, -4.0709e-08, -0.41347, 0.910518, -7.09333e-08, -0.851355, 2.85204, -16.5174)
+transform = Transform3D(7.56469e-09, 7.96e-08, 1.02284, 0.910518, 0.41347, -4.0709e-08, -0.41347, 0.910518, -7.09334e-08, 1.08558, 2.852, -16.6491)
 transparency = 1.0
 gi_mode = 1
 mesh = SubResource( "ArrayMesh_xjtes" )
@@ -459,8 +492,33 @@ skeleton = NodePath("../Floor19")
 
 [node name="Workshop" type="Node3D" parent="."]
 
-[node name="Bench" parent="Workshop" instance=ExtResource( "14_6jquk" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.25, -1)
+[node name="Table" type="StaticBody3D" parent="Workshop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.90689, 0, -1.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Workshop/Table"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource( "BoxShape3D_6f18l" )
+
+[node name="Space" parent="Workshop/Table" instance=ExtResource( "21_vrqb1" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.501876, 1)
+
+[node name="Space2" parent="Workshop/Table" instance=ExtResource( "21_vrqb1" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.501876, 1)
+
+[node name="Space3" parent="Workshop/Table" instance=ExtResource( "21_vrqb1" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.501876, 0)
+
+[node name="Space5" parent="Workshop/Table" instance=ExtResource( "21_vrqb1" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.501876, -1)
+
+[node name="Space7" parent="Workshop/Table" instance=ExtResource( "21_vrqb1" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.501876, -1)
+
+[node name="Space6" parent="Workshop/Table" instance=ExtResource( "21_vrqb1" )]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.501876, 0)
+
+[node name="table_big" parent="Workshop/Table" instance=ExtResource( "22_5ybsm" )]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="Customers" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13)
