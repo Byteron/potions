@@ -4,14 +4,6 @@ class_name TitleScreen
 signal play_pressed()
 signal recipe_pressed()
 
-var levels: Array = [
-	load("res://src/game/level1.tscn"),
-	load("res://src/game/level2.tscn"),
-	load("res://src/game/level3.tscn"),
-]
-
-@export var LevelButton: PackedScene = null
-
 @onready var play_button: Button = $CenterContainer/VBoxContainer/PlayButton
 
 
@@ -39,5 +31,3 @@ func _on_recipe_button_pressed() -> void:
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
-
-

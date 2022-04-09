@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c8c2v717l28dv" path="res://src/game/levels/level2.tscn" id="3_0y4ru"]
 [ext_resource type="AudioStream" uid="uid://cd0x7l0bci1sq" path="res://assets/audio/music/lo_fi_witch.ogg" id="3_3a5w4"]
 [ext_resource type="PackedScene" uid="uid://c53pulv4yorfp" path="res://src/game/levels/level3.tscn" id="4_058g2"]
-[ext_resource type="PackedScene" path="res://src/deco/counter.tscn" id="7_e66xu"]
+[ext_resource type="PackedScene" uid="uid://dfrmewrd2ij3h" path="res://src/deco/counter.tscn" id="7_e66xu"]
 [ext_resource type="PackedScene" uid="uid://d014fhdoxeh0f" path="res://src/tools/cauldron.tscn" id="8_oosmm"]
 [ext_resource type="PackedScene" uid="uid://cvennarng5skj" path="res://src/tools/bottle_station.tscn" id="9_f3ldj"]
 [ext_resource type="PackedScene" uid="uid://culxk5mur1o0h" path="res://src/hud/HUD.tscn" id="10_wog8m"]
