@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bl5mk0u3l6nab"]
+[gd_scene load_steps=43 format=3 uid="uid://bl5mk0u3l6nab"]
 
 [ext_resource type="PackedScene" uid="uid://dmsvo32nle07g" path="res://src/tools/pot.tscn" id="1_dqohl"]
 [ext_resource type="Script" path="res://src/game/levels/level.gd" id="1_yfvk3"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="21_v1io0"]
 [ext_resource type="PackedScene" uid="uid://djgqvndknyjwh" path="res://src/tools/space.tscn" id="21_vrqb1"]
 [ext_resource type="PackedScene" uid="uid://bjyhsc357d05l" path="res://assets/graphics/gltf/table_big.gltf" id="22_5ybsm"]
+[ext_resource type="Texture2D" uid="uid://ghtltiq0jfgn" path="res://assets/graphics/images/grass_card.png" id="26_nfikb"]
 
 [sub_resource type="Resource" id="Resource_xgy6l"]
 script = ExtResource( "6_3ai0r" )
@@ -535,3 +536,143 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 4.60755, 0, -9.35133)
 
 [node name="Character" parent="." instance=ExtResource( "21_v1io0" )]
 transform = Transform3D(-0.523131, -0.0182682, -0.852056, -0.0348995, 0.999391, 3.57139e-09, 0.851536, 0.0297363, -0.523451, 1.09767, 9.53674e-07, -3.49051)
+
+[node name="Grass" type="Node3D" parent="."]
+
+[node name="Sprite3D110" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -6.52472, 0.288936, 1.2923)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D124" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.119771, -0.0549397, 0.762007, 0, 0.290778, 0.428164, -0.0852491, -0.0771877, 1.07058, -6.50069, 0.288936, 0.376759)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D125" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.139195, -0.0304824, 0.422788, -1.78473e-09, 0.290778, 0.428164, -0.0472992, -0.0897058, 1.24421, -6.48156, 0.288936, 0.0129313)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D126" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.142467, -0.0156053, -0.333632, 0.0110305, 0.30368, 0.126199, 0.0345549, -0.0326009, 1.33525, -6.47373, 0.198619, -1.3089)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D127" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.139214, -0.0304746, 0.422262, 0.0110305, 0.30368, 0.126199, -0.0459391, -0.0194329, 1.30992, -6.39241, 0.198619, -1.557)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D111" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.139566, -0.0297707, 0.412916, 0, 0.290778, 0.428164, -0.0461948, -0.0899445, 1.24752, -7.08037, 0.288936, 1.51843)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D117" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.144907, -0.0159747, 0.221567, 0, 0.290778, 0.428164, -0.0247877, -0.0933869, 1.29527, -6.63599, 0.288936, -3.18845)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D118" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.129779, -0.04451, 0.617348, 0, 0.290778, 0.428164, -0.0690655, -0.0836372, 1.16004, -7.14555, 0.288936, -2.87187)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D113" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.139566, -0.0297707, 0.412916, 0, 0.290778, 0.428164, -0.0461948, -0.0899445, 1.24752, -6.59198, 0.288936, 1.94065)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D128" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.139566, -0.0297707, 0.412916, 0, 0.290778, 0.428164, -0.0461948, -0.0899445, 1.24752, -7.44757, 0.288936, 2.01756)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D123" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.140969, 0.0268848, -0.372889, 0, 0.290778, 0.428164, 0.0417168, -0.0908489, 1.26006, -6.47514, 0.288936, 2.54713)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D122" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.139566, -0.0297707, 0.412916, 0, 0.290778, 0.428164, -0.0461948, -0.0899445, 1.24752, -5.97407, 0.288936, 2.3189)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D119" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.139566, -0.0297707, 0.412916, 0, 0.290778, 0.428164, -0.0461948, -0.0899445, 1.24752, -6.67673, 0.288936, -0.766474)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D120" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.146393, 0.00522615, -0.0786954, 0, 0.258023, 0.412479, 0.00911792, -0.0839085, 1.26349, -6.62813, 0.288936, -2.52732)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D130" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.142223, -0.0205592, 0.309581, 0, 0.258023, 0.412479, -0.0358692, -0.0815185, 1.22751, -10.9596, 0.288936, -4.26212)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D132" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.066124, -0.0750433, 1.13, 1.06898e-09, 0.258023, 0.412479, -0.130926, -0.0379005, 0.570707, -11.4355, 0.288935, -2.17146)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D131" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.0921626, 0.012804, 1.03388, -0.0274468, 0.265409, 0.122484, -0.110755, -0.0551179, 0.829966, -10.7567, 0.219959, -4.87107)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D116" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.139566, -0.0297707, 0.412916, 0, 0.290778, 0.428164, -0.0461948, -0.0899445, 1.24752, -7.59757, 0.288936, -1.46822)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D129" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.146109, -0.0104821, 0.145385, 0, 0.290778, 0.428164, -0.0162649, -0.0941618, 1.30601, -8.84339, 0.288936, -2.44723)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D121" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.112667, -0.0608619, 0.844147, 0, 0.290778, 0.428164, -0.0944385, -0.0726095, 1.00709, -8.03364, 0.288936, -3.8699)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D114" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.139566, -0.0297707, 0.412916, 0, 0.290778, 0.428164, -0.0461948, -0.0899445, 1.24752, -8.01556, 0.288936, -0.373004)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D115" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.139566, -0.0297707, 0.412916, 0, 0.290778, 0.428164, -0.0461948, -0.0899445, 1.24752, -7.63962, 0.288936, -0.152168)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )
+
+[node name="Sprite3D112" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.139566, -0.0297707, 0.412916, 0, 0.290778, 0.428164, -0.0461948, -0.0899445, 1.24752, -8.07175, 0.288936, 0.812991)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "26_nfikb" )

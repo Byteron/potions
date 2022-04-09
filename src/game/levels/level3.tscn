@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://src/game/levels/level.gd" id="1_6nt3k"]
 [ext_resource type="PackedScene" uid="uid://dmsvo32nle07g" path="res://src/tools/pot.tscn" id="1_gsmaf"]
-[ext_resource type="PackedScene" uid="uid://c5d1lgufmn351" path="res://assets/graphics/gltf/plant_pot.gltf" id="2_qekqn"]
 [ext_resource type="Resource" uid="uid://dhbxv358g5f8x" path="res://data/recipes/ancient_potion.tres" id="2_qguf6"]
 [ext_resource type="Resource" uid="uid://c2absafivs6vl" path="res://data/recipes/aroma_potion.tres" id="3_6ibaq"]
 [ext_resource type="PackedScene" uid="uid://bcc3w2be250tf" path="res://src/tools/dirt_box.tscn" id="3_xi07l"]
@@ -41,6 +40,7 @@
 [ext_resource type="Script" path="res://src/data/difficulty.gd" id="20_urqkw"]
 [ext_resource type="PackedScene" uid="uid://dn2evgsxnwbm5" path="res://assets/graphics/gltf/customer.gltf" id="20_xcleo"]
 [ext_resource type="PackedScene" uid="uid://csb4thvmptxi0" path="res://src/character/character.tscn" id="21_r5m8i"]
+[ext_resource type="Texture2D" uid="uid://ghtltiq0jfgn" path="res://assets/graphics/images/grass_card.png" id="42_yul18"]
 
 [sub_resource type="Resource" id="Resource_1vh0d"]
 script = ExtResource( "20_urqkw" )
@@ -191,23 +191,14 @@ difficulty = SubResource( "Resource_1vh0d" )
 
 [node name="Greenhouse" type="Node3D" parent="."]
 
-[node name="Pot6" parent="Greenhouse" instance=ExtResource( "1_gsmaf" )]
+[node name="Pot9" parent="Greenhouse" instance=ExtResource( "1_gsmaf" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.12116, 0, 1.5)
 
-[node name="plant_pot" parent="Greenhouse/Pot6" instance=ExtResource( "2_qekqn" )]
-transform = Transform3D(1.80027, 0, 0, 0, 1.5, 0, 0, 0, 1.80027, 0, -0.0590724, 0.0148752)
-
-[node name="Pot7" parent="Greenhouse" instance=ExtResource( "1_gsmaf" )]
+[node name="Pot10" parent="Greenhouse" instance=ExtResource( "1_gsmaf" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.92116, -0.0166825, 1.5208)
 
-[node name="plant_pot" parent="Greenhouse/Pot7" instance=ExtResource( "2_qekqn" )]
-transform = Transform3D(1.80027, 0, 0, 0, 1.5, 0, 0, 0, 1.80027, 0, -0.0465491, 0.0569649)
-
-[node name="Pot8" parent="Greenhouse" instance=ExtResource( "1_gsmaf" )]
+[node name="Pot11" parent="Greenhouse" instance=ExtResource( "1_gsmaf" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.721, -0.0644339, 1.5)
-
-[node name="plant_pot" parent="Greenhouse/Pot8" instance=ExtResource( "2_qekqn" )]
-transform = Transform3D(1.4, 0, 0, 0, 1.3, 0, 0, 0, 1.4, 0.0247579, 0.0357632, 0.114375)
 
 [node name="DirtBox" parent="Greenhouse" instance=ExtResource( "3_xi07l" )]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7, 0.25, -0.5)
@@ -594,3 +585,35 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 5.14755, 0, -9.35133)
 
 [node name="Character" parent="." instance=ExtResource( "21_r5m8i" )]
 transform = Transform3D(-0.523131, -0.0182682, -0.852056, -0.0348995, 0.999391, 3.57139e-09, 0.851536, 0.0297363, -0.523451, 1.09767, 9.53674e-07, -3.49051)
+
+[node name="Grass" type="Node3D" parent="."]
+
+[node name="Sprite3D24" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -7.79491, 0.288936, 2.30219)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "42_yul18" )
+
+[node name="Sprite3D19" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -6.86701, 0.34157, 2.46373)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "42_yul18" )
+
+[node name="Sprite3D4" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.175316, 0.00154046, -0.023746, 6.13614e-10, 0.225943, 0.369753, 0.00366929, -0.0736022, 1.13457, -6.07521, 0.171093, 2.26831)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "42_yul18" )
+
+[node name="Sprite3D14" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.175316, 0.00154046, -0.023746, 6.13614e-10, 0.225943, 0.369753, 0.00366929, -0.0736022, 1.13457, -6.68843, 0.171093, 2.2667)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "42_yul18" )
+
+[node name="Sprite3D15" type="Sprite3D" parent="Grass"]
+transform = Transform3D(0.175316, 0.00154046, -0.023746, 6.13614e-10, 0.225943, 0.369753, 0.00366929, -0.0736022, 1.13457, -7.1111, 0.171093, 2.38226)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "42_yul18" )

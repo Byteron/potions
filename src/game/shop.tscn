@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c8c2v717l28dv" path="res://src/game/levels/level2.tscn" id="3_0y4ru"]
 [ext_resource type="AudioStream" uid="uid://cd0x7l0bci1sq" path="res://assets/audio/music/lo_fi_witch.ogg" id="3_3a5w4"]
 [ext_resource type="PackedScene" uid="uid://c53pulv4yorfp" path="res://src/game/levels/level3.tscn" id="4_058g2"]
-[ext_resource type="PackedScene" uid="uid://dfrmewrd2ij3h" path="res://src/deco/counter.tscn" id="7_e66xu"]
+[ext_resource type="PackedScene" path="res://src/deco/counter.tscn" id="7_e66xu"]
 [ext_resource type="PackedScene" uid="uid://d014fhdoxeh0f" path="res://src/tools/cauldron.tscn" id="8_oosmm"]
 [ext_resource type="PackedScene" uid="uid://cvennarng5skj" path="res://src/tools/bottle_station.tscn" id="9_f3ldj"]
 [ext_resource type="PackedScene" uid="uid://culxk5mur1o0h" path="res://src/hud/HUD.tscn" id="10_wog8m"]
@@ -723,12 +723,6 @@ cast_shadow = 0
 double_sided = false
 texture = ExtResource( "40_woebg" )
 
-[node name="Sprite3D24" type="Sprite3D" parent="Outside"]
-transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -7.79491, 0.288936, 2.30219)
-cast_shadow = 0
-double_sided = false
-texture = ExtResource( "40_woebg" )
-
 [node name="Sprite3D17" type="Sprite3D" parent="Outside"]
 transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -2.91223, 0.338586, 2.45457)
 cast_shadow = 0
@@ -761,12 +755,6 @@ texture = ExtResource( "40_woebg" )
 
 [node name="Sprite3D18" type="Sprite3D" parent="Outside"]
 transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -5.28434, 0.309715, 2.36596)
-cast_shadow = 0
-double_sided = false
-texture = ExtResource( "40_woebg" )
-
-[node name="Sprite3D19" type="Sprite3D" parent="Outside"]
-transform = Transform3D(0.147012, 0, 0, 0, 0.290778, 0.428164, 0, -0.0947434, 1.31408, -6.86701, 0.34157, 2.46373)
 cast_shadow = 0
 double_sided = false
 texture = ExtResource( "40_woebg" )
@@ -851,12 +839,6 @@ texture = ExtResource( "40_woebg" )
 
 [node name="Sprite3D2" type="Sprite3D" parent="Outside"]
 transform = Transform3D(0.12686, -0.00532576, 0.0958584, 0, 0.184996, 0.353496, -0.0112528, -0.0600409, 1.08068, -0.817697, 0.306296, 2.30698)
-cast_shadow = 0
-double_sided = false
-texture = ExtResource( "40_woebg" )
-
-[node name="Sprite3D4" type="Sprite3D" parent="Outside"]
-transform = Transform3D(0.175316, 0.00154046, -0.023746, 6.13614e-10, 0.225943, 0.369753, 0.00366929, -0.0736022, 1.13457, -6.07521, 0.171093, 2.26831)
 cast_shadow = 0
 double_sided = false
 texture = ExtResource( "40_woebg" )
@@ -1078,7 +1060,19 @@ double_sided = false
 texture = ExtResource( "40_woebg" )
 
 [node name="Sprite3D74" type="Sprite3D" parent="Outside"]
-transform = Transform3D(0.138751, -0.0240716, 0.426181, 0, 0.202007, 0.379691, -0.0545213, -0.0612597, 1.08459, -10.0045, 0.238382, -1.11564)
+transform = Transform3D(0.138751, -0.0240716, 0.426181, 0, 0.202007, 0.379691, -0.0545213, -0.0612597, 1.08459, -10.1862, 0.238382, -1.15335)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D111" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.135223, -0.0687259, 0.330261, 0.0143596, 0.166253, 0.753914, -0.0610989, -0.113029, 0.908115, -10.5465, 0.238382, -2.11912)
+cast_shadow = 0
+double_sided = false
+texture = ExtResource( "40_woebg" )
+
+[node name="Sprite3D110" type="Sprite3D" parent="Outside"]
+transform = Transform3D(0.115283, 0.00668723, 0.776124, -0.0143684, 0.210971, 0.0837583, -0.0934226, -0.0241953, 0.944853, -9.60139, 0.238382, -1.19363)
 cast_shadow = 0
 double_sided = false
 texture = ExtResource( "40_woebg" )
@@ -1325,18 +1319,6 @@ texture = ExtResource( "40_woebg" )
 
 [node name="Sprite3D13" type="Sprite3D" parent="Outside"]
 transform = Transform3D(0.175316, 0.00154046, -0.023746, 6.13614e-10, 0.225943, 0.369753, 0.00366929, -0.0736022, 1.13457, -5.42066, 0.171093, 2.35901)
-cast_shadow = 0
-double_sided = false
-texture = ExtResource( "40_woebg" )
-
-[node name="Sprite3D14" type="Sprite3D" parent="Outside"]
-transform = Transform3D(0.175316, 0.00154046, -0.023746, 6.13614e-10, 0.225943, 0.369753, 0.00366929, -0.0736022, 1.13457, -6.68843, 0.171093, 2.2667)
-cast_shadow = 0
-double_sided = false
-texture = ExtResource( "40_woebg" )
-
-[node name="Sprite3D15" type="Sprite3D" parent="Outside"]
-transform = Transform3D(0.175316, 0.00154046, -0.023746, 6.13614e-10, 0.225943, 0.369753, 0.00366929, -0.0736022, 1.13457, -7.1111, 0.171093, 2.38226)
 cast_shadow = 0
 double_sided = false
 texture = ExtResource( "40_woebg" )
