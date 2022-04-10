@@ -1,8 +1,6 @@
 extends Node3D
 class_name Shop
 
-@export var game_time := 240.0
-
 @export var skip_intro = false
 
 @export var levels: Array[PackedScene]
@@ -35,8 +33,8 @@ func start() -> void:
 	hud.show_labels()
 	Recipes.reset()
 	Recipes.start()
-	timer.start(game_time)
-	sound_timer.start(game_time - 10)
+	timer.start(level.game_time)
+	sound_timer.start(level.game_time - 10)
 	player.play()
 
 
