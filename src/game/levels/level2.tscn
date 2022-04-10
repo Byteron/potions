@@ -35,8 +35,8 @@
 [sub_resource type="Resource" id="Resource_xgy6l"]
 script = ExtResource( "2_62luq" )
 max_orders = 4
-order_spawn_time = 20
-order_time = 90
+order_spawn_time = 15
+order_time = 150
 order_failed_penalty = 250
 recipes = [ExtResource( "2_petau" ), ExtResource( "3_563v4" ), ExtResource( "8_tqt6k" ), ExtResource( "6_gdb6f" ), ExtResource( "5_b38o2" ), ExtResource( "7_a3k4b" ), ExtResource( "9_al37w" ), ExtResource( "10_eqfbs" )]
 

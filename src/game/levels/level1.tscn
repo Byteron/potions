@@ -30,9 +30,9 @@
 [sub_resource type="Resource" id="Resource_xgy6l"]
 script = ExtResource( "6_3ai0r" )
 max_orders = 3
-order_spawn_time = 20
-order_time = 120
-order_failed_penalty = 0
+order_spawn_time = 15
+order_time = 200
+order_failed_penalty = 100
 recipes = [ExtResource( "2_4egud" ), ExtResource( "3_xjeem" ), ExtResource( "4_8mbrc" ), ExtResource( "5_e1c3v" )]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ct1h2"]

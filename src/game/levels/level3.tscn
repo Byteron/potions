@@ -46,7 +46,7 @@
 script = ExtResource( "20_urqkw" )
 max_orders = 5
 order_spawn_time = 15
-order_time = 45
+order_time = 100
 order_failed_penalty = 500
 recipes = [ExtResource( "2_qguf6" ), ExtResource( "3_6ibaq" ), ExtResource( "4_re3jr" ), ExtResource( "5_4jvoi" ), ExtResource( "6_c68on" ), ExtResource( "7_xuoro" ), ExtResource( "8_j7g08" ), ExtResource( "9_drcw6" ), ExtResource( "10_na8k6" ), ExtResource( "11_h6ou3" ), ExtResource( "12_y4e52" ), ExtResource( "13_xp171" ), ExtResource( "14_fnind" ), ExtResource( "15_evgxa" ), ExtResource( "16_7c1j1" ), ExtResource( "17_mpqqq" ), ExtResource( "18_pdd3n" ), ExtResource( "19_0jwbp" )]
 
