@@ -11,8 +11,8 @@ func add_order(order: Order) -> void:
 	var entry: OrderEntry = OrderEntry.instantiate()
 	entry.faded.connect(_on_entry_faded)
 	entry.order = order
-	entry.rect_position.y = entry.rect_size.y * count
 	add_child(entry)
+	entry.rect_position.y = entry.rect_size.y * count + count * 5
 	animate_in(entry)
 	orders[order] = entry
 
