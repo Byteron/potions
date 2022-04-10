@@ -16,6 +16,7 @@ signal back_pressed()
 
 
 var selected_level := 0
+var highest_unlocked_level := 0
 
 
 func _ready() -> void:
@@ -32,8 +33,8 @@ func _process(_delta: float) -> void:
 	score_label.text = str(Recipes.score)
 
 
-func show_score() -> void:
-	victory_screen.enable(selected_level)
+func show_score(outcome, win_score) -> void:
+	victory_screen.enable(selected_level, outcome, win_score)
 	score_label.hide()
 	time_label.hide()
 	container.hide()
@@ -63,7 +64,7 @@ func set_time_left(time_left: float) -> void:
 
 func _on_title_screen_play_pressed() -> void:
 	title_screen.disable()
-	level_screen.enable()
+	level_screen.enable(highest_unlocked_level)
 
 
 func _on_title_screen_recipe_pressed() -> void:

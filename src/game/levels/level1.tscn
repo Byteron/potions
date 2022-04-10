@@ -169,6 +169,8 @@ size = Vector3(2, 0.5, 3)
 
 [node name="Level1" type="Node3D"]
 script = ExtResource( "1_yfvk3" )
+win_score = 3000
+win_unlocks_level = 1
 difficulty = SubResource( "Resource_xgy6l" )
 
 [node name="Greenhouse" type="Node3D" parent="."]

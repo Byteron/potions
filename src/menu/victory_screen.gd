@@ -7,6 +7,7 @@ signal back_pressed()
 
 @onready var score_label: Label = $VBoxContainer/CenterContainer/VBoxContainer/ScoreLabel
 @onready var stats_label: Label = $VBoxContainer/CenterContainer/VBoxContainer/StatsLabel
+@onready var outcome_label: Label = $Outcome
 @onready var back_button: Button = $BackButton
 
 @onready var credits_container: Control = $Credits
@@ -55,6 +56,8 @@ var sold := 0
 var failed := 0
 
 var level := 0
+var win_score := 0
+var outcome := Level.NO_OUTCOME
 
 
 func _process(_delta: float) -> void:
@@ -62,8 +65,10 @@ func _process(_delta: float) -> void:
 	stats_label.text = "Sold: " + str(sold) + "\n" + "Failed: " + str(failed)
 
 
-func enable(level: int) -> void:
+func enable(level: int, outcome, win_score: int) -> void:
 	self.level = level
+	self.outcome = outcome
+	self.win_score = win_score
 
 	show()
 	start()
@@ -75,9 +80,12 @@ func disable() -> void:
 
 func start() -> void:
 	_update_credits()
+	_update_outcome_text()
 
 	back_button.visible = false
-
+	outcome_label.visible = false
+	outcome_label.rect_scale = Vector2(0, 0)
+	
 	for entry in credits_container.get_children():
 		entry.modulate.a = 0
 	
@@ -89,6 +97,9 @@ func start() -> void:
 	tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).tween_property(self, "score", Recipes.score, 3).set_delay(0.25)
 	tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).tween_property(self, "sold", Recipes.sold, 1).set_delay(0.25)
 	tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT).tween_property(self, "failed", Recipes.failed, 0.5).set_delay(0.25)
+	
+	tween.tween_callback(outcome_label.show)
+	tween.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT).tween_property(outcome_label, "rect_scale", Vector2(1, 1), 0.5)
 	
 	for entry in credits_container.get_children():
 		tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT).tween_property(entry, "modulate:a", 1.0, 0.5).set_delay(0.5)
@@ -113,6 +124,15 @@ func _update_credits() -> void:
 
 		entry.roles = dict.roles
 		credits_container.add_child(entry)
+
+
+func _update_outcome_text():
+	if outcome == Level.LOST:
+		outcome_label.text = "Score %d points to unlock the next level!" % win_score
+	elif outcome == Level.WON:
+		outcome_label.text = "You beat the target of %d points and unlocked the next level!" % win_score
+	else:
+		outcome_label.text = ""
 
 
 func _on_back_button_pressed() -> void:

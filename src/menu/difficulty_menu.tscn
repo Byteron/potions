@@ -1,13 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bl7t1n1wm3cue"]
+[gd_scene load_steps=2 format=3 uid="uid://bl7t1n1wm3cue"]
 
 [ext_resource type="Script" path="res://src/menu/title_screen.gd" id="1_6n4pe"]
-[ext_resource type="PackedScene" uid="uid://c71tm5xlb6wa7" path="res://src/menu/level_button.tscn" id="2_icb7u"]
 
 [node name="DifficultyMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( "1_6n4pe" )
-LevelButton = ExtResource( "2_icb7u" )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0

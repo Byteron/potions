@@ -16,6 +16,7 @@ class_name Shop
 @onready var rect: ColorRect = $Intro/ColorRect
 
 var level: Level = null
+var save_data := SaveGame.load()
 
 
 func _ready() -> void:
@@ -26,6 +27,7 @@ func _ready() -> void:
 	else:
 		rect.visible = false
 	
+	hud.highest_unlocked_level = save_data.unlocked_levels
 	hud.show_menu()
 
 
@@ -57,7 +59,14 @@ func _on_game_timer_timeout() -> void:
 	Recipes.clear()
 	player.stop()
 	await timer.timeout
-	hud.show_score()
+	
+	var outcome = level.get_outcome(Recipes.score, save_data.unlocked_levels)
+	if outcome == Level.WON:
+		save_data.unlocked_levels = level.win_unlocks_level
+		save_data.save()
+		hud.highest_unlocked_level = save_data.unlocked_levels
+	
+	hud.show_score(outcome, level.win_score)
 
 
 func _on_game_over_timer_timeout() -> void:

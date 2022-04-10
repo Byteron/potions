@@ -14,7 +14,11 @@ var buttons: Array[Button] = []
 func _ready() -> void:
 	for level in 3:
 		var button: Button = LevelButton.instantiate()
-		button.text = ["Easy", "Medium", "Hard"][level]
+		button.text = [
+				"Level 1: Raw crops",
+				"Level 2: Chopped",
+				"Level 3: Drying & Grinding"
+			][level]
 		button.pressed.connect(_on_level_selected.bind(level))
 		buttons.append(button)
 		container.add_child(button)
@@ -26,8 +30,9 @@ func _ready() -> void:
 		buttons[i].focus_neighbor_bottom = buttons[(i + 1) % buttons.size()].get_path()
 
 
-func enable() -> void:
+func enable(highest_unlocked_level: int) -> void:
 	show()
+	_update_unlocked_levels(highest_unlocked_level)
 	buttons[0].grab_focus()
 
 func disable() -> void:
@@ -41,3 +46,9 @@ func _on_level_selected(level: int) -> void:
 
 func _on_back_button_pressed() -> void:
 	back_pressed.emit()
+
+
+func _update_unlocked_levels(highest_unlocked_level: int) -> void:
+	for i in buttons.size():
+		if buttons[i] != back_button:
+			buttons[i].disabled = (i > highest_unlocked_level)
