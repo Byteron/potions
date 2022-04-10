@@ -14,8 +14,8 @@ script = ExtResource( "1_hno5g" )
 PotionEntry = ExtResource( "2_6n0xx" )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_right = 1280.0
-offset_bottom = 720.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
 offset_right = 1280.0

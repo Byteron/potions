@@ -4,8 +4,8 @@ class_name HUD
 signal level_selected(level: int)
 signal back_pressed()
 
-@onready var score_label: Label = $ScoreLabel
-@onready var time_label: Label = $TimeLabel
+@onready var score_label: Label = $Stats/ScoreLabel
+@onready var time_label: Label = $Stats/TimeLabel
 
 @onready var container: OrderContainer = $OrderContainer
 

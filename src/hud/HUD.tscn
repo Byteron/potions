@@ -29,18 +29,31 @@ script = ExtResource( "1_s8jmo" )
 script = ExtResource( "3_lhsno" )
 OrderEntry = ExtResource( "3_sua2s" )
 
-[node name="TimeLabel" type="Label" parent="."]
-offset_left = 234.0
-offset_top = 607.0
-offset_right = 423.0
-offset_bottom = 650.0
+[node name="Stats" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+
+[node name="TimeLabel" type="Label" parent="Stats"]
+offset_left = -376.0
+offset_top = -60.0
+offset_right = -187.0
+offset_bottom = -17.0
 theme_override_fonts/font = SubResource( "Font_earka" )
 theme_override_font_sizes/font_size = 32
 text = "300"
 horizontal_alignment = 2
 vertical_alignment = 1
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
 
-[node name="SecondsLabel" type="Label" parent="TimeLabel"]
+[node name="SecondsLabel" type="Label" parent="Stats/TimeLabel"]
 offset_left = 197.0
 offset_right = 365.0
 offset_bottom = 42.0
@@ -53,18 +66,22 @@ __meta__ = {
 "_edit_use_custom_anchors": false
 }
 
-[node name="ScoreLabel" type="Label" parent="."]
-offset_left = 254.0
-offset_top = 649.0
-offset_right = 422.0
-offset_bottom = 680.0
+[node name="ScoreLabel" type="Label" parent="Stats"]
+offset_left = -356.0
+offset_top = -18.0
+offset_right = -188.0
+offset_bottom = 13.0
 theme_override_fonts/font = SubResource( "Font_gtbv4" )
 theme_override_font_sizes/font_size = 22
 text = "5000"
 horizontal_alignment = 2
 vertical_alignment = 1
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
 
-[node name="PointsLabel" type="Label" parent="ScoreLabel"]
+[node name="PointsLabel" type="Label" parent="Stats/ScoreLabel"]
 offset_left = 177.0
 offset_top = -4.0
 offset_right = 345.0
