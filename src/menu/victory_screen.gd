@@ -11,45 +11,60 @@ signal back_pressed()
 
 @onready var credits_container: Control = $Credits
 
-var credit_entries := [
+var credit_entries : Array[Dictionary] = [
 	{
 		name = "Aaron Winter",
-		score = "High score: 19900 points",
 		roles = "Game Design and Programming",
 	},
 	{
 		name = "Zowie van Dillen",
-		score = "High score: 15600 points",
 		roles = "2D and 3D Art",
 	},
 	{
 		name = "Vikfro",
-		score = "",
 		roles = "3D Art and Music",
 	},
 	{
 		name = "Geoffrey Muller",
-		score = "",
 		roles = "Key Art and Logo Design",
 	},
 	{
 		name = "Ramita",
-		score = "",
 		roles = "Sound Effects",
 	},
 ]
+
+var scores : Dictionary = {
+	"Aaron Winter" = [
+		16800,
+		19600,
+		19900,
+	],
+	"Zowie van Dillen" = [
+		0,
+		0,
+		15600,
+	],
+	"Vikfro" = [0, 0, 0],
+	"Geoffrey Muller" = [0, 0, 0],
+	"Ramita" = [0, 0, 0],
+}
 
 var score := 0
 var sold := 0
 var failed := 0
 
-
-func _ready() -> void:
-	_init_credits()
-	enable()
+var level := 0
 
 
-func enable() -> void:
+func _process(_delta: float) -> void:
+	score_label.text = "Score: " + str(score)
+	stats_label.text = "Sold: " + str(sold) + "\n" + "Failed: " + str(failed)
+
+
+func enable(level: int) -> void:
+	self.level = level
+
 	show()
 	start()
 
@@ -59,21 +74,21 @@ func disable() -> void:
 
 
 func start() -> void:
+	_update_credits()
+
+	back_button.visible = false
+
+	for entry in credits_container.get_children():
+		entry.modulate.a = 0
+	
 	score = 0
 	sold = 0
 	failed = 0
-	back_button.visible = false
 	
-	for entry in credits_container.get_children():
-		entry.modulate.a = 0
-
 	var tween = get_tree().create_tween()
-#	tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).tween_property(self, "score", Recipes.score, 3).set_delay(0.25)
-#	tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).tween_property(self, "sold", Recipes.sold, 1).set_delay(0.25)
-#	tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT).tween_property(self, "failed", Recipes.failed, 0.5).set_delay(0.25)
-	tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).tween_property(self, "score", 10000, 3).set_delay(0.25)
-	tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).tween_property(self, "sold", 10, 1).set_delay(0.25)
-	tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT).tween_property(self, "failed", 4, 0.5).set_delay(0.25)
+	tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).tween_property(self, "score", Recipes.score, 3).set_delay(0.25)
+	tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT).tween_property(self, "sold", Recipes.sold, 1).set_delay(0.25)
+	tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT).tween_property(self, "failed", Recipes.failed, 0.5).set_delay(0.25)
 	
 	for entry in credits_container.get_children():
 		tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT).tween_property(entry, "modulate:a", 1.0, 0.5).set_delay(0.5)
@@ -82,17 +97,20 @@ func start() -> void:
 	tween.tween_callback(back_button.grab_focus)
 
 
-func _process(_delta: float) -> void:
-	score_label.text = "Score: " + str(score)
-	stats_label.text = "Sold: " + str(sold) + "\n" + "Failed: " + str(failed)
+func _update_credits() -> void:
+	for child in credits_container.get_children():
+		credits_container.remove_child(child)
+		child.queue_free()
 
-
-func _init_credits() -> void:
 	for dict in credit_entries:
 		var entry: CreditsEntry = CreditsEntry.instantiate()
 		entry.modulate.a = 0
 		entry.name = dict.name
-		entry.score = dict.score
+		if scores[entry.name][level] != 0:
+			entry.score = "High Score: %d" % scores[entry.name][level]
+		else:
+			entry.score = ""
+
 		entry.roles = dict.roles
 		credits_container.add_child(entry)
 

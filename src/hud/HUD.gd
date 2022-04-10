@@ -15,6 +15,9 @@ signal back_pressed()
 @onready var victory_screen: VictoryScreen = $VictoryScreen
 
 
+var selected_level := 0
+
+
 func _ready() -> void:
 	recipe_menu.disable()
 	victory_screen.disable()
@@ -30,7 +33,7 @@ func _process(_delta: float) -> void:
 
 
 func show_score() -> void:
-	victory_screen.enable()
+	victory_screen.enable(selected_level)
 	score_label.hide()
 	time_label.hide()
 	container.hide()
@@ -79,6 +82,7 @@ func _on_victory_screen_back_pressed() -> void:
 
 func _on_level_screen_level_selected(level: int) -> void:
 	level_screen.disable()
+	selected_level = level
 	level_selected.emit(level)
 
 
