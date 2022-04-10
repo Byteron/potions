@@ -42,8 +42,8 @@ var scores : Dictionary = {
 		19900,
 	],
 	"Zowie van Dillen" = [
-		0,
-		0,
+		15200,
+		23600,
 		15600,
 	],
 	"Vikfro" = [0, 0, 0],
