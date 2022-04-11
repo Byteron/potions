@@ -31,6 +31,11 @@ func _next_stage() -> void:
 	animate()
 
 
+func pick() -> void:
+	amount -= 1
+	_sprite.texture = data.images[amount - 1]
+
+
 func animate(scale_factor := 0.7) -> void:
 	var tween = get_tree().create_tween()
 	_sprite.scale = Vector3(scale_factor, scale_factor, scale_factor)

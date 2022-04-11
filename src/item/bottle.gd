@@ -12,8 +12,18 @@ var is_filled := false
 func update_sprite() -> void:
 	if is_filled:
 		_sprite.texture = filled_texture
+		update_color()
 	else:
+		_sprite.modulate = Color.WHITE
 		_sprite.texture = empty_texture
+
+
+func update_color() -> void:
+	var color = Color.BLACK
+	for ingredient in ingredients:
+		color += ingredient.data.color
+	color = color / ingredients.size()
+	_sprite.modulate = color
 
 
 func stringify() -> String:

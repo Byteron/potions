@@ -28,7 +28,7 @@ func _on_interactable_interacted(character: Character) -> void:
 		character.take_item(ingredient)
 		harvest_player.play()
 
-		_growable.amount -= 1
+		_growable.pick()
 		
 		if _growable.amount == 0:
 			_growable.queue_free()

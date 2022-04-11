@@ -1,7 +1,9 @@
-[gd_resource type="Resource" load_steps=5 format=3 uid="uid://jrhw42osr18p"]
+[gd_resource type="Resource" load_steps=7 format=3 uid="uid://jrhw42osr18p"]
 
 [ext_resource type="Resource" uid="uid://bn2bb436exhrd" path="res://data/ingredients/root.tres" id="1_gim2h"]
+[ext_resource type="Texture2D" uid="uid://bwqg4pnjmv4p" path="res://assets/graphics/images/curcuma_plant_1.png" id="1_prtnf"]
 [ext_resource type="Script" path="res://src/data/growable_data.gd" id="1_r785t"]
+[ext_resource type="Texture2D" uid="uid://do03ecnxc56mx" path="res://assets/graphics/images/curcuma_plant_2.png" id="2_jgo8d"]
 [ext_resource type="Texture2D" uid="uid://34lor3dreqgj" path="res://assets/graphics/images/curcuma_sapling.png" id="2_tsckp"]
 [ext_resource type="Texture2D" uid="uid://1a3n2avxb5kw" path="res://assets/graphics/images/curcuma_plant.png" id="3_ataly"]
 
@@ -9,6 +11,7 @@
 script = ExtResource( "1_r785t" )
 name = "Root"
 stages = [ExtResource( "2_tsckp" ), ExtResource( "3_ataly" )]
+images = [ExtResource( "1_prtnf" ), ExtResource( "2_jgo8d" ), ExtResource( "3_ataly" )]
 grow_time = 6.0
 amount = 3
 ingredient_data = ExtResource( "1_gim2h" )
