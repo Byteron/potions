@@ -83,3 +83,9 @@ func _on_hud_back_pressed() -> void:
 	anim.play("camera_in")
 	await anim.animation_finished
 	get_tree().reload_current_scene()
+
+
+func _on_hud_escape_pressed() -> void:
+	timer.stop()
+	sound_timer.stop()
+	_on_game_timer_timeout()

@@ -1331,4 +1331,5 @@ texture = ExtResource( "40_woebg" )
 [connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
 [connection signal="timeout" from="GameOverTimer" to="." method="_on_game_over_timer_timeout"]
 [connection signal="back_pressed" from="HUD" to="." method="_on_hud_back_pressed"]
+[connection signal="escape_pressed" from="HUD" to="." method="_on_hud_escape_pressed"]
 [connection signal="level_selected" from="HUD" to="." method="_on_hud_level_selected"]

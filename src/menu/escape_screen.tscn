@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://dowlhw4q4dywi"]
+
+[ext_resource type="Script" path="res://src/menu/escape_screen.gd" id="1_t0nna"]
+
+[node name="EscapeScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( "1_t0nna" )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="CenterContainer"]
+offset_left = 482.0
+offset_top = 325.0
+offset_right = 797.0
+offset_bottom = 395.0
+theme_override_font_sizes/font_size = 48
+text = "Back to Menu"
+
+[node name="ProgressBar" type="ProgressBar" parent="CenterContainer/Label"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 0
+value = 30.0
+percent_visible = false
+__meta__ = {
+"_edit_layout_mode": 1,
+"_edit_use_custom_anchors": false
+}
