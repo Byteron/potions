@@ -58,6 +58,7 @@ func _on_game_timer_timeout() -> void:
 	Recipes.stop()
 	Recipes.clear()
 	player.stop()
+	level.character.disable()
 	await timer.timeout
 	
 	var outcome = level.get_outcome(Recipes.score, save_data.unlocked_levels)
@@ -78,6 +79,7 @@ func _on_hud_level_selected(level: int) -> void:
 	anim.play("camera_out")
 	await anim.animation_finished
 	start()
+
 
 func _on_hud_back_pressed() -> void:
 	anim.play("camera_in")

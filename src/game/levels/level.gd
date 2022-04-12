@@ -15,8 +15,12 @@ enum {
 @export var win_unlocks_level := 0  # Zero signifies that a level has no goal.
 @export var difficulty: Resource = null
 
+@onready var character: Character = $Character
+
+
 func _ready() -> void:
 	Recipes.difficulty = difficulty as Difficulty
+
 
 func get_outcome(score, currently_unlocked_levels):
 	if win_unlocks_level <= currently_unlocked_levels:
