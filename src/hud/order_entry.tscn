@@ -17,7 +17,7 @@ script = ExtResource( "1_hvtrv" )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_right = 260.0
-offset_bottom = 88.0
+offset_bottom = 94.0
 grow_horizontal = 2
 grow_vertical = 2
 __meta__ = {
@@ -30,7 +30,8 @@ offset_right = 260.0
 offset_bottom = 80.0
 
 [node name="ProgressBar" type="ProgressBar" parent="VBoxContainer"]
+rect_min_size = Vector2(0, 10)
 offset_top = 84.0
 offset_right = 260.0
-offset_bottom = 88.0
+offset_bottom = 94.0
 percent_visible = false
