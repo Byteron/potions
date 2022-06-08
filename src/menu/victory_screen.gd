@@ -84,7 +84,7 @@ func start() -> void:
 
 	back_button.visible = false
 	outcome_label.visible = false
-	outcome_label.rect_scale = Vector2(0, 0)
+	outcome_label.scale = Vector2(0, 0)
 	
 	for entry in credits_container.get_children():
 		entry.modulate.a = 0
@@ -99,7 +99,7 @@ func start() -> void:
 	tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT).tween_property(self, "failed", Recipes.failed, 0.5).set_delay(0.25)
 	
 	tween.tween_callback(outcome_label.show)
-	tween.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT).tween_property(outcome_label, "rect_scale", Vector2(1, 1), 0.5)
+	tween.set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT).tween_property(outcome_label, "scale", Vector2(1, 1), 0.5)
 	
 	for entry in credits_container.get_children():
 		tween.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT).tween_property(entry, "modulate:a", 1.0, 0.5).set_delay(0.5)

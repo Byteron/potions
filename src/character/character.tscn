@@ -251,6 +251,7 @@ transform = Transform3D(-0.499255, -0.0272839, -1.26759e-06, -0.0272839, 0.49925
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="character"]
 transform = Transform3D(0, -7.4499e-09, 2, 0, 2, 7.45126e-09, -2, -2.84217e-14, 0, 7.45058e-09, -2.26897, 5.59552e-14)
+visible = false
 amount = 12
 lifetime = 0.5
 local_coords = false

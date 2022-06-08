@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://de4jsrcssn3fp"]
+[gd_scene load_steps=40 format=3 uid="uid://de4jsrcssn3fp"]
 
 [ext_resource type="Script" path="res://src/game/shop.gd" id="1_6107u"]
 [ext_resource type="PackedScene" uid="uid://bl5mk0u3l6nab" path="res://src/game/levels/level1.tscn" id="2_7dbyx"]
@@ -26,6 +26,58 @@
 
 [sub_resource type="Animation" id="Animation_fvxtk"]
 length = 0.001
+
+[sub_resource type="Animation" id="Animation_px7b8"]
+resource_name = "intro"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(4.39754, 2.09575, -3.33653), Vector3(4.39126, 2.09575, 0.998644)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.015501, -1.57224, -7.33505e-09), Vector3(-0.015501, -1.57224, -8.38291e-09)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Intro/ColorRect:color")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 2.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Intro/ColorRect:visible")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6, 2.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="Animation" id="Animation_r7giu"]
 resource_name = "camera_in"
@@ -83,56 +135,12 @@ tracks/1/keys = {
 "values": [Vector3(-0.015501, -1.57224, -8.38291e-09), Vector3(-0.943573, 0.167906, -0.0263344)]
 }
 
-[sub_resource type="Animation" id="Animation_px7b8"]
-resource_name = "intro"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(3, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(4.39754, 2.09575, -3.33653), Vector3(4.39126, 2.09575, 0.998644)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:rotation")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(3, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.015501, -1.57224, -7.33505e-09), Vector3(-0.015501, -1.57224, -8.38291e-09)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Intro/ColorRect:color")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.6, 2.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Intro/ColorRect:visible")
-tracks/3/interp = 2
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.6, 2.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4qlxh"]
+_data = {
+"RESET": SubResource( "Animation_fvxtk" ),
+"camera_in": SubResource( "Animation_r7giu" ),
+"camera_out": SubResource( "Animation_qnd1h" ),
+"intro": SubResource( "Animation_px7b8" )
 }
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jl2y6"]
@@ -181,6 +189,7 @@ size = Vector2(4, 4)
 
 [node name="Shop" type="Node3D"]
 script = ExtResource( "1_6107u" )
+skip_intro = true
 levels = [ExtResource( "2_7dbyx" ), ExtResource( "3_0y4ru" ), ExtResource( "4_058g2" )]
 
 [node name="GameTimer" type="Timer" parent="."]
@@ -193,10 +202,9 @@ one_shot = true
 stream = ExtResource( "2_jd8pm" )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( "Animation_fvxtk" )
-anims/camera_in = SubResource( "Animation_r7giu" )
-anims/camera_out = SubResource( "Animation_qnd1h" )
-anims/intro = SubResource( "Animation_px7b8" )
+libraries = {
+"": SubResource( "AnimationLibrary_4qlxh" )
+}
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( "3_3a5w4" )

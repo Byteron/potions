@@ -13,7 +13,7 @@ func update_info() -> void:
 	for ingredient in recipe.ingredients:
 		var rect = TextureRect.new()
 		rect.ignore_texture_size = true
-		rect.rect_min_size = Vector2(32, 32)
+		rect.minimum_size = Vector2(32, 32)
 		var texture = AtlasTexture.new()
 		texture.atlas = ingredient.texture
 		texture.region = ingredient.texture.get_image().get_used_rect()

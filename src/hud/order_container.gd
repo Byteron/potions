@@ -12,7 +12,7 @@ func add_order(order: Order) -> void:
 	entry.faded.connect(_on_entry_faded)
 	entry.order = order
 	add_child(entry)
-	entry.rect_position.y = entry.rect_size.y * count + count * 5
+	entry.position.y = entry.size.y * count + count * 5
 	animate_in(entry)
 	orders[order] = entry
 
@@ -32,14 +32,14 @@ func animate_all_up() -> void:
 
 func animate_in(entry: OrderEntry) -> void:
 	var tween: Tween = get_tree().create_tween()
-	entry.rect_position.x -= entry.rect_size.x
-	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).tween_property(entry, "rect_position:x", entry.rect_size.x, 0.5).as_relative()
+	entry.position.x -= entry.size.x
+	tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).tween_property(entry, "position:x", entry.size.x, 0.5).as_relative()
 	tween.play()
 
 
 func animate_up(entry: OrderEntry, index: int) -> void:
 	var tween: Tween = get_tree().create_tween()
-	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC).tween_property(entry, "rect_position:y", entry.rect_size.y * index, 0.5)
+	tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC).tween_property(entry, "position:y", entry.size.y * index, 0.5)
 	tween.play()
 
 
@@ -54,7 +54,7 @@ func animate_out(entry: OrderEntry, successful: bool) -> void:
 		tween.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC).tween_property(entry, "modulate", Color("FF0000"), 0.25)
 		tween.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC).tween_property(entry, "modulate", Color("FFFFFF"), 0.25)
 	
-	tween.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC).tween_property(entry, "rect_position:x", -entry.rect_size.x, 0.5).as_relative()
+	tween.set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC).tween_property(entry, "position:x", -entry.size.x, 0.5).as_relative()
 	tween.tween_callback(entry.remove)
 	tween.play()
 
